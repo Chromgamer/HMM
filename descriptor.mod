@@ -4,5 +4,6 @@ tags={
 	"Fixes"
 	"Historical"
 }
+replace_path="history/countries"
 name="HMM"
 supported_version="1.14.7"
