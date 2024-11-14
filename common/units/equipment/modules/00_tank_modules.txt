@@ -124,7 +124,7 @@ equipment_modules = {
 		}
 
 		build_cost_resources = {
-			chromium = 1
+			chromium = 0
 		}
 	}
 
@@ -765,7 +765,7 @@ equipment_modules = {
 			convert_cost_ic = 3
 		}
 		build_cost_resources = {
-			steel = 2
+			steel = 0
 			tungsten = 1
 		}
 	}
@@ -792,7 +792,7 @@ equipment_modules = {
 			convert_cost_ic = 4
 		}
 		build_cost_resources = {
-			steel = 3
+			steel = 0
 			tungsten = 1
 		}
 	}
@@ -859,7 +859,7 @@ equipment_modules = {
 			convert_cost_ic = 4
 		}
 		build_cost_resources = {
-			steel = 1
+			steel = 0
 		}
 	}
 
@@ -887,7 +887,7 @@ equipment_modules = {
 
 		build_cost_resources = {
 			tungsten = 1
-			steel = 1
+			steel = 0
 		}
 	}
 
@@ -915,8 +915,8 @@ equipment_modules = {
 		}
 		build_cost_resources = {
 			tungsten = 1
-			steel = 2
-			chromium = 1
+			steel = 0
+			chromium = 0
 		}
 	}
 
@@ -943,7 +943,7 @@ equipment_modules = {
 		}
 		build_cost_resources = {
 			tungsten = 1
-			steel = 2
+			steel = 0
 		}
 	}
 
@@ -970,8 +970,8 @@ equipment_modules = {
 		}
 		build_cost_resources = {
 			tungsten = 1
-			steel = 3
-			chromium = 1
+			steel = 0
+			chromium = 0
 		}
 	}
 
@@ -999,8 +999,8 @@ equipment_modules = {
 		}
 
 		build_cost_resources = {
-			tungsten = 2
-			steel = 1
+			tungsten = 1
+			steel = 0
 		}
 	}
 
@@ -1028,7 +1028,7 @@ equipment_modules = {
 		}
 		build_cost_resources = {
 			tungsten = 2
-			steel = 1
+			steel = 0
 		}
 	}
 
@@ -1053,8 +1053,8 @@ equipment_modules = {
 			convert_cost_ic = 3
 		}
 		build_cost_resources = {
-			tungsten = 2
-			steel = 2
+			tungsten = 1
+			steel = 0
 		}
 	}
 
@@ -1079,9 +1079,9 @@ equipment_modules = {
 			convert_cost_ic = 5
 		}
 		build_cost_resources = {
-			tungsten = 2
-			chromium = 1
-			steel = 2
+			tungsten = 1
+			chromium = 0
+			steel = 0
 		}
 	}
 	tank_high_velocity_cannon_3 = {
@@ -1105,9 +1105,9 @@ equipment_modules = {
 			convert_cost_ic = 7
 		}
 		build_cost_resources = {
-			tungsten = 2
-			chromium = 1
-			steel = 3
+			tungsten = 1
+			chromium = 0
+			steel = 0
 		}
 	}
 
@@ -1133,8 +1133,8 @@ equipment_modules = {
 		}
 		build_cost_resources = {
 			tungsten = 1
-			chromium = 1
-			steel = 2
+			chromium = 0
+			steel = 0
 		}
 	}
 
@@ -1159,9 +1159,9 @@ equipment_modules = {
 			convert_cost_ic = 7
 		}
 		build_cost_resources = {
-			tungsten = 2
-			chromium = 1
-			steel = 2
+			tungsten = 1
+			chromium = 0
+			steel = 0
 		}
 	}
 
@@ -1186,9 +1186,9 @@ equipment_modules = {
 			convert_cost_ic = 8
 		}
 		build_cost_resources = {
-			tungsten = 3
-			chromium = 1
-			steel = 3
+			tungsten = 1
+			chromium = 0
+			steel = 0
 		}
 	}
 
@@ -1216,8 +1216,8 @@ equipment_modules = {
 
 		build_cost_resources = {
 			tungsten = 1
-			chromium = 1
-			steel = 3
+			chromium = 0
+			steel = 0
 		}
 	}
 
@@ -1239,7 +1239,7 @@ equipment_modules = {
 		
 		build_cost_resources = {
 			tungsten = 5
-			chromium = 2
+			chromium = 0
 		}
 	}
 
@@ -1452,7 +1452,7 @@ equipment_modules = {
 		}
 
 		build_cost_resources = {
-			tungsten = 1
+			tungsten = 0
 		}
 	}
 

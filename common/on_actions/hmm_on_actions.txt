@@ -90,7 +90,6 @@ on_actions = {
 	}
 	on_monthly = {
 		effect = {
-			hmm_intel = yes
 			every_country = {
 				limit = {
 					is_playable_country = yes
@@ -234,6 +233,38 @@ on_actions = {
 			}
 		}
 	}
+	on_war_relation_added = {
+        effect = {
+            if = {
+                limit = {
+                    tag = JAP
+                    FROM = {
+                        is_in_faction_with = ENG
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = ENG
+                    }
+                    add_to_war = {
+                        targeted_alliance = FROM
+                        enemy = JAP
+                        hostility_reason = asked_to_join
+                    }
+                }
+                every_country = {
+                    limit = {
+                        is_in_faction_with = JAP
+                    }
+                    add_to_war = {
+                        targeted_alliance = ROOT
+                        enemy = FROM
+                        hostility_reason = asked_to_join
+                    }
+                }
+            }
+        }
+    }
 	on_declare_war = {
 		effect = {
 			if = {
@@ -270,6 +301,107 @@ on_actions = {
 					add_to_faction = FROM
 				}
 			}
+			if = {
+                limit = {
+                    FROM = {
+                        tag = ALB
+                    }
+                }
+                ALB = {
+                    load_oob = "ALB_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = BEL
+                    }
+                }
+                BEL = {
+                    load_oob = "BEL_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = DEN
+                    }
+                }
+                DEN = {
+                    load_oob = "DEN_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = HOL
+                    }
+                }
+                HOL = {
+                    load_oob = "HOL_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = LUX
+                    }
+                }
+                LUX = {
+                    load_oob = "LUX_CHROM_SPAWN"
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        tag = NOR
+                    }
+                }
+                NOR = {
+                    load_oob = "NOR_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = POL
+                    }
+                }
+                POL = {
+                    load_oob = "POL_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = YUG
+                    }
+                }
+                YUG = {
+                    load_oob = "YUG_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = GRE
+                    }
+                }
+                GRE = {
+                    load_oob = "GRE_CHROM_SPAWN"
+                }
+            }
+			if = {
+                limit = {
+                    FROM = {
+                        tag = CHI
+                    }
+                }
+                CHI = {
+                    load_oob = "CHI_CHROM_SPAWN"
+                }
+            }
+			
 		}
 	}
 }

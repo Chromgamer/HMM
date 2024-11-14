@@ -241,6 +241,8 @@ hmm_capitulations_on_actions = {
 
 
 }
+
+
 			
 
 		

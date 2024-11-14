@@ -67,13 +67,7 @@ focus_tree = {
 
 		x = 2
 		y = 0
-		offset = {
-			x = 6
-			y = 0
-			trigger = {
-				ITA_cw_branches_are_visible = yes
-			}
-		}
+		
 		cost = 5
 
 		bypass = {
@@ -5298,6 +5292,7 @@ focus_tree = {
 
 			hidden_effect = {
 				add_ideas = ITA_hidden_standardization_ns
+				#add_ideas = ITA_hidden_standardization_ns_hidden
 			}
 
 			add_to_variable = { ITA_iri_consumer_goods_factor = 0.02 }
@@ -5355,6 +5350,7 @@ focus_tree = {
 
 			hidden_effect = {
 				add_ideas = ITA_hidden_specialization_ns
+				#add_ideas = ITA_hidden_specialization_ns_hidden
 			}
 
 			add_to_variable = { ITA_iri_consumer_goods_factor = 0.02 }
@@ -8955,17 +8951,6 @@ focus_tree = {
 		y = 1
 		relative_position_id = ITA_culto_del_duce
 
-		offset = {
-			x = -10
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ITA_convene_the_grand_council
-			}
-		}
 
 		cost = 5
 		available = {
@@ -9175,17 +9160,6 @@ focus_tree = {
 		y = 1
 		relative_position_id = ITA_security_militias
 
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ITA_convene_the_grand_council
-			}
-		}
 
 		cost = 10
 		available = {
@@ -9310,17 +9284,6 @@ focus_tree = {
 		relative_position_id = ITA_strengthen_the_regime
 		cost = 5
 
-		offset = {
-			x = 8
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ITA_convene_the_grand_council
-			}
-		}
 
 		bypass = {
 			458 = { is_claimed_by = ROOT }

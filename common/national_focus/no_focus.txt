@@ -59,6 +59,10 @@ focus_tree = {
 			add = 1000000
 			tag = IRE
 		}
+		modifier = {
+			add = 1000000
+			tag = COG
+		}
 	}
 	
 	default = yes

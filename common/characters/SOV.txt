@@ -992,18 +992,6 @@ characters = {
 				small=GFX_portrait_SOV_markian_popov_small
 			}
 		}
-		advisor = {
-			cost = 200
-			slot = high_command
-			idea_token = SOV_markian_popov
-			ledger = army
-			allowed = {
-				original_tag = SOV
-			}
-			traits = {
-				army_CombinedArms_3
-			}
-		}
 		corps_commander = {
 			traits = { brilliant_strategist  winter_specialist panzer_leader trickster trait_engineer combined_arms_expert cavalry_leader organizer ranger commando}
 			skill = 6

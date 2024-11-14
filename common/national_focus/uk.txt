@@ -1507,6 +1507,9 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			add_ideas = british_fighter_discount
+			#hidden_effect = {
+			#	add_ideas = british_fighter_discount_hidden 
+			#}
 		}
 	}
 	focus = {
@@ -1681,13 +1684,7 @@ focus_tree = {
 		icon = GFX_focus_generic_cruiser2
 		x = 3
 		y = 2
-		offset = {
-			x = -1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
+		
 		relative_position_id = naval_rearmament_focus
 		cost = 10
 		ai_will_do = {
@@ -1786,13 +1783,7 @@ focus_tree = {
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		x = 0
 		y = 2
-		offset = {
-			x = 0
-			y = -1
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
+		
 		relative_position_id = uk_convoy_focus
 		cost = 10
 		ai_will_do = {
@@ -2086,22 +2077,7 @@ focus_tree = {
 		icon = GFX_goal_generic_national_unity
 		x = 29
 		y = 0
-		offset = {
-			x = -2
-			y = 0
-			trigger = {
-				OR = {
-					NOT = { has_dlc = "Man the Guns" }
-					AND = {
-						has_game_rule = {
-							rule = obsolete_focus_branches_visibility
-							option = HIDE
-						}
-						has_completed_focus = uk_empire_focus
-					}
-				}
-			}
-		}
+
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -3818,13 +3794,7 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		x = -1
 		y = 1
-		offset = {
-			x = 1
-			y = 0
-			trigger = {
-				NOT = { has_dlc = "Man the Guns" }
-			}
-		}
+
 		relative_position_id = uk_india_focus
 		cost = 10
 
