@@ -295,6 +295,7 @@ on_actions = {
 				limit = {
 					FROM = {
 						allies = yes
+						NOT = { tag = SOV}
 					}
 				}
 				ENG = {

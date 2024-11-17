@@ -67,7 +67,8 @@ no_garrison = {
 	sound_effect = "Martial_Law_Interface_No_Garrison"
 
 	visible = {
-		has_government = democratic #? on design
+		always = no
+		
 	}
 
 	state_modifier = {
@@ -85,35 +86,7 @@ no_garrison = {
 	ai_will_do = {
 		base = 0
 
-		modifier = {
-			FROM = {
-				has_government = democratic
-			}
-			has_active_resistance = no
-			add = 200
-		}
-		# if losing, get manpower & equipment back
-		modifier = {
-			FROM = {
-				surrender_progress > 0.15
-			}
-			add = 100
-		}
-		modifier = {
-			FROM = {
-				surrender_progress > 0.4
-			}
-			add = 500
-		}
-
-		modifier = {
-			check_variable  = { uncapped_resistance_target > -0.4 }
-			add = -60
-		}
-		modifier = {
-			check_variable  = { uncapped_resistance_target > -0.4 }
-			add = -60
-		}
+		
 	}
 }
 
@@ -163,8 +136,10 @@ foreign_civilian_oversight = {
 	ai_will_do = {
 		base = 120
 		modifier = {
-			check_variable  = { resistance_target_without_law > 0.05}
-			add = 100
+
+			tag = HOL
+
+			add = 100000000
 		}
 	}
 }
