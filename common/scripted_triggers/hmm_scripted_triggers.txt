@@ -44,7 +44,6 @@ allies = {
 		tag = LUX
 		tag = POL
 		tag = DEN
-		tag = CHI
 	}
 }
 
