@@ -40,13 +40,7 @@ if = {
 	}
 }
 
-if = {
-	limit = {
-		has_dlc = "Gotterdammerung"
-	}
-	give_guarantee = FRA
-	give_guarantee = ENG
-}
+
 
 set_research_slots = 3
 set_stability = 0.7
@@ -348,16 +342,7 @@ if = {
 }
 
 
-IF = {
-	limit = {
-		has_dlc = "Gotterdammerung"
-	}
-	set_autonomy = {
-		target = COG
-		autonomous_state = autonomy_colony
-		freedom_level = 0.2
-	}
-}
+
 
 IF = {
 	limit = {

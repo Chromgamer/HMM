@@ -90,6 +90,36 @@ on_actions = {
 	}
 	on_monthly = {
 		effect = {
+			if = {
+				limit = {
+						BEL = {
+							has_capitulated = yes
+						}
+						HOL = {
+							has_capitulated = yes
+						}
+						LUX = {
+							has_capitulated = yes
+						}
+						DEN = {
+							has_capitulated = yes
+						}
+						NOR = {
+							has_capitulated = yes
+						}
+						POL = {
+							has_capitulated = yes
+						}
+				}
+				every_country = {
+					limit = {
+						axis = yes
+					}
+					every_army_leader = {
+						remove_unit_leader_trait = no_grind
+					}
+				}
+			}
 			every_country = {
 				limit = {
 					is_playable_country = yes
@@ -188,36 +218,7 @@ on_actions = {
 		effect = {
 			hmm_capitulations_on_actions = yes
 
-			if = {
-				limit = {
-						BEL = {
-							has_capitulated = no
-						}
-						HOL = {
-							has_capitulated = no
-						}
-						LUX = {
-							has_capitulated = no
-						}
-						DEN = {
-							has_capitulated = no
-						}
-						NOR = {
-							has_capitulated = no
-						}
-						POL = {
-							has_capitulated = no
-						}
-				}
-				every_country = {
-					limit = {
-						axis = yes
-					}
-					every_army_leader = {
-						remove_unit_leader_trait = no_grind
-					}
-				}
-			}
+			
 		}
 	}
 	on_state_control_changed = {
