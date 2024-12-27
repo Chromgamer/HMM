@@ -52,7 +52,6 @@ ideas = {
 					}
 			}
 			}
-		}
 		
 	}
 	hidden_ideas = {

@@ -177,6 +177,7 @@ on_actions = {
 					every_army_leader = {
 						remove_unit_leader_trait = no_grind
 					}
+					set_global_flag = grind_allowed
 				}
 			}
 			every_country = {
@@ -242,6 +243,9 @@ on_actions = {
 				every_country = {
 					limit = {
 						axis = yes
+						NOT = {
+							has_global_flag = grind_allowed
+						}
 					}
 					every_army_leader = {
 						limit = {
