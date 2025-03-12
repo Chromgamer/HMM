@@ -775,8 +775,6 @@ princely_subjugation= {
 				original_tag = WST
 			}
 		}
-
-		
 	}
 
 	state_modifier = {
