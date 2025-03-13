@@ -38,6 +38,8 @@ hmm.6.a:0 "integrate RAJ"
 hmm.7.y:0 "yes"
 hmm.7.n:0 "no"
 
+WAR_join:0 "Auto Join War"
+
 
 add_convoy:0 "Add Convoy"
 auto_mech:0 "Cheap Mechanized"
