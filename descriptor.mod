@@ -1,4 +1,4 @@
-version="1.16.1"
+version="1.16.3"
 tags={
 	"Balance"
 	"Historical"
@@ -11,5 +11,5 @@ replace_path="map/strategicregions"
 replace_path="common/national_focus"
 replace_path="common/opinion_modifiers"
 name="HMM - [DEV]"
-supported_version="1.16.1"
+supported_version="1.16.3"
 remote_file_id="3365264825"
