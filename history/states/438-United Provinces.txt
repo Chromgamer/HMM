@@ -8,9 +8,12 @@ state={
 	buildings_max_level_factor=1.000
 	state_category=town
 	local_supplies=0.000
-	history={		owner = RAJ
+	history={
+		owner = RAJ
+		add_core_of = RAJ
 		victory_points = {
-			1377 10}
+			1377 10
+		}
 
 
 		buildings = {
