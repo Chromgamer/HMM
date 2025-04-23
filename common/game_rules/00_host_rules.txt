@@ -373,3 +373,18 @@ usa_boost = {
 		desc = "USA get 8 Civilian factories (Not Recommmended)"
 	}
 }
+playable_iraq = {
+	name = "Playable Iraq?"
+	group = "HMM Rules"
+	icon = "GFX_decision_category_usa_intervention_mandate"
+	default = {
+		name = no
+		text = "No"
+		desc = "Iraq gets day 1 annexed into The UK"
+	}
+	option = {
+		name = yes
+		text = "Yes"
+		desc = "Iraq is playable"
+	}
+}
