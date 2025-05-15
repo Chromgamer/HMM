@@ -12058,6 +12058,7 @@ focus_tree = {
 
 		available = {
 			is_subject = no
+			date < 1941.6.22
 		}
 
 		cancel = {
