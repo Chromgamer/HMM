@@ -135,7 +135,7 @@ NDefines.NAir.ANTI_AIR_ATTACK_TO_DAMAGE_REDUCTION_FACTOR = 1.25 -- this is buffe
 
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
 
-NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 1
+NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 0
 
 --NDefines_Graphics.NAirGfx.MAX_MISSILE_BOMBING_SCENARIOS = 0
 --NDefines_Graphics.NAirGfx.MAX_BOMBING_SCENARIOS = 0
