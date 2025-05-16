@@ -474,8 +474,15 @@ on_actions = {
 					BRA = {
 						add_political_power = -25
 					}
+
 				}
-				
+				HOL ={
+					diplomatic_relation = {
+						country = GER
+						relation = embargo
+						active = yes
+					}
+				}
 				every_country = {
 					limit = {
 						allies = yes
