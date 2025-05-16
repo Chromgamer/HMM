@@ -734,8 +734,7 @@ technologies = {
 		category_self_propelled_anti_air = {
 			air_attack = 0.15
 		}
-		tech_air_damage_factor = -0.02
-
+		static_anti_air_damage_factor = 0.05
 		path = {
 			leads_to_tech = antiair2
 			research_cost_coeff = 1
@@ -853,8 +852,7 @@ technologies = {
 		enable_equipment_modules = {
 			tank_heavy_cannon_2
 		}
-
-		tech_air_damage_factor = -0.02
+		static_anti_air_damage_factor = 0.05
 
 		path = {
 			leads_to_tech = antiair4
@@ -909,8 +907,7 @@ technologies = {
 		category_self_propelled_anti_air = {
 			air_attack = 0.05
 		}
-
-		tech_air_damage_factor = -0.02
+		static_anti_air_damage_factor = 0.05
 
 		path = {
 			leads_to_tech = antiair5
