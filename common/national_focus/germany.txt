@@ -5210,6 +5210,7 @@ focus_tree = {
 		relative_position_id = GER_aeronautical_research_institute
 		cost = 5
 		available = {
+			always = no
 		}
 
 		search_filters = { FOCUS_FILTER_MILITARY_CHARACTER FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }

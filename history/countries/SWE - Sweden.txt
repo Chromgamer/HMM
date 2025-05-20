@@ -664,7 +664,7 @@ add_equipment_to_stockpile = {
 	amount = 200
 	producer = CZE
 }
-
+add_ideas = free_trade
 ###################
 # Variables #
 ###################

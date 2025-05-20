@@ -26,6 +26,7 @@ on_actions = {
 						ai_rk = yes
 						ai_manpower = yes
 						ai_black = yes
+						tag = SWE
 					}
 				}
 				country_lock_all_division_template = yes
@@ -78,6 +79,11 @@ on_actions = {
 			SPR = {
 				add_ideas = {
 					no_faction
+				}
+			}
+			HOL = {
+				add_ideas = {
+					noresistance
 				}
 			}
 			every_country = {
