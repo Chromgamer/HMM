@@ -282,7 +282,6 @@ focus_tree = {
 		id = BRA_corporatism
 		icon = GFX_focus_ICE_state_corporatism
 		prerequisite = {  focus = BRA_the_polaca}
-		mutually_exclusive = { focus = BRA_autarky }
 		x = 2
 		y = 1
 		relative_position_id =  BRA_the_polaca
