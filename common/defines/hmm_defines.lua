@@ -130,12 +130,13 @@ NDefines.NTrade.MAX_MONTH_TRADE_FACTOR = 0				-- This is the maximum bonus that 
 NDefines.NTrade.DISTANCE_TRADE_FACTOR = 0				-- Trade factor is modified by distance times this
 NDefines.NTrade.RELATION_TRADE_FACTOR = 0				-- Trade factor is modified by Opinion value times this
 NDefines.NBuildings.OWNER_CHANGE_EXTRA_SHARED_SLOTS_FACTOR = 1.0 -- You get all the factories in a territory when you annex it
-
-NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
-NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 0.6 --Vanilla 2
+NDefines.NBuildings.ANTI_AIR_SUPERIORITY_MULT = 10.0 -- How much air superiority reduction to the enemy does our AA guns? Normally each building level = -1 reduction. With this multiplier.
+NDefines.NAir.ANTI_AIR_ATTACK_TO_DAMAGE_REDUCTION_FACTOR = 1.15 -- this is buffed by .15 I AM NOT 100% SURE THIS MAKES ANY CHANGE TO SAA (state aa) BUT IT GOODS TO HAVE , IF SHREDS CAS = REMOVED
+NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 1 --Vanilla 2
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 0
-NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.05 -- Vanilla 0.07
-NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0 --Vanilla -0.12
+NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.11 -- Vanilla 0.07
+NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.12 --Vanilla -0.12
+NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
 --NDefines_Graphics.NAirGfx.MAX_MISSILE_BOMBING_SCENARIOS = 0
 --NDefines_Graphics.NAirGfx.MAX_BOMBING_SCENARIOS = 0
 NDefines_Graphics.NAirGfx.MAX_PATROL_SCENARIOS = 0
