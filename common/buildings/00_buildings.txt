@@ -116,7 +116,6 @@ buildings = {
 		disabled_in_dmz = yes
 		icon_frame = 16
 		damage_factor = 0.1
-		repair_speed_factor = 1.2
 		infrastructure_construction_effect = yes
 		level_cap = {
 			province_max = 1
@@ -246,7 +245,7 @@ buildings = {
 		anti_air = yes
 		disabled_in_dmz = yes
 		air_defence = 1
-		damage_factor = 0.2
+		damage_factor = 0.1
 		value = 1
 		infrastructure_construction_effect = yes
 		level_cap = {
@@ -264,7 +263,7 @@ buildings = {
 		refinery = yes
 		value = 5
 		infrastructure_construction_effect = yes
-		repair_speed_factor = 1
+		
 		show_modifier = yes
 
 		country_modifiers = {
