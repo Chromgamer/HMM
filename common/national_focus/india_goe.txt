@@ -14237,7 +14237,7 @@ focus = {
         cost = 10
 
         available = {
-
+             NOT = { has_war_with = GER }
         }
 
         bypass = {
@@ -14313,7 +14313,7 @@ focus = {
         cost = 10
 
         available = {
-
+             NOT = { has_war_with = SOV }
         }
 
         bypass = {
