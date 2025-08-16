@@ -52,6 +52,20 @@ ideas = {
 					}
 			}
 			}
+			no_tradebacks = {
+			cancel = {
+				GER = {
+					has_war = yes
+				}
+			}
+			allowed = {
+				always = no				# Added via focus
+			}
+			removal_cost = -1
+			picture = generic_central_management
+			modifier = {
+				production_lack_of_resource_penalty_factor = -1
+			}
 		
 	}
 	hidden_ideas = {
