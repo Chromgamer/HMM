@@ -67,7 +67,9 @@ ideas = {
 				production_lack_of_resource_penalty_factor = -1
 			}
 		
+		}
 	}
+
 	hidden_ideas = {
 		noresistance = {
 			allowed = {
