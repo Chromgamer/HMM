@@ -253,5 +253,29 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 761;13315;sea;9092;-1;-1;-1;-1;;Ontario
 13196;13314;sea;9092;-1;-1;-1;-1;;Northern Quebec
 1421;10184;sea;2899;-1;-1;-1;-1;;Sulu-Mindanao
+2089;5005;impassable;-1;-1;-1;-1;-1;;Iran Border
+2089;7953;impassable;-1;-1;-1;-1;-1;;Iran Border
+12726;7953;impassable;-1;-1;-1;-1;-1;;Iran Border
+78;10774;impassable;-1;-1;-1;-1;-1;;Iran Border
+78;7953;impassable;-1;-1;-1;-1;-1;;Iran Border
+78;829;impassable;-1;-1;-1;-1;-1;;Iran Border
+12855;829;impassable;-1;-1;-1;-1;-1;;Iran Border
+12855;5098;impassable;-1;-1;-1;-1;-1;;Iran Border
+10793;5098;impassable;-1;-1;-1;-1;-1;;Iran Border
+6826;4943;impassable;-1;-1;-1;-1;-1;;Iran Border
+6826;5098;impassable;-1;-1;-1;-1;-1;;Iran Border
+6826;1822;impassable;-1;-1;-1;-1;-1;;Iran Border
+12985;12921;impassable;-1;-1;-1;-1;-1;;Iran Border
+5014;1822;impassable;-1;-1;-1;-1;-1;;Iran Border
+12320;1636;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+6997;1636;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+6997;4755;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+4660;4755;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+4660;4825;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+9715;4825;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+11704;10454;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+10454;12434;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+10454;4473;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+4901;4473;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
 5864;5838;;-1;-1;-1;-1;-1;OTRANTO_STRAIT;Otranto Strait
 -1;-1;;-1;-1;-1;-1;-1;-1 

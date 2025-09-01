@@ -3,7 +3,10 @@
 #### NO STEP BACK
 ####
 
-
+set_autonomy = {
+	target = PER
+	autonomous_state = iran_puppet
+}
 #You don't want Russian party names? Just remove these lines
 set_party_name = {
 	ideology = communism
