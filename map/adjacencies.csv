@@ -277,5 +277,6 @@ From;To;Type;Through;start_x;start_y;stop_x;stop_y;adjacency_rule_name;Comment
 10454;12434;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
 10454;4473;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
 4901;4473;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
+9715;10454;impassable;-1;-1;-1;-1;-1;;Iran-Soviet Caucasus
 5864;5838;;-1;-1;-1;-1;-1;OTRANTO_STRAIT;Otranto Strait
 -1;-1;;-1;-1;-1;-1;-1;-1 
