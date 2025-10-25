@@ -8875,20 +8875,7 @@ focus_tree = {
 		relative_position_id = GER_uplift_the_rosenberg_office
 		cost = 5
 		available = {
-			has_government = fascism
-			OR = {
-				any_controlled_state = {
-					NOT = {
-						is_core_of = ROOT
-					}
-					is_on_continent = europe
-				}
-				any_subject_country = {
-					capital_scope = {
-						is_on_continent = europe
-					}
-				}
-			}
+			always = no
 		}
 
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_MANPOWER }

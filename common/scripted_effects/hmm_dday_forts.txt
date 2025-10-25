@@ -24,7 +24,7 @@ every_state = {
 						state = 912
 					}
 				}
-				add_building_construction = {
+				set_building_level = {
 					type = coastal_bunker
 					level = 2
 					instant_build = yes

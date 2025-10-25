@@ -1764,7 +1764,12 @@ technologies = {
 				PROJECT = sp_land_super_heavy_railway_gun
 			}
 		}
-
+		allow = {
+			has_game_rule = {
+				rule = railway_gun
+				option = on
+			}
+		}
 		research_cost = 1.5
 		start_year = 1936
 		folder = {

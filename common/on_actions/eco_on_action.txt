@@ -1857,6 +1857,20 @@ on_actions = {
 					variant_name = "Panzer I Ausf. A"
 				}
 			}
+			PER = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = 4000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment_1
+					amount = 70
+				}
+				add_equipment_to_stockpile = {
+					type = artillery_equipment_1
+					amount = 25
+				}
+			}
 			BUL = {
 				add_equipment_to_stockpile = {
 					type = train_equipment

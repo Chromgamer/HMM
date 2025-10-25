@@ -47,6 +47,7 @@ WST = "countries/Wasteland.txt"
 TUM = "countries/TUM.txt"
 CHO = "countries/CHO.txt"
 SOL = "countries/Solomon.txt"
+PER = "countries/Persia.txt"
 
 # REICHSKOMMISSARIATS (no cores) (European)
 RKB = "countries/Reichskommisariat Belgien.txt"

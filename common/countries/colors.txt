@@ -37,6 +37,10 @@ POL = {
 	color = rgb { 214 102 139 }
 	color_ui = rgb { 255 120 138 }
 }
+PER = {
+	color = rgb { 71 113 97 }
+	color_ui = rgb { 92 147 126 }
+}
 AUS = {
 	color = rgb { 194 198 215 }
 	color_ui = rgb { 255 255 255 }
