@@ -1,5 +1,7 @@
 ﻿l_english:
  peace_training:0 "Peacetime Training"
+ no_grind:0 "No Grind"
+ tank_pre_grind:0 "Tank Pregrind"
  
 
 
@@ -70,3 +72,22 @@ move_capital_to_Stalingrad:0 "Move Capital to Stalingrad"
 move_capital_to_Vladivostok:0 "Move Capital to Vladivostok"
 SOV_assist_republican_spain:0 "Assist Republican Spain"
 continuous_recruitment_drive:0 "Continuous Recruitment Drive"
+
+  # Template decisions category and decisions
+ templates:0 "Division Templates"
+ templates_desc:0 "Create predefined division templates with a single click."
+ 
+ Hide_Templates:0 "Hide Template Decisions"
+ Hide_Templates_desc:0 "Hide all template decisions to declutter your decision view."
+ 
+ Show_Templates:0 "Show Template Decisions"
+ Show_Templates_desc:0 "Show all template decisions."
+ 
+ cav:0 "Create Cavalry Garrison Template"
+ cav_desc:0 "Create a 25-battalion cavalry division template for garrison duty."
+ 
+ a2cw:0 "Create 2W Infantry Template"
+ a2cw_desc:0 "Create a minimal 2-width infantry division template for FALS conversion."
+ 
+ a50cw:0 "Create 50W Infantry Template"
+ a50cw_desc:0 "Create a 50-width infantry division (25 battalions) template."

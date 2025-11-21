@@ -1,4 +1,4 @@
-﻿
+﻿ 
 
 
 ##### OOB #####
@@ -7,7 +7,7 @@ units = {
 	#Yokosuka (Tokyo)
 	fleet = {
 		name = "Dai 1 Kantai"			
-		naval_base = 1092  #Yokosuka
+		naval_base = 9998  #Yokosuka
 		task_force = {
 			name = "1 Kantai"
 			location = 1092  #Yokosuka
@@ -101,7 +101,7 @@ units = {
 	#Sasebo (Nagasaki)
 	fleet = {
 		name = "Dai 2 Kantai"			
-		naval_base = 1092  #Sasebo
+		naval_base = 9998  #Sasebo
 		task_force = {	
 			name = "2 Kantai"
 			location = 1092  #Sasebo
@@ -196,7 +196,7 @@ units = {
 	#Taiwan (Goaxing)
 	fleet = {
 		name = "Dai 3 Kantai"			
-		naval_base = 1092	# Taiwan
+		naval_base = 9998	# Taiwan
 		task_force = {
 			name = "3 Kantai" #Later assigned for the Chinese theater
 			location = 1092	# Taiwan
@@ -261,7 +261,7 @@ units = {
 	#Hiroshima (Kure)
 	fleet = {
 		name = "Kure Kantai"			
-		naval_base = 1092  # Hiroshima
+		naval_base = 9998  # Hiroshima
 		task_force = {
 			name = "Kure Yobikantai" # Patrol and reserve fleet, including ships under modernization
 			location = 1092  # Hiroshima
@@ -319,7 +319,7 @@ units = {
 	# Naval District Forces #
 	fleet = {
 		name = "Kaigun Yobikantai"
-		naval_base = 1092  #Ominato
+		naval_base = 9998  #Ominato
 		#Ominato
 		task_force = {
 			name = "Ominato Keibi Sentai"
@@ -344,7 +344,7 @@ units = {
 	### Pacific Forces ###
 	fleet = {
 		name = "Taiheiyo Kantai"			
-		naval_base = 1092  # Truk
+		naval_base = 9998  # Truk
 		#Truk
 		task_force = {
 			name = "Nanpo Yuso Sendan"
