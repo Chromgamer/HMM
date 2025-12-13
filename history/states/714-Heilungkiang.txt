@@ -2,6 +2,10 @@ state={
 	id=714
 	name="STATE_714"
 
+	resources={
+		oil= 16 
+	}
+
 	history = {
 
 		owner = MAN
@@ -24,9 +28,6 @@ state={
 		buildings = {
 			infrastructure = 2
 		}
-		resources={
-		oil = 4 #Japan extracted 1m barrels annually from Manhuria
-	}
 
 	}
 
