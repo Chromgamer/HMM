@@ -97,6 +97,7 @@ characters = {
 					}
 				}
 				visible = {
+					always = no
 					is_country_leader = no 
 				}
 				idea_token = CHI_dai_li

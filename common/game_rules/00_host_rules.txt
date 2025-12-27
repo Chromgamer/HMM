@@ -1,5 +1,5 @@
 select_host_country = {
-	name = "Select Host for Host Tool"
+	name = "Select Country for Host Tool"
 	group = "HMM Rules"
 	icon = "GFX_volunteers"
 	default = {
@@ -217,7 +217,7 @@ multi_charge_large_caliber_gun= {
 	}
 }
 sov_boost = {
-	name = "Soviets Civ Boost"
+	name = "Soviet Civ Boost"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_merge_plant_materiel"
 	default = {
@@ -368,7 +368,7 @@ fra_boost = {
 	}
 }
 usa_boost = {
-	name = "USA Civ Boost?Are you ok , like mentaly??"
+	name = "USA Civ Boost"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_merge_plant_materiel"
 	default = {
@@ -388,7 +388,7 @@ usa_boost = {
 	}
 }
 playable_iraq = {
-	name = "Playable Iraq?"
+	name = "Playable Iraq"
 	group = "HMM Rules"
 	icon = "GFX_decision_category_usa_intervention_mandate"
 	default = {
