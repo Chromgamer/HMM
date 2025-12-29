@@ -4295,8 +4295,8 @@ on_actions = {
 							IRQ = { set_country_flag = IRQ_AI_RANDOM_SIDQI }
 						}
 					}
-				}	
-		}
+				}
+			}
 			PER = {
 				IF = {
 					limit = {
@@ -4333,7 +4333,8 @@ on_actions = {
 						}
 					}
 				}
-			}
+			}	
+		}
 	}
 
 
@@ -4974,7 +4975,6 @@ on_actions = {
 			}
 		}
 	}
-
 	on_army_leader_promoted = {
 		effect = {
 			add_timed_unit_leader_trait = {
@@ -5223,5 +5223,4 @@ on_actions = {
 			}
 		}
 	}
-}
 }
