@@ -12,7 +12,6 @@ NDefines.NDiplomacy.LICENSE_ACCEPTANCE_TECH_DIFFERENCE_BASE = 1000    -- Accepta
 NDefines.NDiplomacy.LICENSE_ACCEPTANCE_OPINION_FACTOR = 30
 NDefines.NMilitary.TRAINING_MAX_DAILY_COUNTRY_EXP = 0
 NDefines.NDoctrines.MASTERY_BANK_CONVERSION_RATE = 1  -- The rate at which mastery gained when a track is finished or empty is "banked"
-NDefines.NDoctrines.MASTERY_BANK_MAX = 500.0  -- The rate at which mastery gained when a track is finished or empty is "banked"
 --AI no lend lease
 NDefines.NAI.LENDLEASE_FRACTION_OF_PRODUCTION = 0
 NDefines.NAI.LENDLEASE_FRACTION_OF_STOCKPILE = 0
@@ -63,6 +62,7 @@ NDefines.NMilitary.MAX_AIR_EXPERIENCE = 999			                    -- WAS 500 || 
 NDefines.NMilitary.MAX_ARMY_EXPERIENCE = 999		                    -- WAS 500 || XP Cap
 NDefines.NMilitary.FIELD_MARSHAL_DIVISIONS_CAP = 90			-- how many divisions a field marshall is limited to. 0 = inf, < 0 = blocked
 NDefines.NMilitary.CORPS_COMMANDER_DIVISIONS_CAP = 90			-- how many divisions a corps commander is limited to. 0 = inf, < 0 = blocked
+NDefines.NMilitary.GARRISON_ORDER_ARMY_CAP_FACTOR = 1.0			-- armies gets increased cap when they are garrisoned
 
 
 
