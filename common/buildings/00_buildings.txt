@@ -548,6 +548,7 @@ buildings = {
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 20
 		value = 1
+		infrastructure_construction_effect = yes
 		spawn_point = special_project_facility_spawn
 		specialization = { specialization_nuclear }
 		need_supply = yes

@@ -3322,6 +3322,7 @@ operations = {
 	# First border incident
 	JAP_test_the_soviets = {
 		icon = border_war
+		visible = { always = no }
 		allowed = {
 			original_tag = JAP
 		}

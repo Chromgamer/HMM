@@ -110,6 +110,10 @@ hmm_capitulations_on_actions = {
 			transfer_state = 804
             transfer_state = 853
 		}
+		if = {
+			limit = {
+				country_exists = BUL
+			}
 		BUL = {
 			transfer_state = 106
 			transfer_state = 970
@@ -119,6 +123,21 @@ hmm_capitulations_on_actions = {
 				add_ideas = peace_training
 			}
 		}
+		}
+		else = {
+			ITA = {
+				transfer_state = 106
+				transfer_state = 970
+				transfer_state = 803
+				}
+				ITA = { add_state_core = 106 }
+				ITA = { add_state_core = 970 }
+				ITA = { add_state_core = 803 }
+					}
+		if = {
+			limit = {
+				country_exists = HUN
+			}
 		HUN = {
 			transfer_state = 764
 			transfer_state = 45
@@ -126,6 +145,15 @@ hmm_capitulations_on_actions = {
 				limit = { NOT = { has_idea = peace_training } }
 				add_ideas = peace_training
 			}
+		}
+		}
+		else = {
+			ITA = {
+				transfer_state = 764
+				transfer_state = 45
+				}
+				ITA = { add_state_core = 764 }
+				ITA = { add_state_core = 45 }
 		}
 	} 
 	# Albania
@@ -153,7 +181,11 @@ hmm_capitulations_on_actions = {
 				ITA = { has_war_with = GRE }
 				BUL = { has_war_with = GRE }
 			}
-		} 
+		}
+		if = {
+			limit = {
+				country_exists = BUL
+			}
 		
 		GRE = {
 			transfer_navy = { target = ITA }
@@ -168,7 +200,23 @@ hmm_capitulations_on_actions = {
 				transfer_troops = no
 			}
 		}
-	} 
+	}
+	else = {
+		GRE = {
+			transfer_navy = { target = ITA }
+			}
+			ITA = {
+				annex_country = {
+				target = GRE
+				transfer_troops = no
+				}
+				add_named_threat = { 
+					threat = 4.3
+					name = HMM_gre
+				}
+		}
+	}
+	}
 	# China
 	if = {
 		limit = { 
