@@ -108,3 +108,17 @@ country_event = {
 		set_country_flag = ENG_imperial_conference_timer_flag
 	}
 }
+news_event = {
+	id = hmm.7
+	title = hmm.7.t
+	desc = hmm.7.d
+	picture = GFX_report_event_generic_read_write
+
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+    	
+	option = {
+		name = hmm.7.a
+	}
+}

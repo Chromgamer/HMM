@@ -267,6 +267,18 @@ hmm_capitulations_on_actions = {
 				transfer_troops = no
 			}
 		}
+		GER = {
+			annex_country = {
+				target = MON
+				transfer_troops = no
+			}
+		}
+		GER = {
+			annex_country = {
+				target = TAN
+				transfer_troops = no
+			}
+		}
 	}
 	if = {
 		limit = { 

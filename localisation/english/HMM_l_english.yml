@@ -1,9 +1,10 @@
 ﻿l_english:
  peace_training:0 "Peacetime Training"
  no_grind:0 "No Grind"
+ no_grind_desc:0 "No Grinding Generals"
  pre_grind:0 "No XP Gain"
- tank_pre_grind:0 "Tank Pregrind"
- 
+ pre_grind_desc:0 "No Grinding Pregrinded Generals"
+ tank_pre_grind:0 "Tank Pregrind" 
 
 
 
@@ -17,7 +18,7 @@
 ## Victory System Localisation
 
  MOD_countdown_to_victory_cat:0 "Victory!"
- MOD_countdown_to_victory_cat_desc:0 "The winner of the game is the team who controlls 7 or more of the 10 following Cities for §Y365 days§!:\n\n§YNanjing§! - [GetNanjingOwner]\n§YDehli§! - [GetDehliOwner]\n§YAlexandria§! - [GetAlexandriaOwner]\n§YBenghasi§! - [GetBenghasiOwner]\n§YAmsterdam§! - [GetAmsterdamOwner]\n§YParis§! - [GetParisOwner]\n§YLyon§! - [GetLyonOwner]\n§YBryansk§! - [GetBryanskOwner]\n§YMoscow§! - [GetMoscowOwner]\n§YStalingrad§! - [GetStalingradOwner]\n\n\n§YCurrent Score§!:\n\n[GER.GetFlag] §RAxis§!: [?global.axis_score]/§Y10§!\n\n[ENG.GetFlag] §CAllies§!: [?global.allies_score]/§Y10§!\n"
+ MOD_countdown_to_victory_cat_desc:0 "The winner of the game is the team who controls 7 or more of the 10 following Cities for §Y365 days§!:\n\n§YNanjing§! - [GetNanjingOwner]\n§YDehli§! - [GetDehliOwner]\n§YAlexandria§! - [GetAlexandriaOwner]\n§YBenghasi§! - [GetBenghasiOwner]\n§YAmsterdam§! - [GetAmsterdamOwner]\n§YParis§! - [GetParisOwner]\n§YLyon§! - [GetLyonOwner]\n§YBryansk§! - [GetBryanskOwner]\n§YMoscow§! - [GetMoscowOwner]\n§YStalingrad§! - [GetStalingradOwner]\n\n\n§YCurrent Score§!:\n\n[GER.GetFlag] §RAxis§!: [?global.axis_score]/§Y10§!\n\n[ENG.GetFlag] §CAllies§!: [?global.allies_score]/§Y10§!\n"
 
 
  vp_axis_owns:0 "[GER.GetFlag] §RAxis§!"
@@ -26,11 +27,15 @@
  MOD_countdown_to_allied_victory_mission:0 "Imminent [ENG.GetFlag] §CAllied§! §YVictory§!"
  MOD_countdown_to_axis_victory_mission:0 "Imminent [GER.GetFlag] §RAxis§! §YVictory§!"
 
+ soviet_cap_timer:0 "Time passed since the Soviet Union capitulated"
+ hmm.7.t:0 "Axis Win"
+ hmm.7.d:0 "Axis win based on Soviet capitulation win condition."
+
  hmm.2.t:0 "Allies Win"
  hmm.2.d:0 "Allies WIN"
  hmm.2.a:0 "Let me take a save"
  hmm.1.t:0 "Axis Win"
- hmm.1.d:0 "Axis Win"
+ hmm.1.d:0 "Axis win based on VP system"
  hmm.1.a:0 "Let me take a save"
 
 hmm.3.a:0 "integrate Canada"
