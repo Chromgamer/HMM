@@ -988,10 +988,6 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-					}
 					is_core_of = ROOT
 				}
 				set_state_flag = SPA_expand_the_war_industry_2mil
@@ -1004,10 +1000,6 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 1
-					}
 					is_core_of = ROOT
 					NOT = { has_state_flag = SPA_expand_the_war_industry_2mil }
 				}
@@ -1058,10 +1050,6 @@ focus_tree = {
 			add_timed_idea = { idea = SPA_national_recovery_1 days = 1825 }
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
 					is_core_of = ROOT
 				}
 				set_state_flag = SPA_national_recovery_2civ
@@ -1269,10 +1257,6 @@ focus_tree = {
 			remove_ideas = SPA_recovering_from_civil_war_3
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
 					is_core_of = ROOT
 				}
 				set_state_flag = SPA_ensure_agricultural_self_sufficiency_2civ
@@ -1285,10 +1269,6 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
 					is_core_of = ROOT
 					NOT = { has_state_flag = SPA_ensure_agricultural_self_sufficiency_2civ }
 				}
@@ -1303,10 +1283,6 @@ focus_tree = {
 
 			random_owned_controlled_state = {
 				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-					}
 					is_core_of = ROOT
 					NOT = { has_state_flag = SPA_ensure_agricultural_self_sufficiency_2civ }
 				}
@@ -1953,7 +1929,6 @@ focus_tree = {
 		}
 
 		prerequisite = { focus = SPA_adopt_the_26_points }
-		mutually_exclusive = { focus = SPA_restore_the_monarchy }
 		
 		icon = GFX_goal_generic_political_pressure
 		x = 1
@@ -2271,43 +2246,6 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = SPA_restore_the_monarchy
-		available = {
-		}
-		bypass = {
-		}
-		prerequisite = { focus = SPA_adopt_the_26_points }
-		mutually_exclusive = { focus = SPA_dictator_for_life }
-		
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 3
-		y = 1
-		relative_position_id = SPA_adopt_the_26_points
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			if = {
-				limit = {
-					has_completed_focus = SPA_supremacy_of_the_communion
-				}
-				custom_effect_tooltip = SPA_restore_the_monarchy_tt
-				hidden_effect = {
-					drop_cosmetic_tag = yes
-					set_cosmetic_tag = SPB_kingdom
-				}
-				news_event = { id = lar_news.17 hours = 6 }
-			}
-			if = {
-				limit = {
-					NOT = { has_completed_focus = SPA_supremacy_of_the_communion }
-				}
-				news_event = { id = lar_news.18 hours = 6 }
-			}
-		}
-	}
 
 	focus = {
 		id = SPA_stamp_out_the_maquis
