@@ -1855,9 +1855,7 @@ characters = {
 			coordination_skill = 6
 			legacy_id = 0
 			visible = {
-				NOT = {
-					has_country_flag = JAP_yamamoto_shot_down_flag
-				}
+
 			}
 		}
 
