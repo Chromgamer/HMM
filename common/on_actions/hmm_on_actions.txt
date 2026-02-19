@@ -346,6 +346,16 @@ on_actions = {
 					}
 				}
 			}
+			if = {
+				limit = {
+					has_country_flag = no_spain
+                	has_country_flag = no_finland
+				}
+				BUL = {
+					remove_country_leader_trait = bul_caudillo
+					add_country_leader_trait = bul_caudillo_2
+				}
+			}
 		}
 	}
 	on_capitulation = {
