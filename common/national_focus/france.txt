@@ -1781,6 +1781,20 @@
 					instant_build = yes
 				}
 			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			IF = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+
+				custom_effect_tooltip = available_mio_tt
+				show_mio_tooltip = FRA_amx_organization
+
+				mio:FRA_amx_organization = {
+					add_mio_size = 1
+				}
+
+			}
 		}
 	}
 
@@ -3341,7 +3355,7 @@
 				name = FRA_improved_screen_ships
 				bonus = 2.0
 				uses = 1
-				category = cl_tech
+				category = ca_tech
 			}
 		}
 	}

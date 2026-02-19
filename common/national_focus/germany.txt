@@ -4417,11 +4417,11 @@ focus_tree = {
 						suspension_type_slot = tank_bogie_suspension
 						armor_type_slot = tank_welded_armor
 						engine_type_slot = tank_gasoline_engine
-						special_type_slot_1 = tank_radio_1
+						special_type_slot_1 = tank_radio_2
 						special_type_slot_2 = smoke_launchers
 					}
 					upgrades = {
-						tank_nsb_engine_upgrade = 6
+						tank_nsb_engine_upgrade = 5
 						tank_nsb_armor_upgrade = 3
 					}
 					icon = "GFX_GER_basic_medium_tank_medium"
@@ -4472,7 +4472,7 @@ focus_tree = {
 			GER_modify_army_modifier = yes
 			add_to_variable = { 
 				GER_military_coordination_bonus = 0.05
-				tooltip = coordination_bonus_tt
+    				tooltip = coordination_bonus_tt
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -7761,12 +7761,25 @@ focus_tree = {
 
 		completion_reward = {
 			
-			add_mastery_bonus = {
-				name = GER_wolfpack_tactics
-				bonus = 0.1
-				days = 240
-				grand_doctrine = new_convoy_raiding
-				track = submarines
+			if = {
+				limit = {
+					has_doctrine = wolfpacks
+				}
+
+				add_mastery_bonus = {
+					name = GER_wolfpack_tactics
+					bonus = 0.20
+					days = 240
+					sub_doctrine = wolfpacks
+				}
+				else = {
+					add_mastery_bonus = {
+						name = GER_wolfpack_tactics
+						bonus = 0.1
+						days = 240
+						track = submarines
+					}
+				}
 			}
 			
 

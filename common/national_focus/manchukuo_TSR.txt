@@ -1803,8 +1803,14 @@
 					legacy_id = -1
 				}
 			}
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			custom_effect_tooltip = MAN_tsr_chinese_leadership_tt
+
 			custom_effect_tooltip = generic_skip_one_line_tt
 			MAN_low_legitimacy_level_down = yes
+
 		}
 	}
 
