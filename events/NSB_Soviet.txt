@@ -3568,6 +3568,23 @@ country_event = {
 				country_event = { id = NSB_soviet_foreign_politics_events.150 hours = 1 }
 			}
 		}
+		IF = {
+			limit = {
+				FROM = {
+					original_tag = SOV 
+					has_government = communism
+				}
+				ROOT = {
+					original_tag = SIK
+				}
+			}
+			set_cosmetic_tag = SIK_ssr
+			set_party_name = {
+			    ideology = communism
+			    long_name = SIK_CPSU_communism_party_long
+			    name = SIK_CPSU_communism_party
+			}
+		}
 	}
 
 	option = { #Join Faction - Keep government
@@ -4192,8 +4209,7 @@ country_event = {
 			modifier = { #Is going commie or historical
 				factor = 0
 				OR = {
-					has_completed_focus = JAP_the_unthinkable_option
-					has_completed_focus = JAP_purge_the_kodoha_faction
+					has_completed_focus = JAP_sea_purge_the_kodoha_faction
 				}
 			}
 		}
@@ -5867,14 +5883,25 @@ country_event = {
 		}
 
 		add_political_power = 75
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+
 		SOV = {
 			puppet = ROOT
-
 			add_opinion_modifier = {
 				target = ROOT
 				modifier = SOV_complied_with_our_demands
 			}
 		}
+
+		set_cosmetic_tag = SIK_ssr
+		set_party_name = {
+		    ideology = communism
+		    long_name = SIK_CPSU_communism_party_long
+		    name = SIK_CPSU_communism_party
+		}
+
+		custom_effect_tooltip = generic_skip_one_line_tt
 
 		FROM = {
 			country_event = { id = NSB_soviet_foreign_politics_events.283 hours = 1 }
@@ -6026,7 +6053,7 @@ country_event = {
 		}
 		modifier = {
 			factor = 2
-			has_full_control_of_state = 613 # NANJING (CHI)
+			has_full_control_of_state = 1035 # NANJING (CHI)
 		}
 		modifier = {
 			factor = 2
@@ -6476,7 +6503,7 @@ country_event = {
 					}
 					if = {
 						limit = {
-							has_tech = basic_medium_battery
+							has_tech = basic_heavy_battery
 						}
 						create_equipment_variant = {
 							name = "Hipper Class"
@@ -6665,7 +6692,7 @@ country_event = {
 			}
 			if = {
 				limit = {
-					has_tech = basic_medium_battery
+					has_tech = basic_heavy_battery
 				}
 				create_equipment_variant = {
 					name = "Hipper Class"

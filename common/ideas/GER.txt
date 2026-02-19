@@ -4703,6 +4703,7 @@ ideas = {
 
 		GER_germaniawerft_improved = {
 			name = germaniawerft
+			picture = germaniawerft
 			allowed = {
 				original_tag = GER
 			}
@@ -4745,6 +4746,7 @@ ideas = {
 
 		GER_blohm_und_voss_improved = {
 			name = blohm_und_voss
+			picture = blohm_und_voss
 
 			allowed = {
 				original_tag = GER
