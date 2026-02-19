@@ -1435,17 +1435,6 @@ focus_tree = {
 					}
 				}
 			}
-
-			IF = {
-				limit = {
-					ROM = {
-						owns_state = 76
-					}
-				}
-				strength_ratio = { tag = ROM ratio > 0.66 }
-			}
-
-
 		}
 
 		bypass = {

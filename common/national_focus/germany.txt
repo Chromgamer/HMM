@@ -3469,12 +3469,15 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			every_army_leader = {
-				limit = {
-					NOT = { has_trait = scavenger }
+			custom_effect_tooltip = GER_salvage_captured_equipment_custom_tt
+			hidden_effect = {
+				every_army_leader = {
+					limit = {
+						NOT = { has_trait = scavenger }
+					}
+					random_select_amount = 2
+					add_trait = { trait = scavenger }
 				}
-				random_select_amount = 2
-				add_trait = { trait = scavenger }
 			}
 		}
 	}
@@ -4929,10 +4932,15 @@ focus_tree = {
 
 			add_mastery_bonus = {
 				name = GER_dive_bombers
-				bonus = 0.2
+				bonus = 0.05
+				days = 180
+				grand_doctrine = new_battlefield_support
+			}
+			add_mastery_bonus = {
+				name = GER_dive_bombers
+				bonus = 0.15
 				days = 180
 				track = strike_aircraft
-				grand_doctrine = new_battlefield_support
 			}
 			add_doctrine_cost_reduction = {
 				name = GER_dive_bombers
@@ -4947,20 +4955,21 @@ focus_tree = {
 				category = light_air
 			}
 
+			# On historical, this focus is completed mid-late 1939
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
 				}
 				custom_effect_tooltip = generic_skip_one_line_tt
 				create_equipment_variant = { 
-					name = "Ju 87 G" 
+					name = "Ju 87 D" 
 					type = small_plane_cas_airframe_2
 					allow_without_tech = no
 					design_team = mio:GER_junkers_organization
 					modules = {
 						fixed_main_weapon_slot = bomb_locks
-						fixed_auxiliary_weapon_slot_1 = tank_buster_1
-						engine_type_slot = engine_3_1x
+						fixed_auxiliary_weapon_slot_1 = bomb_locks
+						engine_type_slot = engine_2_1x
 						special_type_slot_1 = lmg_defense_turret
 						special_type_slot_2 = empty
 					}
@@ -5069,9 +5078,14 @@ focus_tree = {
 
 			add_mastery_bonus = {
 				name = GER_tactical_bombers
-				bonus = 0.2
+				bonus = 0.15
 				days = 180
 				grand_doctrine = new_operational_integrity
+			}
+			add_mastery_bonus = {
+				name = GER_tactical_bombers
+				bonus = 0.05
+				days = 180
 				track = medium_aircraft
 			}
 
@@ -5102,7 +5116,7 @@ focus_tree = {
 						fixed_main_weapon_slot = medium_bomb_bay
 						fixed_auxiliary_weapon_slot_1 = medium_bomb_bay
 						fixed_auxiliary_weapon_slot_2 = torpedo_mounting
-						engine_type_slot = engine_3_2x
+						engine_type_slot = engine_2_2x
 						special_type_slot_1 = lmg_defense_turret_2x
 						special_type_slot_2 = empty	
 					}
@@ -5186,7 +5200,6 @@ focus_tree = {
 			}
 		}
 	}
-	
 	focus = {
 		id = GER_uralbomber_program
 		icon = GFX_focus_generic_long_range_aircraft
@@ -5209,9 +5222,14 @@ focus_tree = {
 
 			add_mastery_bonus = {
 				name = GER_uralbomber_program
-				bonus = 0.2
+				bonus = 0.05
 				days = 180
 				grand_doctrine = new_strategic_destruction
+			}
+			add_mastery_bonus = {
+				name = GER_uralbomber_program
+				bonus = 0.15
+				days = 180
 				track = heavy_aircraft
 			}
 			add_doctrine_cost_reduction = {
@@ -5464,7 +5482,8 @@ focus_tree = {
 				tooltip = air_agility_factor_tt
 			}
 
-
+			# On historical, this focus is completed late 1939
+			#This one is not really needed, first 'FW 190'
 			if = {
 				limit = {
 					has_dlc = "By Blood Alone"
@@ -5477,10 +5496,8 @@ focus_tree = {
 					design_team = mio:GER_messerschmitt_organization
 					modules = {
 						fixed_main_weapon_slot = light_mg_4x
-						fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
-						engine_type_slot = engine_3_1x
-						special_type_slot_1 = armor_plate_small
-						special_type_slot_2 = drop_tanks	
+						fixed_auxiliary_weapon_slot_1 = light_mg_2x
+						engine_type_slot = engine_2_1x
 					}
 					icon = "GFX_GER_fighter2_medium"
 					model = "GER_fighter_equipment_2_entity"

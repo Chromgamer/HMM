@@ -1977,7 +1977,7 @@ focus_tree = {
 	
 	focus = {
 		id = ROM_white_squadron_focus
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_focus_SOV_women_in_aviation
 		x = 0
 		y = 1
 		prerequisite = { focus = ROM_expand_the_air_force }
@@ -2069,11 +2069,17 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_mastery_bonus = {
+				name = ROM_air_defense
+				bonus = 0.2
+				days = 240
+				grand_doctrine = new_operational_integrity
+			}
 			add_doctrine_cost_reduction = {
 				name = ROM_air_defense
-				cost_reduction = 0.50
-				uses = 2
-				category = cat_operational_integrity
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
 			}
 		}
 	}
@@ -2106,11 +2112,17 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
+			add_mastery_bonus = {
+				name = ROM_ground_support
+				bonus = 0.2
+				days = 240
+				grand_doctrine = new_battlefield_support
+			}
 			add_doctrine_cost_reduction = {
 				name = ROM_ground_support
 				cost_reduction = 0.50
-				uses = 2
-				category = battlefield_support_tree
+				uses = 1
+				category = air_doctrine
 			}
 		}
 	}
@@ -2292,11 +2304,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		search_filters = { FOCUS_FILTER_RESEARCH }
 		completion_reward = {
-			add_doctrine_cost_reduction = {
+			add_mastery_bonus = {
 				name = ROM_air_superiority
-				cost_reduction = 0.50
-				uses = 2
-				category = strategic_destruction_tree
+				bonus = 0.1
+				days = 240
+				track = fighter_aircraft
 			}
 		}
 	}
@@ -2829,7 +2841,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			custom_effect_tooltip = ROM_mountain_artillery_tech_tt
+			custom_effect_tooltip = mountain_guns_tt
 			hidden_effect = { set_technology = { mountain_gun = 1 } }
 		}
 	}
