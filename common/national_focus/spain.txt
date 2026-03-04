@@ -986,7 +986,7 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			41 = {
+			176 = {
 				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
@@ -1228,7 +1228,7 @@ focus_tree = {
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
 			remove_ideas = SPA_recovering_from_civil_war_3
-			41 = {
+			171 = {
 				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
