@@ -251,11 +251,10 @@ country_event = {
 			country_event = usa.32
 		}
 		else = {
-			set_variable_to_random = {
-          		var = election_factor
-         		min = 0.6
-          		max = 0.8
-      			}
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}
 			add_to_variable = { election_factor = -0.5 }
 			USA_election_senate = yes
 			USA_election_house = yes
@@ -278,11 +277,10 @@ country_event = {
 			}
 		}		
 		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
-		set_variable_to_random = {
-          	var = election_factor
-          	min = 0.6
-          	max = 0.8
-      	}		
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}		
 	    add_to_variable = { election_factor = -0.6 }
 		USA_election_senate = yes
 		USA_election_house = yes
@@ -364,11 +362,10 @@ country_event = {
 			country_event = usa.32
 		}
 		else = {
-			set_variable_to_random = {
-          var = election_factor
-          min = 0.6
-          max = 0.8
-      }
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}
 			add_to_variable = { election_factor = -0.5 }
 			USA_election_senate = yes
 			USA_election_house = yes
@@ -389,11 +386,10 @@ country_event = {
 		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
 		remove_ideas = new_deal
 		add_ideas = wilkies_new_deal
-		set_variable_to_random = {
-          var = election_factor
-          min = 0.6
-          max = 0.8
-      }
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}
 		add_to_variable = { election_factor = -0.6 }
 		add_political_power = 120
 		USA_election_senate = yes
@@ -461,11 +457,10 @@ country_event = {
 			country_event = usa.32
 		}
 		else = {
-			set_variable_to_random = {
-          var = election_factor
-          min = 0.6
-          max = 0.8
-      }
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}
 	  		add_to_variable = { election_factor = -0.5 }
 			USA_election_senate = yes
 			USA_election_house = yes
@@ -480,11 +475,10 @@ country_event = {
 		add_ideas = new_deal
 		retire_country_leader = yes
 		add_political_power = 120
-			set_variable_to_random = {
-          		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      	}
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}
 		add_to_variable = { election_factor = -0.6 }
 		USA_election_senate = yes
 		USA_election_house = yes
@@ -543,11 +537,10 @@ country_event = {
 			country_event = usa.32
 		}
 		else = {
-			set_variable_to_random = {
-          		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      		}
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}
 			add_to_variable = { election_factor = -0.5 }
 			USA_election_senate = yes
 			USA_election_house = yes
@@ -567,11 +560,10 @@ country_event = {
 		}		
 		remove_ideas = new_deal
 		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
-			set_variable_to_random = {
-          		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      	}		
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}		
 	    add_to_variable = { election_factor = -0.6 }
 		USA_election_senate = yes
 		USA_election_house = yes
@@ -637,11 +629,10 @@ country_event = {
 			country_event = usa.32
 		}
 		else = {
-			set_variable_to_random = {
-          		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      		}		
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}		
 	  		add_to_variable = { election_factor = -0.5 }
 			USA_election_senate = yes
 			USA_election_house = yes
@@ -654,11 +645,10 @@ country_event = {
 		name = usa.10.b
 		add_ideas = new_deal
 		set_party_name = { ideology = democratic long_name = USA_democratic_party name = USA_democratic_party }
-			set_variable_to_random = {
-         		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      	}		
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}		
 	  	add_to_variable = { election_factor = -0.6 }
 		USA_election_senate = yes
 		USA_election_house = yes
@@ -726,11 +716,10 @@ country_event = {
 			country_event = usa.32
 		}
 		else = {
-			set_variable_to_random = {
-          		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      		}			
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}			
 	  		add_to_variable = { election_factor = -0.5 }
 			USA_election_senate = yes
 			USA_election_house = yes
@@ -760,11 +749,10 @@ country_event = {
 		}
 		remove_ideas = new_deal
 		set_party_name = { ideology = democratic long_name = USA_republican_party name = USA_republican_party }
-			set_variable_to_random = {
-          		var = election_factor
-          		min = 0.6
-          		max = 0.8
-      	}		
+				set_variable = {
+          				var = election_factor
+          				value = 0.8
+      				}		
 		add_to_variable = { election_factor = -0.6 }
 		USA_election_senate = yes
 		USA_election_house = yes
@@ -1282,10 +1270,9 @@ country_event = {
 			}
 			random_list = {
 				50 = {
-				set_variable_to_random = {
+				set_variable = {
           				var = election_factor
-         				min = 0.6
-          				max = 0.8
+          				value = 0.8
       				}					
 	  				add_to_variable = { election_factor = -0.6 }
 					USA_election_senate = yes
@@ -1293,10 +1280,9 @@ country_event = {
 					country_event = usa.30
 				}
 				50 = {
-				set_variable_to_random = {
+				set_variable = {
           				var = election_factor
-          				min = 0.6
-          				max = 0.8
+          				value = 0.8
       				}					
 					add_to_variable = { election_factor = -0.3 }
 					USA_election_senate = yes
