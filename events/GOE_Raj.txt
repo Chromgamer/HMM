@@ -12,6 +12,7 @@ add_namespace = GOE_RAJ_goa
 add_namespace = GOE_RAJ_generals
 add_namespace = GOE_RAJ_mughals_peace_deal
 add_namespace = GOE_RAJ_loyalist
+add_namespace = GOE_RAJ_news
 
 ##DESC
 #country_event = {
@@ -7620,11 +7621,11 @@ country_event = {
 country_event = {
 	id = GOE_RAJ_generals.3
 	picture = GFX_report_event_generic_read_write
-	title = GOE_RAJ_generals..t
+	title = GOE_RAJ_generals.3.t
 	desc = GOE_RAJ_generals.3.desc
 	is_triggered_only = yes
 	option = { #ok
-		name = GOE_RAJ_generals.2.a
+		name = GOE_RAJ_generals.3.a
 	}
 }
 
@@ -7827,5 +7828,50 @@ country_event = {
 			transfer_state_to = RAJ
 			add_core_of = RAJ
 		}
+	}
+}
+
+news_event = {
+	id = GOE_RAJ_news.1
+	title = GOE_RAJ_news.1.t
+	desc = GOE_RAJ_news.1.desc
+	picture = GFX_news_event_journalists_speech
+
+	major = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = GOE_RAJ_news.1.a
+	}
+}
+
+news_event = {
+	id = GOE_RAJ_news.2
+	title = GOE_RAJ_news.2.t
+	desc = GOE_RAJ_news.2.desc
+	picture = GFX_news_event_021
+
+	major = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = GOE_RAJ_news.2.a
+	}
+}
+
+news_event = {
+	id = GOE_RAJ_news.3
+	title = GOE_RAJ_news.3.t
+	desc = GOE_RAJ_news.3.desc
+	picture = GFX_news_event_009
+
+	major = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = GOE_RAJ_news.3.a
 	}
 }
