@@ -57,6 +57,25 @@ PRC = "countries/ComChina.txt"
 
 ICE = "countries/Iceland.txt" # tag cannot be removed
 
+# GoE # removing these tags causes Raj to get cores on states it should not have cores on
+DIP = "countries/Partisans.txt"
+PSH = "countries/Pashtunistan.txt"
+HYD = "countries/Hyderabad.txt"
+MYS = "countries/Mysore.txt"
+RJP = "countries/Rajputana.txt"
+CIP = "countries/Central Indian Provinces.txt"
+RAS = "countries/Madras States.txt"
+NWF = "countries/North Western Frontier States.txt"
+KAS = "countries/Kashmir.txt"
+MPU = "countries/Manipur.txt"
+WIS = "countries/Western Indian States.txt"
+KOL = "countries/Kolhapur and Deccan States.txt"
+KHL = "countries/Khalistan.txt"
+SIN = "countries/Sindh.txt"
+KLT = "countries/Kalat.txt"
+SKK = "countries/Sikkim.txt"
+BLC = "countries/Balochistan.txt"
+
 LBA = "countries/Libya.txt"
 INS = "countries/Indonesia.txt"
 COG = "countries/Congo.txt"
