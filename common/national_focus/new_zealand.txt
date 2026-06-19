@@ -1457,7 +1457,7 @@
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 1
+						size > 0 # HMM: used to be 1, reduced to 0 so AI can still queue up an infra in these states and not brick the focus
 					}
 				}
 				add_building_construction = {
@@ -1473,7 +1473,7 @@
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 1
+						size > 0 # HMM: used to be 1, reduced to 0 so AI can still queue up an infra in these states and not brick the focus
 					}
 				}
 				add_building_construction = {
@@ -1489,7 +1489,7 @@
 				limit = {
 					free_building_slots = {
 						building = infrastructure
-						size > 1
+						size > 0 # HMM: used to be 1, reduced to 0 so AI can still queue up an infra in these states and not brick the focus
 					}
 				}
 				add_building_construction = {
