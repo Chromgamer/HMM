@@ -1546,3 +1546,8 @@ SIA_great_thai_empire = { #Mandate 1, Phibun, historical
 	color = rgb { 252 253 254 } 
 	color_ui = rgb { 252 253 254 }
 }
+
+AST_australasia = {
+	color = rgb { 0 102 180 }
+	color_ui = rgb { 0 102 180 }
+}
