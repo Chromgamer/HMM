@@ -18,6 +18,7 @@ state=
 			}
 		}
 		add_core_of = WST
+		add_core_of = LIB
 	}
 	provinces={
 		7959 8006

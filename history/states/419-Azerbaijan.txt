@@ -11,6 +11,9 @@ state={
 			infrastructure = 1
 		}
 		add_core_of = WST
+		add_core_of = PER
+		add_core_of = KUR
+		add_core_of = AZR
 	}
 
 	provinces={

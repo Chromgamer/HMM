@@ -8,9 +8,17 @@ state = {
 	history = {
 
 		owner = CHI
-		add_core_of = WST
+		add_core_of = PRC
 		add_core_of = CHI
 
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender"
+				}
+				add_core_of = XIC
+			}
+		}
 
 		victory_points = {
 			8049 3 # Yanan

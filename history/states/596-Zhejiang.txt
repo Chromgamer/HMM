@@ -8,7 +8,7 @@ state = {
 
 		owner = CHI
 		add_core_of = CHI
-		add_core_of = WST
+		add_core_of = PRC
 		
 		victory_points = { 
 			9974 1 # Ningbo
@@ -33,12 +33,18 @@ state = {
 
 			7191 = {
 				naval_base = 1
+				#coastal_bunker = 1
+				#bunker = 1
 			}
 			9974 = {
 				naval_base = 3
+				#coastal_bunker = 1
+				#bunker = 1
 			}
 			1055 = {
 				naval_base = 3
+				#coastal_bunker = 1
+				#bunker = 1
 			}
 		}
 

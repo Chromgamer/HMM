@@ -4,7 +4,6 @@ state={
 	name="STATE_304"
 	manpower = 1
 	
-	
 	state_category = wasteland
 	
 	history={
@@ -22,6 +21,7 @@ state={
 			}
 		}
 		add_core_of = WST
+		add_core_of = PAN
 	}
 
 	provinces={

@@ -5,8 +5,8 @@ state={
 	manpower = 2074932
 	
 	resources = {
-		coal = 90 # initial distribution
-		oil = 50 
+		coal = 90 # HMM: moved from Stalino, originally 8 # initial distribution
+		oil = 50 # HMM: added to make Soviet one-shot less likely
 	}
 	state_category = town
 
