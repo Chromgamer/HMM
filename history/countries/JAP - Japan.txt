@@ -1477,6 +1477,12 @@ create_equipment_variant = {
 		fixed_ship_secondaries_slot = ship_secondaries_1
 		fixed_ship_armor_slot = empty
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_carrier_hoso"
+			model = "JAP_carrier_entity"
+		}
+	}
 	obsolete = yes
 }
 create_equipment_variant = {
@@ -1517,6 +1523,12 @@ create_equipment_variant = {
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_heavy_battery_2
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_nagato"
+			model = "JAP_battleship_3_entity"
+		}
+	}
 }
 create_equipment_variant = {
 	name = "Kongo Class"
@@ -1537,6 +1549,12 @@ create_equipment_variant = {
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_heavy_battery_1
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_kongo"
+			model = "JAP_battleship_0_entity"
+		}
+	}
 }
 create_equipment_variant = {
 	name = "Fuso Class"
@@ -1556,6 +1574,12 @@ create_equipment_variant = {
 		mid_1_custom_slot = ship_secondaries_1
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_heavy_battery_1
+	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_fuso"
+			model = "JAP_battleship_1_entity"
+		}
 	}
 	obsolete = yes
 }
@@ -1579,6 +1603,12 @@ create_equipment_variant = {
 		rear_1_custom_slot = ship_heavy_battery_1
 	}
 	obsolete = yes
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_ise"
+			model = "JAP_battleship_2_entity"
+		}
+	}
 }
 	
 ### Cruiser Variants			
@@ -1705,6 +1735,12 @@ create_equipment_variant = {
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_airplane_launcher_1
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_heavy_cruiser_tone"
+			model = "JAP_heavy_cruiser_1_entity"
+		}
+	}
 }
 
 create_equipment_variant = {
@@ -1785,6 +1821,12 @@ create_equipment_variant = {
 		mid_1_custom_slot = ship_torpedo_1
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_mine_layer_1
+	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_light_cruiser_sendai"
+			model = "JAP_light_cruiser_entity"
+		}
 	}
 	obsolete = yes
 }
@@ -2227,6 +2269,12 @@ create_equipment_variant = {
 				front_1_custom_slot = ship_deck_space
 				mid_1_custom_slot = ship_deck_space
 			}
+			optional_assets = {
+				{
+					icon = "GFX_JAP_carrier_shokaku"
+					model = "JAP_carrier_0_entity"
+				}
+			}
 		}
 		create_equipment_variant = {
 			name = "Yamato Class"
@@ -2298,6 +2346,12 @@ create_equipment_variant = {
 				fixed_ship_torpedo_slot = ship_torpedo_2
 				mid_1_custom_slot = ship_torpedo_2
 				rear_1_custom_slot = ship_depth_charge_1
+			}
+			optional_assets = {
+				{
+					icon = "GFX_JAP_destroyer_yukikaze"
+					model = "JAP_destroyer_1_entity"
+				}
 			}
 		}
 		create_equipment_variant = {
