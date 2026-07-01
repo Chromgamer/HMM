@@ -395,23 +395,7 @@ sp_rockets_ballistic_missile = {
 	}
 
 	generic_prototype_rewards = {
-		sp_rockets_scientist_xp_generic_reward
-		sp_rockets_political_interference_generic_reward
-		sp_rockets_onsite_explosion_generic_reward
-		sp_rockets_generic_major_breakthrough_reward
-		sp_rockets_generic_avionics_advancements_reward
-		sp_air_generic_reward_scientist_xp_1
-		sp_air_generic_reward_scientist_xp_2
-		sp_air_generic_reward_scientist_xp_3
-		sp_air_generic_reward_air_xp_1
-		sp_air_generic_reward_air_xp_2
-		sp_air_generic_reward_air_xp_3
-		sp_air_generic_reward_major_progress_1
-		sp_air_generic_reward_major_progress_2
-		sp_air_generic_reward_major_progress_3
-		sp_air_generic_reward_test_failure_1
-		sp_air_generic_reward_test_failure_2
-		sp_air_generic_reward_test_failure_3	
+		sp_air_generic_reward_always
 	}
 
 	unique_prototype_rewards = {
@@ -607,23 +591,7 @@ sp_rockets_medium_range_ballistic_missile = {
 	}
 
 	generic_prototype_rewards = {
-		sp_rockets_scientist_xp_generic_reward
-		sp_rockets_political_interference_generic_reward
-		sp_rockets_onsite_explosion_generic_reward
-		sp_rockets_generic_major_breakthrough_reward
-		sp_rockets_generic_avionics_advancements_reward
-		sp_air_generic_reward_scientist_xp_1
-		sp_air_generic_reward_scientist_xp_2
-		sp_air_generic_reward_scientist_xp_3
-		sp_air_generic_reward_air_xp_1
-		sp_air_generic_reward_air_xp_2
-		sp_air_generic_reward_air_xp_3
-		sp_air_generic_reward_major_progress_1
-		sp_air_generic_reward_major_progress_2
-		sp_air_generic_reward_major_progress_3
-		sp_air_generic_reward_test_failure_1
-		sp_air_generic_reward_test_failure_2
-		sp_air_generic_reward_test_failure_3		
+		sp_air_generic_reward_always
 	}
 
 	unique_prototype_rewards = {
@@ -744,23 +712,7 @@ sp_rockets_long_range_ballistic_missile = {
 	}
 
 	generic_prototype_rewards = {
-		sp_rockets_scientist_xp_generic_reward
-		sp_rockets_political_interference_generic_reward
-		sp_rockets_onsite_explosion_generic_reward
-		sp_rockets_generic_major_breakthrough_reward
-		sp_rockets_generic_avionics_advancements_reward
-		sp_air_generic_reward_scientist_xp_1
-		sp_air_generic_reward_scientist_xp_2
-		sp_air_generic_reward_scientist_xp_3
-		sp_air_generic_reward_air_xp_1
-		sp_air_generic_reward_air_xp_2
-		sp_air_generic_reward_air_xp_3
-		sp_air_generic_reward_major_progress_1
-		sp_air_generic_reward_major_progress_2
-		sp_air_generic_reward_major_progress_3
-		sp_air_generic_reward_test_failure_1
-		sp_air_generic_reward_test_failure_2
-		sp_air_generic_reward_test_failure_3		
+		sp_air_generic_reward_always
 	}
 
 	unique_prototype_rewards = {
@@ -920,23 +872,7 @@ sp_rockets_ground_to_air_missile = {
 	}
 
 	generic_prototype_rewards = {
-		sp_rockets_scientist_xp_generic_reward
-		sp_rockets_political_interference_generic_reward
-		sp_rockets_onsite_explosion_generic_reward
-		sp_rockets_generic_major_breakthrough_reward
-		sp_rockets_generic_avionics_advancements_reward
-		sp_air_generic_reward_scientist_xp_1
-		sp_air_generic_reward_scientist_xp_2
-		sp_air_generic_reward_scientist_xp_3
-		sp_air_generic_reward_air_xp_1
-		sp_air_generic_reward_air_xp_2
-		sp_air_generic_reward_air_xp_3
-		sp_air_generic_reward_major_progress_1
-		sp_air_generic_reward_major_progress_2
-		sp_air_generic_reward_major_progress_3
-		sp_air_generic_reward_test_failure_1
-		sp_air_generic_reward_test_failure_2
-		sp_air_generic_reward_test_failure_3		
+		sp_air_generic_reward_always
 	}
 
 	unique_prototype_rewards = {
@@ -1134,23 +1070,7 @@ sp_rocket_interceptor = {
 	}
 
 	generic_prototype_rewards = {
-		sp_rockets_scientist_xp_generic_reward
-		sp_rockets_political_interference_generic_reward
-		sp_rockets_onsite_explosion_generic_reward
-		sp_rockets_generic_major_breakthrough_reward
-		sp_rockets_generic_avionics_advancements_reward
-		sp_air_generic_reward_scientist_xp_1
-		sp_air_generic_reward_scientist_xp_2
-		sp_air_generic_reward_scientist_xp_3
-		sp_air_generic_reward_air_xp_1
-		sp_air_generic_reward_air_xp_2
-		sp_air_generic_reward_air_xp_3
-		sp_air_generic_reward_major_progress_1
-		sp_air_generic_reward_major_progress_2
-		sp_air_generic_reward_major_progress_3
-		sp_air_generic_reward_test_failure_1
-		sp_air_generic_reward_test_failure_2
-		sp_air_generic_reward_test_failure_3		
+		sp_air_generic_reward_always
 	}
 }
 
