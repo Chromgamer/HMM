@@ -15483,14 +15483,24 @@ focus = {
                 }
                 if = {
                     limit = {
-                        NOT = { has_tech = railway_gun }
+                        NOT = {
+							has_game_rule = {
+								rule = railway_gun
+								option = off
+							}
+						}
                     }
-                    set_technology = { railway_gun = 1 }
-                }
+                    if = {
+                        limit = {
+                            NOT = { has_tech = railway_gun }
+                        }
+                        set_technology = { railway_gun = 1 }
+                    }
 
-                create_railway_gun = {
-                    equipment = railway_gun_equipment_1
-                    name = "BL 9.2-inch Railway Gun"
+                    create_railway_gun = {
+                        equipment = railway_gun_equipment_1
+                        name = "BL 9.2-inch Railway Gun"
+                    }
                 }
             }
             else = {

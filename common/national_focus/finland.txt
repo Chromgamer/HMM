@@ -4167,6 +4167,12 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = { has_tech = railway_gun }
+						NOT = {
+							has_game_rule = {
+								rule = railway_gun
+								option = off
+							}
+						}
 					}
 					add_tech_bonus = {
 						name = FIN_coastal_defense
