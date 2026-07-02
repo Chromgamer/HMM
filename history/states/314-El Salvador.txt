@@ -19,6 +19,7 @@ state=
 			}
 		}
 		add_core_of = WST
+		add_core_of = ELS
 	}
 	provinces={
 		12823 13093 

@@ -4,6 +4,10 @@ state={
 	name="STATE_227"
 	manpower = 3767336
 
+	# HMM: moved inland to allow Soviets to last longer
+	#resources = {
+	#	coal = 82 # initial distribution
+	#}
 	
 	state_category = city
 
@@ -16,7 +20,7 @@ state={
 			6474 10
 		}
 		add_core_of = SOV
-		add_core_of = WST
+		add_core_of = UKR
 	}
 
 	provinces={

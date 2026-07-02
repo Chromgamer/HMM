@@ -35,7 +35,8 @@ NDefines.NMilitary.ABILITY_NO_HQ_SCALING = 1.0									-- Same as PLANNING_CAP_N
 NDefines.NMilitary.GENERAL_PROXIMITY_CLOSE = 1									-- At the "close" proximity setting, the general should stay this many provinces behind the frontline
 NDefines.NMilitary.GENERAL_PROXIMITY_MEDIUM = 2									-- At the "medium" proximity setting, the general should stay this many provinces behind the frontline
 NDefines.NMilitary.GENERAL_PROXIMITY_FAR = 3										-- At the "far" proximity setting, the general should stay this many provinces behind the frontline
-NDefines.NMilitary.GENERAL_PROXIMITY_DEFAULT = 1									-- The default proximity setting for a deployed general. This number should correspond to one of the values above
+-- Note for define below: we can't actually set Free Control to the default, so this is the best we can do to prevent people from getting their HQs accidentally run over out of negligence
+NDefines.NMilitary.GENERAL_PROXIMITY_DEFAULT = 3									-- The default proximity setting for a deployed general. This number should correspond to one of the values above
 NDefines.NMilitary.GENERAL_RANK_TO_ARMY_HQ_EXP_LEVEL_FACTOR = 1				    -- The general's rank is multiplied by this factor (rounded up) to determine the spawned Army HQ division's experience level
 NDefines.NMilitary.ARMY_HQ_REQUISITION_MINIMUM_REMAINING_PERCENTAGE = 1		    -- When deploying an Army HQ, divisions will not have their equipment or manpower requisitioned below this percentage of their target manpower or equipment
 NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_DEPLOY = 0		-- base time in days for a unit leader to be deployed while not already deployed. Instantaneous if 0. Scaled by HQ template manpower.
@@ -201,6 +202,31 @@ NDefines.NAI.DIPLOMACY_ACCEPT_ATTACHE_OPINION_PENALTY = 0
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROLLED = 0
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROL_DIFF = 0
 NDefines.NAI.MINIMUM_CONVOY_TO_ASK_LEND_LEASE = 0
+
+-- Contingencies for disabling international market
+NDefines.NMarket.MAX_CIV_FACTORIES_PER_CONTRACT = 0
+NDefines.NAI.EQUIPMENT_MARKET_UPDATE_FREQUENCY_DAYS = 9999
+NDefines.NAI.EQUIPMENT_MARKET_MAX_CIVS_FOR_PURCHASES_RATIO = 0.0
+NDefines.NAI.EQUIPMENT_MARKET_BASE_MARKET_RATIO = 0.0
+
+-- Removed unnecessary AI calculations and extended time between updates (don't disable completely in case it screws with test builds)
+NDefines.NAI.AI_UPDATE_ROLES_FREQUENCY_HOURS = 672 -- vanilla: 48
+NDefines.NAI.AI_NAVAL_GOALS_UPDATE_FREQUENCY_DAYS = 28 -- vanilla: 7
+NDefines.NAI.UPDATE_SUPPLY_BOTTLENECKS_FREQUENCY_HOURS = 672 -- vanilla: 168
+NDefines.NAI.UPDATE_SUPPLY_MOTORIZATION_FREQUENCY_HOURS = 168 -- vanilla: 52
+-- Don't modify force concentration stuff because it can affect the AI a lot more noticeably for Yugo and SCW, even if we can squeeze more performance from it, too
+NDefines.NAI.RAIDS_ENABLE_AI = false -- vanilla: true
+NDefines.NAI.RAIDS_CREATE_FREQUENCY_DAYS = 9999 -- vanilla: 7
+NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 28 -- vanilla: 7
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_DOCTRINE = 365 -- vanilla: 30
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_TEMPLATE = 28 -- vanilla: 7
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_EQUIPMENT = 28 -- vanilla: 7
+NDefines.NAI.DAYS_BETWEEN_AIR_PRIORITIES_UPDATE = 28 -- vanilla: 4
+NDefines.NAI.CONVOY_RAIDING_TARGET_RECALC_DAYS = 180 -- vanilla: 15
+NDefines.NAI.STRIKE_FORCE_TARGET_RECALC_DAYS = 28 -- vanilla: 5
+NDefines.NAI.AI_OBJECTIVE_DEFAULT_TARGET_RECALC_DAYS = 28 -- vanilla: 5
+-- Modifying this should be fine because raids are disallowed/banned anyway
+NDefines.NRaids.MAX_STATE_TARGETS_TO_EVALUATE_PER_HOUR = 1 -- vanilla: 50
 
 --THANKS THRASHY
 NDefines.NAir.ACE_WING_SIZE_MAX_BONUS = 1                       -- biggest bonus we can get from having a small wing with an ace on

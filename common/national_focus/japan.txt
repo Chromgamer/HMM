@@ -10124,18 +10124,27 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY }
 
 		completion_reward = {
-			
-			IF = {
+			if = {
 				limit = {
-					NOT = { has_tech = railway_gun }
+					NOT = {
+						has_game_rule = {
+							rule = railway_gun
+							option = off
+						}
+					}
 				}
-				set_technology = { railway_gun = 1 }
+				IF = {
+					limit = {
+						NOT = { has_tech = railway_gun }
+					}
+					set_technology = { railway_gun = 1 }
+					custom_effect_tooltip = generic_skip_one_line_tt
+				}
+
+				JAP_mobilize_railway_guns = yes
+
 				custom_effect_tooltip = generic_skip_one_line_tt
 			}
-
-			JAP_mobilize_railway_guns = yes
-
-			custom_effect_tooltip = generic_skip_one_line_tt
 
 			IF = {
 				limit = {
@@ -11879,12 +11888,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			JAP_yuzuru_hiraga = {	
-				limit = {
-					NOT = {
-						has_trait = air_controller
-					}
-				}	
+			JAP_yuzuru_hiraga = {
 				add_trait = { trait = air_controller }
 			}
 			
@@ -12079,20 +12083,8 @@ focus_tree = {
 			
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			JAP_yuzuru_hiraga = {	
-				limit = {
-					NOT = {
-						has_trait = air_controller
-					}
-				}	
+			JAP_yuzuru_hiraga = {
 				add_trait = { trait = air_controller }
-			}
-			JAP_yuzuru_hiraga = {	
-				limit = {
-					NOT = {
-						has_trait = ironside
-					}
-				}	
 				add_trait = { trait = ironside }
 			}
 
@@ -12168,12 +12160,7 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			JAP_yuzuru_hiraga = {	
-				limit = {
-					NOT = {
-						has_trait = ironside
-					}
-				}	
+			JAP_yuzuru_hiraga = {
 				add_trait = { trait = ironside }
 			}
 		}

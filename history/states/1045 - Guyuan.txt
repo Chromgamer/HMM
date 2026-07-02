@@ -9,8 +9,9 @@ state = {
 
 	history = {
 		owner = CHI
-		add_core_of = WST
+		add_core_of = XSM
 		add_core_of = CHI
+		add_core_of = PRC
 
 		buildings = {
 			infrastructure = 1
@@ -19,6 +20,16 @@ state = {
 
 		victory_points = {
 			5025 1 # Guyuan
+		}
+
+		1936.1.1 = {
+			IF = {
+				limit = {
+					has_dlc = "No Compromise, No Surrender" 
+				}
+				add_core_of = NXM
+				remove_core_of = XSM
+			}
 		}
 	}
 

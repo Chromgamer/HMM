@@ -5,8 +5,10 @@ state = {
 	history = {
 
 		owner = CHI
+		add_core_of = XSM
 		add_core_of = CHI
-		add_core_of = WST
+		add_core_of = PRC
+		add_core_of = TIB
 
 		#victory_points = {
 		#	7940 10 # Goldmud was not ofunded until in the late fifties

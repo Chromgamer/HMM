@@ -4,7 +4,6 @@ state = {
 	manpower = 1
 	
 	state_category = wasteland
-
 	
 	
 
@@ -12,6 +11,7 @@ state = {
 
 		owner = WST
 		add_core_of = WST
+		add_core_of = CHL
 
 		buildings = {
 			infrastructure = 1

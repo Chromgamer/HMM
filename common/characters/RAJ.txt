@@ -132,6 +132,14 @@ characters={
 							NOT = { has_country_flag = has_arrested_bose }
 						}
 					}
+					NOT = {
+						has_idea = idea_RAJ_bose_hiding_raj
+						has_idea = idea_RAJ_bose_hiding_afghanistan
+						has_idea = idea_RAJ_bose_hiding_ussr
+						has_idea = idea_RAJ_bose_hiding_ger
+						has_idea = idea_RAJ_bose_submarine
+						has_idea = idea_RAJ_bose_jap
+					}
 				}
 			}
 			advisor = {
@@ -157,6 +165,17 @@ characters={
 						ROOT = { 
 							has_completed_focus = RAJ_forward_bloc 
 							NOT = { has_country_flag = has_arrested_bose }
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = RAJ_bose_is_hiding_tt
+						NOT = {
+							has_idea = idea_RAJ_bose_hiding_raj
+							has_idea = idea_RAJ_bose_hiding_afghanistan
+							has_idea = idea_RAJ_bose_hiding_ussr
+							has_idea = idea_RAJ_bose_hiding_ger
+							has_idea = idea_RAJ_bose_submarine
+							has_idea = idea_RAJ_bose_jap
 						}
 					}
 				}
@@ -1198,6 +1217,7 @@ characters={
 			allowed = {
 				OR = {
 					original_tag = PAK
+					original_tag = AFG
 					AND = {
 						original_tag = RAJ
 						has_completed_focus = RAJ_the_mughal_uprising
@@ -1246,6 +1266,7 @@ characters={
 			allowed = {
 				OR = {
 					original_tag = PAK
+					original_tag = AFG
 					AND = {
 						original_tag = RAJ
 						has_completed_focus = RAJ_the_mughal_uprising
@@ -1292,6 +1313,7 @@ characters={
 			allowed = {
 				OR = {
 					original_tag = PAK
+					original_tag = AFG
 					original_tag = RAJ
 				}
 			}
