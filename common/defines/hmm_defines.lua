@@ -35,7 +35,8 @@ NDefines.NMilitary.ABILITY_NO_HQ_SCALING = 1.0									-- Same as PLANNING_CAP_N
 NDefines.NMilitary.GENERAL_PROXIMITY_CLOSE = 1									-- At the "close" proximity setting, the general should stay this many provinces behind the frontline
 NDefines.NMilitary.GENERAL_PROXIMITY_MEDIUM = 2									-- At the "medium" proximity setting, the general should stay this many provinces behind the frontline
 NDefines.NMilitary.GENERAL_PROXIMITY_FAR = 3										-- At the "far" proximity setting, the general should stay this many provinces behind the frontline
-NDefines.NMilitary.GENERAL_PROXIMITY_DEFAULT = 1									-- The default proximity setting for a deployed general. This number should correspond to one of the values above
+-- Note for define below: we can't actually set Free Control to the default, so this is the best we can do to prevent people from getting their HQs accidentally run over out of negligence
+NDefines.NMilitary.GENERAL_PROXIMITY_DEFAULT = 3									-- The default proximity setting for a deployed general. This number should correspond to one of the values above
 NDefines.NMilitary.GENERAL_RANK_TO_ARMY_HQ_EXP_LEVEL_FACTOR = 1				    -- The general's rank is multiplied by this factor (rounded up) to determine the spawned Army HQ division's experience level
 NDefines.NMilitary.ARMY_HQ_REQUISITION_MINIMUM_REMAINING_PERCENTAGE = 1		    -- When deploying an Army HQ, divisions will not have their equipment or manpower requisitioned below this percentage of their target manpower or equipment
 NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_DEPLOY = 0		-- base time in days for a unit leader to be deployed while not already deployed. Instantaneous if 0. Scaled by HQ template manpower.
