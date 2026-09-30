@@ -13010,6 +13010,8 @@ focus_tree = {
 					limit = {
 						has_dlc = "Arms Against Tyranny"
 					}
+					if = {
+						limit = { air_engine_4_allowed = yes }
 					create_equipment_variant = {
 						name = "VL Pyörremyrsky"
 						type = small_plane_airframe_4
@@ -13022,6 +13024,22 @@ focus_tree = {
 						}
 						icon = "GFX_FIN_modern_small_fighter_1_medium"
 						design_team = mio:FIN_valtion_lentokonetehdas_organization
+					}
+					}
+					else = {
+						create_equipment_variant = {
+							name = "VL Pyörremyrsky"
+							type = small_plane_airframe_4
+							parent_version = 0
+							modules = {
+								fixed_main_weapon_slot = heavy_mg_2x
+								fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+								fixed_auxiliary_weapon_slot_2 = bomb_locks
+								engine_type_slot = engine_3_1x
+							}
+							icon = "GFX_FIN_modern_small_fighter_1_medium"
+							design_team = mio:FIN_valtion_lentokonetehdas_organization
+						}
 					}
 					create_equipment_variant = {
 						name = "VL Humu"
@@ -13074,6 +13092,8 @@ focus_tree = {
 					}
 				}
 				else = {
+					if = {
+						limit = { air_engine_4_allowed = yes }
 					create_equipment_variant = {
 						name = "VL Pyörremyrsky"
 						type = small_plane_airframe_4
@@ -13085,6 +13105,21 @@ focus_tree = {
 							engine_type_slot = engine_4_1x
 						}
 						icon = "GFX_FIN_modern_small_fighter_1_medium"
+					}
+					}
+					else = {
+						create_equipment_variant = {
+							name = "VL Pyörremyrsky"
+							type = small_plane_airframe_4
+							parent_version = 0
+							modules = {
+								fixed_main_weapon_slot = heavy_mg_2x
+								fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_1x
+								fixed_auxiliary_weapon_slot_2 = bomb_locks
+								engine_type_slot = engine_3_1x
+							}
+							icon = "GFX_FIN_modern_small_fighter_1_medium"
+						}
 					}
 					create_equipment_variant = {
 						name = "VL Humu"

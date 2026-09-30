@@ -1942,6 +1942,11 @@ bba_get_fighter_GER_effect = { #creates a fighter design if necessary and export
 			limit = {
 				GER = { NOT = { has_country_flag = GER_advanced_export_fighter_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					GER = { air_engine_4_allowed = yes }
+				}
 			GER = {
 				create_equipment_variant = {
 					name = "Ta 152"
@@ -1956,6 +1961,24 @@ bba_get_fighter_GER_effect = { #creates a fighter design if necessary and export
 					icon = "GFX_GER_fighter3_medium"
 				}
 				set_country_flag = GER_advanced_export_fighter_template
+			}
+			}
+			else = {
+				GER = {
+					create_equipment_variant = {
+						name = "Ta 152"
+						type = small_plane_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = aircraft_cannon_2_2x
+							fixed_auxiliary_weapon_slot_1 = heavy_mg_4x
+							engine_type_slot = engine_3_1x
+							special_type_slot_1 = empty
+						}
+						icon = "GFX_GER_fighter3_medium"
+					}
+					set_country_flag = GER_advanced_export_fighter_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -2356,6 +2379,11 @@ bba_get_fighter_ENG_effect = { #creates a fighter design if necessary and export
 			limit = {
 				ENG = { NOT = { has_country_flag = ENG_advanced_export_fighter_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					ENG = { air_engine_4_allowed = yes }
+				}
 			ENG = {
 				create_equipment_variant = {
 					name = "Hawker Tempest"
@@ -2370,6 +2398,24 @@ bba_get_fighter_ENG_effect = { #creates a fighter design if necessary and export
 					icon = "GFX_ENG_CAS3_medium"
 				}
 				set_country_flag = ENG_advanced_export_fighter_template
+			}
+			}
+			else = {
+				ENG = {
+					create_equipment_variant = {
+						name = "Hawker Tempest"
+						type = small_plane_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = aircraft_cannon_2_2x
+							fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+							engine_type_slot = engine_3_1x
+							special_type_slot_1 = empty
+						}
+						icon = "GFX_ENG_CAS3_medium"
+					}
+					set_country_flag = ENG_advanced_export_fighter_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -2465,6 +2511,11 @@ bba_get_cas_ENG_effect = { #creates a CAS design if necessary and exports a numb
 			limit = {
 				ENG = { NOT = { has_country_flag = ENG_advanced_export_cas_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					ENG = { air_engine_4_allowed = yes }
+				}
 			ENG = {
 				create_equipment_variant = {
 					name = "Hawker Tempest"
@@ -2480,6 +2531,25 @@ bba_get_cas_ENG_effect = { #creates a CAS design if necessary and exports a numb
 					icon = "GFX_ENG_CAS3_medium"
 				}
 				set_country_flag = ENG_advanced_export_cas_template
+			}
+			}
+			else = {
+				ENG = {
+					create_equipment_variant = {
+						name = "Hawker Tempest"
+						type = small_plane_cas_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = bomb_locks
+							fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+							fixed_auxiliary_weapon_slot_2 = aircraft_cannon_2_2x
+							engine_type_slot = engine_3_1x
+							special_type_slot_1 = empty
+						}
+						icon = "GFX_ENG_CAS3_medium"
+					}
+					set_country_flag = ENG_advanced_export_cas_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -2758,6 +2828,11 @@ bba_get_fighter_USA_effect = { #creates a fighter design if necessary and export
 			limit = {
 				USA = { NOT = { has_country_flag = USA_advanced_export_fighter_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					USA = { air_engine_4_allowed = yes }
+				}
 			USA = {
 				create_equipment_variant = {
 					name = "P-51"
@@ -2773,6 +2848,25 @@ bba_get_fighter_USA_effect = { #creates a fighter design if necessary and export
 					icon = "GFX_USA_fighter3_medium"
 				}
 				set_country_flag = USA_advanced_export_fighter_template
+			}
+			}
+			else = {
+				USA = {
+					create_equipment_variant = {
+						name = "P-51"
+						type = small_plane_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = heavy_mg_4x
+							fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
+							fixed_auxiliary_weapon_slot_2 = bomb_locks
+							engine_type_slot = engine_3_1x
+							special_type_slot_1 = empty
+						}
+						icon = "GFX_USA_fighter3_medium"
+					}
+					set_country_flag = USA_advanced_export_fighter_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -2847,6 +2941,11 @@ bba_get_cas_USA_effect = { #creates a CAS design if necessary and exports a numb
 			limit = {
 				USA = { NOT = { has_country_flag = USA_advanced_export_cas_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					USA = { air_engine_4_allowed = yes }
+				}
 			USA = {
 				create_equipment_variant = {
 					name = "A-26"
@@ -2862,6 +2961,25 @@ bba_get_cas_USA_effect = { #creates a CAS design if necessary and exports a numb
 					icon = "GFX_USA_CAS3_medium"
 				}
 				set_country_flag = USA_advanced_export_cas_template
+			}
+			}
+			else = {
+				USA = {
+					create_equipment_variant = {
+						name = "A-26"
+						type = small_plane_cas_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = bomb_locks
+							fixed_auxiliary_weapon_slot_1 = small_bomb_bay
+							fixed_auxiliary_weapon_slot_2 = small_bomb_bay
+							engine_type_slot = engine_3_2x
+							special_type_slot_1 = hmg_defense_turret_2x
+						}
+						icon = "GFX_USA_CAS3_medium"
+					}
+					set_country_flag = USA_advanced_export_cas_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -3138,6 +3256,11 @@ bba_get_fighter_ITA_effect = { #creates a fighter design if necessary and export
 			limit = {
 				ITA = { NOT = { has_country_flag = ITA_advanced_export_fighter_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					ITA = { air_engine_4_allowed = yes }
+				}
 			ITA = {
 				create_equipment_variant = {
 					name = "Re.2005"
@@ -3153,6 +3276,25 @@ bba_get_fighter_ITA_effect = { #creates a fighter design if necessary and export
 					icon = "GFX_ITA_fighter3_medium"
 				}
 				set_country_flag = ITA_advanced_export_fighter_template
+			}
+			}
+			else = {
+				ITA = {
+					create_equipment_variant = {
+						name = "Re.2005"
+						type = small_plane_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = heavy_mg_2x
+							fixed_auxiliary_weapon_slot_1 = aircraft_cannon_1_2x
+							fixed_auxiliary_weapon_slot_2 = aircraft_cannon_1_1x
+							engine_type_slot = engine_3_1x
+							special_type_slot_1 = drop_tanks
+						}
+						icon = "GFX_ITA_fighter3_medium"
+					}
+					set_country_flag = ITA_advanced_export_fighter_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -3557,6 +3699,11 @@ bba_get_fighter_FRA_effect = { #creates a fighter design if necessary and export
 			limit = {
 				FRA = { NOT = { has_country_flag = FRA_advanced_export_fighter_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					FRA = { air_engine_4_allowed = yes }
+				}
 			FRA = {
 				create_equipment_variant = {
 					name = "SE.580"
@@ -3571,6 +3718,24 @@ bba_get_fighter_FRA_effect = { #creates a fighter design if necessary and export
 					}
 				}
 				set_country_flag = FRA_advanced_export_fighter_template
+			}
+			}
+			else = {
+				FRA = {
+					create_equipment_variant = {
+						name = "SE.580"
+						type = small_plane_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = heavy_mg_4x
+							fixed_auxiliary_weapon_slot_1 = heavy_mg_2x
+							fixed_auxiliary_weapon_slot_2 = aircraft_cannon_2_1x
+							engine_type_slot = engine_3_1x
+							special_type_slot_1 = drop_tanks
+						}
+					}
+					set_country_flag = FRA_advanced_export_fighter_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {
@@ -3849,6 +4014,11 @@ bba_get_heavy_fighter_FRA_effect = { #creates a heavy_fighter design if necessar
 			limit = {
 				FRA = { NOT = { has_country_flag = FRA_advanced_export_heavy_fighter_template } }
 			}
+			if = {
+				limit = {
+					air_engine_4_allowed = yes
+					FRA = { air_engine_4_allowed = yes }
+				}
 			FRA = {
 				create_equipment_variant = {
 					name = "SE.255" #fictional
@@ -3867,6 +4037,28 @@ bba_get_heavy_fighter_FRA_effect = { #creates a heavy_fighter design if necessar
 					icon = "GFX_FRA_heavy_fighter3_medium"
 				}
 				set_country_flag = FRA_advanced_export_heavy_fighter_template
+			}
+			}
+			else = {
+				FRA = {
+					create_equipment_variant = {
+						name = "SE.255" #fictional
+						type = medium_plane_fighter_airframe_3
+						allow_without_tech = yes #Makes no difference since effect requires appropriate tech (above), but it improves tooltip
+						modules = {
+							fixed_main_weapon_slot = aircraft_cannon_2_2x
+							fixed_auxiliary_weapon_slot_1 = aircraft_cannon_2_2x
+							fixed_auxiliary_weapon_slot_2 = bomb_locks
+							fixed_auxiliary_weapon_slot_3 = empty
+							fixed_auxiliary_weapon_slot_4 = rocket_rails
+							engine_type_slot = engine_3_2x
+							special_type_slot_1 = empty
+							special_type_slot_2 = empty
+						}
+						icon = "GFX_FRA_heavy_fighter3_medium"
+					}
+					set_country_flag = FRA_advanced_export_heavy_fighter_template
+				}
 			}
 		}
 		add_equipment_to_stockpile = {

@@ -559,3 +559,26 @@ DIPLOMACY_RETURN_TERRITORY_ENABLE_TRIGGER = {
 		}
 	}
 }
+
+air_engine_4_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = air_engine_4
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = air_engine_4
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = air_engine_4
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}

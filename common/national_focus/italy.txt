@@ -14200,7 +14200,10 @@ focus_tree = {
 					add_ideas = ITA_hidden_super_heavy_aircraft_ns
 				}
 
+				if = {
+					limit = { air_engine_4_allowed = yes }
 				ITA_add_the_king_of_the_skies_template_production_and_wing = yes
+				}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt

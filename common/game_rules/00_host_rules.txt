@@ -427,6 +427,31 @@ jet_engines = {
 		desc = "Jet engines can be researched and built as normal."
 	}
 }
+air_engine_4 = {
+	name = "Status of Aircraft Engine IV"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = banned
+		text = "RBanned"
+		desc = "Engine IV cannot be researched or built."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Engine IV can only be researched or built by Axis countries."
+	}
+	default = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Engine IV can only be researched or built by Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Engine IV can be researched and built as normal."
+	}
+}
 marine_commando_status = {
 	name = "Status of Marine Commandos"
 	group = "HMM Rules"

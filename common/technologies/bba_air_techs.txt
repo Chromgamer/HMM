@@ -2012,6 +2012,10 @@ technologies = {
 
 	engines_4 = {
 
+		allow_branch = {
+			air_engine_4_allowed = yes
+		}
+
 		enable_equipment_modules = {
 			engine_4_1x
 			engine_4_2x
