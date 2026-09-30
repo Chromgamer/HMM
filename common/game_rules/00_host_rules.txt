@@ -1291,6 +1291,36 @@ sov_coal_boost = {
 		desc = "The Soviet Union gets 80 extra (base) coal spawned in Khakassia (in Siberia) at startup."
 	}
 }
+sov_refinery_boost = {
+	name = "Soviet Synthetic Refinery Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_rubber"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "The Soviet Union does not get any extra synthetic refineries spawned in at startup."
+	}
+	option = {
+		name = sov2
+		text = "6On (+2)"
+		desc = "The Soviet Union gets 2 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+	option = {
+		name = sov4
+		text = "7On (+4)"
+		desc = "The Soviet Union gets 4 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+	option = {
+		name = sov6
+		text = "8On (+6)"
+		desc = "The Soviet Union gets 6 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+	default = {
+		name = sov8
+		text = "9On (+8)"
+		desc = "The Soviet Union gets 8 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+}
 axis_fuel_spirit = {
 	name = "Axis Fuel Spirit"
 	group = "HMM Rules"

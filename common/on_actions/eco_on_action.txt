@@ -2032,6 +2032,131 @@ on_actions = {
 					}
 				}
 			}
+			# SOV free synthetic refineries (in their four historical synthetic rubber plant states: SK-1 @ Yaroslavl, SK-2 @ Voronezh, SK-3 @ Tula, and SK-4 @ Kazan)
+			# Note, Voronezh and Tula start the game with 1 ref each in vanilla, and Tula has only 1 free slot for a 2nd ref, so it needs a free slot for the 3rd entry
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_refinery_boost
+						option = sov2
+					}
+				}
+				248 = { # Yaroslavl (SK-1 Yarak)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				249 = { # Kazan (SK-4)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_refinery_boost
+						option = sov4
+					}
+				}
+				248 = { # Yaroslavl (SK-1 Yarak)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 2
+						instant_build = yes
+					}
+				}
+				260 = { # Voronezh (SK-2 Kirov)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				249 = { # Kazan (SK-4)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_refinery_boost
+						option = sov6
+					}
+				}
+				248 = { # Yaroslavl (SK-1 Yarak)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 2
+						instant_build = yes
+					}
+				}
+				260 = { # Voronezh (SK-2 Kirov)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				223 = { # Tula (SK-3)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				249 = { # Kazan (SK-4)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_refinery_boost
+						option = sov8
+					}
+				}
+				248 = { # Yaroslavl (SK-1 Yarak)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 3
+						instant_build = yes
+					}
+				}
+				260 = { # Voronezh (SK-2 Kirov)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				223 = { # Tula (SK-3)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+				249 = { # Kazan (SK-4)
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 }
