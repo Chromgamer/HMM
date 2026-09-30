@@ -305,9 +305,33 @@ technologies = {
 			
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 		}			
 		path = {
@@ -544,6 +568,28 @@ technologies = {
 				is_special_project_completed = sp:sp_air_jet_engine
 			} 
 		}
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
+		}
 		on_research_complete = {
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
@@ -602,6 +648,29 @@ technologies = {
 			} 
 		}
 
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
+		}
+
 		enable_equipments = {
 			jet_fighter_equipment_2
 		}
@@ -635,6 +704,28 @@ technologies = {
 		allow = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_supersonic_jet
+			}
+		}
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
 			}
 		}
 		enable_equipments = {
@@ -1585,9 +1676,33 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 		}		
 		on_research_complete = {
@@ -1702,6 +1817,28 @@ technologies = {
 				is_special_project_completed = sp:sp_air_jet_engine
 			} 
 		}
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
+		}
 		on_research_complete = {
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
@@ -1748,6 +1885,29 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
 		}
 
 		enable_equipments = {
@@ -1931,6 +2091,29 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
 		}
 
 		enable_equipments = {

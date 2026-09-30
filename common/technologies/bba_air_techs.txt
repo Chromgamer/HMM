@@ -257,9 +257,33 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 			
 		}				
@@ -339,9 +363,33 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_axial_jet_engine	
+			}
 			}
 		}		
 		research_cost = 2
@@ -402,6 +450,29 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
 		}
 
 		is_special_project_tech = yes
@@ -586,9 +657,33 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 		}		
 		research_cost = 2
@@ -649,9 +744,33 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_axial_jet_engine	
+			}
 			}
 		}
 		research_cost = 2
@@ -699,6 +818,29 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
 		}
 
 		is_special_project_tech = yes
@@ -937,6 +1079,29 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
 		}
 
 		is_special_project_tech = yes
@@ -1668,9 +1833,33 @@ technologies = {
 			engine_2_6x	
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 		}		
 		research_cost = 1
@@ -1734,9 +1923,33 @@ technologies = {
 			engine_3_6x	
 		}
 		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = jet_engines
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = jet_engines
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_axial_jet_engine	
+			}
 			}
 		}		
 		research_cost = 1.5
@@ -1994,6 +2207,29 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			OR = {
+				has_game_rule = {
+					rule = jet_engines
+					option = allowed
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = allies
+					}
+					allies = yes
+				}
+				AND = {
+					has_game_rule = {
+						rule = jet_engines
+						option = axis
+					}
+					axis = yes
+				}
+			}
 		}
 
 		is_special_project_tech = yes
