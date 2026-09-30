@@ -1041,6 +1041,7 @@ foreign_politics = {
 		}
 
 		complete_effect = {
+			set_country_flag = JAP_offered_china_white_peace_flag
 			event_target:WTT_current_china_leader = {
 				country_event = { 
 					id = wtt_japan.126 
@@ -2046,6 +2047,113 @@ JAP_pacific_guardian = {
 		}
 	}
 
+	# Assume Guardianship over §Y[FROM.GetNameDef]§! (SEA verison guardian decision)
+	JAP_assume_guardianship_over_asian_subject_decison = {
+		icon = GFX_decision_jap_pacific_guardian
+
+		priority = 50
+	
+		allowed = {
+		}
+
+		ai_will_do = {
+			base = 25
+		}
+		
+		visible = {
+			has_completed_focus = JAP_free_colonized_asian_countries
+		}
+		available = {
+			NOT = { has_country_flag = JAP_currently_trying_to_become_a_nations_guardian_flag }
+		}
+
+		target_array = global.asian_countries
+	    
+	    target_trigger = {
+	        FROM = {
+	        	is_subject = yes
+	        	NOT = {
+	        		# Shouldn't be doable on India 
+	        		original_tag = RAJ
+	        	}
+	        	OVERLORD = {
+	        		capital_scope = {
+	        			NOT = {
+	        				is_on_continent = asia
+	        			}
+	        		}
+	        	}
+	        	NOT = {
+	        		has_war_with = ROOT
+	        		is_subject_of = ROOT
+	        	}
+	        }
+	    }
+
+	    on_map_mode = decision_view_only 
+
+	    cost = 75		
+		fire_only_once = yes
+
+		days_remove = 30
+
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = { flag = JAP_currently_trying_to_become_a_nations_guardian_flag value = 1 days = 31 }
+			}
+		}
+		remove_effect = {
+			hidden_effect = {
+				clr_country_flag = JAP_currently_trying_to_become_a_nations_guardian_flag
+			}
+			IF = {
+				limit = {
+					# This is only to avoid being spammed with errors for no particular reason when scoping to their overlord
+					FROM = {
+						is_subject = yes
+					}
+				}
+				FROM = {
+					OVERLORD = {
+						country_event = {
+							id = SEA_japan_foreign_policy.115
+							hours = 6
+							random_hours = 12
+						}	
+					}
+					set_country_flag = JAP_this_is_the_country_being_negotiated_at_the_moment
+				}
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				FROM = {
+					drop_cosmetic_tag = yes
+				}
+				puppet = {
+				    target = FROM
+				    end_wars = yes
+				}
+			}
+		}
+
+		cancel_trigger = {
+			FROM = {
+				OR = {
+					exists = no
+					is_subject = no
+					is_subject_of = ROOT
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		cancel_effect = {
+			hidden_effect = {
+				clr_country_flag = JAP_currently_trying_to_become_a_nations_guardian_flag
+			}
+		}
+	}
+
 	# Invite Asian Nation to your faction decision 
 	JAP_invite_demo_or_na_asian_nation_to_faction_decison = {
 		icon = GFX_decision_hol_exchange_intelligence_data
@@ -2130,6 +2238,77 @@ JAP_pacific_guardian = {
 }
 
 JAP_the_red_sun_over_asia_decisions = {
+	
+	# Invite Communust South American Nations to your faction decision 
+	JAP_invite_com_south_ame_nation_to_faction_decison = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		priority = 30
+	
+		allowed = {
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+		
+		visible = {
+			has_completed_focus = JAP_trans_pacific_influence
+		}
+		available = {
+			
+		}
+
+		target_array = global.south_american_countries
+	    
+	    target_trigger = {
+	        FROM = {
+	        	is_subject = no
+	        	is_in_faction = no
+	        	NOT = {
+	        		has_war_with = ROOT
+	        	}
+	        	has_government = communism
+	        }
+	    }
+
+	    on_map_mode = decision_view_only 
+
+	    cost = 50		
+		fire_only_once = yes
+
+		#days_remove = 30
+
+		complete_effect = {
+
+			FROM = {
+				country_event = {
+					id = SEA_japan_foreign_policy.118
+					hours = 6
+					random_hours = 12
+				}	
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				ROOT = {
+					add_to_faction = FROM
+				}
+			}
+			
+		}
+
+		remove_effect = {
+
+		}
+
+		cancel_trigger = {
+			
+		}
+
+		cancel_effect = {
+			
+		}
+	}
 
 	JAP_communist_core_asian_state = {
 
@@ -2224,6 +2403,342 @@ JAP_the_red_sun_over_asia_decisions = {
 					clr_state_flag = JAP_coring_this_asian_state_in_progress_flag
 				}
 			}
+		}
+	}
+
+	# Invite Communust Middle Eastern Nations to your faction decision 
+	JAP_invite_com_middle_eastern_nation_to_faction_decison = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		priority = 30
+	
+		allowed = {
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+		
+		visible = {
+			has_completed_focus = JAP_spread_revolutionary_flames_to_west_asia
+		}
+		available = {
+			
+		}
+
+		target_array = global.middle_eastern_countries
+	    
+	    target_trigger = {
+	        FROM = {
+	        	is_subject = no
+	        	is_in_faction = no
+	        	NOT = {
+	        		has_war_with = ROOT
+	        	}
+	        	has_government = communism
+	        }
+	    }
+
+	    on_map_mode = decision_view_only 
+
+	    cost = 50		
+		fire_only_once = yes
+
+		#days_remove = 30
+
+		complete_effect = {
+
+			FROM = {
+				country_event = {
+					id = SEA_japan_foreign_policy.118
+					hours = 6
+					random_hours = 12
+				}	
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				ROOT = {
+					add_to_faction = FROM
+				}
+			}
+			
+		}
+
+		remove_effect = {
+
+		}
+
+		cancel_trigger = {
+			
+		}
+
+		cancel_effect = {
+			
+		}
+	}
+
+	# Stir Communist Sentiments in Middle Eastern Nations
+	JAP_stir_communist_sentiments_in_the_middle_east_decison = {
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		priority = 31
+	
+		allowed = {
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+		
+		visible = {
+			has_completed_focus = JAP_spread_revolutionary_flames_to_west_asia
+		}
+		available = {
+			
+		}
+
+		target_array = global.middle_eastern_countries
+	    
+	    target_trigger = {
+	        FROM = {
+	        	NOT = {
+	        		has_war_with = ROOT
+	        	}
+	        	NOT = {
+	        		has_government = communism
+	        	}
+	        }
+	    }
+
+	    on_map_mode = decision_view_only 
+
+	    cost = 50		
+		fire_only_once = yes
+
+		#days_remove = 30
+
+		complete_effect = {
+
+			FROM = {
+				country_event = {
+					id = SEA_japan_popup_events.37
+					hours = 6
+					random_hours = 12
+				}	
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = JAP_fifth_international_agitation
+					days = 720
+				}
+				add_stability = -0.05
+			}
+			
+		}
+
+		remove_effect = {
+
+		}
+
+		cancel_trigger = {
+			
+		}
+
+		cancel_effect = {
+			
+		}
+	}
+
+	# Stir Communist Sentiments in Greater Indian Nations
+	JAP_stir_communist_sentiments_in_south_asia_decison = {
+		icon = GFX_decision_eng_propaganda_campaigns
+
+		priority = 31
+	
+		allowed = {
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+		
+		visible = {
+			has_completed_focus = JAP_spread_revolutionary_flames_to_south_asia
+		}
+		available = {
+			
+		}
+
+		target_array = global.asian_countries
+	    
+	    target_trigger = {
+	        FROM = {
+	        	NOT = {
+	        		has_war_with = ROOT
+	        	}
+	        	NOT = {
+	        		has_government = communism
+	        	}
+	        	OR = {
+	        		original_tag = PAK
+	        		original_tag = RAJ
+	        		original_tag = KAS
+	        		original_tag = KHL
+	        		original_tag = NWF
+	        		original_tag = BLC
+	        		original_tag = KLT
+	        		original_tag = SIN
+	        		original_tag = RJP
+	        		original_tag = WIS
+	        		original_tag = CIP
+	        		original_tag = HYD
+	        		original_tag = KOL
+	        		original_tag = MYS
+	        		original_tag = RAS
+	        		original_tag = BAN
+	        		original_tag = SKK
+	        		original_tag = MPU
+	        		original_tag = BRM
+	        		original_tag = BHU
+	        		original_tag = NEP
+	        		original_tag = AFG
+	        	}
+	        }
+	    }
+
+	    on_map_mode = decision_view_only 
+
+	    cost = 50		
+		fire_only_once = yes
+
+		#days_remove = 30
+
+		complete_effect = {
+
+			FROM = {
+				country_event = {
+					id = SEA_japan_popup_events.37
+					hours = 6
+					random_hours = 12
+				}	
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				add_timed_idea = {
+					idea = JAP_fifth_international_agitation
+					days = 720
+				}
+				add_stability = -0.05
+			}
+			
+		}
+
+		remove_effect = {
+
+		}
+
+		cancel_trigger = {
+			
+		}
+
+		cancel_effect = {
+			
+		}
+	}
+
+	# Invite Communust South Asian Nations to your faction decision 
+	JAP_invite_com_south_asian_nation_to_faction_decison = {
+		icon = GFX_decision_hol_exchange_intelligence_data
+
+		priority = 30
+	
+		allowed = {
+		}
+
+		ai_will_do = {
+			base = 50
+		}
+		
+		visible = {
+			has_completed_focus = JAP_spread_revolutionary_flames_to_south_asia
+		}
+		available = {
+			
+		}
+
+		target_array = global.asian_countries
+	    
+	    target_trigger = {
+	        FROM = {
+	        	is_subject = no
+	        	is_in_faction = no
+	        	NOT = {
+	        		has_war_with = ROOT
+	        	}
+	        	has_government = communism
+	        	OR = {
+	        		original_tag = PAK
+	        		original_tag = RAJ
+	        		original_tag = KAS
+	        		original_tag = KHL
+	        		original_tag = NWF
+	        		original_tag = BLC
+	        		original_tag = KLT
+	        		original_tag = SIN
+	        		original_tag = RJP
+	        		original_tag = WIS
+	        		original_tag = CIP
+	        		original_tag = HYD
+	        		original_tag = KOL
+	        		original_tag = MYS
+	        		original_tag = RAS
+	        		original_tag = BAN
+	        		original_tag = SKK
+	        		original_tag = MPU
+	        		original_tag = BRM
+	        		original_tag = BHU
+	        		original_tag = NEP
+	        		original_tag = AFG
+	        	}
+	        }
+	    }
+
+	    on_map_mode = decision_view_only 
+
+	    cost = 50		
+		fire_only_once = yes
+
+		#days_remove = 30
+
+		complete_effect = {
+
+			FROM = {
+				country_event = {
+					id = SEA_japan_foreign_policy.118
+					hours = 6
+					random_hours = 12
+				}	
+			}
+			custom_effect_tooltip = if_they_accept_tt
+			effect_tooltip = {
+				ROOT = {
+					add_to_faction = FROM
+				}
+			}
+			
+		}
+
+		remove_effect = {
+
+		}
+
+		cancel_trigger = {
+			
+		}
+
+		cancel_effect = {
+			
 		}
 	}
 
@@ -4734,6 +5249,11 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
+			597 = {
+				NOT = {
+					has_state_flag = shandong_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -4759,6 +5279,7 @@ prospect_for_resources = {
 					type = aluminium
 					amount = 12
 				}
+				set_state_flag = shandong_aluminium_developed
 			}
 		}
 	}
@@ -4788,7 +5309,11 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
-
+			621 = {
+				NOT = {
+					has_state_flag = suiyuan_steel_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -4814,6 +5339,7 @@ prospect_for_resources = {
 					type = steel
 					amount = 8
 				}
+				set_state_flag = suiyuan_steel_developed
 			}
 		}	
 	}
@@ -4837,7 +5363,11 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
-			
+			325 = {
+				NOT = {
+					has_state_flag = yunnan_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -4863,6 +5393,7 @@ prospect_for_resources = {
 					type = aluminium
 					amount = 12
 				}
+				set_state_flag = yunnan_aluminium_developed
 			}
 		}	
 	}
@@ -4886,7 +5417,11 @@ prospect_for_resources = {
 				has_completed_focus = JAP_develop_the_chinese_resources
 			}
 			
-			
+			605 = {
+				NOT = {
+					has_state_flag = sichuan_aluminium_developed
+				}
+			}
 		}
 
 		fire_only_once = yes
@@ -4912,6 +5447,7 @@ prospect_for_resources = {
 					type = aluminium
 					amount = 12
 				}
+				set_state_flag = sichuan_aluminium_developed
 			}
 		}	
 	}
@@ -5149,6 +5685,18 @@ JAP_kwantung_army_decisions = {
 			IF = {
 				limit = {
 					OR = {
+						HBC = {
+							OR = {
+								controls_state = 608
+								controls_state = 614
+							}
+						}
+						XIC = {
+							OR = {
+								controls_state = 608
+								controls_state = 614
+							}
+						}
 						CHI = { #if CHI owns one of these states, they get the event
 							OR = {
 								controls_state = 608
@@ -10309,7 +10857,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		}
 	
 		visible = {
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_strike_the_southern_road
 			NOT = { has_country_flag = JAP_created_state_of_burma_flag }
 		} 
@@ -10328,6 +10881,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 				any_core_state = {
 					is_fully_controlled_by = ROOT
 				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 		}
 	
@@ -10407,7 +10969,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		}
 	
 		visible = { 
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_strike_the_southern_road
 			NOT = { has_country_flag = JAP_created_provisional_government_of_free_india_flag }
 		} 
@@ -10426,6 +10993,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 				any_core_state = {
 					is_fully_controlled_by = ROOT
 				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 		}
 	
@@ -10532,7 +11108,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		}
 	
 		visible = { 
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_strike_the_southern_road
 			NOT = { has_country_flag = JAP_created_second_philippine_republic_flag }
 		} 
@@ -10551,6 +11132,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 				any_core_state = {
 					is_fully_controlled_by = ROOT
 				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 		}
 	
@@ -10690,7 +11280,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		cost = 30
 
 		visible = {
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
 			NOT = { country_exists = VIN }
 			NOT = { country_exists = CAM }
@@ -10727,6 +11322,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 			}
 			1069 = {
 				is_controlled_by_ROOT_or_subject = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 		}
 
@@ -10835,7 +11439,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		cost = 10
 
 		visible = {
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
 			NOT = { country_exists = VIN }
 		}
@@ -10853,6 +11462,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 			}
 			1066 = {
 				is_controlled_by_ROOT_or_subject = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 
 		}
@@ -10937,7 +11555,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		cost = 10
 
 		visible = {
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
 			NOT = { country_exists = CAM }
 		}
@@ -10946,6 +11569,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 			
 			741 = {
 				is_controlled_by_ROOT_or_subject = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 
 		}
@@ -11023,7 +11655,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		cost = 10
 
 		visible = {
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
 			NOT = { country_exists = LAO }
 			NOT = {
@@ -11043,6 +11680,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 
 			1069 = {
 				is_controlled_by_ROOT_or_subject = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 
 		}
@@ -11122,7 +11768,12 @@ JAP_the_co_prosperity_sphere_decisions = {
 		cost = 10
 
 		visible = {
-			always = no
+			NOT = {
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
 			has_completed_focus = JAP_sea_greater_east_asian_co_properity_sphere
 			NOT = { country_exists = SRL }
 		}
@@ -11131,6 +11782,15 @@ JAP_the_co_prosperity_sphere_decisions = {
 			
 			422 = {
 				is_controlled_by_ROOT_or_subject = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = allow_release_nations
+						option = FREE
+					}
+				}
+				has_war = no
 			}
 
 		}
