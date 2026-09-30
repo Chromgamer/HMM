@@ -209,7 +209,6 @@ Germany_Cancel_Mefo= {
 		text = "GYes"
 		desc = "Germany can cancel MEFO Bills."
 	}
-
 }
 Germany_Fate_of_yugo= {
 	name = "Can Germany annex Yugoslavia through focuses?"
@@ -225,7 +224,6 @@ Germany_Fate_of_yugo= {
 		text = "GYes"
 		desc = "Germany can annex Yugoslavia through its focuses."
 	}
-
 }
 urban_assault_vechile= {
 	name = "Status of Assault Engineer Support Companies"
@@ -252,7 +250,7 @@ urban_assault_vechile= {
 		desc = "Assault engineer support companies are unlocked as normal after finishing the Military Engineering Vehicles special project."
 	}
 }
-railway_gun= {
+railway_gun = {
 	name = "Status of Railway Guns"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
@@ -277,7 +275,7 @@ railway_gun= {
 		desc = "Railway guns can be researched and built, and focuses, decisions, and events that unlock and/or spawn in railway guns are unaffected."
 	}
 }
-super_heavy_railway_gun= {
+super_heavy_railway_gun = {
 	name = "Status of Super-Heavy Railway Guns"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
@@ -302,7 +300,7 @@ super_heavy_railway_gun= {
 		desc = "Super-heavy railway guns can be researched and built, assuming ordinary railway guns can also be researched."
 	}
 }
-multi_charge_large_caliber_gun= {
+multi_charge_large_caliber_gun = {
 	name = "Status of Multi-Charge Large Caliber Guns"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
@@ -477,7 +475,7 @@ marine_commando_status = {
 		desc = "Marine Commandos can be unlocked as normal."
 	}
 }
-max_submarine_tech= {
+max_submarine_tech = {
 	name = "Maximum Submarine Tech Level"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"

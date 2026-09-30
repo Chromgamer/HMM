@@ -560,6 +560,75 @@ DIPLOMACY_RETURN_TERRITORY_ENABLE_TRIGGER = {
 	}
 }
 
+railway_gun_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = railway_gun
+			option = on
+		}
+		AND = {
+			has_game_rule = {
+				rule = railway_gun
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = railway_gun
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+super_heavy_tank_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = super_heavy_tank
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = super_heavy_tank
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = super_heavy_tank
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+land_cruiser_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = land_cruiser
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = land_cruiser
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = land_cruiser
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
 air_engine_4_allowed = {
 	OR = {
 		has_game_rule = {
@@ -576,6 +645,52 @@ air_engine_4_allowed = {
 		AND = {
 			has_game_rule = {
 				rule = air_engine_4
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+jet_engines_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = jet_engines
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = jet_engines
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = jet_engines
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+marine_commando_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = marine_commando_status
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = marine_commando_status
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = marine_commando_status
 				option = axis
 			}
 			axis = yes

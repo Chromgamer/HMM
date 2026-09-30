@@ -216,26 +216,7 @@ sp_land_land_cruiser = {
 
 	allowed = {
 		has_dlc = "Gotterdammerung"
-		OR = {
-			has_game_rule = {
-				rule = land_cruiser
-				option = allowed
-			}
-			AND = {
-				has_game_rule = {
-					rule = land_cruiser
-					option = allies
-				}
-				allies = yes
-			}
-			AND = {
-				has_game_rule = {
-					rule = land_cruiser
-					option = axis
-				}
-				axis = yes
-			}
-		}
+		land_cruiser_allowed = yes
 	}
 
 	available = {

@@ -306,28 +306,7 @@ technologies = {
 		}
 		on_research_complete = {
 			if = {
-				limit = {
-					OR = {
-						has_game_rule = {
-							rule = jet_engines
-							option = allowed
-						}
-						AND = {
-							has_game_rule = {
-								rule = jet_engines
-								option = allies
-							}
-							allies = yes
-						}
-						AND = {
-							has_game_rule = {
-								rule = jet_engines
-								option = axis
-							}
-							axis = yes
-						}
-					}
-				}
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
@@ -569,26 +548,7 @@ technologies = {
 			} 
 		}
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			jet_engines_allowed = yes
 		}
 		on_research_complete = {
 			custom_effect_tooltip = {
@@ -649,26 +609,7 @@ technologies = {
 		}
 
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			jet_engines_allowed = yes
 		}
 
 		enable_equipments = {
@@ -707,26 +648,7 @@ technologies = {
 			}
 		}
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			jet_engines_allowed = yes
 		}
 		enable_equipments = {
 			supersonic_fighter_equipment_1
@@ -1677,28 +1599,7 @@ technologies = {
 		}
 		on_research_complete = {
 			if = {
-				limit = {
-					OR = {
-						has_game_rule = {
-							rule = jet_engines
-							option = allowed
-						}
-						AND = {
-							has_game_rule = {
-								rule = jet_engines
-								option = allies
-							}
-							allies = yes
-						}
-						AND = {
-							has_game_rule = {
-								rule = jet_engines
-								option = axis
-							}
-							axis = yes
-						}
-					}
-				}
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
@@ -1818,26 +1719,7 @@ technologies = {
 			} 
 		}
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			jet_engines_allowed = yes
 		}
 		on_research_complete = {
 			custom_effect_tooltip = {
@@ -1888,26 +1770,7 @@ technologies = {
 		}
 
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			jet_engines_allowed = yes
 		}
 
 		enable_equipments = {
@@ -2094,26 +1957,7 @@ technologies = {
 		}
 
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = jet_engines
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			jet_engines_allowed = yes
 		}
 
 		enable_equipments = {

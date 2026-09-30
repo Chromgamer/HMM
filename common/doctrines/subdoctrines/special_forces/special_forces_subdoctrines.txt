@@ -259,28 +259,7 @@ marines_1 = {
 			mastery = 60
 		    effect = {
 				if = {
-					limit = {
-						OR = {
-							has_game_rule = {
-								rule = marine_commando_status
-								option = allowed
-							}
-							AND = {
-								has_game_rule = {
-									rule = marine_commando_status
-									option = allies
-								}
-								allies = yes
-							}
-							AND = {
-								has_game_rule = {
-									rule = marine_commando_status
-									option = axis
-								}
-								axis = yes
-							}
-						}
-					}
+					limit = { marine_commando_allowed = yes }
 		    	unlock_subunit = marine_commando
 		    	custom_effect_tooltip = SF_MARINES_exfiltration_effect_tt
 				}
@@ -302,28 +281,7 @@ marines_1 = {
 			}
 			effect = {
 				if = {
-					limit = {
-						OR = {
-							has_game_rule = {
-								rule = marine_commando_status
-								option = allowed
-							}
-							AND = {
-								has_game_rule = {
-									rule = marine_commando_status
-									option = allies
-								}
-								allies = yes
-							}
-							AND = {
-								has_game_rule = {
-									rule = marine_commando_status
-									option = axis
-								}
-								axis = yes
-							}
-						}
-					}
+					limit = { marine_commando_allowed = yes }
 				custom_effect_tooltip = SF_marine_demoliton_effect_TT
 				}
 			}			

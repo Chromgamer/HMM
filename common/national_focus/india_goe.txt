@@ -22786,28 +22786,7 @@ focus = {
                     set_technology = { armored_train = 1 }
                 }
                 if = {
-                    limit = {
-                        OR = {
-							has_game_rule = {
-								rule = railway_gun
-								option = on
-							}
-							AND = {
-								has_game_rule = {
-									rule = railway_gun
-									option = allies
-								}
-								allies = yes
-							}
-							AND = {
-								has_game_rule = {
-									rule = railway_gun
-									option = axis
-								}
-								axis = yes
-							}
-						}
-                    }
+                    limit = { railway_gun_allowed = yes }
                     if = {
                         limit = {
                             NOT = { has_tech = railway_gun }

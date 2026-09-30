@@ -2106,26 +2106,7 @@ technologies = {
 	super_heavy_tank = { #Maus
 
 		allow_branch = {
-			OR = {
-				has_game_rule = {
-					rule = super_heavy_tank
-					option = allowed
-				}
-				AND = {
-					has_game_rule = {
-						rule = super_heavy_tank
-						option = allies
-					}
-					allies = yes
-				}
-				AND = {
-					has_game_rule = {
-						rule = super_heavy_tank
-						option = axis
-					}
-					axis = yes
-				}
-			}
+			super_heavy_tank_allowed = yes
 		}
 
 		path = {
@@ -2160,26 +2141,7 @@ technologies = {
 			if = {
 				limit = {
 					has_dlc = "Gotterdammerung"
-					OR = {
-						has_game_rule = {
-							rule = land_cruiser
-							option = allowed
-						}
-						AND = {
-							has_game_rule = {
-								rule = land_cruiser
-								option = allies
-							}
-							allies = yes
-						}
-						AND = {
-							has_game_rule = {
-								rule = land_cruiser
-								option = axis
-							}
-							axis = yes
-						}
-					}
+					land_cruiser_allowed = yes
 				}
 				custom_effect_tooltip = {
 					localization_key = SP_UNLOCK_PROJECT

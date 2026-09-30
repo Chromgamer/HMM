@@ -748,26 +748,7 @@ sp_air_jet_engine = {
 	}
 
 	allowed = {
-		OR = {
-			has_game_rule = {
-				rule = jet_engines
-				option = allowed
-			}
-			AND = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allies
-				}
-				allies = yes
-			}
-			AND = {
-				has_game_rule = {
-					rule = jet_engines
-					option = axis
-				}
-				axis = yes
-			}
-		}
+		jet_engines_allowed = yes
 	}
 
 	available = { 
@@ -1038,26 +1019,7 @@ sp_air_axial_jet_engine = {
 	}
 
 	allowed = {
-		OR = {
-			has_game_rule = {
-				rule = jet_engines
-				option = allowed
-			}
-			AND = {
-				has_game_rule = {
-					rule = jet_engines
-					option = allies
-				}
-				allies = yes
-			}
-			AND = {
-				has_game_rule = {
-					rule = jet_engines
-					option = axis
-				}
-				axis = yes
-			}
-		}
+		jet_engines_allowed = yes
 	}
 
 	available = { 
@@ -1339,6 +1301,7 @@ sp_air_supersonic_jet = {
 
 	allowed = {
 		has_dlc = "Gotterdammerung"		
+		jet_engines_allowed = yes
 	}
 	
 	breakthrough_cost = {
