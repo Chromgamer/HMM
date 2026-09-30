@@ -1341,6 +1341,21 @@ axis_fuel_spirit = {
 		desc = "Romanian and Hungarian oil decisions and focuses are kept as they are in the base game."
 	}
 }
+berlin_madrid_tunnel = {
+	name = "Status of Spanish Berlin-Madrid Tunnel"
+	group = "HMM Rules"
+	icon = "GFX_decision_infiltrate_state"
+	default = {
+		name = on
+		text = "ROn"
+		desc = "A special tunnel is enabled between Berlin and Madrid that allows trade and lend-leases with Spain without convoys."
+	}
+	option = {
+		name = off
+		text = "ROff"
+		desc = "No special tunnel exists between Berlin and Madrid, so if Southern France is controlled by a hostile country, trade and lend-leases with Spain will require convoys."
+	}
+}
 who_gets_saf_annex = {
 	name = "Who Gets the Annex South Africa Decision If It Is Not Player-Controlled?"
 	group = "HMM Rules"

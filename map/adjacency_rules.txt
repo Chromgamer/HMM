@@ -447,8 +447,12 @@ adjacency_rule =
 	
 	required_provinces = { 3761 }
 	is_disabled = {
-		NOT = {
-			tag=SPR
-		}		
+		OR = {
+			NOT = { tag = SPR }
+			has_game_rule = {
+				rule = berlin_madrid_tunnel
+				option = off
+			}
+		}
 	}
 }
