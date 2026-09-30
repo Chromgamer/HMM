@@ -1196,29 +1196,99 @@ usa_oil_boost = {
 		desc = "USA does not get any extra oil spawned in at startup."
 	}
 	option = {
-		name = usa30
-		text = "6On (+30)"
-		desc = "USA gets 30 extra oil spawned in Texas at startup."
+		name = usa16
+		text = "6On (+16)"
+		desc = "The USA gets 16 extra (base) oil spawned in Texas at startup."
 	}
 	option = {
-		name = usa60
-		text = "7On (+60)"
-		desc = "USA gets 60 extra oil spawned in Texas at startup."
+		name = usa32
+		text = "7On (+32)"
+		desc = "The USA gets 32 extra (base) oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa48
+		text = "8On (+48)"
+		desc = "The USA gets 48 extra (base) oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa64
+		text = "9On (+64)"
+		desc = "The USA gets 64 extra (base) oil spawned in Texas at startup."
 	}
 	default = {
-		name = usa90
-		text = "8On (+90)"
-		desc = "USA gets 90 extra oil spawned in Texas at startup."
+		name = usa80
+		text = "tOn (+80)"
+		desc = "The USA gets 80 extra (base) oil spawned in Texas at startup."
+	}
+}
+sov_oil_boost = {
+	name = "Soviet Oil Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_oil"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "The Soviet Union does not get any extra oil spawned in at startup."
 	}
 	option = {
-		name = usa120
-		text = "9On (+120)"
-		desc = "USA gets 120 extra oil spawned in Texas at startup."
+		name = sov16
+		text = "6On (+16)"
+		desc = "The Soviet Union gets 16 extra (base) oil spawned in the Volga-Urals at startup."
 	}
 	option = {
-		name = usa150
-		text = "tOn (+150)"
-		desc = "USA gets 150 extra oil spawned in Texas at startup."
+		name = sov32
+		text = "7On (+32)"
+		desc = "The Soviet Union gets 32 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	option = {
+		name = sov48
+		text = "8On (+48)"
+		desc = "The Soviet Union gets 48 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	option = {
+		name = sov64
+		text = "9On (+64)"
+		desc = "The Soviet Union gets 64 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	default = {
+		name = sov80
+		text = "tOn (+80)"
+		desc = "The Soviet Union gets 80 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+}
+sov_coal_boost = {
+	name = "Soviet Coal Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_coal"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "The Soviet Union does not get any extra coal spawned in at startup."
+	}
+	option = {
+		name = sov16
+		text = "6On (+16)"
+		desc = "The Soviet Union gets 16 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	option = {
+		name = sov32
+		text = "7On (+32)"
+		desc = "The Soviet Union gets 32 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	option = {
+		name = sov48
+		text = "8On (+48)"
+		desc = "The Soviet Union gets 48 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	option = {
+		name = sov64
+		text = "9On (+64)"
+		desc = "The Soviet Union gets 64 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	default = {
+		name = sov80
+		text = "tOn (+80)"
+		desc = "The Soviet Union gets 80 extra (base) coal spawned in Khakassia (in Siberia) at startup."
 	}
 }
 axis_fuel_spirit = {

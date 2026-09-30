@@ -4,10 +4,9 @@ state={
 	name="STATE_227"
 	manpower = 3767336
 
-	# HMM: moved inland to allow Soviets to last longer
-	#resources = {
-	#	coal = 82 # initial distribution
-	#}
+	resources = {
+		coal = 82 # initial distribution
+	}
 	
 	state_category = city
 

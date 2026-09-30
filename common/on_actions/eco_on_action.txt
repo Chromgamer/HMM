@@ -1727,20 +1727,20 @@ on_actions = {
 				}
 			}
 		}
-		# Free oil
+		# Free resources
 		effect = {
-			# USA free oil
+			# USA free oil (in Texas)
 			if = {
 				limit = {
 					has_game_rule = {
 						rule = usa_oil_boost
-						option = usa30
+						option = usa16
 					}
 				}
 				375 = { # Texas
 					add_resource = {
 						type = oil
-						amount = 30
+						amount = 16
 					}
 				}
 			}
@@ -1748,13 +1748,13 @@ on_actions = {
 				limit = {
 					has_game_rule = {
 						rule = usa_oil_boost
-						option = usa60
+						option = usa32
 					}
 				}
 				375 = { # Texas
 					add_resource = {
 						type = oil
-						amount = 60
+						amount = 32
 					}
 				}
 			}
@@ -1762,13 +1762,13 @@ on_actions = {
 				limit = {
 					has_game_rule = {
 						rule = usa_oil_boost
-						option = usa90
+						option = usa48
 					}
 				}
 				375 = { # Texas
 					add_resource = {
 						type = oil
-						amount = 90
+						amount = 48
 					}
 				}
 			}
@@ -1776,13 +1776,13 @@ on_actions = {
 				limit = {
 					has_game_rule = {
 						rule = usa_oil_boost
-						option = usa120
+						option = usa64
 					}
 				}
 				375 = { # Texas
 					add_resource = {
 						type = oil
-						amount = 120
+						amount = 64
 					}
 				}
 			}
@@ -1790,13 +1790,245 @@ on_actions = {
 				limit = {
 					has_game_rule = {
 						rule = usa_oil_boost
-						option = usa150
+						option = usa80
 					}
 				}
 				375 = { # Texas
 					add_resource = {
 						type = oil
-						amount = 150
+						amount = 80
+					}
+				}
+			}
+			# SOV free oil (in the four Volga-Ural states, also known as "little Baku" for their major oil production)
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_oil_boost
+						option = sov16
+					}
+				}
+				249 = { # Kazan
+					add_resource = {
+						type = oil
+						amount = 4
+					}
+				}
+				251 = { # Kuybyshev
+					add_resource = {
+						type = oil
+						amount = 4
+					}
+				}
+				651 = { # Ufa
+					add_resource = {
+						type = oil
+						amount = 4
+					}
+				}
+				652 = { # Orenburg
+					add_resource = {
+						type = oil
+						amount = 4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_oil_boost
+						option = sov32
+					}
+				}
+				249 = { # Kazan
+					add_resource = {
+						type = oil
+						amount = 8
+					}
+				}
+				251 = { # Kuybyshev
+					add_resource = {
+						type = oil
+						amount = 8
+					}
+				}
+				651 = { # Ufa
+					add_resource = {
+						type = oil
+						amount = 8
+					}
+				}
+				652 = { # Orenburg
+					add_resource = {
+						type = oil
+						amount = 8
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_oil_boost
+						option = sov48
+					}
+				}
+				249 = { # Kazan
+					add_resource = {
+						type = oil
+						amount = 12
+					}
+				}
+				251 = { # Kuybyshev
+					add_resource = {
+						type = oil
+						amount = 12
+					}
+				}
+				651 = { # Ufa
+					add_resource = {
+						type = oil
+						amount = 12
+					}
+				}
+				652 = { # Orenburg
+					add_resource = {
+						type = oil
+						amount = 12
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_oil_boost
+						option = sov64
+					}
+				}
+				249 = { # Kazan
+					add_resource = {
+						type = oil
+						amount = 16
+					}
+				}
+				251 = { # Kuybyshev
+					add_resource = {
+						type = oil
+						amount = 16
+					}
+				}
+				651 = { # Ufa
+					add_resource = {
+						type = oil
+						amount = 16
+					}
+				}
+				652 = { # Orenburg
+					add_resource = {
+						type = oil
+						amount = 16
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_oil_boost
+						option = sov80
+					}
+				}
+				249 = { # Kazan
+					add_resource = {
+						type = oil
+						amount = 20
+					}
+				}
+				251 = { # Kuybyshev
+					add_resource = {
+						type = oil
+						amount = 20
+					}
+				}
+				651 = { # Ufa
+					add_resource = {
+						type = oil
+						amount = 20
+					}
+				}
+				652 = { # Orenburg
+					add_resource = {
+						type = oil
+						amount = 20
+					}
+				}
+			}
+			# SOV free coal (in Khakassia, a huge coal deposit at the time)
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_coal_boost
+						option = sov16
+					}
+				}
+				569 = { # Khakassia
+					add_resource = {
+						type = coal
+						amount = 16
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_coal_boost
+						option = sov32
+					}
+				}
+				569 = { # Khakassia
+					add_resource = {
+						type = coal
+						amount = 32
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_coal_boost
+						option = sov48
+					}
+				}
+				569 = { # Khakassia
+					add_resource = {
+						type = coal
+						amount = 48
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_coal_boost
+						option = sov64
+					}
+				}
+				569 = { # Khakassia
+					add_resource = {
+						type = coal
+						amount = 64
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						rule = sov_coal_boost
+						option = sov80
+					}
+				}
+				569 = { # Khakassia
+					add_resource = {
+						type = coal
+						amount = 80
 					}
 				}
 			}
