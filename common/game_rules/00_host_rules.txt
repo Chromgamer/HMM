@@ -1186,6 +1186,41 @@ finland_can_kyosti_kallio_resign_early = {
 		desc = "As Finland's leader, Kyösti Kallio can resign early to let Risto Ryti (production cap guy) take over early."
 	}
 }
+usa_oil_boost = {
+	name = "USA Oil Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_oil"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "USA does not get any extra oil spawned in at startup."
+	}
+	option = {
+		name = usa30
+		text = "6On (+30)"
+		desc = "USA gets 30 extra oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa60
+		text = "7On (+60)"
+		desc = "USA gets 60 extra oil spawned in Texas at startup."
+	}
+	default = {
+		name = usa90
+		text = "8On (+90)"
+		desc = "USA gets 90 extra oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa120
+		text = "9On (+120)"
+		desc = "USA gets 120 extra oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa150
+		text = "tOn (+150)"
+		desc = "USA gets 150 extra oil spawned in Texas at startup."
+	}
+}
 axis_fuel_spirit = {
 	name = "Axis Fuel Spirit"
 	group = "HMM Rules"
