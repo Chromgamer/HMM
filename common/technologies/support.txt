@@ -185,6 +185,7 @@ technologies = {
 					original_tag = AFG
 					has_dlc = "Graveyard of Empires"
 					has_completed_focus = AFG_expand_quami_template
+					has_template = "Pashtun Levy"
 				}
 				add_units_to_division_template = {
 					template_name = "Pashtun Levy" 
@@ -221,8 +222,42 @@ technologies = {
 		}
 
 		enable_equipment_modules = {
-			dozer_blade
+			#dozer_blade # HMM: moved this to a separate technology so that we can gate it with rules
 			#flamethrower #MM: Moved to Special Project sp_land_flamethrower_tank
+		}
+
+		on_research_complete = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = dozer_blade_status
+							option = allowed
+						}
+						AND = {
+							has_game_rule = {
+								rule = dozer_blade_status
+								option = allies
+							}
+							allies = yes
+						}
+						AND = {
+							has_game_rule = {
+								rule = dozer_blade_status
+								option = axis
+							}
+							axis = yes
+						}
+					}
+				}
+				custom_effect_tooltip = HMM_unlock_dozer_blade
+				hidden_effect = {
+					set_technology = {
+						HMM_dozer_blade_tech = 1
+						popup = no
+					}
+				}
+			}
 		}
 
 		#enable_subunits = { #MM: Moved to Special Project sp_land_flamethrower_tank
@@ -318,7 +353,7 @@ technologies = {
 
 		light_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -326,7 +361,7 @@ technologies = {
 		}
 		medium_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -334,7 +369,7 @@ technologies = {
 		}
 		heavy_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -395,7 +430,7 @@ technologies = {
 		assault_engineer = {
 			breakthrough = 0.1
 			urban = {
-				attack = 0.15
+				attack = 0.1
 			}
 		}
 
@@ -409,7 +444,7 @@ technologies = {
 
 		light_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -417,7 +452,7 @@ technologies = {
 		}
 		medium_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -425,7 +460,7 @@ technologies = {
 		}
 		heavy_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -688,6 +723,7 @@ technologies = {
 					has_dlc = "Thunder at Our Gates"
 					tag = ENG
 					is_ai = yes
+					has_template = "Army Headquarters"
 				}
 				add_units_to_division_template = {
 					template_name = "Army Headquarters"
@@ -766,6 +802,7 @@ technologies = {
 					original_tag = AFG
 					has_dlc = "Graveyard of Empires"
 					has_completed_focus = AFG_expand_quami_template
+					has_template = "Pashtun Levy"
 				}
 				add_units_to_division_template = {
 					template_name = "Pashtun Levy" 
@@ -924,6 +961,7 @@ technologies = {
 					has_dlc = "Thunder at Our Gates"
 					tag = FRA
 					is_ai = yes
+					has_template = "Quartier General d'Armee"
 				}
 				add_units_to_division_template = {
 					template_name = "Quartier General d'Armee"
@@ -1145,6 +1183,15 @@ technologies = {
 
 	tech_field_hospital = {
 
+		allow_branch = {
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = none
+				}
+			}
+		}
+
 		enable_subunits = {
 			field_hospital
 		}
@@ -1206,6 +1253,7 @@ technologies = {
 					original_tag = AFG
 					has_dlc = "Graveyard of Empires"
 					has_completed_focus = AFG_expand_quami_template
+					has_template = "Pashtun Levy"
 				}
 				add_units_to_division_template = {
 					template_name = "Pashtun Levy" 
@@ -1218,8 +1266,19 @@ technologies = {
 	}
 
 	tech_field_hospital2 = {
-		allow = {
-			always = no
+		allow_branch = {
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = none
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = hospital_1
+				}
+			}
 		}
 		field_hospital = {
 			casualty_trickleback = 0.10
@@ -1276,6 +1335,27 @@ technologies = {
 	}
 
 	tech_field_hospital3 = {
+
+		allow_branch = {
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = none
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = hospital_1
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = hospital_2
+				}
+			}
+		}
 
 		field_hospital = {
 			casualty_trickleback = 0.1
@@ -1342,6 +1422,13 @@ technologies = {
 	}
 	tech_field_hospital4 = {
 
+		allow_branch = {
+			has_game_rule = {
+				rule = max_field_hospital_tech
+				option = hospital_4
+			}
+		}
+
 		field_hospital = {
 			casualty_trickleback = 0.1
 			experience_loss_factor = -0.10
@@ -1395,7 +1482,7 @@ technologies = {
 	SWI_saint_bernard_tech = { #Saint Bernard tech
 		allow = { always = no } #Only obtained through Focus
 		field_hospital = {
-			casualty_trickleback = 0.20 ## REMEMBER TO UPDATE THE TOOLTIP
+			casualty_trickleback = 0.10 ## REMEMBER TO UPDATE THE TOOLTIP
 			experience_loss_factor = -0.3
 		}
 	}
@@ -1425,6 +1512,7 @@ technologies = {
 					has_dlc = "Thunder at Our Gates"
 					tag = USA
 					is_ai = yes
+					has_template = "Field Army Headquarters"
 				}
 				add_units_to_division_template = {
 					template_name = "Field Army Headquarters"
@@ -1436,6 +1524,7 @@ technologies = {
 					has_dlc = "Thunder at Our Gates"
 					tag = SOV
 					is_ai = yes
+					has_template = "Shtab Armii"
 				}
 				add_units_to_division_template = {
 					template_name = "Shtab Armii"
@@ -1504,7 +1593,7 @@ technologies = {
 		}
 
 		helicopter_transport = {
-			supply_consumption_factor = -0.12
+			supply_consumption_factor = -0.15
 		}
 
 		path = {
@@ -1559,7 +1648,7 @@ technologies = {
 		}
 
 		helicopter_transport = {
-			supply_consumption_factor = -0.12
+			supply_consumption_factor = -0.15
 		}
 
 		helicopter_brigade = {
@@ -1903,7 +1992,9 @@ technologies = {
 		enable_equipments = {
 			railway_gun_equipment_1
 		}
-		always = no
+		allow_branch = {
+			railway_gun_allowed = yes
+		}
 		enable_equipment_modules = {
 			lc_hull_mounted_railway_gun #Module for Land Cruiser
 		}
@@ -2325,6 +2416,18 @@ technologies = {
 	sp_helicopter_med_evac_tech = {
 		allow_branch = {
 			 has_dlc = "Gotterdammerung"
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = none
+				}
+			}
+			NOT = {
+				has_game_rule = {
+					rule = max_field_hospital_tech
+					option = hospital_1_no_heli
+				}
+			}
 		}
 
 		allow = {

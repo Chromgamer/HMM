@@ -3989,10 +3989,11 @@ BUL_internal_factions = {
 					neutrality = BUL_neutrality_support_before_zveno_coup
 				}
 
-				random_country = {
+				212 = {
+					controller = {
+						if = {
 					limit = {
 						original_tag = BUL
-						controls_state = 212
 					}
 					set_cosmetic_tag = BUL_zveno_bulgaria
 					set_country_flag = BUL_zveno_bulgaria_flag
@@ -4126,6 +4127,8 @@ BUL_internal_factions = {
 							}
 							set_nationality = BUL
 						}
+					}
+				}
 					}
 				}
 			
@@ -4569,18 +4572,16 @@ BUL_macedonian_revolutionary_organizations = {
 			every_state = {
 				limit = {
 					BUL_is_macedonian_state = yes
-					is_controlled_by = ROOT
 				}
-				add_dynamic_modifier = { modifier = widespread_bulgarian_sentiment_02 }
-			}
-			every_state = {
-				limit = {
-					BUL_is_macedonian_state = yes
-					NOT = { is_controlled_by = ROOT }
+				if = {
+					limit = { is_controlled_by = ROOT }
+					add_dynamic_modifier = { modifier = widespread_bulgarian_sentiment_02 }
 				}
-				add_dynamic_modifier = { modifier = widespread_bulgarian_sentiment_01 }
-				hidden_effect = {
-					controller = { country_event = bftb_bulgaria_imro.2 }
+				else = {
+					add_dynamic_modifier = { modifier = widespread_bulgarian_sentiment_01 }
+					hidden_effect = {
+						controller = { country_event = bftb_bulgaria_imro.2 }
+					}
 				}
 			}
 
@@ -4606,9 +4607,8 @@ BUL_macedonian_revolutionary_organizations = {
 		available = {
 			NOT = { has_country_flag = BUL_macedonian_affairs_ongoing_flag }
 			has_war = yes
-			any_state = {
+			any_controlled_state = {
 				BUL_is_macedonian_state = yes
-				is_fully_controlled_by = ROOT
 			}
 		}
 
@@ -4627,7 +4627,7 @@ BUL_macedonian_revolutionary_organizations = {
 
 		cancel_trigger = {
 			NOT = {
-				any_state = {
+				any_controlled_state = {
 					BUL_is_macedonian_state = yes
 					is_fully_controlled_by = ROOT
 				}
@@ -4673,7 +4673,7 @@ BUL_macedonian_revolutionary_organizations = {
 						owner = ROOT
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						BUL_is_macedonian_state = yes
 						is_fully_controlled_by = BUL
@@ -4686,7 +4686,7 @@ BUL_macedonian_revolutionary_organizations = {
 				}
 			}
 			else = {
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						BUL_is_macedonian_state = yes
 						is_fully_controlled_by = ROOT
@@ -4703,23 +4703,25 @@ BUL_macedonian_revolutionary_organizations = {
 						division = "division_template = \"Makedonska Revolyutsionna Militsiya\" start_experience_factor = 0.4" 
 						owner = ROOT
 					}
-					random_state = {
+					ROOT = {
+					random_controlled_state = {
 						limit = {
 							BUL_is_macedonian_state = yes
 							is_fully_controlled_by = ROOT
-							NOT = { state = PREV }
+							NOT = { state = PREV.PREV }
 						}
 						create_unit = {
 							division = "division_template = \"Makedonska Revolyutsionna Militsiya\" start_experience_factor = 0.4" 
 							owner = ROOT
 						}
 					}
+					}
 				}
 			}
 			if = {
 				limit = {
 					NOT = {
-						any_state = {
+						any_controlled_state = {
 							BUL_is_macedonian_state = yes
 							is_fully_controlled_by = ROOT
 						}
@@ -4747,7 +4749,7 @@ BUL_macedonian_revolutionary_organizations = {
 
 		available = {
 			NOT = { has_country_flag = BUL_macedonian_affairs_ongoing_flag }
-			any_state = {
+			any_controlled_state = {
 				BUL_is_macedonian_state = yes
 				is_fully_controlled_by = ROOT
 			}
@@ -4768,7 +4770,7 @@ BUL_macedonian_revolutionary_organizations = {
 			hidden_effect = {
 				set_country_flag = { flag = BUL_support_imro_flag value = 4 }
 				set_variable = { BUL_total_mp_from_macedonian_states = 0 }
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						BUL_is_macedonian_state = yes
 						is_fully_controlled_by = ROOT
@@ -5194,6 +5196,7 @@ BUL_the_fatherland_front_dec_cat = {
 			random_unit_leader = {
 				limit = {
 					has_trait = trait_BUL_zveno_member
+					NOT = { has_trait = trait_BUL_ff_sympathizer }
 				}
 				add_unit_leader_trait = trait_BUL_ff_sympathizer
 			}
@@ -7136,7 +7139,7 @@ BUL_foreign_agreements = {
 
 			random_owned_controlled_state = {
 				limit = {
-					ROOT = { has_full_control_of_state = PREV }
+					is_fully_controlled_by = ROOT
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
@@ -7267,7 +7270,7 @@ BUL_foreign_agreements = {
 
 			random_owned_controlled_state = {
 				limit = {
-					ROOT = { has_full_control_of_state = PREV }
+					is_fully_controlled_by = ROOT
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
@@ -7398,7 +7401,7 @@ BUL_foreign_agreements = {
 
 			random_owned_controlled_state = {
 				limit = {
-					ROOT = { has_full_control_of_state = PREV }
+					is_fully_controlled_by = ROOT
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
@@ -8020,9 +8023,9 @@ BUL_negotiate_claims_in_the_balkans = {
 				BUL_is_balkan_state = yes
 				NOT = { is_controlled_by = BUL }
 				controller = {
+					has_full_control_of_state = FROM
 					PREV = {
 						NOT = { is_core_of = PREV }
-						is_fully_controlled_by = PREV
 					}
 					is_in_faction_with = ROOT
 				}
@@ -8075,9 +8078,9 @@ BUL_negotiate_claims_in_the_balkans = {
 					is_fully_controlled_by = BUL
 				}
 				controller = {
+					has_full_control_of_state = FROM
 					PREV = {
 						NOT = { is_core_of = PREV }
-						is_fully_controlled_by = PREV
 					}
 					is_in_faction_with = ROOT
 				}
@@ -8284,8 +8287,7 @@ BUL_align_bulgaria = {
 				is_justifying_wargoal_against = BUL
 				has_military_access_to = BUL
 			}
-			any_country = {
-				has_war_with = ROOT
+			any_enemy_country = {
 				is_neighbor_of = BUL				
 			}
 			is_subject = no
@@ -8983,7 +8985,78 @@ BUL_the_balkan_federation_dream = {
 		}
 	}
 
-	
+	BUL_balkan_federation_demand_turkish_territory = {
+
+		icon = GFX_decision_generic_military
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 0.01
+				strength_ratio = {
+					tag = TUR
+					ratio > 1.5
+				}
+			}
+			modifier = {
+				factor = 5
+				strength_ratio = {
+					tag = TUR
+					ratio > 2
+				}
+			}
+			modifier = {
+				factor = 10
+				strength_ratio = {
+					tag = TUR
+					ratio > 3
+				}
+			}
+			modifier = {
+				factor = 100
+				TUR = { is_in_faction = no }
+			}
+		}
+
+		allowed = {
+			original_tag = BUL
+		}
+
+		available = {
+			NOT = { has_war_with = FROM }
+			strength_ratio = {
+				tag = TUR
+				ratio > 1
+			}
+		}
+		
+		visible = {
+			always = no
+			country_exists = TUR
+			TUR = {
+				OR = {
+					controls_state = 341
+					controls_state = 797
+				}	
+			}
+			NOT = { is_in_faction_with = TUR }
+			has_government = communism
+			has_completed_focus = BUL_the_unification_of_the_balkans
+		}
+
+		cancel_if_not_visible = yes
+
+		cost = 75
+		
+		complete_effect = {
+			TUR = {
+				country_event = { 
+					id = bftb_bulgaria_balkan_federation.16
+					hours = 1
+				}
+			}
+		}
+	}
 }
 
 

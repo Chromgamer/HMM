@@ -203,7 +203,7 @@ characters = {
 			}
 		}
 		field_marshal = {
-			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster }
+			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster pre_grind }
 			skill = 6
 			attack_skill = 5
 			defense_skill = 5
@@ -226,7 +226,7 @@ characters = {
 				}
 			}
 			corps_commander = {
-			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster }
+			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster pre_grind }
 			skill = 6
 			attack_skill = 5
 			defense_skill = 5
@@ -267,7 +267,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster }
+			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster pre_grind }
 			skill = 6
 			attack_skill = 5
 			defense_skill = 5
@@ -306,8 +306,8 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { old_guard panzer_leader infantry_leader organizer trickster commando}
-			skill = 8
+			traits = { old_guard panzer_leader infantry_leader organizer trickster pre_grind }
+			skill = 6
 			attack_skill = 5
 			defense_skill = 5
 			planning_skill = 3
@@ -330,7 +330,7 @@ characters = {
 				}
 			}
 			corps_commander = {
-				traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster }
+				traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster pre_grind }
 				skill = 6
 				attack_skill = 5
 				defense_skill = 5
@@ -397,7 +397,7 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster }
+			traits = { trait_reckless harsh_leader trait_BUL_zveno_member organizer panzer_leader cavalry_leader infantry_leader commando skilled_staffer trickster pre_grind }
 			skill = 6
 			attack_skill = 5
 			defense_skill = 5
@@ -650,6 +650,12 @@ characters = {
 					NOT = {
 						has_government = fascism
 					}
+					NOT = { # HMM: added for extra clarity that he will retire
+						AND = {
+							is_in_faction_with = GER
+							GER = { has_government = fascism }
+						}
+					}
 				}
 				traits = {
 					army_chief_drill_2
@@ -792,6 +798,12 @@ characters = {
 				available = {
 					NOT = {
 						has_government = communism
+					}
+					NOT = { # HMM: added for extra clarity that he will retire
+						AND = {
+							is_in_faction_with = GER
+							GER = { has_government = fascism }
+						}
 					}
 				}
 				traits = {

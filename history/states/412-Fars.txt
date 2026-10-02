@@ -4,12 +4,14 @@ state = {
 	state_category = wasteland
 	manpower = 1
 
-	
+	resources = {
+	}
 
 	history = {
 
 		owner = WST
 		add_core_of = WST
+		add_core_of = PER
 		buildings = {
 			infrastructure = 1
 			7982 = {

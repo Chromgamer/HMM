@@ -1263,12 +1263,21 @@ operations = {
 							owns_state = 453
 						}
 					}
-					random_country = {
-						limit = {
-							owns_state = 446
-							owns_state = 453
-						}
+					random_list = {
+						50 = {
+							446 = {
+								owner = {
 						country_event = { id = generic.12 days = 1 }
+								}
+							}
+						}
+						50 = {
+							453 = {
+								owner = {
+									country_event = { id = generic.12 days = 1 }
+								}
+							}
+						}
 					}
 				}
 			}
@@ -1382,11 +1391,10 @@ operations = {
 							owns_state = 685
 						}
 					}
-					random_country = {
-						limit = {
-							owns_state = 685
-						}
+					685 = {
+					owner = {
 						country_event = { id = generic.13 days = 1 }
+					}
 					}
 				}
 			}
@@ -2118,7 +2126,7 @@ economy_decisions = {
 		}
 
         complete_effect = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
             		free_building_slots = {
@@ -2199,7 +2207,7 @@ economy_decisions = {
 						infrastructure > 4
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_fully_controlled_by = ROOT
             			free_building_slots = {
@@ -2227,7 +2235,7 @@ economy_decisions = {
 						infrastructure > 2
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_fully_controlled_by = ROOT
             			free_building_slots = {
@@ -2243,7 +2251,7 @@ economy_decisions = {
 				}
 			}
 			else = {
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						is_fully_controlled_by = ROOT
             			free_building_slots = {
@@ -2252,7 +2260,6 @@ economy_decisions = {
 							include_locked = yes
 						}
 						NOT = { has_state_flag = war_building_slot_flag }
-						infrastructure > 4
 					}
 					add_extra_state_shared_building_slots = 1
 					set_state_flag = war_building_slot_flag
@@ -3029,7 +3036,7 @@ foreign_support = {
 					}
 				}
 				AND = {
-					601 = { #Xikang
+					747 = { #Dali
 						has_state_flag = CHI_needed_for_the_hump
 						OR = {
 							is_controlled_by = ROOT
@@ -3059,7 +3066,7 @@ foreign_support = {
 					}
 				}
 				AND = {
-					601 = { #Xikang
+					747 = { #Dali 
 						has_state_flag = CHI_needed_for_the_hump
 						OR = {
 							is_controlled_by = ROOT

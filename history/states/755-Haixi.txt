@@ -11,8 +11,9 @@ state={
 	history = {
 
 		owner = CHI
-		add_core_of = WST
+		add_core_of = XSM
 		add_core_of = CHI
+		add_core_of = PRC
 
 		victory_points = {
 			10750 1 # Dulan  

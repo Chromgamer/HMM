@@ -184,7 +184,36 @@ faction_goal_north_subjugated = {
 		FROM = { has_completed_focus = CHI_tour_the_north }
 	}
 	completed = {
-
+		NXM = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		SHX = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		GSM = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		HBC = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		XIC = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		SND = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
 
 	}
 	complete_effect = {
@@ -419,6 +448,28 @@ faction_goal_west_subjugated = {
 	available = {
 		FROM = { has_completed_focus = CHI_tour_the_west }
 	}
+	completed = {
+		XSM = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		KHM = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		SIK = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		SIC = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+	}
 	complete_effect = {
 		add_faction_power_projection = 50
 		every_collection_element = {
@@ -467,7 +518,21 @@ faction_goal_south_subjugated = {
 		FROM = { has_completed_focus = CHI_tour_the_south }
 	}
 	completed = {
-
+		GDC = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		GXC = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
+		YUN = {
+			all_core_state = {
+				is_owned_by = ROOT
+			}
+		}
 	}
 	complete_effect = {
 		add_faction_power_projection = 50
@@ -608,11 +673,12 @@ faction_goal_production_quotas = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = INFLUENCE_ABOVE_30_PERCENT
 		every_faction_member = {
-			limit = { faction_influence_ratio > 0.3}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_production_quotas } }
-				add_political_power = 75
+			visible_when_empty = yes
+			limit = {
+				faction_influence_ratio > 0.3
+				NOT = { has_completed_goal = faction_goal_production_quotas }
 			}
+				add_political_power = 75
 		}
 	}
 	ai_will_do = {
@@ -657,10 +723,9 @@ faction_goal_stall_the_fascist_threat = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_stall_the_fascist_threat } }
 				army_experience = 50
-			}
 		}
 	}
 	ai_will_do = {
@@ -755,73 +820,45 @@ faction_goal_spy_master = {
 		custom_effect_tooltip = THE_SPY_MASTER
 		add_faction_initiative = 1
 		custom_effect_tooltip = generic_skip_one_line_tt
+		# Note: this effect is bugged in vanilla and gives too many upgrades (because the designer for it didn't think things through), but we want to keep the buggy behavior in HMM to stay consistent
 		every_faction_member = {
+			visible_when_empty = yes
+			limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
+			if = {
 			limit = {
 				has_intelligence_agency = no
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
 				create_intelligence_agency = yes
 			}
-		}
-		every_faction_member = {
+			if = {
 			limit = {
-				has_intelligence_agency = yes
 				NOT = { has_done_agency_upgrade  = upgrade_form_department }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
 				upgrade_intelligence_agency = upgrade_form_department
 			}
-		}
-		every_faction_member = {
+			if = {
 			limit = {
-				has_intelligence_agency = yes
-				has_done_agency_upgrade  = upgrade_form_department
 				NOT = { has_done_agency_upgrade = upgrade_crypto_strength }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
 				upgrade_intelligence_agency = upgrade_crypto_strength
 			}
-		}
-		every_faction_member = {
+			if = {
 			limit = {
-				has_intelligence_agency = yes
-				has_done_agency_upgrade = upgrade_crypto_strength
 				has_tech = mechanical_computing
 				NOT = { has_done_agency_upgrade = upgrade_crypto_strength_2 }
 			}
 			add_faction_initiative = 1
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
 				upgrade_intelligence_agency = upgrade_crypto_strength_2
 			}
-		}
-		every_faction_member = {
+			else_if = {
 			limit = {
-				has_intelligence_agency = yes
 				NOT = { agency_upgrade_number > 30 }
-				OR = {
-					has_done_agency_upgrade = upgrade_crypto_strength_2
-					NOT = { has_tech = mechanical_computing }
-				}
 			}
 			add_faction_initiative = 1
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
 				gain_random_agency_upgrade = yes
 			}
-		}
-		every_faction_member = { # Fallback in case someone completed everything
-			visible_when_empty = no
-			limit = {
-				has_intelligence_agency = yes
-				agency_upgrade_number > 30
-			}
+			else = {
 			add_faction_initiative = 1
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_spy_master } }
 				add_political_power = 100
 			}
 		}
@@ -866,11 +903,9 @@ faction_goal_convoy_sufficiency = {
 				    size > 199
 				    type = convoy
 				}
+				NOT = { has_completed_goal = faction_goal_convoy_sufficiency }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_convoy_sufficiency } }
 				navy_experience = 50
-			}
 		}
 	}
 	ai_will_do = {
@@ -1031,24 +1066,41 @@ faction_goal_ensure_military_r_d = {
 			OWNER = { add_faction_influence_ratio = 0.05 }
 		}
 		every_faction_member = {
-			if = {
-				limit = {
-					any_scientist = {
+			visible_when_empty = yes
+			limit = {
+				any_active_scientist = {
+					OR = {
 						has_scientist_level = {
 							level > 0
 							specialization = specialization_land
 						}
-						is_active_scientist = yes
+						has_scientist_level = {
+							level > 0
+							specialization = specialization_naval
+						}
+						has_scientist_level = {
+							level > 0
+							specialization = specialization_air
+						}
 					}
 				}
-				every_scientist = {
+			}
+			if = {
+				limit = {
+					any_active_scientist = {
+						has_scientist_level = {
+							level > 0
+							specialization = specialization_land
+						}
+					}
+				}
+				every_active_scientist = {
 					visible_when_empty = yes
 					limit = {
 						has_scientist_level = {
 							level > 0
 							specialization = specialization_land
 						}
-						is_active_scientist = yes
 					}
 					add_scientist_xp = {
 						experience = constant:sp_scientist_xp_gain.very_high
@@ -1058,22 +1110,20 @@ faction_goal_ensure_military_r_d = {
 			}
 			if = {
 				limit = {
-					any_scientist = {
+					any_active_scientist = {
 						has_scientist_level = {
 							level > 0
 							specialization = specialization_naval
 						}
-						is_active_scientist = yes
 					}
 				}
-				every_scientist = {
+				every_active_scientist = {
 					visible_when_empty = yes
 					limit = {
 						has_scientist_level = {
 							level > 0
 							specialization = specialization_naval
 						}
-						is_active_scientist = yes
 					}
 					add_scientist_xp = {
 						experience = constant:sp_scientist_xp_gain.very_high
@@ -1083,22 +1133,20 @@ faction_goal_ensure_military_r_d = {
 			}
 			if = {
 				limit = {
-					any_scientist = {
+					any_active_scientist = {
 						has_scientist_level = {
 							level > 0
 							specialization = specialization_air
 						}
-						is_active_scientist = yes
 					}
 				}
-				every_scientist = {
+				every_active_scientist = {
 					visible_when_empty = yes
 					limit = {
 						has_scientist_level = {
 							level > 0
 							specialization = specialization_air
 						}
-						is_active_scientist = yes
 					}
 					add_scientist_xp = {
 						experience = constant:sp_scientist_xp_gain.very_high
@@ -1167,10 +1215,9 @@ faction_goal_military_infrastructure = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_military_infrastructure } }
 				army_experience = 50
-			}
 		}
 	}
 	ai_will_do = {
@@ -1188,6 +1235,12 @@ faction_goal_a_great_fortress = {
 	category = short_term
 	group = FOCUS_FILTER_CONSOLIDATION
 	visible = {
+		NOT = {
+			has_game_rule = {
+				rule = deterrence_enabled
+				option = no
+			}
+		}
 	}
 	available = {
 		collection_size = {
@@ -1229,16 +1282,15 @@ faction_goal_a_great_fortress = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
+			visible_when_empty = yes
 			limit = {
 				NOT = { has_idea = deterrence }
+				NOT = { has_completed_goal = faction_goal_a_great_fortress }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_a_great_fortress } }
 				add_timed_idea = {
 					idea = deterrence
 					days = 360
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1289,11 +1341,10 @@ faction_goal_preemptive_strike_on_fascism = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_preemptive_strike_on_fascism } }
 				army_experience = 25
 				add_war_support = 0.05
-			}
 		}
 	}
 	ai_will_do = {
@@ -1345,10 +1396,9 @@ faction_goal_war_on_communism = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_war_on_communism } }
 				add_war_support = 0.05
-			}
 		}
 	}
 	ai_will_do = {
@@ -1397,10 +1447,9 @@ faction_goal_war_on_democracy = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_war_on_democracy } }
 				add_war_support = 0.05
-			}
 		}
 	}
 	ai_will_do = {
@@ -1411,6 +1460,104 @@ faction_goal_war_on_democracy = {
 
 ### Units
 
+faction_goal_an_armored_fist = {
+	name = an_armored_fist_goal_name
+	description = an_armored_fist_goal_desc
+	category = short_term
+	group = FOCUS_FILTER_ARMY_XP
+	available = {
+		always = no
+	}
+	visible = {
+		always = no
+	}
+	completed = {
+		count_in_collection = {
+			collection = {
+			    input = game:scope
+			    operators = { faction_members }
+			    name = FACTION
+			}
+			unit = armor
+			equipment_ratio = 0.9
+			size > 49
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			visible_when_empty = yes
+				limit = { NOT = { has_completed_goal = faction_goal_an_armored_fist } }
+				army_experience = 50
+				random_unit_leader = {
+					tooltip = ONE_PANZER_GENERAL
+					visible_when_empty = yes
+					limit = {
+						OR = {
+							has_trait = armor_officer
+							has_trait = panzer_leader
+							has_trait = panzer_expert
+						}
+					}
+					gain_xp = 400
+					add_attack = 1
+				}
+		}
+	}
+	ai_will_do = {
+		base = 1
+	}
+}
+
+faction_goal_an_infantry_army = {
+	name = an_infantry_army_goal_name
+	description = an_infantry_army_goal_desc
+	category = short_term
+	group = FOCUS_FILTER_ARMY_XP
+	available = {
+		always = no
+	}
+	visible = {
+		always = no
+	}
+	completed = {
+		count_in_collection = {
+		    collection = {
+		        input = game:scope
+		        operators = { faction_members }
+		        name = FACTION
+		    }
+		   unit = infantry
+		   size > 249
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			visible_when_empty = yes
+				limit = { NOT = { has_completed_goal = faction_goal_an_infantry_army } }
+				army_experience = 50
+				random_unit_leader = {
+					tooltip = ONE_INFANTRY_GENERAL
+					visible_when_empty = yes
+					limit = {
+						OR = {
+							has_trait = infantry_officer
+							has_trait = infantry_leader
+							has_trait = infantry_expert
+						}
+					}
+					gain_xp = 400
+					add_logistics = 1
+				}
+		}
+	}
+	ai_will_do = {
+		base = 1
+	}
+}
 
 ### Strategic Resources
 
@@ -1463,15 +1610,25 @@ faction_goal_develop_mexican_oil = {
 		add_faction_power_projection = 100
 		if = {
 			limit = { NOT = { has_completed_goal = faction_goal_develop_mexican_oil } }
-			every_state = {
-				limit = {
-					OR = {
-						state = 480
-						state = 479
-						state = 477
-						state = 476
-					}
+			480 = {
+				add_resource = {
+				    type = oil
+				    amount = 4
 				}
+			}
+			479 = {
+				add_resource = {
+				    type = oil
+				    amount = 4
+				}
+			}
+			477 = {
+				add_resource = {
+				    type = oil
+				    amount = 4
+				}
+			}
+			476 = {
 				add_resource = {
 				    type = oil
 				    amount = 4
@@ -1606,13 +1763,13 @@ faction_goal_develop_venezuelan_oil = {
 		add_faction_power_projection = 100
 		if = {
 			limit = { NOT = { has_completed_goal = faction_goal_develop_venezuelan_oil } }
-			every_state = {
-				limit = {
-					OR = {
-						state = 489
-						state = 307
-					}
+			489 = {
+				add_resource = {
+				    type = oil
+				    amount = 8
 				}
+			}
+			307 = {
 				add_resource = {
 				    type = oil
 				    amount = 8
@@ -1947,7 +2104,10 @@ faction_goal_develop_ploiesti_oil_fields = {
 	category = short_term
 	group = resources_to_market_icon
 	allowed = {
-		
+		has_game_rule = {
+			rule = axis_fuel_spirit
+			option = off
+		}
 	}
 	visible = {
 		46 = { is_controlled_by_ROOT_or_ally = yes }
@@ -2044,13 +2204,13 @@ faction_goal_develop_baku_oil_fields = {
 		add_faction_power_projection = 100
 		if = {
 			limit = { NOT = { has_completed_goal = faction_goal_develop_baku_oil_fields } }
-			every_state = {
-				limit = {
-					OR = {
-						state = 232
-						state = 821
-					}
+			232 = {
+				add_resource = {
+				    type = oil
+				    amount = 4
 				}
+			}
+			821 = {
 				add_resource = {
 				    type = oil
 				    amount = 4
@@ -3169,24 +3329,28 @@ faction_goal_expand_bahamas_bases = {
 		693 = { is_controlled_by_ROOT_or_ally = yes }
 	}
 	completed = {
-		any_state = {
-			OR = {
-				state = 690
-				state = 693
-			}
-			air_base > 1
+		OR = {
+			690 = { air_base > 1 }
+			693 = { air_base > 1 }
 		}
-		any_state = {
-			OR = {
-				state = 690
-				state = 693
-			}
-			any_province_building_level = {
-				province = {
-					all_provinces = yes
+		OR = {
+			690 = {
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = naval_base
+					level > 2
 				}
-				building = naval_base
-				level > 2
+			}
+			693 = {
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+					}
+					building = naval_base
+					level > 2
+				}
 			}
 		}
 	}

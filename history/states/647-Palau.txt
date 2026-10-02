@@ -12,7 +12,8 @@ state = {
 	history = {
 
 		owner = JAP
-		add_core_of = WST
+		add_core_of = FSM
+		add_core_of = PLU
 
 		buildings = {
 

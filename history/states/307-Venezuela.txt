@@ -6,7 +6,8 @@ state={
 	state_category = wasteland
 	
 	manpower = 1
-	
+	resources={
+	}
 
 	history={
 		owner = WST
@@ -23,6 +24,7 @@ state={
 			}
 		}
 		add_core_of = WST
+		add_core_of = VEN
 	}
 
 	provinces={

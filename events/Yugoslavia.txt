@@ -146,10 +146,9 @@ country_event = {
 		else = {
 			start_civil_war = { ideology = democratic size = 0.6 capital = 107 states = { 108 803 802 106 105 } }
 		}
-		random_country = {
+		random_other_country = {
 			limit = {
 				original_tag = YUG
-				NOT = { tag = ROOT }
 				has_government = democratic
 			}
 			add_ideas = { king_peter_1 }
@@ -167,10 +166,7 @@ country_event = {
 				}
 				puppet = HRZ
 			}
-			every_other_country = {
-				limit = {
-					is_subject_of = PREV
-				}
+			every_subject_country = {
 				set_country_flag = yugoslav_puppet_flag
 				add_to_war = { 
 					targeted_alliance = PREV 
@@ -305,9 +301,9 @@ country_event = {
 	option = { # Surrender Slovenia
 		name = yugoslavia.5.a
 		ai_chance = {
-			factor = 100
+			factor = 90
 			modifier = { # Decrease chance YUG resists if AUS isn't taken first
-				AUS = { exists = yes }
+				country_exists = AUS
 				factor = 0.5
 			}
 			modifier = { # If they stand a chance to hold the line they will fight
@@ -330,6 +326,21 @@ country_event = {
 			}
 		}
 		GER = { country_event = germany.94 } #Germany gets Slovenia
+	}
+	option = { # Refuse anyway
+		name = yugoslavia.5.b
+		trigger = { always = no }
+		ai_chance = { factor = 10 }
+		GER = {
+			country_event = germany.95 #Germany gains wargoal
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state_focus
+					target = YUG
+					generator = { 102 853 }
+				}
+			}
+		}
 	}
 }
 
@@ -410,9 +421,9 @@ country_event = {
 
 			add_political_power = -75		
 			add_named_threat = { threat = 5 name = GER_fate_of_yugoslavia }
-			every_country = {
+			YUG = {
+			every_subject_country = {
 				limit = {
-					is_subject_of = YUG
 					OR = {
 						original_tag = BOS
 						original_tag = HRZ
@@ -426,6 +437,7 @@ country_event = {
 					}
 				}
 				GER = { annex_country = { target = PREV transfer_troops = no } }
+			}
 			}
 			annex_country = { target = YUG transfer_troops = no }
 

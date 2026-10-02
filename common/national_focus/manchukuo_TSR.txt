@@ -165,11 +165,12 @@
 		}
 
 		available = {
-			NOT = { has_idea = MAN_banditry }
-			NOT = { has_war_with = JAP }
-			JAP = {
-				exists = yes
+			if = { # HMM: Need this because the AI will select a focus before it clicks the decisions to get rid of banditry
+				limit = { is_ai = no }
+				NOT = { has_idea = MAN_banditry }
 			}
+			NOT = { has_war_with = JAP }
+			country_exists = JAP
 			OR = {
 				is_ally_with = JAP
 				JAP = {
@@ -225,7 +226,7 @@
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = { is_fully_controlled_by = ROOT }
 				add_manpower = 25417
 				add_extra_state_shared_building_slots = 1
@@ -237,7 +238,7 @@
 				set_state_flag = MAN_invite_japanese_settlers_2IC
 			}
 
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = { is_fully_controlled_by = ROOT }
 				add_manpower = 33846
 				add_extra_state_shared_building_slots = 1
@@ -283,10 +284,9 @@
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
-			every_state = {
+			every_core_state = {
 				limit = {
 					is_fully_controlled_by = ROOT
-					is_core_of = ROOT
 				}
 				add_extra_state_shared_building_slots = 1
 			}
@@ -344,10 +344,8 @@
 		available = {
 			OR = {
 				num_of_factories > 50
-				all_state = {
-					OR = {
-						NOT = { is_core_of = CHI }
-						NOT = { is_core_of = PRC }
+				CHI = {
+					all_core_state = {
 						OR = {
 							is_controlled_by = ROOT
 							CONTROLLER = { is_in_faction_with = ROOT }
@@ -441,7 +439,7 @@
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		complete_tooltip = {
-			random_state = {
+			random_owned_controlled_state = {
 				limit = {
 					has_state_flag = MAN_expand_the_textile_industry_IC
 				}
@@ -1449,7 +1447,7 @@
 		cost = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 0 #1
 		}
 
 		available = {
@@ -1743,6 +1741,7 @@
 		bypass = {
 
 		}
+		allow_branch = { always = no }
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1896,9 +1895,10 @@
 
 		search_filters = { FOCUS_FILTER_ANNEXATION FOCUS_FILTER_POLITICAL }
 		completion_reward = {
-			every_state = {
-				limit = { is_core_of = CHI }
+			CHI = {
+			every_core_state = {
 				add_core_of = ROOT
+			}
 			}
 		}
 	}
@@ -1985,9 +1985,6 @@
 					character = MAN_aisin_gioro_puyi
 				}
 			}
-		}
-		allow_branch = { 
-			always = no
 		}
 
 		bypass = {
@@ -2207,15 +2204,14 @@
 		ai_will_do = {
 			factor = 4
 		}
-		allow_branch = { 
-			always = no
-		}
+
 		available = {
 
 		}
 
 		bypass = {
 		}
+		allow_branch = { always = no }
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -2430,7 +2426,7 @@
 					}
 				}
 				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = PREV } }
+					limit = { is_fully_controlled_by = ROOT }
 					prioritize = { 328 }
 					create_unit = {
 						division = "name = \"1. Imperial Guards Division\" division_template = \"Imperial Guards Division\" start_experience_factor = 1.0" 
@@ -2748,7 +2744,7 @@
 					}
 				}
 				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = PREV } }
+					limit = { is_fully_controlled_by = ROOT }
 					prioritize = { 328 }
 					create_unit = {
 						division = "name = \"People's Volunteers Division\" division_template = \"People's Volunteers Division\" start_experience_factor = 1.0" 
@@ -2946,7 +2942,7 @@
 					}
 				}
 				random_owned_controlled_state = {
-					limit = { ROOT = { has_full_control_of_state = PREV } }
+					limit = { is_fully_controlled_by = ROOT }
 					prioritize = { 328 }
 					create_unit = {
 						division = "name = \"Northeast Counter-Japanese Division\" division_template = \"Northeast Counter-Japanese Division\" start_experience_factor = 0.6" 
@@ -3105,9 +3101,8 @@
 				limit = {
 					has_war_with = event_target:WTT_current_china_leader
 				}
-				every_country = {
+				every_enemy_country = {
 					limit = {
-						has_war_with = MAN
 						is_in_faction_with = event_target:WTT_current_china_leader
 					}
 					white_peace = {
@@ -4535,9 +4530,10 @@
 			custom_effect_tooltip = generic_skip_one_line_tt
 
 			set_rule = { can_create_factions = yes }
-			every_state = {
-				limit = { is_core_of = CHI }
+			CHI = {
+			every_core_state = {
 				add_core_of = ROOT
+			}
 			}
 
 		}
@@ -4736,18 +4732,10 @@
 			1045 = { is_fully_controlled_by = ROOT }
 			1044 = { is_fully_controlled_by = ROOT }
 			756 = { is_fully_controlled_by = ROOT }
-			XSM = {
-				exists = no
-			}
-			GSM = {
-				exists = no
-			}
-			NXM = {
-				exists = no
-			}
-			KHM = {
-				exists = no
-			}
+			NOT = { country_exists = XSM }
+			NOT = { country_exists = GSM }
+			NOT = { country_exists = NXM }
+			NOT = { country_exists = KHM }
 		}
 
 		bypass = {
@@ -5015,16 +5003,14 @@
 		}
 
 		available = {
-			all_state = { 
+			all_core_state = {
 				OR = {
-					NOT = { is_core_of = ROOT }
 					state = 729
 					state = 326
 					state = 728
 					state = 524
 					is_controlled_by = ROOT
 				}
-				
 			}
 		}
 

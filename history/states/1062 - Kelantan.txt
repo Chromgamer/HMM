@@ -14,7 +14,7 @@ state = {
 	history = {
 
 		owner = ENG
-		add_core_of = WST
+		add_core_of = MAL
 
 		victory_points = {
 			7329 1 # Kota Bharu

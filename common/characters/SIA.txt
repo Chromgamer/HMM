@@ -1373,7 +1373,7 @@ characters={
 				}
 				cost = 200
 				ai_will_do = {
-					factor = 1.000
+					factor = 1000.000 # Prioritize to help get Partial early enough
 				}
 		}
 		name=SIA_mangkorn_phromyothi
@@ -1922,7 +1922,7 @@ characters={
 					silent_workhorse 
 				}
 		}
-		name="Kuang Abhayavongsa"
+			name=SIA_kuang_abhayavongsa
 		portraits={
 			army={
 				large=GFX_portrait_SIA_khuang_aphaiwong

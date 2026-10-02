@@ -997,6 +997,17 @@ country_event = {
 			country_event = { id = wtt_japan.110 hours = 6 }
 		}
 	}
+
+	option = {
+		name = wtt_japan.109.b #refuse
+		ai_chance = {
+			base = 0
+		}
+		trigger = { always = no }
+
+		event_target:JAP_initiator = { country_event = { id = wtt_japan.112 hours = 6 } }
+		event_target:ITA_fascism = { country_event = { id = wtt_japan.112 hours = 6 } }
+	}
 }
 
  # Event for Italy to accept Tripartite Pact
@@ -1049,6 +1060,24 @@ country_event = {
 		}
 		event_target:JAP_initiator = { country_event = { id = wtt_japan.111 hours = 6 } }
 		event_target:GER_fascism = { country_event = { id = wtt_japan.113 hours = 6 } }
+	}
+
+	option = {
+		name = wtt_japan.109.b ##refuse
+		trigger = { always = no }
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 0
+				OR = {
+					ITA_is_historical_ai = yes
+					ITA_is_alt_fascist_balbo_ai = yes
+				}
+			}
+		}
+		
+		event_target:GER_fascism = { country_event = { id = wtt_japan.112 hours = 6 } }
+		event_target:JAP_initiator = { country_event = { id = wtt_japan.112 hours = 6 } }
 	}
 }
 
@@ -1648,7 +1677,7 @@ country_event = {
 						is_faction_leader = yes
 					}
 				}
-				every_country = {
+				every_enemy_country = {
 					limit = {
 						OR = {
 							AND = {
@@ -1657,7 +1686,6 @@ country_event = {
 							}
 							is_literally_china = yes
 						}
-						has_war_with = ROOT
 						is_in_faction_with = event_target:WTT_current_china_leader
 					}
 					every_controlled_state = {
@@ -1675,17 +1703,16 @@ country_event = {
 						}
 					}
 				}
-				every_other_country = {
+				every_enemy_country = {
 					limit = {
 						is_literally_china = yes
-						has_war_with = ROOT
 						is_in_faction_with = event_target:WTT_current_china_leader
 					}
 					white_peace = ROOT
 				}
 			}
 			else = {
-				every_other_country = {
+				every_enemy_country = {
 					limit = {
 						OR = {
 							AND = {
@@ -1694,7 +1721,6 @@ country_event = {
 							}
 							is_literally_china = yes
 						}
-						has_war_with = ROOT
 					}
 					every_controlled_state = {
 						limit = {
@@ -1711,7 +1737,7 @@ country_event = {
 						}
 					}
 				}
-				every_other_country = {
+				every_enemy_country = {
 					limit = {
 						OR = {
 							AND = {
@@ -1720,7 +1746,6 @@ country_event = {
 							}
 							is_literally_china = yes
 						}
-						has_war_with = ROOT
 					}
 					white_peace = ROOT
 					hidden_effect = {
@@ -1826,12 +1851,13 @@ country_event = {
 					end_civil_wars = yes
 				}	
 			}
-			every_other_country = {
+			KOR = {
+			every_enemy_country = {
 				limit = {
 					is_literally_china = yes
-					has_war_with = KOR
 				}
 				white_peace = KOR
+			}
 			}
 			MAN = {
 				puppet = KOR
@@ -1865,7 +1891,8 @@ country_event = {
 					end_civil_wars = yes
 				}	
 			}
-			every_other_country = {
+			KOR = {
+			every_enemy_country = {
 				limit = {
 					OR = {
 						AND = {
@@ -1874,11 +1901,9 @@ country_event = {
 						}
 						is_literally_china = yes
 					}
-					has_war_with = KOR
 				}
 				white_peace = KOR
 			}
-			KOR = {	
 				set_politics = {
 					ruling_party = democratic
 					elections_allowed = yes
@@ -1918,7 +1943,7 @@ country_event = {
 					is_faction_leader = yes
 				}
 			}
-			every_country = {
+			every_enemy_country = {
 				limit = {
 					OR = {
 						AND = {
@@ -1927,7 +1952,6 @@ country_event = {
 						}
 						is_literally_china = yes
 					}
-					has_war_with = ROOT
 					is_in_faction_with = event_target:WTT_current_china_leader
 				}
 				every_controlled_state = {
@@ -1945,7 +1969,7 @@ country_event = {
 					}
 				}
 			}
-			every_other_country = {
+			every_enemy_country = {
 				limit = {
 					OR = {
 						AND = {
@@ -1954,7 +1978,6 @@ country_event = {
 						}
 						is_literally_china = yes
 					}
-					has_war_with = ROOT
 					is_in_faction_with = event_target:WTT_current_china_leader
 				}
 				white_peace = ROOT
@@ -1975,7 +1998,7 @@ country_event = {
 			}
 		}
 		else = {
-			every_other_country = {
+			every_enemy_country = {
 				limit = {
 					OR = {
 						AND = {
@@ -1984,7 +2007,6 @@ country_event = {
 						}
 						is_literally_china = yes
 					}
-					has_war_with = ROOT
 				}
 				every_controlled_state = {
 					limit = {
@@ -2001,7 +2023,7 @@ country_event = {
 					}
 				}
 			}
-			every_other_country = {
+			every_enemy_country = {
 				limit = {
 					OR = {
 						AND = {
@@ -2010,7 +2032,6 @@ country_event = {
 						}
 						is_literally_china = yes
 					}
-					has_war_with = ROOT
 				}
 				white_peace = ROOT
 			}
@@ -2130,12 +2151,13 @@ country_event = {
 							state = 1028
 						}
 					}
-					every_country = {
+					controller = {
+						if = {
 						limit = {
 							original_tag = MAN
-							controls_state = PREV
 						}
 						transfer_state = PREV
+						}
 					}
 				}
 				white_peace = JAP

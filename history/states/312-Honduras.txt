@@ -3,7 +3,8 @@ state=
 	id=312
 	name="STATE_312"
 	manpower=1
-	
+	resources={
+	}
 	
 	state_category = wasteland
 	history=
@@ -22,6 +23,7 @@ state=
 			}
 		}
 		add_core_of = WST
+		add_core_of = HON
 	}
 	provinces={
 		2031 8017 12865

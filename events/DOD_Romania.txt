@@ -480,7 +480,10 @@ country_event = {
 				is_in_faction = no
 			}
 			set_rule = { can_create_factions = yes }
-			create_faction = ROM_BALKAN_FACTION
+			create_faction_from_template = {
+				template = faction_template_BALKAN_ENTENTE_FACTION
+				name = ROM_BALKAN_FACTION
+			}
 			add_to_faction = HUN
 		}
 		set_country_flag = ROM_HUN_aligned
@@ -654,10 +657,8 @@ country_event = {
 	
 	option = { #cool
 		name = DOD_romania.61.a
-		every_country = {
-			limit = {
-				is_subject_of = YUG
-			}
+		YUG = {
+		every_subject_country = {
 			every_owned_state = {
 				limit = {
 					OR = {
@@ -704,7 +705,6 @@ country_event = {
 				HUN = { transfer_state = PREV }
 			}
 		}
-		YUG = {
 			every_owned_state = {
 				limit = {
 					OR = {
@@ -856,7 +856,7 @@ country_event = {
 	id = DOD_romania.63
 	title = DOD_romania.63.t
 	desc = DOD_romania.63.desc
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 	
@@ -1866,12 +1866,27 @@ country_event = {
 	id = DOD_romania.110
 	title = DOD_romania.110.t
 	desc = DOD_romania.110.desc 
-	picture = GFX_report_event_hitler_handshake
+	picture = [GetHitlerHandshakeEventPicture]
 	
 	is_triggered_only = yes
 
 	option = {# agree
 		name = DOD_romania.110.a
+		trigger = { # Agreeing would cause SLO to get released as a ROM puppet, so run some checks
+			NOT = { # HMM: SLO is technically a released nation, so subject it to the releasing nations rule
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
+			OR = {
+				has_war = no
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+			}
+		}
 		ai_chance = {
 			factor = 90
 			modifier = {
@@ -1946,8 +1961,14 @@ country_event = {
 		ai_chance = {
 			factor = 80
 			modifier = {
-				is_in_faction = yes
 				factor = 0
+				OR = {
+					is_in_faction = yes
+					any_other_country = {
+						is_major = yes
+						has_guaranteed = ROOT
+					}
+				}
 			}
 			modifier = {
 				GER = {
@@ -1959,6 +1980,7 @@ country_event = {
 		}
 		custom_effect_tooltip = GAME_OVER_TT
 		GER = {
+			set_country_flag = GER_split_CZE_with_ROM_flag
 			transfer_state = 9
 			transfer_state = 69
 			transfer_state = 972
@@ -1994,6 +2016,7 @@ country_event = {
 	}
 	option = {# refuse
 		name = DOD_romania.114.b
+		trigger = { always = no }
 		ai_chance = {
 			factor = 20
 			modifier = {
@@ -3933,17 +3956,18 @@ country_event = {
 		}
 		hidden_effect = {
 			#ensure Germany doesn't get randomly encircled
-			every_state = {
+			FROM = {
+			every_controlled_state = {
 				limit = {
-					controller = { tag = FROM }
 					owner = {
 						has_war_with = event_target:romania_former_ally_target
 						NOT = { has_war_with = event_target:romania_new_ally_target }
 					}
 				}
 				event_target:romania_former_ally_target = {
-					set_state_controller = PREV
+					set_state_controller = ROOT
 				}
+			}
 			}
 			FROM = {
 				# move our armies to back home
@@ -3953,10 +3977,9 @@ country_event = {
 			}
 		}
 		white_peace = FROM
-		every_country = {
+		every_enemy_country = {
 			limit = {
 				is_subject_of = FROM
-				has_war_with = ROOT
 			}
 			white_peace = ROOT
 		}
@@ -3982,7 +4005,7 @@ country_event = {
 							}
 						}
 						if = {
-							limit = { MOL = { exists = no } }
+							limit = { NOT = { country_exists = MOL } }
 							release_puppet = MOL 
 							MOL = { save_event_target_as = released_nation_target }
 						}
@@ -4049,14 +4072,13 @@ country_event = {
 						}
 					}
 					white_peace = FROM
-					every_country = {
+				}
+				every_subject_country = {
 						limit = {
-							is_subject_of = FROM
 							has_war_with = ROOT
 						}
 						white_peace = ROOT
 					}
-				}
 			}
 		}
 	}

@@ -179,8 +179,8 @@ bookmarks = {
 			}
 			focuses = {
 				JAP_sea_purge_the_kodoha_faction
-				JAP_sea_greater_east_asian_co_prosperity_sphere
-				JAP_okadas_military_purge_speech
+				JAP_imperial_rule_assistance_association
+				JAP_sea_greater_east_asian_co_properity_sphere
 			}
 		}
 
@@ -197,8 +197,8 @@ bookmarks = {
 			}
 			focuses = {
 				JAP_sea_purge_the_kodoha_faction
-				JAP_sea_greater_east_asian_co_prosperity_sphere
-				JAP_okadas_military_purge_speech
+				JAP_imperial_rule_assistance_association
+				JAP_sea_greater_east_asian_co_properity_sphere
 			}
 		}
 		"SOV"={
@@ -287,6 +287,21 @@ bookmarks = {
 				AST_war_is_coming
 				AST_overseas_loyalties
 				AST_anzac_spirit
+			}
+		}
+		"NZL"={
+			minor = yes
+			history = "NZL_GATHERING_STORM_DESC"
+			version = thunder_at_our_gates
+			assume_not_played_if_missing_data = yes
+			ideology = democratic
+			ideas = {
+				
+			}
+			focuses = {
+				NZL_bob_semple_tank
+				NZL_statute_of_westminster
+				NZL_maori_volunteers
 			}
 		}
 		"SAF"={
@@ -423,8 +438,8 @@ bookmarks = {
 			}
 			focuses = {
 				SPA_caudillo_of_spain
-				SPA_national_recovery
-				SPR_expand_the_axis_gold_trade
+				SPA_dictator_for_life
+				SPA_autarky
 			}
 		}
 
@@ -513,6 +528,23 @@ bookmarks = {
 				wuw_HUN_proclaim_greater_hungary
 			}
 		}
+		PHI = {
+			minor = yes
+			history = "PHI_GATHERING_STORM_DESC" 
+			ideology = neutrality
+			required_dlc = { "No Compromise, No Surrender" }
+			version = no_compromise_no_surrender
+			ideas = {
+				PHI_island_nation_ns_fake
+				PHI_the_great_depression_ns_fake
+				PHI_philippine_army_ns_fake
+			}
+			focuses = {
+				PHI_align_with_the_usa
+				PHI_national_defense_act
+				PHI_treaty_of_manila
+			}
+		}
 		MAN = {
 			minor = yes
 			history = "MAN_TSR_GATHERING_STORM_DESC"
@@ -528,6 +560,23 @@ bookmarks = {
 				MAN_tsr_obedience
 				MAN_tsr_the_question_of_leadership
 				MAN_tsr_empire_of_manchukuo
+			}
+		}
+		"SIA"={
+			minor = yes
+			history = "SIA_GATHERING_STORM_DESC"
+			ideology = neutrality
+			required_dlc  = { "Thunder at Our Gates" }
+			version = thunder_at_our_gates
+			assume_not_played_if_missing_data = yes
+			ideas = {
+				idea_SIA_military_neutral
+				idea_SIA_civilian_neutral
+			}
+			focuses = {
+				SIA_the_khana_ratsadon
+				SIA_for_the_preservation_of_siamese_independence
+				SIA_phibuns_premiership
 			}
 		}
 		effect = {

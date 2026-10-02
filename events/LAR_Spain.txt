@@ -77,11 +77,10 @@ country_event = {
 					activate_mission = SPA_military_plot_nationalists
 				}
 			}
-			every_state = {
-				limit = {
-					is_core_of = SPR
-				}
+			SPR = {
+			every_core_state = {
 				add_core_of = SPA
+			}
 			}
 		}
 	}
@@ -234,15 +233,10 @@ country_event = {
 					retire_ideology_leader = neutrality
 					retire_ideology_leader = communism
 				}
+				SPR_manuel_azana = { set_nationality = SPD }
 				SPD = { # Remove Carlist/Falangist country leaders for new SPD tag
 					retire_ideology_leader = fascism
 					retire_ideology_leader = neutrality
-					every_possible_country = {
-						limit = {
-							has_character = SPR_manuel_azana	
-						}
-						SPR_manuel_azana = { set_nationality = SPD }
-					}
 					IF = {
 						limit = {
 							NOT = {
@@ -642,15 +636,21 @@ country_event = {
 					remove_unit_leader_trait = trait_SPA_nationalist_sympathies
 				}
 				# Add various loyalist traits that now become relevant - indicating loyalties to the different subfactions
+				SPA_francisco_franco = {
+					if = {
+						limit = { NOT = { has_trait = trait_SPA_falangist_loyalties } }
+						add_unit_leader_trait = trait_SPA_falangist_loyalties
+					}
+				}
 				every_unit_leader = {
 					limit = {
 						OR = {
-							has_id = 1108
 							has_id = 1109
 							has_id = 1111
 							has_id = 1112
 							has_id = 1113
 						}
+						NOT = { has_trait = trait_SPA_falangist_loyalties }
 					}
 					add_unit_leader_trait = trait_SPA_falangist_loyalties
 				}
@@ -661,6 +661,7 @@ country_event = {
 							has_id = 1115
 							has_id = 1116
 						}
+						NOT = { has_trait = trait_SPA_carlist_loyalties }
 					}
 					add_unit_leader_trait = trait_SPA_carlist_loyalties
 				}
@@ -672,6 +673,7 @@ country_event = {
 								has_id = 1102
 								has_id = 1103
 							}
+							NOT = { has_trait = trait_SPR_republican_loyalties }
 						}
 						add_unit_leader_trait = trait_SPR_republican_loyalties
 					}
@@ -683,6 +685,7 @@ country_event = {
 								has_id = 1106
 								is_character = SPR_enrique_lister
 							}
+							NOT = { has_trait = trait_SPR_stalinist_loyalties }
 						}
 						add_unit_leader_trait = trait_SPR_stalinist_loyalties
 					}
@@ -691,6 +694,7 @@ country_event = {
 							OR = {
 								has_id = 1107
 							}
+							NOT = { has_trait = trait_SPR_anti_stalinist_loyalties }
 						}
 						add_unit_leader_trait = trait_SPR_anti_stalinist_loyalties
 					}
@@ -2740,17 +2744,30 @@ country_event = {
 					set_nationality = SPA
 				}
 				SPA = {
+					SPA_francisco_franco = {
+						if = {
+							limit = { has_trait = trait_SPA_nationalist_sympathies }
+							remove_unit_leader_trait = trait_SPA_nationalist_sympathies
+						}
+						if = {
+							limit = { NOT = { has_trait = trait_SPA_falangist_loyalties } }
+							add_unit_leader_trait = trait_SPA_falangist_loyalties
+						}
+					}
 					every_unit_leader = {
 						limit = {
 							OR = {
-								has_id = 1108
 								has_id = 1109
 								has_id = 1111
 								has_id = 1112
 								has_id = 1113
 							}
+							NOT = { has_trait = trait_SPA_falangist_loyalties }
 						}
+						if = {
+							limit = { has_trait = trait_SPA_nationalist_sympathies }
 						remove_unit_leader_trait = trait_SPA_nationalist_sympathies
+						}
 						add_unit_leader_trait = trait_SPA_falangist_loyalties
 					}
 					every_unit_leader = {
@@ -2760,13 +2777,18 @@ country_event = {
 								has_id = 1115
 								has_id = 1116
 							}
+							NOT = { has_trait = trait_SPA_carlist_loyalties }
 						}
+						if = {
+							limit = { has_trait = trait_SPA_nationalist_sympathies }
 						remove_unit_leader_trait = trait_SPA_nationalist_sympathies
+						}
 						add_unit_leader_trait = trait_SPA_carlist_loyalties
 					}
 					every_unit_leader = {
 						limit = {
 							has_id = 1110
+							has_trait = trait_SPA_nationalist_sympathies
 						}
 						remove_unit_leader_trait = trait_SPA_nationalist_sympathies
 					}
@@ -2778,6 +2800,7 @@ country_event = {
 							has_id = 1102
 							has_id = 1103
 						}
+						NOT = { has_trait = trait_SPR_republican_loyalties }
 					}
 					add_unit_leader_trait = trait_SPR_republican_loyalties
 				}
@@ -2788,6 +2811,7 @@ country_event = {
 							has_id = 1105
 							has_id = 1106
 						}
+						NOT = { has_trait = trait_SPR_stalinist_loyalties }
 					}
 					add_unit_leader_trait = trait_SPR_stalinist_loyalties
 				}
@@ -2796,6 +2820,7 @@ country_event = {
 						OR = {
 							has_id = 1107
 						}
+						NOT = { has_trait = trait_SPR_anti_stalinist_loyalties }
 					}
 					add_unit_leader_trait = trait_SPR_anti_stalinist_loyalties
 				}
@@ -5648,13 +5673,12 @@ country_event = {
 					controls_state = 172
 					controls_state = 176
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						OR = {
 							state = 172
 							state = 176
 						}
-						is_controlled_by = ROOT
 					}
 					SPB = {
 						transfer_state = PREV
@@ -5692,7 +5716,7 @@ country_event = {
 						num_of_controlled_states > 14
 						has_global_flag = scw_early_end
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							any_neighbor_state = {
 								OR = {
@@ -5704,14 +5728,13 @@ country_event = {
 								}
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
 							transfer_state = PREV
 						}
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							any_neighbor_state = {
 								OR = {
@@ -5723,7 +5746,6 @@ country_event = {
 								}
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
@@ -5745,13 +5767,12 @@ country_event = {
 						}
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						OR = {
 							state = 172
 							state = 176
 						}
-						is_controlled_by = ROOT
 					}
 					SPB = {
 						transfer_state = PREV
@@ -5771,13 +5792,12 @@ country_event = {
 						}
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						OR = {
 							state = 172
 							state = 176
 						}
-						is_controlled_by = ROOT
 					}
 					SPB = {
 						transfer_state = PREV
@@ -5792,7 +5812,7 @@ country_event = {
 							controls_state = 791
 						}
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							OR = {
 								state = 171
@@ -5800,7 +5820,6 @@ country_event = {
 								state = 791
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
@@ -5809,12 +5828,11 @@ country_event = {
 					}
 				}
 				else = {
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 178 }
 							NOT = { state = 177 }
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
@@ -5835,7 +5853,7 @@ country_event = {
 						controls_state = 791
 					}
 				}
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						OR = {
 							state = 171
@@ -5843,7 +5861,6 @@ country_event = {
 							state = 791
 						}
 						has_state_flag = SPR_core_of_spain_flag
-						is_controlled_by = ROOT
 						is_capital = no
 					}
 					SPB = {
@@ -5859,7 +5876,7 @@ country_event = {
 							controls_state = 791
 						}
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							OR = {
 								state = 171
@@ -5867,7 +5884,6 @@ country_event = {
 								state = 791
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
@@ -5876,12 +5892,11 @@ country_event = {
 					}
 				}
 				else = {
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 178 }
 							NOT = { state = 177 }
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
@@ -5900,12 +5915,11 @@ country_event = {
 						controls_state = 791
 					}
 				}
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						NOT = { state = 178 }
 						NOT = { state = 177 }
 						has_state_flag = SPR_core_of_spain_flag
-						is_controlled_by = ROOT
 						is_capital = no
 					}
 					SPB = {
@@ -5916,12 +5930,11 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 5
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 178 }
 							NOT = { state = 177 }
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPB = {
@@ -5931,10 +5944,9 @@ country_event = {
 				}
 			}
 			else = {
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						has_state_flag = SPR_core_of_spain_flag
-						is_controlled_by = ROOT
 						is_capital = no
 					}
 					SPB = {
@@ -5943,9 +5955,8 @@ country_event = {
 				}
 			}
 			SPB = {
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
-						is_controlled_by = SPB
 						is_core_of = SPB
 						NOT = {
 							state = 177
@@ -6383,15 +6394,13 @@ country_event = {
 			}
 			if = {
 				limit = {
-					any_state = {
-						is_controlled_by = ROOT
+					any_controlled_state = {
 						has_state_flag = SPA_carlist_cell_flag
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						NOT = { has_state_flag = SPA_carlist_cell_flag }
-						is_controlled_by = ROOT
 					}
 					SPA = {
 						transfer_state = PREV
@@ -6405,12 +6414,11 @@ country_event = {
 						controls_state = 176
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						NOT = { state = 172 }
 						NOT = { state = 176 }
 						NOT = { has_state_flag = SPA_carlist_cell_flag }
-						is_controlled_by = ROOT
 					}
 					SPA = {
 						transfer_state = PREV
@@ -6418,23 +6426,18 @@ country_event = {
 				}
 			}
 			else = {
-				random_owned_state = {
-					limit = {
-						is_controlled_by = ROOT
-					}
+				random_owned_controlled_state = {
 					set_state_flag = SPA_carlist_cell_flag
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
-						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPA_carlist_cell_flag }
 					}
 					set_state_flag = SPA_carlist_cell_flag
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						NOT = { has_state_flag = SPA_carlist_cell_flag }
-						is_controlled_by = ROOT
 					}
 					SPA = {
 						transfer_state = PREV
@@ -6463,9 +6466,8 @@ country_event = {
 					set_capital = { state = 172 }
 				}
 				else = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
-							is_controlled_by = SPA
 							is_core_of = SPA
 							NOT = {
 								state = 177
@@ -6987,7 +6989,7 @@ country_event = {
 						controls_state = 166
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						OR = {
 							state = 165
@@ -6995,7 +6997,6 @@ country_event = {
 							state = 166
 						}
 						is_capital = no
-						is_controlled_by = ROOT
 					}
 					SPC = {
 						transfer_state = PREV
@@ -7014,7 +7015,7 @@ country_event = {
 						}
 						num_of_controlled_states > 8
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 178 }
 							NOT = { state = 177 }
@@ -7027,7 +7028,6 @@ country_event = {
 								is_owned_by = SPC
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPC = {
@@ -7043,7 +7043,7 @@ country_event = {
 					SPC = {
 						transfer_state = 167
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							any_neighbor_state = {
 								OR = {
@@ -7054,14 +7054,13 @@ country_event = {
 								}
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPC = {
 							transfer_state = PREV
 						}
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
 							any_neighbor_state = {
 								OR = {
@@ -7072,7 +7071,6 @@ country_event = {
 								}
 							}
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPC = {
@@ -7082,12 +7080,11 @@ country_event = {
 				}
 			}
 			else = { # You're not getting out of a civil war by voluntarily giving up the targetable locations, pal!
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						NOT = { state = 178 }
 						NOT = { state = 177 }
 						has_state_flag = SPR_core_of_spain_flag
-						is_controlled_by = ROOT
 						is_capital = no
 					}
 					SPC = {
@@ -7098,12 +7095,11 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 3
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 178 }
 							NOT = { state = 177 }
 							has_state_flag = SPR_core_of_spain_flag
-							is_controlled_by = ROOT
 							is_capital = no
 						}
 						SPC = {
@@ -7122,9 +7118,8 @@ country_event = {
 			}
 			else = {
 				SPC = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
-							is_controlled_by = SPC
 							is_core_of = SPC
 							NOT = {
 								state = 177
@@ -7802,14 +7797,13 @@ country_event = {
 					controls_state = 794
 				}
 				set_capital = { state = 165 }
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						OR = {
 							state = 165
 							state = 794
 							state = 166
 						}
-						is_controlled_by = ROOT
 					}
 					set_state_flag = SPR_anarchist_state_flag
 				}
@@ -7817,13 +7811,12 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 7
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
 							NOT = { state = 41 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7840,13 +7833,12 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 9
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
 							NOT = { state = 41 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7863,13 +7855,12 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 11
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
 							NOT = { state = 41 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7886,13 +7877,12 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 13
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
 							NOT = { state = 41 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7909,12 +7899,11 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 15
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7931,12 +7920,11 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 17
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7953,12 +7941,11 @@ country_event = {
 					limit = {
 						num_of_controlled_states > 19
 					}
-					random_state = {
+					random_owned_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7970,12 +7957,11 @@ country_event = {
 						}
 						set_state_flag = SPR_anarchist_state_flag
 					}
-					random_state = {
+					random_owned_controlled_state = {
 						limit = {
 							NOT = { state = 165 }
 							NOT = { state = 794 }
 							NOT = { state = 166 }
-							is_controlled_by = ROOT
 							NOT = { has_state_flag = SPR_anarchist_state_flag }
 							any_neighbor_state = {
 								OR = {
@@ -7988,9 +7974,8 @@ country_event = {
 						set_state_flag = SPR_anarchist_state_flag
 					}
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
-						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPR_anarchist_state_flag }
 					}
 					SPD = {
@@ -8006,22 +7991,20 @@ country_event = {
 						controls_state = 794
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
 						NOT = { state = 165 }
 						NOT = { state = 794 }
 						NOT = { state = 166 }
-						is_controlled_by = ROOT
 					}
 					set_state_flag = SPR_anarchist_state_flag
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
 						has_state_flag = SPR_core_of_spain_flag
 						NOT = { state = 165 }
 						NOT = { state = 794 }
 						NOT = { state = 166 }
-						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPR_anarchist_state_flag }
 					}
 					SPD = {
@@ -8038,9 +8021,8 @@ country_event = {
 					limit = {
 						NOT = { owns_state = 165 }
 					}
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
-							is_controlled_by = ROOT
 							is_core_of = ROOT
 							NOT = {
 								state = 177
@@ -8052,39 +8034,30 @@ country_event = {
 				}
 			}
 			else = {
-				random_owned_state = {
-					limit = {
-						is_controlled_by = ROOT
-					}
+				random_owned_controlled_state = {
 					set_state_flag = SPR_anarchist_state_flag
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
-						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPR_anarchist_state_flag }
 					}
 					set_state_flag = SPR_anarchist_state_flag
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
-						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPR_anarchist_state_flag }
 					}
 					set_state_flag = SPR_anarchist_state_flag
 				}
-				every_state = {
+				every_controlled_state = {
 					limit = {
-						is_controlled_by = ROOT
 						NOT = { has_state_flag = SPR_anarchist_state_flag }
 					}
 					SPD = {
 						transfer_state = PREV
 					}
 				}
-				random_owned_state = {
-					limit = {
-						is_controlled_by = ROOT
-					}
+				random_owned_controlled_state = {
 					ROOT = { set_capital = { state = PREV } }
 				}
 			}
@@ -8111,9 +8084,8 @@ country_event = {
 					SPD = { set_capital = { state = 41 } }
 				}
 				else = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
-							is_controlled_by = SPD
 							is_core_of = SPD
 							NOT = {
 								state = 177
@@ -8161,14 +8133,9 @@ country_event = {
 					target_country = SPD
 				}
 			}
-			every_unit_leader = {
-				limit = {
-					has_id = 1108
-				}
-				set_nationality = {
-					character = THIS
-					target_country = SPD
-				}
+			set_nationality = {
+				character = SPA_francisco_franco
+				target_country = SPD
 			}
 			every_unit_leader = {
 				limit = {
@@ -8229,12 +8196,7 @@ country_event = {
 				}
 			}
 			SPD = {
-				every_possible_country = {
-					limit = {
-						has_character = SPR_manuel_azana	
-					}
-					SPR_manuel_azana = { set_nationality = SPD }
-				}
+				SPR_manuel_azana = { set_nationality = SPD }
 				IF = {
 					limit = {
 						NOT = {
@@ -8966,7 +8928,7 @@ country_event = {
 				FROM = { is_in_faction = no }
 			}
 			effect_tooltip = {
-				random_other_country = {
+				random_allied_country = {
 					limit = {
 						is_in_faction_with = ROOT
 						is_faction_leader = yes
@@ -8980,7 +8942,7 @@ country_event = {
 				is_in_faction = no
 				FROM = { is_in_faction = yes }
 			}
-			random_other_country = {
+			random_allied_country = {
 				limit = {
 					is_in_faction_with = FROM
 					is_faction_leader = yes
@@ -9052,7 +9014,7 @@ country_event = {
 				FROM = { is_in_faction = no }
 			}
 			effect_tooltip = {
-				random_other_country = {
+				random_allied_country = {
 					limit = {
 						is_in_faction_with = ROOT
 						is_faction_leader = yes
@@ -9167,10 +9129,9 @@ country_event = {
 					has_country_flag = SPA_iberian_pact_enemy_flag
 				}
 			}
-			random_other_country = {
+			random_enemy_country = {
 				limit = {
 					has_country_flag = SPA_iberian_pact
-					has_war_with = PREV
 				}
 				ROOT = {
 					add_to_war = { 
@@ -9285,10 +9246,9 @@ country_event = {
 
 	immediate = {
 		hidden_effect = {
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					is_controlled_by = ROOT
 					NOT = {
 						state = 177
 						state = 178
@@ -9298,10 +9258,9 @@ country_event = {
 				set_state_flag = union_militar_temp_flag_1
 				save_event_target_as = union_militar_target_state_1
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					is_controlled_by = ROOT
 					NOT = {
 						state = 177
 						state = 178
@@ -9312,10 +9271,9 @@ country_event = {
 				set_state_flag = union_militar_temp_flag_2
 				save_event_target_as = union_militar_target_state_2
 			}
-			random_owned_state = {
+			random_owned_controlled_state = {
 				limit = {
 					is_core_of = ROOT
-					is_controlled_by = ROOT
 					NOT = {
 						state = 177
 						state = 178
@@ -9495,6 +9453,71 @@ country_event = {
 	picture = GFX_report_event_spr_occupation_of_tangiers
 	
 	is_triggered_only = yes
+	
+	option = { # Protest
+		name = lar_spain.36.a
+		trigger = { always = no }
+		ai_chance = {
+			base = 34
+			modifier = {
+				factor = 3
+				has_war = no
+			}
+			modifier = {
+				factor = 2
+				has_government = democratic
+			}
+			modifier = {
+				factor = 5
+				strength_ratio = {
+				    tag = FROM
+				    ratio > 5
+				}
+			}
+			modifier = {
+				factor = 2
+				strength_ratio = {
+				    tag = FROM
+				    ratio > 3
+				}
+			}
+			modifier = {
+				factor = 0.5
+				strength_ratio = {
+				    tag = FROM
+				    ratio < 2
+				}
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { has_political_power > 100 }
+			}
+			modifier = {
+				factor = 0
+				strength_ratio = {
+				    tag = FROM
+				    ratio < 1
+				}
+			}
+			modifier = {
+				factor = 0
+				is_in_faction_with = FROM
+			}
+		}
+		add_political_power = -200
+		custom_effect_tooltip = lar_spain.36_tt
+		effect_tooltip = {
+			create_wargoal = {
+			    type = topple_government
+			    target = FROM
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = { id = lar_spain.37 hours = 18 random_hours = 6 }
+			}
+		}
+	}
 
 	option = { # Let it slide
 		name = lar_spain.36.b
@@ -9963,11 +9986,10 @@ country_event = {
 	option = { # Ok
 		name = lar_spain.46.a
 		set_cosmetic_tag = ESU_POR_unified
-		every_state = {
-			limit = {
-				is_core_of = POR
-			}
+		POR = {
+		every_core_state = {
 			add_core_of = ROOT
+		}
 		}
 		annex_country = { target = FROM transfer_troops = yes }
 	}
@@ -10108,11 +10130,10 @@ country_event = {
 	
 	option = { # Ok
 		name = lar_spain.50.a
-		random_country = {
+		random_subject_country = {
 			limit = {
 				original_tag = POR
 				has_government = neutrality
-				is_subject_of = ROOT
 			}
 			SPC = {
 				annex_country = {
@@ -10283,8 +10304,8 @@ country_event = {
 	fire_only_once = yes
 
 	trigger = {
-		any_country = {
-			original_tag = SPR
+		any_country_with_original_tag = {
+			original_tag_to_check = SPR
 			OR = {
 				has_government = democratic
 				has_government = communism
@@ -10554,11 +10575,10 @@ country_event = {
 	option = { # Ok
 		name = lar_spain.60.a
 		set_cosmetic_tag = ESU_POR_unified
-		every_state = {
-			limit = {
-				is_core_of = POR
-			}
+		POR = {
+		every_core_state = {
 			add_core_of = ROOT
+		}
 		}
 		annex_country = { target = FROM transfer_troops = yes }
 	}
@@ -10775,9 +10795,8 @@ country_event = {
 			base = 100
 			modifier = {
 				factor = 0.33
-				any_country = {
+				any_enemy_country = {
 					is_major = yes
-					has_war_with = ROOT
 				}
 			}
 			modifier = {
@@ -10804,9 +10823,8 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 100
-				any_country = {
+				any_enemy_country = {
 					is_major = yes
-					has_war_with = ROOT
 				}
 			}
 			modifier = {
@@ -11099,15 +11117,14 @@ country_event = {
 		original_tag = SPR
 		if = {
 			limit = {
-				any_country = {
-					OR = {
-						AND = {
-							tag = SPA
-							has_completed_focus = SPA_unify_the_nationalist_front
-						}
-						tag = SPB
+				OR = {
+					SPA = {
+						has_completed_focus = SPA_unify_the_nationalist_front
+						is_ai = no
 					}
+					SPB = {
 					is_ai = no
+					}
 				}
 			}
 			is_ai = no
@@ -11236,12 +11253,9 @@ country_event = {
 			every_unit_leader = {
 				set_nationality = ROOT
 			}
-		}
-		every_state = {
-			limit = {
-				is_core_of = FRA
-			}
+		every_core_state = {
 			add_core_of = ROOT
+		}
 		}
 		annex_country = { target = FRA transfer_troops = yes }
 	}
@@ -11353,8 +11367,8 @@ country_event = {
 
 	trigger = {
 		tag = SOV
-		any_country = {
-			original_tag = SPR
+		any_country_with_original_tag = {
+			original_tag_to_check = SPR
 			focus_progress = {
 			    focus = SPR_subvert_soviet_control
 			    progress > 0.1
@@ -11374,9 +11388,8 @@ country_event = {
 			base = 100
 			modifier = {
 				factor = 0.33
-				any_country = {
+				any_enemy_country = {
 					is_major = yes
-					has_war_with = ROOT
 				}
 			}
 			modifier = {
@@ -11484,9 +11497,8 @@ country_event = {
 			base = 0
 			modifier = {
 				add = 100
-				any_country = {
+				any_enemy_country = {
 					is_major = yes
-					has_war_with = ROOT
 				}
 			}
 		}

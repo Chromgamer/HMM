@@ -233,8 +233,10 @@ characters={
 				}
 			}
 			available = {
-				NOT = {
-					has_country_flag = dwight_d_eisenhower_sent_to_china
+				USA = {
+					NOT = {
+						has_country_flag = dwight_d_eisenhower_sent_to_china
+					}
 				}
 			}
 			traits = {

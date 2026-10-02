@@ -91,20 +91,18 @@ on_actions = {
 
 		#JAPAN - Add Chinese States to an array for Strategic Offensives Decision purposes
 		effect = {
-			
-			every_state = {
+			every_country = {
+				limit = { is_literally_china = yes }
+			every_owned_state = {
 				limit = {
-					owner = {
-						is_literally_china = yes
-						controls_state = PREV
-					}
+					is_controlled_by = PREV
 				}
 				add_to_array = { 
 					array = JAP.JAP_strategic_offensives_targets_array 
 					value = THIS
 				}
 			}
-			
+			}
 		}
 
 		#JAPAN - Launch event that notifies about Kodoha coup and advisor protection if 1936 start date, as well as the 1936 election
@@ -189,8 +187,6 @@ on_actions = {
 							id = 9848
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				716 = { # Liaoning
 					add_province_modifier = {
@@ -205,8 +201,6 @@ on_actions = {
 							id = 11815
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				715 = { # Liaobei
 					add_province_modifier = {
@@ -215,8 +209,6 @@ on_actions = {
 							id = 916
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				609 = { # East Hebei
 					add_province_modifier = {
@@ -229,8 +221,6 @@ on_actions = {
 							id = 11822
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				610 = { # Jehol
 					add_province_modifier = {
@@ -245,8 +235,6 @@ on_actions = {
 							id = 3955
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				1039 = { # Hebei-Chahar
 					add_province_modifier = {
@@ -257,8 +245,6 @@ on_actions = {
 							id = 1590
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				621 = { # Suiyuan
 					add_province_modifier = {
@@ -267,8 +253,6 @@ on_actions = {
 							id = 7158
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				615 = { # Shanxi
 					add_province_modifier = {
@@ -282,8 +266,6 @@ on_actions = {
 							id = 12300
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				1046 = { # Yulin
 					add_province_modifier = {
@@ -293,8 +275,6 @@ on_actions = {
 							id = 7314
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				608 = { # Beijing
 					add_province_modifier = {
@@ -305,8 +285,6 @@ on_actions = {
 							id = 9843
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				614 = { # Hebei
 					add_province_modifier = {
@@ -320,8 +298,6 @@ on_actions = {
 							id = 12062
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				607 = { # Henan
 					add_province_modifier = {
@@ -330,8 +306,6 @@ on_actions = {
 							id = 4058
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				622 = { # Shaanbei
 					add_province_modifier = {
@@ -340,8 +314,6 @@ on_actions = {
 							id = 10880
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				616 = { # Ningxia
 					add_province_modifier = {
@@ -352,8 +324,6 @@ on_actions = {
 							id = 8127
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				1044 = { # Wuwei
 					add_province_modifier = {
@@ -364,8 +334,6 @@ on_actions = {
 							id = 5100
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
 				}
 				756 = { # Jiuquan
 					add_province_modifier = {
@@ -375,27 +343,6 @@ on_actions = {
 							id = 7971
 						}
 					}
-					add_to_array = { global.great_wall_state = THIS }
-					set_state_flag = CHI_great_wall_raidable
-				}
-			}
-		}
-
-		effect = {
-			PRC = {
-				every_core_state = {
-					add_to_array = { global.PRC_starting_PRC_core_states = THIS }
-				}
-			}
-		}
-
-		effect = {
-			SPR = {
-				every_core_state = {
-					limit = {
-						is_on_continent = europe
-					}
-					add_to_array = { global.starting_SPR_european_core_states = THIS }
 				}
 			}
 		}
@@ -905,7 +852,10 @@ on_actions = {
 					PRC_increase_asian_democratic_union_modfier_strength = yes
 				}
 				FROM = {
+					if = {
+						limit = { NOT = { has_idea = PRC_asian_democratic_union_idea } }
 					add_ideas = PRC_asian_democratic_union_idea
+					}
 				}
 			}
 		}
@@ -973,7 +923,10 @@ on_actions = {
 					PRC_increase_asian_democratic_union_modfier_strength = yes
 				}
 				ROOT = {
+					if = {
+						limit = { NOT = { has_idea = PRC_asian_democratic_union_idea } }
 					add_ideas = PRC_asian_democratic_union_idea
+					}
 				}
 			}
 		}
@@ -1013,7 +966,10 @@ on_actions = {
 				}
 
 				ROOT = {
+					if = {
+						limit = { NOT = { has_idea = idea_CHI_sympathetic_judges } }
 					add_ideas = idea_CHI_sympathetic_judges
+					}
 				}
 			}
 
@@ -1127,7 +1083,10 @@ on_actions = {
 					PRC_increase_asian_democratic_union_modfier_strength = yes
 				}
 				ROOT = {
+					if = {
+						limit = { NOT = { has_idea = PRC_asian_democratic_union_idea } }
 					add_ideas = PRC_asian_democratic_union_idea
+					}
 				}
 			}
 		}
@@ -1768,13 +1727,6 @@ on_actions = {
 							}
 							OR = {
 								is_core_of = PHI
-								AND = {
-									is_core_of = WST
-									OR = {
-										owner = ENG
-										owner = HOL
-									}
-								}
 								is_core_of = VIN
 								is_core_of = CAM
 								is_core_of = SIA
@@ -3409,11 +3361,19 @@ on_actions = {
 			IF = {
 				limit = {
 					ROOT = {
+						OR = {
+							original_tag = KUM
+							original_tag = KHM
+						}
 						has_character = KUM_yulbars_khan
 						has_war_with = SIK
 					}
 				}
 				IF = {
+					limit = {
+						original_tag = KUM
+						is_subject_of = KHM
+					}
 					IF = {
 						limit = {
 							KHM = {
@@ -3427,12 +3387,9 @@ on_actions = {
 							}
 						}
 					}
-					ELSE = {
-						IF = {
+					ELSE_IF = {
 							limit = {
-								CHI = {
-									exists = yes
-								}
+								country_exists = CHI
 							}
 							CHI = {
 								country_event = {
@@ -3440,15 +3397,18 @@ on_actions = {
 									hours = 6
 								}
 							}
-						}
 					}
 				}
-				ELSE = {
+				ELSE_IF = {
+					limit = {
+						original_tag = KUM
+						NOT = {
+							is_subject_of = KHM
+						}
+					}
 					IF = {
 						limit = {
-							CHI = {
-								exists = yes
-							}
+							country_exists = CHI
 						}
 						CHI = {
 							country_event = {
@@ -3457,6 +3417,17 @@ on_actions = {
 							}
 						}
 					}
+				}
+				ELSE_IF = {
+						limit = {
+							country_exists = CHI
+						}
+						CHI = {
+							country_event = {
+								id = SEA_warlords.11
+								hours = 6
+							}
+						}
 				}
 			}
 		}
@@ -3473,11 +3444,31 @@ on_actions = {
 				}
 				IF = {
 					limit = {
-						NXM = {
-							exists = yes
-						}
+						country_exists = NXM
 					}
 					NXM = {
+						country_event = {
+							id = SEA_warlords.12
+							hours = 6
+						}
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						country_exists = XSM
+					}
+					XSM = {
+						country_event = {
+							id = SEA_warlords.12
+							hours = 6
+						}
+					}
+				}
+				ELSE_IF = {
+					limit = {
+						country_exists = GSM
+					}
+					GSM = {
 						country_event = {
 							id = SEA_warlords.12
 							hours = 6
@@ -3522,9 +3513,7 @@ on_actions = {
 					FROM = {
 						original_tag = SIK
 					}
-					RAJ = {
-						exists = yes
-					}
+					country_exists = RAJ
 				}
 				RAJ = {
 					country_event = {
@@ -3891,8 +3880,7 @@ on_actions = {
                 		has_cosmetic_tag = RAJ_UK
                 		OR = {
                 			is_subject = no
-                			any_country = {
-                				has_subject = PREV
+                			overlord = {
                 				NOT = {
                 					original_tag = ENG 
                 				}
@@ -3920,6 +3908,7 @@ on_actions = {
                 IF = {    # This prevents Japan from having a non-allowed eco modifier after being puppeted etc 
                     limit = {
                         has_idea = national_defense_state
+						NOT = { has_idea = partial_economic_mobilisation }
                     }
                     swap_ideas = {
                     	remove_idea = national_defense_state
@@ -4332,7 +4321,174 @@ on_actions = {
 
     }
 
+    # THIS is the admiral, From is owner country, FromFrom is the combatant
+	on_navy_leader_won_combat = {
 
+		### Battle of Midway events ###
+
+		# Japanese version if they win
+		effect = {
+			IF = {
+				limit = {
+					FROM.FROM = {
+						is_fighting_in_strategic_region = 95 # The West Emperor Chain
+						owner = {
+							original_tag = JAP
+							ships_in_area = { area = 95 size > 29 } # Must be a decently big navy on both sides to count (counts all ships incl. convoys/subs)
+						}
+						opponent = {
+							owner = {
+								original_tag = USA
+								ships_in_area = { area = 95 size > 29 }
+							}
+						}
+					}
+					NOT = {
+						has_global_flag = JAP_the_battle_of_midway_already_took_place_flag
+					}
+				}
+
+				THIS = {
+					set_character_flag = was_the_japanese_admiral_in_midway
+				}
+				FROM.FROM = {
+					owner = {
+						# We Won the Battle of Midway
+						country_event = {
+							id = SEA_japan_popup_events.51
+							hours = 4
+						}
+					}
+				}
+				set_global_flag = JAP_the_battle_of_midway_already_took_place_flag
+			}
+
+		}
+
+		# American version if they win
+		effect = {
+			IF = {
+				limit = {
+					FROM.FROM = {
+						is_fighting_in_strategic_region = 95 # The West Emperor Chain
+						owner = {
+							original_tag = USA
+							ships_in_area = { area = 95 size > 29 } # Must be a decently big navy on both sides to count (counts all ships incl. convoys/subs)
+						}
+						opponent = {
+							owner = {
+								original_tag = JAP
+								ships_in_area = { area = 95 size > 29 }
+							}
+						}
+					}
+					NOT = {
+						has_global_flag = USA_the_battle_of_midway_already_took_place_flag
+					}
+				}
+
+				THIS = {
+					set_character_flag = was_the_american_admiral_in_midway
+				}
+				FROM.FROM = {
+					owner = {
+						# We Won the Battle of Midway
+						country_event = {
+							id = SEA_japan_popup_events.52
+							hours = 4
+						}
+					}
+				}
+				set_global_flag = USA_the_battle_of_midway_already_took_place_flag
+			}
+
+		}
+
+	}
+
+
+	# THIS is the admiral, From is owner country, FromFrom is the combatant
+	on_navy_leader_lost_combat = {
+
+		# American version if they lose
+		effect = {
+			IF = {
+				limit = {
+					FROM.FROM = {
+						is_fighting_in_strategic_region = 95 # The West Emperor Chain
+						owner = {
+							original_tag = USA
+							ships_in_area = { area = 95 size > 29 } # Must be a decently big navy on both sides to count (counts all ships incl. convoys/subs)
+						}
+						opponent = {
+							owner = {
+								original_tag = JAP
+								ships_in_area = { area = 95 size > 29 }
+							}
+						}
+					}
+					NOT = {
+						has_global_flag = USA_the_battle_of_midway_already_took_place_flag
+					}
+				}
+
+				THIS = {
+					set_character_flag = was_the_american_admiral_in_midway
+				}
+				FROM.FROM = {
+					owner = {
+						# We Lost the Battle of Midway
+						country_event = {
+							id = SEA_japan_popup_events.54
+							hours = 4
+						}
+					}
+				}
+				set_global_flag = USA_the_battle_of_midway_already_took_place_flag
+			}
+
+		}
+
+		# Japanese version if they lose
+		effect = {
+			IF = {
+				limit = {
+					FROM.FROM = {
+						is_fighting_in_strategic_region = 95 # The West Emperor Chain
+						owner = {
+							original_tag = JAP
+							ships_in_area = { area = 95 size > 29 } # Must be a decently big navy on both sides to count (counts all ships incl. convoys/subs)
+						}
+						opponent = {
+							owner = {
+								original_tag = USA
+								ships_in_area = { area = 95 size > 29 }
+							}
+						}
+					}
+					NOT = {
+						has_global_flag = JAP_the_battle_of_midway_already_took_place_flag
+					}
+				}
+
+				THIS = {
+					set_character_flag = was_the_japanese_admiral_in_midway
+				}
+				FROM.FROM = {
+					owner = {
+						# We Lost the Battle of Midway
+						country_event = {
+							id = SEA_japan_popup_events.53
+							hours = 4
+						}
+					}
+				}
+				set_global_flag = JAP_the_battle_of_midway_already_took_place_flag
+			}
+
+		}
+
+	}
 
 
 

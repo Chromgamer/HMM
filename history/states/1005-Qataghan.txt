@@ -4,6 +4,8 @@ state={
 	manpower = 1
 	state_category = wasteland
 
+	resources = {
+	}
 
 	provinces={
 		7519 10781 10826 12314 12653 
@@ -11,6 +13,8 @@ state={
 	history={
 		owner = WST
 		add_core_of = WST
+		add_core_of = AFG
+		add_core_of = TAJ
 	}
 	
 	buildings_max_level_factor=1.000

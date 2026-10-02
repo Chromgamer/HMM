@@ -2246,200 +2246,136 @@ HUN_territorial_revision_category = {
 	
 		available = {
 			has_completed_focus = wuw_HUN_revenge_for_the_brusilov_offensive
-			UKR = {
-				exists = no
-			}
+			NOT = { country_exists = UKR }
 			is_subject = no
 			custom_trigger_tooltip = {
 				tooltip = wuw_HUN_the_kingdom_of_ukraine_required_states_tt
 				AND = {
-					OR = {
 						93 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 93
-						}
-					}
-					OR = {
 						199 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 199
-						}
-					}
-					OR = {
 						201 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 201
-						}
-					}
-					OR = {
 						202 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 202
-						}
-					}
-					OR = {
 						198 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 198
-						}
-					}
-					OR = {
 						834 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 834
-						}
-					}
-					OR = {
 						192 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 192
-						}
-					}
-					OR = {
 						203 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 203
-						}
-					}
-					OR = {
 						197 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 197
-						}
-					}
-					OR = {
 						193 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 193
-						}
-					}
-					OR = {
 						225 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 225
-						}
-					}
-					OR = {
 						259 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 259
-						}
-					}
-					OR = {
 						226 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 226
-						}
-					}
-					OR = {
 						196 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 196
-						}
-					}
-					OR = {
 						200 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 200
-						}
-					}
-					OR = {
 						227 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 227
-						}
-					}
-					OR = {
 						221 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 221
-						}
-					}
-					OR = {
 						228 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 228
-						}
-					}
-					OR = {
 						137 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 137
-						}
-					}
-					OR = {
 						218 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 218
-						}
-					}
-					OR = {
 						234 = {
+							OR = {
 							is_controlled_by = ROOT
-						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 234
+							controller = { is_subject_of = ROOT }
+							}
 						}
 					}
 				}
@@ -2450,8 +2386,9 @@ HUN_territorial_revision_category = {
 
 		complete_effect = {
 
-			ROOT = {
-				HUN_vasyl_vyshyvanyi = { set_nationality = UKR }
+			set_nationality = {
+				target_country = UKR
+				character = HUN_vasyl_vyshyvanyi
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -2462,10 +2399,7 @@ HUN_territorial_revision_category = {
 					limit = {
 						OR = {
 							is_controlled_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = PREV
-							}
+							controller = { is_subject_of = ROOT }
 						}
 						NOT = {
 							is_core_of = ROOT
@@ -3096,8 +3030,7 @@ HUN_the_empire_category = {
 			has_completed_focus = wuw_HUN_demand_austrian_restoration
 			OR = {
 				controls_state = 975
-				any_country = {
-					is_subject_of = ROOT
+				any_subject_country = {
 					controls_state = 975
 				}
 			}
@@ -3181,9 +3114,7 @@ HUN_the_empire_category = {
 					is_subject_of = ROOT
 				}
 				AND = {
-					AUS = {
-						exists = no
-					}
+					NOT = { country_exists = AUS }
 					4 = {
 						is_owned_by = ROOT
 					}
@@ -3207,9 +3138,8 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			every_state = {
+			every_controlled_state = {
 				limit = {
-					is_controlled_by = ROOT
 					NOT = {
 						is_core_of = ROOT
 					}
@@ -3274,9 +3204,7 @@ HUN_the_empire_category = {
 					is_subject_of = ROOT
 				}
 				AND = {
-					ALB = {
-						exists = no
-					}
+					NOT = { country_exists = ALB }
 					934 = {
 						is_owned_by = ROOT
 					}
@@ -3302,9 +3230,8 @@ HUN_the_empire_category = {
 				add_core_of = ALB
 			} 
 
-			every_state = {
+			every_controlled_state = {
 				limit = {
-					is_controlled_by = ROOT
 					NOT = {
 						is_core_of = ROOT
 					}
@@ -3359,18 +3286,13 @@ HUN_the_empire_category = {
 			has_government = neutrality
 			is_subject = no
 			AND = {
-				POL = {
-					exists = no
-				}
-				OR = {
+				NOT = { country_exists = POL }
 					10 = {
+						OR = {
 						is_controlled_by = ROOT
+						controller = { is_subject_of = ROOT }
+						}
 					}
-					any_country = {
-						is_subject_of = ROOT
-						controls_state = 10
-					}
-				}
 			}	
 		}
 	
@@ -3378,19 +3300,16 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			every_state = {
+			POL = {
+			every_core_state = {
 				limit = {
 					OR = {
 						is_controlled_by = ROOT
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = PREV
-						}
+						controller = { is_subject_of = ROOT }
 					}
 					NOT = {
 						is_core_of = ROOT
 					}
-					is_core_of = POL
 					NOT = {
 						is_owned_and_controlled_by = POL
 					}
@@ -3407,8 +3326,6 @@ HUN_the_empire_category = {
 				}
 				transfer_state_to = POL
 			}
-
-			POL = {
 				drop_cosmetic_tag = yes
 				set_cosmetic_tag = POL_KINGDOM
 				IF = {
@@ -3454,18 +3371,13 @@ HUN_the_empire_category = {
 			has_government = neutrality
 			is_subject = no
 			AND = {
-				SPR = {
-					exists = no
-				}
-				OR = {
+				NOT = { country_exists = SPR }
 					41 = {
+						OR = {
 						is_controlled_by = ROOT
+						controller = { is_subject_of = ROOT }
+						}
 					}
-					any_country = {
-						is_subject_of = ROOT
-						controls_state = 41
-					}
-				}
 			}	
 		}
 	
@@ -3477,10 +3389,7 @@ HUN_the_empire_category = {
 				limit = {
 					OR = {
 						is_controlled_by = ROOT
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = PREV
-						}
+						controller = { is_subject_of = ROOT }
 					}
 					NOT = {
 						is_core_of = ROOT
@@ -3541,9 +3450,7 @@ HUN_the_empire_category = {
 					is_subject_of = ROOT
 				}
 				AND = {
-					CZE = {
-						exists = no
-					}
+					NOT = { country_exists = CZE }
 					9 = {
 						is_owned_by = ROOT
 					}
@@ -3573,9 +3480,8 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			every_state = {
+			every_controlled_state = {
 				limit = {
-					is_controlled_by = ROOT
 					NOT = {
 						is_core_of = ROOT
 					}
@@ -3635,18 +3541,13 @@ HUN_the_empire_category = {
 			is_subject = no
 			OR = {
 				AND = {
-					MEX = {
-						exists = no
-					}
-					OR = {
+					NOT = { country_exists = MEX }
 						277 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 277
-						}
-					}
 				}
 				MEX = {
 					is_subject_of = ROOT
@@ -3662,10 +3563,7 @@ HUN_the_empire_category = {
 				limit = {
 					OR = {
 						is_controlled_by = ROOT
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = PREV
-						}
+						controller = { is_subject_of = ROOT }
 					}
 					NOT = {
 						is_core_of = ROOT
@@ -3733,18 +3631,13 @@ HUN_the_empire_category = {
 			is_subject = no
 			OR = {
 				AND = {
-					CRO = {
-						exists = no
-					}
-					OR = {
+					NOT = { country_exists = CRO }
 						109 = {
+							OR = {
 							is_controlled_by = ROOT
+							controller = { is_subject_of = ROOT }
+							}
 						}
-						any_country = {
-							is_subject_of = ROOT
-							controls_state = 109
-						}
-					}
 				}
 				CRO = {
 					is_subject_of = ROOT
@@ -3756,17 +3649,13 @@ HUN_the_empire_category = {
 
 		complete_effect = {
 
-			every_state = {
-				limit = {
-					OR  = {
-						state = 104
-						state = 804
-					}
-					NOT = {
-						is_core_of = CRO
-					}
-				}
-				add_core_of = CRO
+			if = {
+				limit = { 104 = { NOT = { is_core_of = CRO } } }
+				104 = { add_core_of = CRO }
+			}
+			if = {
+				limit = { 804 = { NOT = { is_core_of = CRO } } }
+				804 = { add_core_of = CRO }
 			}
 
 			CRO = {
@@ -3774,10 +3663,7 @@ HUN_the_empire_category = {
 					limit = {
 						OR = {
 							is_controlled_by = ROOT
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = PREV
-							}
+							controller = { is_subject_of = ROOT }
 						}
 						NOT = {
 							is_core_of = ROOT
@@ -3891,28 +3777,20 @@ HUN_the_empire_category = {
 			is_subject = no
 			OR = {
 				AND = {
-					LBV = {
-						exists = no
-					}
+					NOT = { country_exists = LBV }
 					AND = {
-						OR = {
 							160 = {
+								OR = {
 								is_controlled_by = ROOT
+								controller = { is_subject_of = ROOT }
+								}
 							}
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = 160
-							}
-						}
-						OR = {
 							159 = {
+								OR = {
 								is_controlled_by = ROOT
+								controller = { is_subject_of = ROOT }
+								}
 							}
-							any_country = {
-								is_subject_of = ROOT
-								controls_state = 159
-							}
-						}
 					}
 				}
 				LBV = {
@@ -3930,9 +3808,8 @@ HUN_the_empire_category = {
 					limit = {
 						OR = {
 							is_controlled_by = ROOT
-							any_country = {
+							controller = {
 								is_subject_of = ROOT
-								controls_state = PREV
 							}
 						}
 						NOT = {
@@ -4601,7 +4478,7 @@ HUN_fascist_movements_category = {
 			    			}
 			    		}
 
-			    		random_state = {
+			    		random_controlled_state = {
 			    			limit = {
 			    				is_fully_controlled_by = PREV
 			    			}

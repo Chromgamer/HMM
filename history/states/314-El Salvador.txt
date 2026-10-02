@@ -3,6 +3,8 @@ state=
 	id=314
 	name="STATE_314"
 	manpower = 1
+	resources={
+	}
 	
 	state_category = wasteland
 	
@@ -19,6 +21,7 @@ state=
 			}
 		}
 		add_core_of = WST
+		add_core_of = ELS
 	}
 	provinces={
 		12823 13093 

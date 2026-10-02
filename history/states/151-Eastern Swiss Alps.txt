@@ -4,7 +4,8 @@ state={
 	name="STATE_151"
 	manpower = 1
 	state_category = wasteland
-	
+	resources={
+	}
 	history={
 		owner = WST
 		buildings = {
@@ -12,6 +13,7 @@ state={
 			industrial_complex = 1
 		}
 		add_core_of = WST
+		add_core_of = SWI
 	}
 	provinces={
 		658 661 3660 3662 11601 

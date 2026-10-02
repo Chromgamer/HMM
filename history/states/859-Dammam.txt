@@ -3,10 +3,14 @@ state = {
 	name = "STATE_859"
 	manpower = 1
 
+	resources = {
+	}
+
 	history = {
 
 		owner = WST
 		add_core_of = WST
+		add_core_of = SAU
 
 		buildings = {
 			infrastructure = 1

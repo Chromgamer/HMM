@@ -10,7 +10,13 @@ state = {
 
 		owner = CHI
 		add_core_of = CHI
-		add_core_of = WST
+		add_core_of = PRC
+		IF = {
+			limit = {
+				has_dlc = "No Compromise, No Surrender"
+			}
+			add_core_of = SND
+		}
 
 		victory_points = {
 			10000 5 # Qingdao
@@ -24,6 +30,8 @@ state = {
 
 			10000 = {
 				naval_base = 5
+				#coastal_bunker = 1
+				#bunker = 1
 			}
 
 		}

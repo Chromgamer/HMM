@@ -454,9 +454,7 @@ if = {
 
 every_owned_state = {
 	limit = { NOT = { state = 992 } } #province of Áden
-	ROOT = {
-		add_to_array = { array = owned_states_at_game_start value = PREV }
-	}
+	set_state_flag = RAJ_owned_states_at_game_start
 }
 
 set_variable = { famine_reduction = 0 }
@@ -505,16 +503,6 @@ set_variable = { RAJ_fyp_production_factory_max_efficiency_factor = 0 }
 
 if = {
 	limit = {
-		is_historical_focus_on = yes
-	}
-	430 = {
-	 	set_variable = { global.famine_state = THIS }
-	}
-	
-}
-
-if = {
-	limit = {
 		has_dlc = "Graveyard of Empires"
 	}
 
@@ -523,11 +511,8 @@ if = {
 		amount = 5500
 		producer = RAJ
 	}
-}
-if = {
-	limit = { #If not having goe core everything again since non dlc cant recore
-		NOT = { has_dlc = "Graveyard of Empires" }
-	}
+else = {
+	#If not having goe core everything again since non dlc cant recore
 	every_owned_state = {
 		limit = {
 			NOT = {
@@ -547,6 +532,7 @@ if = {
 		}
 		add_core_of = RAJ
 	}
+}
 }
 
 if = {
@@ -655,4 +641,18 @@ if = {
 	set_variable = { RAJ_congress_decision_cost = 100 }
 	set_variable = { RAJ_congress_decision_cost_increment = 25 }
 
+}
+
+# HMM: starting stockpiles to compensate for deleted day 1 starting units
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 3000
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 3800
+}
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 9
 }

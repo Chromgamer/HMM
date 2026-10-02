@@ -3,6 +3,8 @@ state={
 	name="STATE_1009"
 	state_category = wasteland
 
+	resources = {
+	}
 
 	provinces={
 		2017 2062 2078 1948 2101
@@ -13,6 +15,7 @@ state={
 			infrastructure = 0
 		}
 		add_core_of = WST
+		add_core_of = AFG
 	}
 	manpower = 1
 	buildings_max_level_factor=1.000

@@ -3,9 +3,7 @@
 
 oob = "BRA_1936"
 every_core_state = {
-	ROOT = {
-		add_to_array = { cores_at_game_start = PREV }
-	}
+	set_state_flag = BRA_cores_at_game_start
 }
 IF = {
 	limit = { has_dlc = "By Blood Alone" }
@@ -542,4 +540,18 @@ IF = {
 			}
 		}
 	}
+}
+
+# HMM: starting stockpiles to compensate for deleted day 1 starting units
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 7
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 2700
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 75
 }

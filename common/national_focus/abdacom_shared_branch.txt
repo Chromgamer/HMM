@@ -2,6 +2,8 @@
 	id = ABDA_abdacom
 	icon = GFX_focus_ARG_join_the_allies
 
+	text_icon = ABDACOM_focus_style
+
 	x = 0
 	y = 0
 
@@ -24,9 +26,49 @@
 	}
 
 	offset = {
-		x = 58
+		x = 57
 		y = 0
 		trigger = { tag = USA }
+	}
+	offset = {
+		x = -3
+		y = 0
+		trigger = {
+			tag = USA
+			OR = {
+				AND = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+					has_completed_focus = USA_continue_the_new_deal
+				}
+				has_game_rule = {
+					rule = alt_hist_usa
+					option = banned
+				}
+			}
+		}
+	}
+	offset = {
+		x = -13
+		y = 0
+		trigger = {
+			tag = USA
+			OR = {
+				AND = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+					has_completed_focus = USA_reestablish_the_gold_standard
+				}
+				has_game_rule = {
+					rule = alt_hist_usa
+					option = forced
+				}
+			}
+		}
 	}
 
 	offset = {
@@ -66,10 +108,18 @@
 				has_completed_focus = INS_the_declaration_of_independence
 			}
 		}
+		is_vichy_france = no
 	}
 
 	available = {
-		is_in_faction = yes
+		OR = {
+		      is_in_faction_with = USA
+		      is_in_faction_with = FRA
+		      is_in_faction_with = ENG
+		      is_in_faction_with = AST
+		      is_in_faction_with = HOL
+		      is_in_faction_with = INS
+		}
 		has_war_with = JAP
 		OR = {
 			is_major = yes
@@ -94,6 +144,9 @@
 			set_variable = { ABDA_screen_defence_factor = 0 }
 			set_variable = { ABDA_experience_gain_navy_unit_factor = 0 }
 		}
+
+		custom_effect_tooltip = ABDA_faction_membership_requirement_tt
+		
 		every_country = {
 			limit = {
 				OR = {
@@ -119,6 +172,8 @@ joint_focus = {
 	icon = GFX_focus_chi_british_cooperation
 	prerequisite = { focus = ABDA_abdacom }
 	relative_position_id = ABDA_abdacom
+
+	text_icon = ENG_focus_style
 
 	x = -2
 	y = 1
@@ -157,6 +212,8 @@ joint_focus = {
 	icon = GFX_focus_chi_reach_out_to_france
 	prerequisite = { focus = ABDA_abdacom }
 	relative_position_id = ABDA_abdacom
+
+	text_icon = FRA_focus_style
 
 	x = 0
 	y = 1
@@ -209,9 +266,8 @@ joint_focus = {
 						}
 					}
 				}
-				random_owned_state = {
+				random_owned_controlled_state = {
 					limit = {
-						is_controlled_by = ROOT
 						OR = {
 							is_core_of = VIE
 							is_core_of = CAM
@@ -236,6 +292,8 @@ joint_focus = {
 	icon = GFX_focus_generic_befriend_usa
 	prerequisite = { focus = ABDA_abdacom }
 	relative_position_id = ABDA_abdacom
+
+	text_icon = USA_focus_style
 
 	x = 2
 	y = 1
@@ -269,6 +327,8 @@ joint_focus = {
 	prerequisite = { focus = ABDA_fortress_singapore focus = ABDA_corps_expeditionnaire }
 	relative_position_id = ABDA_abdacom
 
+	text_icon = ABDACOM_focus_style
+
 	x = -1
 	y = 2
 
@@ -297,9 +357,9 @@ joint_focus = {
 			add_to_variable = { ABDA_repair_speed_factor = 0.15 }
 			add_to_variable = { ABDA_convoy_escort_efficiency = 0.10 }
 		}
-		every_state = {
+		MAL = {
+		every_core_state = {
 			limit = {
-				is_core_of = MAL
 				OR = {
 					is_owned_by = ENG
 					is_owned_by = MAL
@@ -312,12 +372,10 @@ joint_focus = {
 				province = { all_provinces = yes limit_to_naval_base = yes }
 			}
 		}
+		}
 		every_state = {
 			limit = {
-				is_in_array = {
-					array = INS.owned_states_at_game_start
-					value = THIS
-				}
+				has_state_flag = INS_owned_states_at_game_start
 				OR = {
 					is_controlled_by = INS
 					is_controlled_by = HOL
@@ -348,6 +406,8 @@ joint_focus = {
 	icon = GFX_goal_generic_construct_naval_dockyard
 	prerequisite = { focus = ABDA_corps_expeditionnaire focus = ABDA_maintain_strategic_flexibility}
 	relative_position_id = ABDA_abdacom
+
+	text_icon = ABDACOM_focus_style
 
 	x = 1
 	y = 2
@@ -405,9 +465,8 @@ joint_focus = {
 			if = {
 				limit = { AST = { has_country_flag = abdacom_member } }
 				AST = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
-							is_controlled_by = AST
 							is_core_of = AST
 							free_building_slots = {
 								building = dockyard
@@ -426,9 +485,8 @@ joint_focus = {
 			if = {
 				limit = { INS = { has_country_flag = abdacom_member } }
 				INS = {
-					random_owned_state = {
+					random_owned_controlled_state = {
 						limit = {
-							is_controlled_by = INS
 							is_core_of = INS
 							free_building_slots = {
 								building = dockyard
@@ -455,6 +513,8 @@ joint_focus = {
 	icon = GFX_focus_generic_trade_interdiction
 	prerequisite = { focus = ABDA_the_malay_barrier focus = ABDA_develop_naval_infrastructure }
 	relative_position_id = ABDA_abdacom
+
+	text_icon = ABDACOM_focus_style
 
 	x = 0
 	y = 3
@@ -513,6 +573,8 @@ joint_focus = {
 	prerequisite = { focus = ABDA_unified_naval_command }
 	relative_position_id = ABDA_abdacom
 
+	text_icon = ABDACOM_focus_style
+
 	x = -2
 	y = 4
 
@@ -559,6 +621,8 @@ joint_focus = {
 	icon = GFX_SOV_an_oceangoing_navy_ccp_2d_sov_compatibility
 	prerequisite = { focus = ABDA_unified_naval_command }
 	relative_position_id = ABDA_abdacom
+
+	text_icon = ABDACOM_focus_style
 
 	x = 0
 	y = 4
@@ -700,6 +764,8 @@ joint_focus = {
 	prerequisite = { focus = ABDA_unified_naval_command }
 	relative_position_id = ABDA_abdacom
 
+	text_icon = ABDACOM_focus_style
+
 	x = 2
 	y = 4
 
@@ -748,6 +814,8 @@ joint_focus = {
 	prerequisite = { focus = ABDA_keep_trade_open }
 	prerequisite = { focus = ABDA_ship_a_day_sinking_quotas }
 	relative_position_id = ABDA_abdacom
+
+	text_icon = ABDACOM_focus_style
 
 	x = 0
 	y = 5

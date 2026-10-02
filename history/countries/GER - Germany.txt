@@ -33,7 +33,7 @@ add_breakthrough_progress = {
 
 set_grand_doctrine = new_mobile_warfare
 set_grand_doctrine = new_convoy_raiding
-set_grand_doctrine = new_strategic_destruction
+set_grand_doctrine = new_battlefield_support
 
 if = {
 	limit = { has_dlc = "By Blood Alone" }
@@ -667,6 +667,7 @@ set_war_support = 0.3
 				}
 			}	
 		}
+		set_research_slots = 3	#otherwise inherits Germany's 5
 	}
 
 	if = {
@@ -1844,4 +1845,32 @@ if = {
 	#	}
 	#	obsolete = yes
 	#}
+}
+
+# HMM: starting stockpiles to compensate for deleted day 1 starting units
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 71
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 24900
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 891
+}
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 607
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 349
+}
+add_equipment_to_stockpile = {
+	type = light_tank_chassis_1
+	amount = 720
+	producer = GER
+	variant_name = "Panzer I Ausf. A"
 }

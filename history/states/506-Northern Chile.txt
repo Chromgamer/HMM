@@ -5,13 +5,15 @@ state = {
 	
 	state_category = wasteland
 
-	
+	resources = {
+	}
 
 	history = {
 
 		owner = WST
 		add_core_of = WST
-		
+		add_core_of = CHL
+		add_claim_by = BOL
 
 		buildings = {
 			infrastructure = 3

@@ -651,6 +651,31 @@ country_event = {
 		# Increase opposition Army Support 
 		SOV_increase_opposition_army_support_small = yes 
 	}
+
+	option = { #NO WAIT! Let's Think about it
+		name = NSB_soviet_paranoia_system_events.23.b
+		trigger = { always = no }
+		ai_chance = {
+			base = 1
+			modifier = { #Don't go to negative PP please
+				factor = 0
+				has_political_power < SOV_purge_event_pp_to_avoid_regular_pay
+			}
+			modifier = { #Don't risk starting CW too early
+				factor = 0
+				SOV_is_opposition = yes 
+			}
+		}
+
+		trigger = {
+			NOT = { has_political_power < SOV_purge_event_pp_to_avoid_regular }
+		}
+
+		add_political_power = SOV_purge_event_pp_to_avoid_regular_pay
+
+		#PARANOIA increases
+		SOV_paranoia_low_increase_effect = yes
+	}
 }
 
 ### GENERAL ACCUSES GENERAL - ARMY ###
@@ -811,6 +836,7 @@ unit_leader_event = {
 					has_character_flag = SOV_purge_accuser_flag
 					has_character_flag = SOV_purge_accused_flag
 				}
+				NOT = { has_trait = trait_SOV_cowed_by_stalin_army }
 			}
 			add_unit_leader_trait = trait_SOV_cowed_by_stalin_army
 		}
@@ -2119,6 +2145,11 @@ country_event = {
 
 	option = { #Join Faction - Keep government
 		name = NSB_soviet_foreign_politics_events.1.a
+		trigger = {
+			FROM = {
+				is_faction_leader = yes
+			}
+		}
 
 		ai_chance = {
 			base = 10
@@ -3270,9 +3301,9 @@ country_event = {
 					is_subject = yes
 					strength_ratio = {
 						tag = FROM
-						ratio < 0.6
+						ratio < 0.4
 					}
-					surrender_progress > 0.5
+					surrender_progress > 0.15
 				}
 			}
 		}
@@ -4209,6 +4240,8 @@ country_event = {
 			modifier = { #Is going commie or historical
 				factor = 0
 				OR = {
+					has_completed_focus = JAP_the_unthinkable_option
+					has_completed_focus = JAP_return_of_the_manchukuo_exiles
 					has_completed_focus = JAP_sea_purge_the_kodoha_faction
 				}
 			}
@@ -8993,7 +9026,10 @@ country_event = {
 	option = {
 		name = NSB_soviet_communist_civil_war.010.a
 		var:SOS.SOV_general_to_desert = { 
+			if = {
+				limit = { has_trait = trait_SOV_cowed_by_stalin_army }
 			remove_unit_leader_trait = trait_SOV_cowed_by_stalin_army
+			}
 			set_nationality = ROOT 
 		}
 
@@ -10843,6 +10879,7 @@ country_event = {
 		hidden_effect = {
 			random_army_leader = {
 				# limit = { is_high_command = no }
+				limit = { NOT = { has_trait = trait_SOV_foreign_military_advisor } }
 				add_unit_leader_trait = trait_SOV_foreign_military_advisor
 				set_variable = { ROOT.SOV_foreign_military_advisor_1 = THIS }
 			}
@@ -10932,9 +10969,8 @@ country_event = {
 			}
 			modifier = {
 				factor = 3 # Even less interested if already involved in a war with a major country
-				any_country = {
+				any_enemy_country = {
 					is_major = yes
-					has_war_with = ROOT
 				}
 			}
 		}
@@ -11039,10 +11075,8 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
-			every_country = {
-				limit = {
-					original_tag = SOV
-				}
+			every_country_with_original_tag = {
+   				original_tag_to_check = SOV
 				every_owned_state = {
 					limit = { is_core_of = UKR }
 					UKR = { transfer_state = PREV }
@@ -11168,9 +11202,8 @@ country_event = {
 			}
 			modifier = {
 				factor = 2 # Even less interested if already involved in a war with a major country
-				any_country = {
+				any_enemy_country = {
 					is_major = yes
-					has_war_with = ROOT
 				}
 			}
 		}
@@ -11802,7 +11835,7 @@ country_event = {
 						factor = 0
 						OR = { 
 							has_country_flag = ukr_uprising_flag
-							UKR = { exists = yes }
+							country_exists = UKR
 						}
 					}
 					set_variable = { SOV_nationalist_country = UKR }
@@ -11818,7 +11851,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = blr_uprising_flag
-							BLR = { exists = yes }
+							country_exists = BLR
 						}
 					}
 					set_variable = { SOV_nationalist_country = BLR }
@@ -11832,16 +11865,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = CRI
+						CRI = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = CRI_uprising_flag
-							CRI = { exists = yes }
+							country_exists = CRI
 						}
 					}
 					set_variable = { SOV_nationalist_country = CRI }
@@ -11855,16 +11889,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = KAR
+						KAR = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = KAR_uprising_flag
-							KAR = { exists = yes }
+							country_exists = KAR
 						}
 					}
 					set_variable = { SOV_nationalist_country = KAR }
@@ -11951,7 +11986,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = geo_uprising_flag
-							GEO = { exists = yes }
+							country_exists = GEO
 						}
 					}
 					set_variable = { SOV_nationalist_country = GEO }
@@ -11967,7 +12002,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = arm_uprising_flag
-							ARM = { exists = yes }
+							country_exists = ARM
 						}
 					}
 					set_variable = { SOV_nationalist_country = ARM }
@@ -11983,7 +12018,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = azr_uprising_flag
-							AZR = { exists = yes }
+							country_exists = AZR
 						}
 					}
 					set_variable = { SOV_nationalist_country = AZR }
@@ -11999,7 +12034,7 @@ country_event = {
 						factor = 0
 						OR = {
 							has_country_flag = KAL_uprising_flag
-							KAL = { exists = yes }
+							country_exists = KAL
 						}
 					}
 					set_variable = { SOV_nationalist_country = KAL }
@@ -12013,16 +12048,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = DAG
+						DAG = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = DAG_uprising_flag
-							DAG = { exists = yes }
+							country_exists = DAG
 						}
 					}
 					set_variable = { SOV_nationalist_country = DAG }
@@ -12036,16 +12072,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = CIN
+						CIN = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = CIN_uprising_flag
-							CIN = { exists = yes }
+							country_exists = CIN
 						}
 					}
 					set_variable = { SOV_nationalist_country = CIN }
@@ -12059,16 +12096,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = ABK
+						ABK = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = ABK_uprising_flag
-							ABK = { exists = yes }
+							country_exists = ABK
 						}
 					}
 					set_variable = { SOV_nationalist_country = ABK }
@@ -12084,16 +12122,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = KOM
+						KOM = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = KOM_uprising_flag
-							KOM = { exists = yes }
+							country_exists = KOM
 						}
 					}
 					set_variable = { SOV_nationalist_country = KOM }
@@ -12107,16 +12146,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = NEN
+						NEN = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = NEN_uprising_flag
-							NEN = { exists = yes }
+							country_exists = NEN
 						}
 					}
 					set_variable = { SOV_nationalist_country = NEN }
@@ -12132,16 +12172,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = KHI
+						KHI = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = khi_uprising_flag
-							KHI = { exists = yes }
+							country_exists = KHI
 						}
 					}
 					set_variable = { SOV_nationalist_country = KHI }
@@ -12155,16 +12196,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = BUK
+						BUK = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = buk_uprising_flag
-							BUK = { exists = yes }
+							country_exists = BUK
 						}
 					}
 					set_variable = { SOV_nationalist_country = BUK }
@@ -12178,16 +12220,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0
-						any_state = {
-							is_core_of = KAZ
+						KAZ = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = kaz_uprising_flag
-							KAZ = { exists = yes }
+							country_exists = KAZ
 						}
 					}
 					set_variable = { SOV_nationalist_country = KAZ }
@@ -12201,16 +12244,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0
-						any_state = {
-							is_core_of = UZB
+						UZB = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = uzb_uprising_flag
-							UZB = { exists = yes }
+							country_exists = UZB
 						}
 					}
 					set_variable = { SOV_nationalist_country = UZB }
@@ -12224,16 +12268,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = KKP
+						KKP = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = kkp_uprising_flag
-							KKP = { exists = yes }
+							country_exists = KKP
 						}
 					}
 					set_variable = { SOV_nationalist_country = KKP }
@@ -12247,16 +12292,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = TMS
+						TMS = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = tms_uprising_flag
-							TMS = { exists = yes }
+							country_exists = TMS
 						}
 					}
 					set_variable = { SOV_nationalist_country = TMS }
@@ -12270,16 +12316,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = KYR
+						KYR = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = KYR_uprising_flag
-							KYR = { exists = yes }
+							country_exists = KYR
 						}
 					}
 					set_variable = { SOV_nationalist_country = KYR }
@@ -12293,16 +12340,17 @@ country_event = {
 					}
 					modifier = {
 						factor = 0.25
-						any_state = {
-							is_core_of = TAJ
+						TAJ = {
+						any_core_state = {
 							is_controlled_by = SOV
+						}
 						}
 					}
 					modifier = {
 						factor = 0
 						OR = {
 							has_country_flag = TAJ_uprising_flag
-							TAJ = { exists = yes }
+							country_exists = TAJ
 						}
 					}
 					set_variable = { SOV_nationalist_country = TAJ }
@@ -12324,18 +12372,16 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		hidden_effect = {
-			every_country = {
-				limit = {
-					original_tag = SOV
-				}
+			every_country_with_original_tag = {
+   				original_tag_to_check = SOV
 				every_owned_state = {
 					limit = { is_core_of = var:SOV.SOV_nationalist_country }
 					var:SOV.SOV_nationalist_country = { transfer_state = PREV }
 				}
 			}
 			# Capture any Stalinist soldiers in our territory
-			every_state = {
-				limit = { is_owned_by = var:SOV.SOV_nationalist_country}
+			var:SOV.SOV_nationalist_country = {
+			every_owned_state = {
 				SOS = { 
 					delete_unit = { 
 						state = PREV 
@@ -12343,7 +12389,6 @@ country_event = {
 					}
 				}
 			}
-			var:SOV.SOV_nationalist_country  = {
 				division_template = {
 				    name = "Resistance Fighters"
 					is_locked = yes

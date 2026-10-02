@@ -229,6 +229,11 @@ technologies = {
 				factor = 5
 				date > "1940.1.1"
 			}
+
+			modifier = { # HMM: it's extremely difficult to force an AI to do a specific tech early with just strategies alone, so this is needed for the Siam annex build
+				original_tag = SIA
+				factor = 10000
+			}
 		}
 	}
 	
@@ -252,9 +257,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 			
 		}				
@@ -334,9 +342,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_axial_jet_engine	
+			}
 			}
 		}		
 		research_cost = 2
@@ -397,6 +408,10 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			jet_engines_allowed = yes
 		}
 
 		is_special_project_tech = yes
@@ -581,9 +596,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 		}		
 		research_cost = 2
@@ -644,9 +662,12 @@ technologies = {
 			research_cost_coeff = 1
 		}
 		on_research_complete = {
+			if = {
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_axial_jet_engine	
+			}
 			}
 		}
 		research_cost = 2
@@ -696,6 +717,10 @@ technologies = {
 			} 
 		}
 
+		allow_branch = {
+			jet_engines_allowed = yes
+		}
+
 		is_special_project_tech = yes
 
 		enable_equipments = {
@@ -736,12 +761,6 @@ technologies = {
 			large_plane_airframe_0
 			large_plane_maritime_patrol_plane_airframe_0
 		}
-		allow = {
-            has_game_rule = {
-                rule = strat_bombing
-                option = allowed
-            }
-        }
 	
 		path = {
 			leads_to_tech = basic_large_airframe
@@ -796,12 +815,6 @@ technologies = {
 			leads_to_tech = improved_large_airframe
 			research_cost_coeff = 1
 		}
-		allow = {
-            has_game_rule = {
-                rule = strat_bombing
-                option = allowed
-            }
-        }
 
 		research_cost = 2
 		start_year = 1936
@@ -944,6 +957,10 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_axial_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			jet_engines_allowed = yes
 		}
 
 		is_special_project_tech = yes
@@ -1675,9 +1692,12 @@ technologies = {
 			engine_2_6x	
 		}
 		on_research_complete = {
+			if = {
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_jet_engine	
+			}
 			}
 		}		
 		research_cost = 1
@@ -1741,9 +1761,12 @@ technologies = {
 			engine_3_6x	
 		}
 		on_research_complete = {
+			if = {
+				limit = { jet_engines_allowed = yes }
 			custom_effect_tooltip = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_air_axial_jet_engine	
+			}
 			}
 		}		
 		research_cost = 1.5
@@ -1805,6 +1828,10 @@ technologies = {
 	}
 
 	engines_4 = {
+
+		allow_branch = {
+			air_engine_4_allowed = yes
+		}
 
 		enable_equipment_modules = {
 			engine_4_1x
@@ -2001,6 +2028,10 @@ technologies = {
 			ROOT = {
 				is_special_project_completed = sp:sp_air_jet_engine
 			} 
+		}
+
+		allow_branch = {
+			jet_engines_allowed = yes
 		}
 
 		is_special_project_tech = yes

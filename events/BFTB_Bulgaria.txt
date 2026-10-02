@@ -515,6 +515,7 @@ country_event = {
 				limit = {
 					NOT = { has_trait = trait_BUL_tsar_loyalist }
 					NOT = { has_trait = trait_BUL_ff_sympathizer }
+					NOT = { has_trait = trait_BUL_zveno_member }
 				}
 				add_unit_leader_trait = trait_BUL_zveno_member
 			}
@@ -2874,7 +2875,11 @@ country_event = {
 	option = { #When formed by the player
 		name = bftb_bulgaria_fatherland_front.1.a
 
-		
+		trigger = {
+			has_completed_focus = BUL_the_fatherland_front
+		}
+		add_political_power = 70
+		add_ideas = BUL_fatherland_front_positive
 	}
 
 	option = { #When NOT formed by the player
@@ -2896,28 +2901,41 @@ country_event = {
 		}
 		add_ideas = BUL_fatherland_front_negative
 		activate_mission_tooltip = BUL_ff_impending_coup_mission
-		random_unit_leader = {
+		if = {
 			limit = {
-				has_id = 1203 #Hadzhipetkov
+				has_character = BUL_nikola_hadzipetkov
+				BUL_nikola_hadzipetkov = {
+					NOT = { has_trait = trait_BUL_ff_sympathizer }
+				}
 			}
-			add_unit_leader_trait = trait_BUL_ff_sympathizer
+			BUL_nikola_hadzipetkov = {
+				add_unit_leader_trait = trait_BUL_ff_sympathizer
+			}
 		}
 
 		random_list = {
 			50 = {
-				random_unit_leader = {
-					limit = {
-						has_id = 1202 #Popov
+				modifier = {
+					factor = 0
+					NOT = { has_character = BUL_georgi_popov }
+				}
+				BUL_georgi_popov = {
+					if = {
+						limit = { NOT = { has_trait = trait_BUL_ff_sympathizer } }
+						add_unit_leader_trait = trait_BUL_ff_sympathizer
 					}
-					add_unit_leader_trait = trait_BUL_ff_sympathizer
 				}
 			}
 			50 = {
-				random_unit_leader = {
-					limit = {
-						has_id = 1211 #Dotsev
+				modifier = {
+					factor = 0
+					NOT = { has_character = BUL_angel_dotsev }
+				}
+				BUL_angel_dotsev = {
+					if = {
+						limit = { NOT = { has_trait = trait_BUL_ff_sympathizer } }
+						add_unit_leader_trait = trait_BUL_ff_sympathizer
 					}
-					add_unit_leader_trait = trait_BUL_ff_sympathizer
 				}
 			}
 		}
@@ -2975,6 +2993,67 @@ country_event = {
 
 	immediate = {
 
+	}
+	
+	option = { #Refuse
+		name = bftb_bulgaria_rearmament.1.a
+		trigger = { always = no }
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				factor = 100
+				has_opinion = {
+					target = BUL
+					value < 0
+				}
+			}
+			modifier = {
+				factor = 100
+				BUL = {
+					is_in_faction_with = GER
+				}
+				NOT = {
+					GER = {
+						is_in_faction_with = ROOT
+					}
+				}
+			}
+			modifier = { #Support IMRO is not cool bro
+				factor = 10
+				BUL = { has_completed_focus = BUL_support_macedonian_organizations }
+			}
+			modifier = { #Your coop with IMRO is just too much
+				factor = 10
+				BUL = { has_idea = BUL_imro_05 }
+			}
+			modifier = {
+				factor = 5
+				BUL_has_some_sort_of_bogdan_filov = yes
+			}
+		}
+
+		BUL = { country_event = { id = bftb_bulgaria_rearmament.2 hours = 16 random_hours = 8 } }
+		custom_effect_tooltip = bftb_bulgaria_rearmament.1_refuse_tt
+	}
+
+	option = { #Demands NAP with (at least) one balkan nation
+		name = bftb_bulgaria_rearmament.1.b
+
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 5
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 2
+				BUL_has_some_sort_of_bogdan_filov = yes
+			}
+		}
+
+		BUL = { country_event = { id = bftb_bulgaria_rearmament.3 hours = 16 random_hours = 8 } }
+		custom_effect_tooltip = bftb_bulgaria_rearmament.1_nap_tt
 	}
 
 	option = { #Accept
@@ -3289,9 +3368,10 @@ country_event = {
 			}
 			modifier = {
 				factor = 0
-				any_country = {
-					has_war_with = BUL
+				BUL = {
+				any_enemy_country = {
 					is_in_faction_with = ROOT
+				}
 				}
 			}
 			modifier = { #We like that you condemn IMRO
@@ -4318,10 +4398,9 @@ country_event = {
 			}
 		}
 
-		every_state = {
+		every_controlled_state = {
 			limit = {
 				has_state_flag = BUL_bulgarian_claim_warranted_flag
-				is_controlled_by = ROOT	
 				NOT = {
 					is_core_of = ROOT
 				}
@@ -6439,36 +6518,42 @@ country_event = {
 				if = {
 					limit = {
 						BUL = { check_variable = { var = BUL_trait_gained_during_scw value = 1 compare = equals } }
+						NOT = { has_trait = commando }
 					}
 					add_unit_leader_trait = commando
 				}
 				else_if = {
 					limit = {
 						BUL = { check_variable = { BUL_trait_gained_during_scw = 2 } }
+						NOT = { has_trait = trait_mountaineer }
 					}
 					add_unit_leader_trait = trait_mountaineer
 				}
 				else_if = {
 					limit = {
 						BUL = { check_variable = { BUL_trait_gained_during_scw = 3 } }
+						NOT = { has_trait = hill_fighter }
 					}
 					add_unit_leader_trait = hill_fighter
 				}
 				else_if = {
 					limit = {
 						BUL = { check_variable = { BUL_trait_gained_during_scw = 4 } }
+						NOT = { has_trait = urban_assault_specialist }
 					}
 					add_unit_leader_trait = urban_assault_specialist
 				}
 				else_if = {
 					limit = {
 						BUL = { check_variable = { BUL_trait_gained_during_scw = 5 } }
+						NOT = { has_trait = trickster }
 					}
 					add_unit_leader_trait = trickster
 				}
 				else_if = {
 					limit = {
 						BUL = { check_variable = { BUL_trait_gained_during_scw = 6 } }
+						NOT = { has_trait = organizer }
 					}
 					add_unit_leader_trait = organizer
 				}
@@ -6948,11 +7033,7 @@ country_event = {
 					}
 				}
 			}
-			random_country = {
-				limit = {
-					is_in_faction_with = ROOT
-					is_faction_leader = yes
-				}
+			faction_leader = {
 				add_to_faction = FROM
 			}
 		}
@@ -8541,7 +8622,7 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			random_other_country = {
+			random_allied_country = {
 				limit = {
 					is_in_faction_with = ROOT
 					is_faction_leader = yes

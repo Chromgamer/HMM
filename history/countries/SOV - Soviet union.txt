@@ -503,13 +503,10 @@ add_to_array = {
 	value = 0
 	index = 0
 }
-set_temp_variable = { i = 0 }
-while_loop_effect = {
-	limit = {
-		check_variable = { i = 12 compare = less_than }
-	}
+for_loop_effect = {
+	start = 0
+	end = 12
 	add_to_array = { SOV_paranoia_generic_portraits_array = 1 } # 1 = NO PORTRAIT
-	add_to_temp_variable = { i = 1 }
 }
 set_variable = { SOV_paranoia_portrait_index = 1 }
 
@@ -960,11 +957,9 @@ add_ideas = {
 	
 	#Generic
 	set_variable = { SOV_paranoia_portrait_index = 1 }
-	set_temp_variable = { i = 0 }
-	while_loop_effect = {
-		limit = {
-			check_variable = { i = 6 compare = less_than }
-		}
+	for_loop_effect = {
+		start = 0
+		end = 6
 		set_temp_variable = { SOV_generic_portrait_frame = SOV_paranoia_portrait_index }
 
 		add_to_temp_variable = { SOV_generic_portrait_frame = 1 }
@@ -976,7 +971,6 @@ add_ideas = {
 		}
 		
 		add_to_variable = { SOV_paranoia_portrait_index = 1 }
-		add_to_temp_variable = { i = 1 }
 	}
 
 	#SET PURGE FLAGS
@@ -1016,11 +1010,9 @@ add_ideas = {
 	SOV_pavel_rychagov = { SOV_purge_character_effect = yes }
 
 	#COWED GENERALS
-	set_temp_variable = { army_leader_counter = 0 }
-	while_loop_effect = {
-		limit = {
-			check_variable = { army_leader_counter = 10 compare = less_than }
-		}
+	for_loop_effect = {
+		start = 0
+		end = 10
 		random_army_leader = {
 			limit = {
 				NOT = { has_character_flag = SOV_character_purged_flag }
@@ -1028,14 +1020,11 @@ add_ideas = {
 			}
 			add_unit_leader_trait = trait_SOV_cowed_by_stalin_army
 		}
-		add_to_temp_variable = { army_leader_counter = 1 }
 	}
 	#COWED ADMIRALS
-	set_temp_variable = { navy_leader_counter = 0 }
-	while_loop_effect = {
-		limit = {
-			check_variable = { navy_leader_counter = 3 compare = less_than }
-		}
+	for_loop_effect = {
+		start = 0
+		end = 3
 		random_navy_leader = {
 			limit = {
 				NOT = { has_character_flag = SOV_character_purged_flag }
@@ -1043,7 +1032,6 @@ add_ideas = {
 			}
 			add_unit_leader_trait = trait_SOV_cowed_by_stalin_navy
 		}
-		add_to_temp_variable = { navy_leader_counter = 1 }
 	}
 	
 
@@ -1677,6 +1665,12 @@ if = {
 			fixed_ship_engine_slot = sub_ship_engine_1
 			rear_1_custom_slot = empty
 		}
+		optional_assets = {
+			{
+				icon = "GFX_SOV_submarine_shchuka"
+				model = "SOV_submarine_entity"
+			}
+		}
 		obsolete = yes
 	}
 	create_equipment_variant = {
@@ -1699,6 +1693,12 @@ if = {
 			fixed_ship_torpedo_slot = ship_torpedo_sub_2
 			fixed_ship_engine_slot = sub_ship_engine_2
 			rear_1_custom_slot = empty
+		}
+		optional_assets = {
+			{
+				icon = "GFX_SOV_submarine_shchuka"
+				model = "SOV_submarine_entity"
+			}
 		}
 	}
 	# Destroyers #
@@ -1976,6 +1976,12 @@ if = {
 				mid_1_custom_slot = empty
 				rear_1_custom_slot = ship_depth_charge_1
 			}
+			optional_assets = {
+				{
+					icon = "GFX_PRC_destroyer_anshan"
+					model = "PRC_destroyer_entity"
+				}
+			}
 			obsolete = yes
 		}
 		create_equipment_variant = {
@@ -2052,3 +2058,42 @@ if = {
 		}
 	}
 }
+
+# HMM: starting stockpiles to compensate for deleted day 1 starting units
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 305
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 21960
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 65700
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 401
+}
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 1600
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 814
+}
+add_equipment_to_stockpile = {
+	type = light_tank_chassis_1
+	amount = 1300
+	producer = SOV
+	variant_name = "T-26TU mod. 1933"
+}
+add_equipment_to_stockpile = {
+	type = light_tank_chassis_1
+	amount = 1000
+	producer = SOV
+	variant_name = "BT-5"
+}
+

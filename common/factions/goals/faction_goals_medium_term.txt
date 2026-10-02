@@ -75,12 +75,10 @@ faction_goal_undo_versailles = {
 			visible_when_empty = yes
 			limit = {
 				faction_influence_ratio > 0.3
+				NOT = { has_completed_goal = faction_goal_undo_versailles }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_undo_versailles } }
 				add_war_support = 0.05
 				add_political_power = 50
-			}
 		}
 	}
 	ai_will_do = {
@@ -295,6 +293,34 @@ faction_goal_the_arteries_of_trade = {
 		}
 	}
 	completed = {
+		if = {
+			limit = {
+				has_faction_template = faction_template_allies
+				has_game_rule = {
+					rule = easier_arteries_of_trade_for_allies
+					option = yes
+				}
+			}
+			OR = {
+				has_naval_control = 43
+				has_naval_control = 49
+				has_naval_control = 51
+				has_naval_control = 56
+				has_naval_control = 57
+				has_naval_control = 68
+				has_naval_control = 29
+				has_naval_control = 69
+				has_naval_control = 72
+				has_naval_control = 100
+				has_naval_control = 104
+				has_naval_control = 71
+				has_naval_control = 60	
+				has_naval_control = 48
+				has_naval_control = 61
+				has_naval_control = 62
+			}
+		}
+		else = {
 		count_triggers = {
 			amount = 10
 			has_naval_control = 43
@@ -314,14 +340,14 @@ faction_goal_the_arteries_of_trade = {
 			has_naval_control = 61
 			has_naval_control = 62
 		}
+		}
 	}
 	complete_effect = {
 		add_faction_power_projection = 100
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_the_arteries_of_trade } }
 				add_stability = 0.05
-			}
 		}
 	}
 	ai_will_do = {
@@ -483,10 +509,9 @@ faction_goal_guardians_of_peace = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_guardians_of_peace } }
 				add_stability = 0.05
-			}
 		}
 	}
 	ai_will_do = {
@@ -996,14 +1021,13 @@ faction_goal_indifference_is_a_threat = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_indifference_is_a_threat } }
 				add_political_power = 50
 				add_popularity = {
 					ideology = communism
 					popularity = 0.05
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1028,23 +1052,23 @@ faction_goal_undoing_brest_litowsk = {
 		count_triggers = {
 			amount = 4
 			OR = {
-				LIT = { exists = no }
+				NOT = { country_exists = LIT }
 				LIT = { is_in_faction_with = ROOT }
 			}
 			OR = {
-				LAT = { exists = no }
+				NOT = { country_exists = LAT }
 				LAT = { is_in_faction_with = ROOT }
 			}
 			OR = {
-				EST = { exists = no }
+				NOT = { country_exists = EST }
 				EST = { is_in_faction_with = ROOT }
 			}
 			OR = {
-				POL = { exists = no }
+				NOT = { country_exists = POL }
 				POL = { is_in_faction_with = ROOT }
 			}
 			OR = {
-				FIN = { exists = no }
+				NOT = { country_exists = FIN }
 				FIN = { is_in_faction_with = ROOT }
 			}
 		}
@@ -1058,10 +1082,9 @@ faction_goal_undoing_brest_litowsk = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_undoing_brest_litowsk } }
 				army_experience = 50
-			}
 		}
 	}
 	ai_will_do = {
@@ -1164,6 +1187,315 @@ faction_goal_a_large_faction = {
 
 ### Units/Deployment
 
+faction_goal_marine_corps = {
+	name = marine_corps_goal_name
+	description = marine_corps_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_NAVY_XP
+	available = {
+		always = no
+	}
+	visible = {
+		always = no
+	}
+	completed = {
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION
+			}
+			unit_category = { marine marine_commando amphibious_mechanized category_amphibious_tanks }
+			equipment_ratio = 0.9
+			size > 29
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		hidden_effect = {
+			every_collection_element = {
+				input = {
+					input = game:scope
+					operators = { 
+						faction_members 
+						limit = {
+							OR = {
+								has_tech = marines
+								has_tech = amphibious_mechanized_infantry
+								has_tech = amphibious_tank
+								has_tech = amphibious_tank_chassis
+							}
+						}
+					}
+					name = ALL_FACTION_MEMBERS_WITH_AMPHIBIOUS_TECH
+				}
+				IF = {
+					limit = { NOT = { has_completed_goal = faction_goal_marine_corps } }
+					random_army_leader = {
+						tooltip = ONE_GENERAL
+						visible_when_empty = yes
+						limit = {
+							is_field_marshal = no
+							NOT = { has_trait = cavalry_officer }
+							NOT = { has_trait = panzer_leader }
+							NOT = { has_trait = naval_invader }
+						}
+						gain_xp = 400
+						add_attack = 1
+						add_trait = { trait = naval_invader }
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = ALL_FACTION_MEMBERS_WITH_AMPHIBIOUS_TECH
+		effect_tooltip = {
+			random_army_leader = {
+				tooltip = ONE_GENERAL
+				visible_when_empty = yes
+				limit = {
+					is_field_marshal = no
+					NOT = { has_trait = cavalry_officer }
+					NOT = { has_trait = panzer_leader }
+					NOT = { has_trait = naval_invader }
+				}
+				gain_xp = 400
+				add_attack = 1
+				add_trait = { trait = naval_invader }
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			visible_when_empty = yes
+				limit = { NOT = { has_completed_goal = faction_goal_marine_corps } }
+				add_tech_bonus = {
+					name = marine_corps_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = marine_tech
+				}
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1
+			any_state = {
+				is_controlled_by_ROOT_or_ally = yes
+				is_coastal = yes
+			}
+		}
+		modifier = {
+			add = 2
+			any_controlled_state = {
+				is_coastal = yes
+			}
+		}
+	}
+}
+
+faction_goal_airborne_corps = {
+	name = airborne_corps_goal_name
+	description = airborne_corps_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_AIR_XP
+	available = {
+		always = no
+	}
+	visible = {
+		always = no
+	}
+	completed = {
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION
+			}
+			unit_category = { paratrooper }
+			equipment_ratio = 0.9
+			size > 29
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		hidden_effect = {
+			every_collection_element = {
+				input = {
+					input = game:scope
+					operators = { 
+						faction_members 
+						limit = {
+							has_tech = paratroopers
+						}
+					}
+					name = ALL_FACTION_MEMBERS_WITH_PARATROOPERS_TECH
+				}
+				IF = {
+					limit = { NOT = { has_completed_goal = faction_goal_airborne_corps } }
+					random_army_leader = {
+						tooltip = ONE_GENERAL
+						visible_when_empty = yes
+						limit = {
+							is_field_marshal = no
+							NOT = { has_trait = cavalry_officer }
+							NOT = { has_trait = panzer_leader }
+							NOT = { has_trait = commando }
+						}
+						gain_xp = 400
+						add_attack = 1
+						add_trait = { trait = commando }
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = ALL_FACTION_MEMBERS_WITH_PARATROOPERS_TECH
+		effect_tooltip = {
+			random_army_leader = {
+				tooltip = ONE_GENERAL
+				visible_when_empty = yes
+				limit = {
+					is_field_marshal = no
+					NOT = { has_trait = cavalry_officer }
+					NOT = { has_trait = panzer_leader }
+					NOT = { has_trait = commando }
+				}
+				gain_xp = 400
+				add_attack = 1
+				add_trait = { trait = commando }
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			visible_when_empty = yes
+				limit = { NOT = { has_completed_goal = faction_goal_airborne_corps } }
+				add_tech_bonus = {
+					name = airborne_corps_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = para_tech
+				}
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1
+			has_equipment = {
+			    transport_plane_equipment > 0
+			}
+		}
+	}
+}
+
+faction_goal_mountaineer_corps = {
+	name = mountaineer_corps_goal_name
+	description = mountaineer_corps_goal_desc
+	category = medium_term
+	group = FOCUS_FILTER_ARMY_XP
+	available = {
+		always = no
+	}
+	visible = {
+		always = no
+	}
+	completed = {
+		count_in_collection = {
+			collection = {
+				input = game:scope
+				operators = { faction_members }
+				name = FACTION
+			}
+			unit_category = { mountaineers }
+			equipment_ratio = 0.9
+			size > 29
+		}
+	}
+	complete_effect = {
+		add_faction_power_projection = 200
+		custom_effect_tooltip = THE_FACTION_LEADER
+		add_faction_initiative = 1
+		custom_effect_tooltip = generic_skip_one_line_tt
+		hidden_effect = {
+			every_collection_element = {
+				input = {
+					input = game:scope
+					operators = { 
+						faction_members 
+						limit = {
+							has_tech = tech_mountaineers
+						}
+					}
+					name = ALL_FACTION_MEMBERS_WITH_MOUNTAINEERS_TECH
+				}
+				IF = {
+					limit = { NOT = { has_completed_goal = faction_goal_mountaineer_corps } }
+					random_army_leader = {
+						tooltip = ONE_GENERAL
+						visible_when_empty = yes
+						limit = {
+							is_field_marshal = no
+							NOT = { has_trait = cavalry_officer }
+							NOT = { has_trait = panzer_leader }
+							NOT = { has_trait = trait_mountaineer }
+						}
+						gain_xp = 400
+						add_attack = 1
+						add_trait = { trait = trait_mountaineer }
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = ALL_FACTION_MEMBERS_WITH_MOUNTAINEERS_TECH
+		effect_tooltip = {
+			random_army_leader = {
+				tooltip = ONE_GENERAL
+				visible_when_empty = yes
+				limit = {
+					is_field_marshal = no
+					NOT = { has_trait = cavalry_officer }
+					NOT = { has_trait = panzer_leader }
+					NOT = { has_trait = trait_mountaineer }
+				}
+				gain_xp = 400
+				add_attack = 1
+				add_trait = { trait = trait_mountaineer }
+			}
+		}
+		custom_effect_tooltip = generic_skip_one_line_tt
+		custom_effect_tooltip = ALL_FACTION_MEMBERS
+		every_faction_member = {
+			visible_when_empty = yes
+				limit = { NOT = { has_completed_goal = faction_goal_mountaineer_corps } }
+				add_tech_bonus = {
+					name = mountaineer_corps_tech_bonus
+					bonus = 0.5
+					uses = 1
+					category = mountaineers_tech
+				}
+		}
+	}
+	ai_will_do = {
+		base = 0
+		modifier = {
+			add = 1
+			any_allied_country = {
+				has_terrain = mountain
+			}
+		}
+		modifier = {
+			add = 2
+			has_terrain = mountain
+		}
+	}
+}
 
 faction_goal_submarine_force = {
 	name = submarine_force_goal_name
@@ -1203,11 +1535,10 @@ faction_goal_submarine_force = {
 			}
 			IF = {
 				limit = { NOT = { has_completed_goal = faction_goal_submarine_force } }
-				random_character = {
+				random_navy_leader = {
 					tooltip = ONE_ADMIRAL
 					visible_when_empty = yes
 					limit = {
-						is_navy_leader = yes
 						NOT = { has_trait = seawolf }
 						NOT = { has_trait = ironside }
 						NOT = { has_trait = battleship_adherent }
@@ -1227,7 +1558,7 @@ faction_goal_submarine_force = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_submarine_force } }
 				add_tech_bonus = {
 					name = submarine_force_tech_bonus
@@ -1235,7 +1566,6 @@ faction_goal_submarine_force = {
 					uses = 1
 					category = naval_equipment
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1297,11 +1627,10 @@ faction_goal_convoy_escort_force = {
 			}
 			IF = {
 				limit = { NOT = { has_completed_goal = faction_goal_convoy_escort_force } }
-				random_character = {
+				random_navy_leader = {
 					tooltip = ONE_ADMIRAL
 					visible_when_empty = yes
 					limit = {
-						is_navy_leader = yes
 						NOT = { has_trait = fleet_protector }
 						NOT = { has_trait = seawolf }
 						NOT = { has_trait = ironside }
@@ -1322,7 +1651,7 @@ faction_goal_convoy_escort_force = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_convoy_escort_force } }
 				add_tech_bonus = {
 					name = convoy_escort_force_tech_bonus
@@ -1330,7 +1659,6 @@ faction_goal_convoy_escort_force = {
 					uses = 1
 					category = naval_equipment
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1398,7 +1726,7 @@ faction_goal_air_superiority = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_air_superiority } }
 				add_tech_bonus = {
 					name = air_superiority_tech_bonus
@@ -1406,7 +1734,6 @@ faction_goal_air_superiority = {
 					uses = 1
 					category = air_equipment
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1467,16 +1794,14 @@ faction_goal_industrial_expansion = {
 			visible_when_empty = yes
 			limit = {
 				num_of_civilian_factories > 49
+				NOT = { has_completed_goal = faction_goal_industrial_expansion }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_industrial_expansion } }
 				add_tech_bonus = {
 					name = industrial_expansion_tech_bonus
 					bonus = 0.5
 					uses = 2
 					category = industry
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1594,16 +1919,14 @@ faction_goal_a_military_base = {
 			visible_when_empty = yes
 			limit = {
 				num_of_military_factories > 49
+				NOT = { has_completed_goal = faction_goal_a_military_base }
 			}
-			IF = {
-				limit = { NOT = { has_completed_goal = faction_goal_a_military_base } }
 				add_tech_bonus = {
 					name = a_military_base_tech_bonus
 					bonus = 0.5
 					uses = 2
 					category = excavation_tech
 				}
-			}
 		}
 	}
 	ai_will_do = {
@@ -1672,10 +1995,9 @@ faction_goal_aggressive_defense = {
 		custom_effect_tooltip = generic_skip_one_line_tt
 		custom_effect_tooltip = ALL_FACTION_MEMBERS
 		every_faction_member = {
-			IF = {
+			visible_when_empty = yes
 				limit = { NOT = { has_completed_goal = faction_goal_aggressive_defense } }
 				army_experience = 50
-			}
 		}
 	}
 	ai_will_do = {
@@ -1967,13 +2289,19 @@ faction_goal_control_venezuelan_oil = {
 			}
 			add_faction_initiative = 1
 		}
-		every_state = {
-			limit = {
-				OR = {
-					state = 489
-					state = 307
+		489 = {
+			if = {
+				limit = {
+					infrastructure < 5
 				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
 			}
+		}
+		307 = {
 			if = {
 				limit = {
 					infrastructure < 5
@@ -2269,13 +2597,19 @@ faction_goal_control_lappland_metals = {
 			}
 			add_faction_initiative = 1
 		}
-		every_state = {
-			limit = {
-				OR = {
-					state = 666
-					state = 918
+		666 = {
+			if = {
+				limit = {
+					infrastructure < 5
 				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
 			}
+		}
+		918 = {
 			if = {
 				limit = {
 					infrastructure < 5
@@ -2511,14 +2845,31 @@ faction_goal_control_baku_oil_fields = {
 			}
 			add_faction_initiative = 1
 		}
-		every_state = {
-			limit = {
-				OR = {
-					state = 229
-					state = 232
-					state = 821
+		229 = {
+			if = {
+				limit = {
+					infrastructure < 5
 				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
 			}
+		}
+		232 = {
+			if = {
+				limit = {
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+		821 = {
 			if = {
 				limit = {
 					infrastructure < 5
@@ -2632,14 +2983,31 @@ faction_goal_control_iraqi_oil = {
 			}
 			add_faction_initiative = 1
 		}
-		every_state = {
-			limit = {
-				OR = {
-					state = 291
-					state = 676
-					state = 1010
+		291 = {
+			if = {
+				limit = {
+					infrastructure < 5
 				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
 			}
+		}
+		676 = {
+			if = {
+				limit = {
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+		1010 = {
 			if = {
 				limit = {
 					infrastructure < 5
@@ -2753,14 +3121,31 @@ faction_goal_control_persian_oil = {
 			}
 			add_faction_initiative = 1
 		}
-		every_state = {
-			limit = {
-				OR = {
-					state = 411
-					state = 412
-					state = 413
+		411 = {
+			if = {
+				limit = {
+					infrastructure < 5
 				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
 			}
+		}
+		412 = {
+			if = {
+				limit = {
+					infrastructure < 5
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}	
+			}
+		}
+		413 = {
 			if = {
 				limit = {
 					infrastructure < 5

@@ -34,7 +34,14 @@ characters = {
 				traits = {
 					fascist_corporatist
 				}
-				allowed = {}
+				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
+				}
 				available = {
 					NOT = {
 						has_country_leader = {
@@ -98,6 +105,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_ernst_rudiger_starhemberg
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -205,6 +218,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_karl_renner
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -297,6 +316,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_arthur_seyss-inquart
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -338,6 +363,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_arthur_seyss-inquart
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -387,6 +418,7 @@ characters = {
 			portraits = { 
 				civilian = {
 					large = "GFX_portrait_AUS_alfred_klahr"
+					small = "GFX_portrait_AUS_alfred_klahr_small"	#PfoT addition for in exile
 				}
 			}
 			country_leader = {
@@ -408,6 +440,7 @@ characters = {
 			portraits = {
 				civilian = {
 					large = "GFX_portrait_AUS_alfred_klahr"
+					small = "GFX_portrait_AUS_alfred_klahr_small"	#PfoT addition for in exile
 				}
 			}
 			country_leader = {
@@ -446,6 +479,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_julius_raab
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = { 
@@ -479,6 +518,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_julius_raab
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = { 
@@ -497,6 +542,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_leopold_figl
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				available = {
@@ -529,6 +580,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_leopold_figl
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				available = {
@@ -558,6 +615,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_franz_winkler
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -598,6 +661,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_ludwig_von_mises
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -628,6 +697,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_heimito_von_doderer
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -655,6 +730,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_hans_pertner
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -682,7 +763,15 @@ characters = {
 			idea_token = AUS_johannes_of_liechtenstein
 			allowed = { 
 				OR = {
+					AND = {
 					original_tag = AUS
+						NOT = {
+							has_game_rule = {
+								rule = austria_status
+								option = abstracted
+							}
+						}
+					}
 					original_tag = HUN
 				}
 			}
@@ -748,7 +837,15 @@ characters = {
 			idea_token = AUS_alois_of_liechtenstein
 			allowed = { 
 				OR = {
+					AND = {
 					original_tag = AUS
+						NOT = {
+							has_game_rule = {
+								rule = austria_status
+								option = abstracted
+							}
+						}
+					}
 					original_tag = HUN
 				}
 			}
@@ -788,6 +885,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_heinrich_maier
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 				has_dlc = "La Resistance"
 			}
@@ -826,6 +929,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_leopold_waber
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -845,6 +954,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_viktor_kienbock
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -878,6 +993,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_karl_polheim
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -905,6 +1026,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_marianne_pollak
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -938,6 +1065,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_bruno_kreisky
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -968,6 +1101,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_theodor_innitzer
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1001,6 +1140,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_elizabet_von_gutmann
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1035,6 +1180,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_malke_schorr
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1065,6 +1216,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_egon_schonhof
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1095,6 +1252,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_franz_koritschoner
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -1122,6 +1285,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_adolf_scharf
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = { 
@@ -1144,6 +1313,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_adolf_hoch
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1169,6 +1344,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_otto_bauer
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1214,6 +1395,12 @@ characters = {
 				slot = political_advisor
 				idea_token = AUS_ernst_kaltenbrunner
 				allowed = { 
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				available = {
@@ -1244,6 +1431,12 @@ characters = {
 				slot = army_chief
 				idea_token = AUS_ernst_kaltenbrunner
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -1270,6 +1463,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_maximilian_ronge
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 				has_dlc = "La Resistance"
 			}
@@ -1297,6 +1496,12 @@ characters = {
 			slot = political_advisor
 			idea_token = AUS_friedrich_mandl
 			allowed = { 
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -1749,6 +1954,12 @@ characters = {
 			slot = army_chief
 			idea_token = AUS_alfred_jansa
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = {
@@ -1810,7 +2021,15 @@ characters = {
 			idea_token = AUS_wilhelm_gebauer
 			allowed = {
 				OR = {
+					AND = {
 					original_tag = AUS
+						NOT = {
+							has_game_rule = {
+								rule = austria_status
+								option = abstracted
+							}
+						}
+					}
 					original_tag = GER
 				}
 				
@@ -1865,6 +2084,12 @@ characters = {
 				slot = army_chief
 				idea_token = AUS_franz_bohme
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				available = {
@@ -1928,6 +2153,12 @@ characters = {
 				slot = army_chief
 				idea_token = AUS_franz_bohme
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -1959,6 +2190,12 @@ characters = {
 			slot = army_chief
 			idea_token = AUS_odilo_globocnik
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -1984,6 +2221,12 @@ characters = {
 			slot = army_chief
 			idea_token = AUS_eduard_freiherr
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2005,9 +2248,15 @@ characters = {
 	AUS_godwin_von_brumowski = { 
 		advisor = {
 			
-			slot = air_chief
+			slot = high_command
 			idea_token = AUS_godwin_von_brumowski
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			available = { has_country_flag = AUS_von_brumowski_recruited_flag }
@@ -2042,6 +2291,12 @@ characters = {
 				slot = air_chief
 				idea_token = AUS_alexander_lohr
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2072,6 +2327,12 @@ characters = {
 				slot = air_chief
 				idea_token = AUS_alexander_lohr
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2105,6 +2366,12 @@ characters = {
 				slot = air_chief
 				idea_token = AUS_otto_schobel
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2137,6 +2404,12 @@ characters = {
 				slot = air_chief
 				idea_token = AUS_otto_schobel
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2163,6 +2436,12 @@ characters = {
 			slot = navy_chief
 			idea_token = AUS_paul_von_hegedus
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 				NOT = { has_dlc = "Gotterdammerung" }
 			}
@@ -2193,6 +2472,12 @@ characters = {
 			slot = navy_chief
 			idea_token = AUS_josef_teufl
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 				NOT = { has_dlc = "Gotterdammerung" }
 			}
@@ -2223,6 +2508,12 @@ characters = {
 			slot = navy_chief
 			idea_token = AUS_franz_von_keil
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2253,6 +2544,12 @@ characters = {
 			slot = navy_chief
 			idea_token = AUS_gottfried_freiherr_von_banfeld
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2294,6 +2591,12 @@ characters = {
 				idea_token = AUS_julius_yllam
 				ledger = air
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				
@@ -2322,6 +2625,12 @@ characters = {
 				idea_token = AUS_julius_yllam
 				ledger = air
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				
@@ -2348,6 +2657,12 @@ characters = {
 			idea_token = AUS_alois_schonburg_hartenstein
 			ledger = air
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			
@@ -2372,6 +2687,12 @@ characters = {
 			idea_token = AUS_otto_meixner_von_zweienstamm
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2404,6 +2725,12 @@ characters = {
 				idea_token = AUS_wilhelm_zehner
 				ledger = army
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2432,6 +2759,12 @@ characters = {
 				idea_token = AUS_wilhelm_zehner
 				ledger = army
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2458,6 +2791,12 @@ characters = {
 			idea_token = AUS_viktor_seebauer
 			ledger = air
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2485,6 +2824,12 @@ characters = {
 				idea_token = AUS_lothar_rendulic
 				ledger = army
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2522,6 +2867,12 @@ characters = {
 				idea_token = AUS_lothar_rendulic
 				ledger = army
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2555,7 +2906,15 @@ characters = {
 				ledger = army
 				allowed = {
 					OR = {
+						AND = {
 						original_tag = AUS
+							NOT = {
+								has_game_rule = {
+									rule = austria_status
+									option = abstracted
+								}
+							}
+						}
 						original_tag = GER
 					}
 				}
@@ -2606,6 +2965,12 @@ characters = {
 				idea_token = AUS_eugen_beyer
 				ledger = army
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = austria_status
+							option = abstracted
+						}
+					}
 					original_tag = AUS
 				}
 				traits = {
@@ -2632,6 +2997,12 @@ characters = {
 			idea_token = AUS_arthur_von_pongracz
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2656,6 +3027,12 @@ characters = {
 			idea_token = AUS_theodor_korner
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
 				original_tag = AUS
 			}
 			traits = {
@@ -2700,16 +3077,23 @@ characters = {
 		advisor = {	
 			slot = high_command 
 			idea_token = AUS_josef_brunner
+			ledger = air
 			allowed = {
-					original_tag = AUS
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
 				}
-				traits = {
-					air_air_superiority_2
-				}
-				cost = 100
-				ai_will_do = {
-					base = 1
-				}
+				original_tag = AUS
+			}
+			traits = {
+				air_air_superiority_2
+			}
+			cost = 100
+			ai_will_do = {
+				base = 1
+			}
 		}
 		name = AUS_josef_brunner
 		portraits = {

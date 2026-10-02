@@ -153,6 +153,13 @@ foreign_civilian_oversight = {
 			check_variable  = { resistance_target_without_law > 0.05}
 			add = 100
 		}
+		modifier = { # HMM: we want AI Spain to use Civ Oversight to get compliance high to be able to core states and get resources from them
+			FROM = {
+				original_tag = SPR
+				NOT = { has_government = democratic } # Do local autonomy instead if we're democratic Spain
+			}
+			add = 2000
+		}
 	}
 }
 
@@ -262,7 +269,7 @@ military_governor_occupation = {
 		#}
 		modifier = {
 			check_variable  = { resistance_target_without_law > 0.24}
-			add = 400
+			#add = 400
 		}
 		
 		modifier = {
@@ -275,7 +282,7 @@ military_governor_occupation = {
 			}
 			check_variable = { garrison_min_support_ratio < requirement_limit }
 
-			add = 400
+			#add = 400
 		}
 		
 	}
@@ -310,7 +317,7 @@ martial_law_occupation = {
 			check_variable = { garrison_min_support_ratio > requirement_limit }
 			resistance > resistance_limit
 
-			add = 500
+			#add = 500
 		}
 	}
 }
@@ -473,7 +480,7 @@ brutally_oppressive_occupation = {
 			check_variable = { garrison_min_support_ratio > requirement_limit }
 			resistance > resistance_limit
 
-			add = 1000
+			#add = 1000
 		}
 	}
 }
@@ -723,7 +730,41 @@ independent_rule = {
 
 	visible = {
 		original_tag = RAJ
-		has_completed_focus = RAJ_princely_states_policy
+		has_dlc = "Graveyard of Empires"
+		OR = {
+			AND = {
+				has_focus_tree = indian_focus_goe
+				has_completed_focus = RAJ_princely_states_policy
+			}
+			AND = {
+				NOT = {
+					has_focus_tree = indian_focus_goe
+				}
+				any_controlled_state = {
+					OR = {
+						is_core_of = MYS
+						is_core_of = HYD
+						is_core_of = MYS
+						is_core_of = RJP
+						is_core_of = CIP
+						is_core_of = WIS
+						is_core_of = SIN
+						is_core_of = KAS
+						is_core_of = KOL
+						is_core_of = KAS
+						is_core_of = WIS
+						is_core_of = NWF
+						is_core_of = MPU
+						is_core_of = KHL
+						is_core_of = FSS
+						is_core_of = SKK
+						is_core_of = RAS
+						is_core_of = KLT
+					}
+				}	
+			}
+		}
+
 		FROM = {
 			OR = {
 				original_tag = MYS
@@ -783,7 +824,41 @@ princely_subjugation = {
 
 	visible = {
 		original_tag = RAJ
-		has_completed_focus = RAJ_princely_states_policy
+		has_dlc = "Graveyard of Empires"
+		OR = {
+			AND = {
+				has_focus_tree = indian_focus_goe
+				has_completed_focus = RAJ_princely_states_policy
+			}
+			AND = {
+				NOT = {
+					has_focus_tree = indian_focus_goe
+				}
+				any_controlled_state = {
+					OR = {
+						is_core_of = MYS
+						is_core_of = HYD
+						is_core_of = MYS
+						is_core_of = RJP
+						is_core_of = CIP
+						is_core_of = WIS
+						is_core_of = SIN
+						is_core_of = KAS
+						is_core_of = KOL
+						is_core_of = KAS
+						is_core_of = WIS
+						is_core_of = NWF
+						is_core_of = MPU
+						is_core_of = KHL
+						is_core_of = FSS
+						is_core_of = SKK
+						is_core_of = RAS
+						is_core_of = KLT
+					}
+				}	
+			}	
+		}
+		
 		FROM = {
 			OR = {
 				original_tag = MYS

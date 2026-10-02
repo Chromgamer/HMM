@@ -341,7 +341,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { armor_officer war_hero infantry_leader organizer commando trickster }
+			traits = { armor_officer war_hero infantry_leader organizer commando trickster pre_grind }
 			skill = 6
 			attack_skill = 4
 			defense_skill = 4
@@ -396,7 +396,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { inflexible_strategist career_officer organizer cavalry_leader trait_engineer infantry_leader commando skilled_staffer }
+			traits = { inflexible_strategist career_officer organizer cavalry_leader trait_engineer infantry_leader skilled_staffer pre_grind }
 			skill = 6
 			attack_skill = 6
 			defense_skill = 6
@@ -416,7 +416,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { career_officer trait_cautious infantry_leader commando trickster }
+			traits = { career_officer trait_cautious infantry_leader commando trickster pre_grind }
 			skill = 5
 			attack_skill = 4
 			defense_skill = 4
@@ -437,7 +437,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { infantry_officer career_officer infantry_leader commando trickster }
+			traits = { infantry_officer career_officer infantry_leader commando trickster pre_grind }
 			skill = 5
 			attack_skill = 4
 			defense_skill = 4
@@ -681,7 +681,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { infantry_officer infantry_leader commando trickster }
+			traits = { infantry_officer infantry_leader commando trickster pre_grind }
 			skill = 5
 			attack_skill = 4
 			defense_skill = 4
@@ -891,7 +891,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { ascari_officer trickster guerilla_fighter reckless desert_fox } # Ascari
+			traits = { ascari_officer trickster guerilla_fighter trait_reckless desert_fox } # Ascari
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2
@@ -3541,6 +3541,7 @@ characters = {
 					OR = {
 						has_completed_focus = ITA_meritocracy
 						has_completed_focus = ITA_bring_back_exiled_intellectuals
+						has_completed_focus = ITA_new_forms_of_weaponry
 					}
 				}
 			}

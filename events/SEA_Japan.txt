@@ -27,6 +27,14 @@ country_event = {
 	# We want to go for the historical option :/
 	option = { 
 		name = SEA_japan.1.a
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = alt_hist_jap
+					option = forced
+				}
+			}
+		}
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -92,6 +100,14 @@ country_event = {
 	# It's shougunating time heck yea
 	option = { 
 		name = SEA_japan.1.b
+		trigger = {
+			NOT = {
+				has_game_rule = {
+					rule = alt_hist_jap
+					option = banned
+				}
+			}
+		}
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -168,6 +184,7 @@ country_event = {
 	# We have come to the conclusion that fascism = bad
 	option = { 
 		name = SEA_japan.1.c
+		trigger = { always = no }
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -270,6 +287,7 @@ country_event = {
 	# We have come to the conclusion that fascism = bad (non sea dem)
 	option = { 
 		name = SEA_japan.1.d
+		trigger = { always = no }
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -322,6 +340,7 @@ country_event = {
 	# We have come to the conclusion that fascism = bad (non sea com)
 	option = { 
 		name = SEA_japan.1.e
+		trigger = { always = no }
 		ai_chance = {
 			base = 0
 			modifier = {
@@ -659,6 +678,7 @@ country_event = {
 	option = { 
 		name = SEA_japan_foreign_policy.4.b
 		trigger = {
+			always = no
 			NOT = { has_active_mission = SIA_limited_war_indochina }
 		}
 		ai_chance = {
@@ -965,6 +985,51 @@ country_event = {
 		}
 
 	}
+
+	# Who do they think they are?
+	option = { 
+		name = SEA_japan_foreign_policy.10.b
+		trigger = { always = no }
+		ai_chance = {
+			base = 30
+			modifier = {
+				has_war_support > 0.5
+				factor = 1.5
+			}
+			modifier = {
+				strength_ratio = { tag = JAP ratio > 1.5 }
+				factor = 2
+			}
+			modifier = {
+				has_stability < 0.8
+				factor = 0.5
+			}
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+
+		FROM = {
+			country_event = {
+				# FROM refuses to fold
+				id = SEA_japan_foreign_policy.12
+				days = 2
+				random_days = 3
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ROOT
+					generator = { 671 }
+					expire = 0
+				}	
+			}
+		}
+
+	}
 }
 
 #FROM hands over Tonkin - event for JAP
@@ -1015,10 +1080,7 @@ country_event = {
 			}
 		}
 		
-		random_state = {
-			limit = {
-				state = 671
-			}
+		671 = {
 			create_unit = {
 			    division = "name = \"1 Hanoi Minpei\" division_template = \"Hanoi Minpei\" start_experience_factor = 0.5 start_equipment_factor = 0.7"
 			    owner = PREV
@@ -1108,6 +1170,7 @@ country_event = {
 	# Who do they think they are?
 	option = { 
 		name = SEA_japan_foreign_policy.13.b
+		trigger = { always = no }
 		ai_chance = {
 			base = 20
 			modifier = {
@@ -1217,6 +1280,7 @@ country_event = {
 	# Who do they think they are?
 	option = { 
 		name = SEA_japan_foreign_policy.15.b
+		trigger = { always = no }
 		ai_chance = {
 			base = 30
 			modifier = {
@@ -1980,9 +2044,8 @@ country_event = {
 					tag = SHX
 				}
 			}
-			every_country = {
+			every_allied_country = {
 				limit = {
-					is_ally_with = ROOT
 					has_war_with = SHX
 				}
 				white_peace = {
@@ -2096,9 +2159,8 @@ country_event = {
 					tag = SHX
 				}
 			}
-			every_country = {
+			every_allied_country = {
 				limit = {
-					is_ally_with = ROOT
 					has_war_with = SHX
 				}
 				white_peace = {
@@ -2108,7 +2170,22 @@ country_event = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-
+			IF = {
+				limit = {
+					SHX = {
+						exists = yes
+						NOT = {
+							is_ally_with = ROOT
+						}
+					}
+				}
+				SHX = {
+					country_event = {
+						id = SEA_japan_foreign_policy.30
+						hours = 2
+					}	
+				}
+			}
 		}		
 
 	}
@@ -3262,13 +3339,10 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		every_possible_country = {
-			limit = {
-				has_character = MEN_jodbajab
-			}
+		MEN = {
 			set_nationality = {
-			    target_country = ROOT
-			    character = MEN_jodbajab
+				target_country = ROOT
+				character = MEN_jodbajab
 			}
 		}
 
@@ -3302,13 +3376,10 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		every_possible_country = {
-			limit = {
-				has_character = MAN_jonjurjab
-			}
+		MAN = {
 			set_nationality = {
-			    target_country = ROOT
-			    character = MAN_jonjurjab
+				target_country = ROOT
+				character = MAN_jonjurjab
 			}
 		}
 
@@ -3597,10 +3668,10 @@ country_event = {
 	option = { 
 		name = SEA_japan_foreign_policy.58.a
 
-		every_state = {
+		CHI = {
+		every_core_state = {
 			limit = {
 				is_fully_controlled_by = FROM
-				is_core_of = CHI
 				NOT = {
 					is_owned_by = FROM
 					is_owned_by = ROOT
@@ -3624,13 +3695,14 @@ country_event = {
 			set_state_controller_to = ROOT
 			add_claim_by = ROOT
 		}
+		}
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		every_state = {
+		FROM = {
+		every_owned_state = {
 			limit = {
 				is_fully_controlled_by = FROM
-				is_owned_by = FROM
 				is_core_of = CHI
 				NOT = {
 					is_owned_by = ROOT
@@ -3653,6 +3725,7 @@ country_event = {
 			ROOT = {
 				transfer_state = PREV
 			}
+		}
 		}
 		
 
@@ -3732,9 +3805,8 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		every_state = {
+		every_core_state = {
 			limit = {
-				is_core_of = ROOT
 				is_controlled_by = JAP
 			}
 			set_state_controller_to = ROOT
@@ -3851,12 +3923,13 @@ country_event = {
 							}	
 						}
 					}
-					every_state = {
+					BRM = {
+					every_core_state = {
 						limit = {
-							is_core_of = BRM
 							has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 						}
-						set_state_controller_to = PREV
+						set_state_controller_to = PREV.PREV
+					}
 					}
 				}
 				
@@ -3941,12 +4014,13 @@ country_event = {
 							}	
 						}
 					}
-					every_state = {
+					BRM = {
+					every_core_state = {
 						limit = {
-							is_core_of = BRM
 							has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 						}
-						set_state_controller_to = PREV
+						set_state_controller_to = PREV.PREV
+					}
 					}
 				}
 			}
@@ -4027,12 +4101,13 @@ country_event = {
 							}	
 						}
 					}
-					every_state = {
+					BRM = {
+					every_core_state = {
 						limit = {
-							is_core_of = BRM
 							has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 						}
-						set_state_controller_to = PREV
+						set_state_controller_to = PREV.PREV
+					}
 					}
 				}
 			}
@@ -4139,12 +4214,13 @@ country_event = {
 								}	
 							}
 						}
-						every_state = {
+						BRM = {
+						every_core_state = {
 							limit = {
-								is_core_of = BRM
 								has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 							}
-							set_state_controller_to = PREV
+							set_state_controller_to = PREV.PREV
+						}
 						}
 					}
 					
@@ -4229,12 +4305,13 @@ country_event = {
 								}	
 							}
 						}
-						every_state = {
+						BRM = {
+						every_core_state = {
 							limit = {
-								is_core_of = BRM
 								has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 							}
-							set_state_controller_to = PREV
+							set_state_controller_to = PREV.PREV
+						}
 						}
 					}
 				}
@@ -4315,12 +4392,13 @@ country_event = {
 								}	
 							}
 						}
-						every_state = {
+						BRM = {
+						every_core_state = {
 							limit = {
-								is_core_of = BRM
 								has_state_flag = is_state_that_should_go_to_japanese_burma_flag
 							}
-							set_state_controller_to = PREV
+							set_state_controller_to = PREV.PREV
+						}
 						}
 					}
 				}
@@ -4353,8 +4431,11 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		CHI_wang_jingwei = {
-			set_nationality = RNG
+		CHI = {
+			set_nationality = {
+				target_country = RNG
+				character = CHI_wang_jingwei
+			}
 		}
 		hidden_effect = {
 			RNG = {
@@ -4386,8 +4467,11 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		CHI_wang_jingwei = {
-			set_nationality = RNG
+		CHI = {
+			set_nationality = {
+				target_country = RNG
+				character = CHI_wang_jingwei
+			}
 		}
 		hidden_effect = {
 			RNG = {
@@ -4502,10 +4586,7 @@ country_event = {
 					transfer_troops = yes
 				}	
 			}	
-			every_state = {
-				limit = {
-					is_core_of = ROOT
-				}
+			every_core_state = {
 				add_core_of = RNG
 			}
 		}
@@ -4556,11 +4637,10 @@ country_event = {
 			transfer_troops = yes
 		}	
 			
-		every_state = {
-			limit = {
-				is_core_of = FROM
-			}
+		FROM = {
+		every_core_state = {
 			add_core_of = ROOT
+		}
 		}
 
 	}
@@ -5465,12 +5545,14 @@ country_event = {
 						}	
 					}
 				}
-				every_state = {
+				PHI = {
+				every_core_state = {
 					limit = {
 						is_core_of = PHI
 						is_controlled_by = JAP
 					}
-					set_state_controller_to = PREV
+					set_state_controller_to = PREV.PREV
+				}
 				}
 			}
 			
@@ -5549,12 +5631,13 @@ country_event = {
 						}	
 					}
 				}
-				every_state = {
+				PHI = {
+				every_core_state = {
 					limit = {
-						is_core_of = PHI
 						is_controlled_by = JAP
 					}
-					set_state_controller_to = PREV
+					set_state_controller_to = PREV.PREV
+				}
 				}
 			}
 		}
@@ -5629,12 +5712,13 @@ country_event = {
 						}	
 					}
 				}
-				every_state = {
+				PHI = {
+				every_core_state = {
 					limit = {
-						is_core_of = PHI
 						is_controlled_by = JAP
 					}
-					set_state_controller_to = PREV
+					set_state_controller_to = PREV.PREV
+				}
 				}
 			}
 		}
@@ -5756,9 +5840,8 @@ country_event = {
 					}
 					OR = {
 						is_owned_by = ROOT
-						any_country = {
+						owner = {
 							is_subject_of = ROOT
-							owns_state = PREV
 						}
 					}
 				}
@@ -5767,9 +5850,9 @@ country_event = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			every_country = {
+			FROM = {
+			every_enemy_country = {
 				limit = {
-					has_war_with = FROM
 					OR = {
 						original_tag = ROOT
 						is_in_faction_with = ROOT
@@ -5777,6 +5860,7 @@ country_event = {
 					}
 				}
 				white_peace = FROM
+			}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
@@ -5867,9 +5951,8 @@ country_event = {
 				}
 				OR = {
 					is_owned_by = FROM
-					any_country = {
+					owner = {
 						is_subject_of = FROM
-						owns_state = PREV
 					}
 				}
 			}
@@ -5878,9 +5961,8 @@ country_event = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		every_other_country = {
+		every_enemy_country = {
 			limit = {
-				has_war_with = ROOT
 				OR = {
 					original_tag = FROM
 					is_ally_with = FROM
@@ -5940,10 +6022,7 @@ country_event = {
 			SOV = {
 				remove_from_faction = ROOT
 			}
-			every_other_country = {
-				limit = {
-					has_war_with = ROOT
-				}
+			every_enemy_country = {
 				white_peace = {
 					tag = ROOT
 				}
@@ -6485,15 +6564,12 @@ country_event = {
 				annex_country = {
 					target = FROM
 					transfer_troops = yes
-				}	
-				every_state = {
-					limit = {
-						is_core_of = ROOT
-					}
+				}
+			}	
+				every_core_state = {
 					add_compliance = 25
 					add_extra_state_shared_building_slots = 1
 				}
-			}
 		}
 		
 	}
@@ -7933,9 +8009,8 @@ country_event = {
 			} 
 		}
 		effect_tooltip = {
-			random_country = {
+			random_subject_country = {
 				limit = {
-					is_subject_of = ROOT
 					has_country_flag = JAP_this_is_the_country_being_negotiated_at_the_moment
 				}
 				FROM = {
@@ -9160,10 +9235,7 @@ country_event = {
 					transfer_troops = yes
 				}	
 			}	
-			every_state = {
-				limit = {
-					is_core_of = ROOT
-				}
+			every_core_state = {
 				add_core_of = MAN
 			}
 		}
@@ -9219,11 +9291,10 @@ country_event = {
 			transfer_troops = yes
 		}	
 			
-		every_state = {
-			limit = {
-				is_core_of = FROM
-			}
+		FROM = {
+		every_core_state = {
 			add_core_of = ROOT
+		}
 		}
 
 		FROM = {
@@ -10761,8 +10832,8 @@ country_event = {
 		hidden_effect = {
 			IF = {
 				limit = {
-					any_country = {
-						original_tag = JAP
+					any_country_with_original_tag = {
+						original_tag_to_check = JAP
 						has_government = fascism
 						num_divisions < 20
 					}
@@ -10772,10 +10843,9 @@ country_event = {
 						original_tag = JAP
 						has_government = fascism
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							is_core_of = JAP
-							is_controlled_by = PREV
 						}
 						create_unit = {
 						    division = "name = \"14. Dai-Nippon Teikoku Rikugun Hohei Shidan\" division_template = \"Dai-Nippon Teikoku Rikugun Hohei Shidan\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
@@ -10795,10 +10865,9 @@ country_event = {
 						}
 					}
 				}
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						is_core_of = JAP
-						is_controlled_by = PREV
 					}
 					create_unit = {
 					    division = "name = \"18. Dai-Nippon Teikoku Rikugun Hohei Shidan\" division_template = \"Dai-Nippon Teikoku Rikugun Hohei Shidan\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
@@ -10817,10 +10886,9 @@ country_event = {
 					    owner = PREV
 					}
 				}
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						is_core_of = JAP
-						is_controlled_by = PREV
 					}
 					create_unit = {
 					    division = "name = \"22. Dai-Nippon Teikoku Rikugun Hohei Shidan\" division_template = \"Dai-Nippon Teikoku Rikugun Hohei Shidan\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
@@ -11308,8 +11376,8 @@ country_event = {
 
 			IF = {
 				limit = {
-					any_country = {
-						original_tag = JAP
+					any_country_with_original_tag = {
+						original_tag_to_check = JAP
 						has_government = fascism
 						num_divisions < 20
 					}
@@ -11319,10 +11387,9 @@ country_event = {
 						original_tag = JAP
 						has_government = fascism
 					}
-					random_state = {
+					random_controlled_state = {
 						limit = {
 							is_core_of = JAP
-							is_controlled_by = PREV
 						}
 						create_unit = {
 						    division = "name = \"14. Dai-Nippon Teikoku Rikugun Hohei Shidan\" division_template = \"Dai-Nippon Teikoku Rikugun Hohei Shidan\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
@@ -11342,10 +11409,9 @@ country_event = {
 						}
 					}
 				}
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						is_core_of = JAP
-						is_controlled_by = PREV
 					}
 					create_unit = {
 					    division = "name = \"18. Dai-Nippon Teikoku Rikugun Hohei Shidan\" division_template = \"Dai-Nippon Teikoku Rikugun Hohei Shidan\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
@@ -11364,10 +11430,9 @@ country_event = {
 					    owner = PREV
 					}
 				}
-				random_state = {
+				random_controlled_state = {
 					limit = {
 						is_core_of = JAP
-						is_controlled_by = PREV
 					}
 					create_unit = {
 					    division = "name = \"22. Dai-Nippon Teikoku Rikugun Hohei Shidan\" division_template = \"Dai-Nippon Teikoku Rikugun Hohei Shidan\" start_experience_factor = 0.5 start_equipment_factor = 0.8"
@@ -11671,9 +11736,7 @@ country_event = {
 			base = 25 
 		}
 		trigger = {
-			ANU = {
-				exists = no
-			}
+			NOT = { country_exists = ANU }
 		}
 		
 		every_owned_state = {
@@ -11963,9 +12026,8 @@ country_event = {
 			is_subject = no
 			has_added_tension_amount > 10 
 			has_offensive_war = yes
-			any_country = {
+			any_enemy_country = {
 				is_literally_china = yes
-				has_war_with = PREV
 			}
 		}
 
@@ -11974,44 +12036,28 @@ country_event = {
 			1036 = {
 				OR = {
 					is_controlled_by = JAP
-					JAP = {
-						any_subject_country = {
-							controls_state = PREV
-						}
-					}
+					controller = { is_subject_of = JAP }
 				}
 			}
 			# Hanoi
 			671 = {
 				OR = {
 					is_controlled_by = JAP
-					JAP = {
-						any_subject_country = {
-							controls_state = PREV
-						}
-					}
+					controller = { is_subject_of = JAP }
 				}
 			}
 			# Changde 
 			750 = {
 				OR = {
 					is_controlled_by = JAP
-					JAP = {
-						any_subject_country = {
-							controls_state = PREV
-						}
-					}
+					controller = { is_subject_of = JAP }
 				}
 			}
 			# Yanan
 			1032 = {
 				OR = {
 					is_controlled_by = JAP
-					JAP = {
-						any_subject_country = {
-							controls_state = PREV
-						}
-					}
+					controller = { is_subject_of = JAP }
 				}
 			}
 		}
@@ -14757,6 +14803,18 @@ country_event = {
 	}
 	option = {
 		name = SEA_border_incidents_events.2.b
+		trigger = {
+			OR = {
+				has_game_rule = {
+					rule = jap_sov_war_allowed
+					option = only_focuses_with_border_conflicts
+				}
+				has_game_rule = {
+					rule = jap_sov_war_allowed
+					option = vanilla
+				}
+			}
+		}
 		ai_chance = {
 			base = 25
 			modifier = {
@@ -14969,4 +15027,107 @@ country_event = {
 
 	}
 }
+
+# The Battle of Midway (Japanese victory) - event for JAP 
+country_event = { 
+	id = SEA_japan_popup_events.51
+	title = SEA_japan_popup_events.51.t
+	desc = SEA_japan_popup_events.51.desc
+	picture = GFX_report_event_battle_of_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.51.a
+
+		add_war_support = 0.05 
+		navy_experience = 25 
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		random_unit_leader = {
+			limit = {
+				has_character_flag = was_the_japanese_admiral_in_midway
+			}
+			add_skill_level = 1
+			add_attack = 1
+			add_coordination = 1
+			add_maneuver = 1
+		}	
+
+	}
+}
+
+# The Battle of Midway (American victory) - event for USA 
+country_event = { 
+	id = SEA_japan_popup_events.52
+	title = SEA_japan_popup_events.52.t
+	desc = SEA_japan_popup_events.52.desc
+	picture = GFX_report_event_battle_of_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.52.a
+
+		add_war_support = 0.05 
+		navy_experience = 25 
+
+		custom_effect_tooltip = generic_skip_one_line_tt
+		
+		random_unit_leader = {
+			limit = {
+				has_character_flag = was_the_american_admiral_in_midway
+			}
+			add_skill_level = 1
+			add_attack = 1
+			add_coordination = 1
+			add_maneuver = 1
+		}
+
+	}
+}
+
+# The Battle of Midway (Japanese loss) - event for JAP 
+country_event = { 
+	id = SEA_japan_popup_events.53
+	title = SEA_japan_popup_events.53.t
+	desc = SEA_japan_popup_events.53.desc
+	picture = GFX_report_event_JAP_loss_at_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.53.a
+		
+		add_war_support = -0.1 
+
+	}
+}
+
+# The Battle of Midway (American loss) - event for USA  
+country_event = { 
+	id = SEA_japan_popup_events.54
+	title = SEA_japan_popup_events.54.t
+	desc = SEA_japan_popup_events.54.desc
+	picture = GFX_report_event_USA_loss_at_midway
+
+	is_triggered_only = yes
+
+	fire_only_once = yes 
+
+	option = {
+		name = SEA_japan_popup_events.54.a
+		
+		add_war_support = -0.1 
+
+	}
+}
+
 

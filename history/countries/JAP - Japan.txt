@@ -423,8 +423,6 @@ add_ideas = {
 	set_garrison_strength = 1.0
 }
 
-store_core_states_on_game_start = yes
-
 ###########################
 ### Starting Technology ###
 ###########################
@@ -1329,6 +1327,7 @@ IF = {
 			engine_type_slot = engine_1_2x
 			special_type_slot_1 = lmg_defense_turret
 		}
+		icon = "GFX_JAP_early_bomber_medium"
 	}
 
 	create_equipment_variant = {
@@ -1477,6 +1476,12 @@ create_equipment_variant = {
 		fixed_ship_secondaries_slot = ship_secondaries_1
 		fixed_ship_armor_slot = empty
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_carrier_hoso"
+			model = "JAP_carrier_entity"
+		}
+	}
 	obsolete = yes
 }
 create_equipment_variant = {
@@ -1517,6 +1522,12 @@ create_equipment_variant = {
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_heavy_battery_2
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_nagato"
+			model = "JAP_battleship_3_entity"
+		}
+	}
 }
 create_equipment_variant = {
 	name = "Kongo Class"
@@ -1537,6 +1548,12 @@ create_equipment_variant = {
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_heavy_battery_1
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_kongo"
+			model = "JAP_battleship_0_entity"
+		}
+	}
 }
 create_equipment_variant = {
 	name = "Fuso Class"
@@ -1556,6 +1573,12 @@ create_equipment_variant = {
 		mid_1_custom_slot = ship_secondaries_1
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_heavy_battery_1
+	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_fuso"
+			model = "JAP_battleship_1_entity"
+		}
 	}
 	obsolete = yes
 }
@@ -1579,6 +1602,12 @@ create_equipment_variant = {
 		rear_1_custom_slot = ship_heavy_battery_1
 	}
 	obsolete = yes
+	optional_assets = {
+		{
+			icon = "GFX_JAP_battleship_ise"
+			model = "JAP_battleship_2_entity"
+		}
+	}
 }
 	
 ### Cruiser Variants			
@@ -1705,6 +1734,12 @@ create_equipment_variant = {
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_airplane_launcher_1
 	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_heavy_cruiser_tone"
+			model = "JAP_heavy_cruiser_1_entity"
+		}
+	}
 }
 
 create_equipment_variant = {
@@ -1785,6 +1820,12 @@ create_equipment_variant = {
 		mid_1_custom_slot = ship_torpedo_1
 		mid_2_custom_slot = ship_airplane_launcher_1
 		rear_1_custom_slot = ship_mine_layer_1
+	}
+	optional_assets = {
+		{
+			icon = "GFX_JAP_light_cruiser_sendai"
+			model = "JAP_light_cruiser_entity"
+		}
 	}
 	obsolete = yes
 }
@@ -2227,6 +2268,12 @@ create_equipment_variant = {
 				front_1_custom_slot = ship_deck_space
 				mid_1_custom_slot = ship_deck_space
 			}
+			optional_assets = {
+				{
+					icon = "GFX_JAP_carrier_shokaku"
+					model = "JAP_carrier_0_entity"
+				}
+			}
 		}
 		create_equipment_variant = {
 			name = "Yamato Class"
@@ -2299,6 +2346,12 @@ create_equipment_variant = {
 				mid_1_custom_slot = ship_torpedo_2
 				rear_1_custom_slot = ship_depth_charge_1
 			}
+			optional_assets = {
+				{
+					icon = "GFX_JAP_destroyer_yukikaze"
+					model = "JAP_destroyer_1_entity"
+				}
+			}
 		}
 		create_equipment_variant = {
 			name = "Hatsutaka Class" 	# DD-sized minelayers
@@ -2355,4 +2408,41 @@ create_equipment_variant = {
 		}
 	}	
 }
-	
+
+# HMM: starting stockpiles to compensate for deleted day 1 starting units
+add_equipment_to_stockpile = {
+	type = train_equipment_1
+	amount = 66
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_0
+	amount = 5760
+}
+add_equipment_to_stockpile = {
+	type = infantry_equipment_1
+	amount = 32128
+}
+add_equipment_to_stockpile = {
+	type = support_equipment_1
+	amount = 762
+}
+add_equipment_to_stockpile = {
+	type = motorized_equipment_1
+	amount = 880
+}
+add_equipment_to_stockpile = {
+	type = artillery_equipment_1
+	amount = 228
+}
+add_equipment_to_stockpile = {
+	type = light_tank_chassis_0
+	amount = 67
+	producer = JAP
+	variant_name = "Type 94 Tankette"
+}
+add_equipment_to_stockpile = {
+	type = medium_tank_chassis_0
+	amount = 280
+	producer = JAP
+	variant_name = "Type 89 I-Go"
+}

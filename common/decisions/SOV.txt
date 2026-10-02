@@ -1751,11 +1751,9 @@ SOV_paranoia_system = {
 
 			#Generic
 			set_variable = { SOV_paranoia_portrait_index = 1 }
-			set_temp_variable = { i = 0 }
-			while_loop_effect = {
-				limit = {
-					check_variable = { i = 12 compare = less_than }
-				}
+			for_loop_effect = {
+				start = 0
+				end = 12
 				set_temp_variable = { SOV_generic_portrait_frame = SOV_paranoia_portrait_index }
 				if = { #There are 6 portraits and 12 slots, so second round of generic portraits
 					limit = {
@@ -1773,7 +1771,6 @@ SOV_paranoia_system = {
 				}
 
 				add_to_variable = { SOV_paranoia_portrait_index = 1 }
-				add_to_temp_variable = { i = 1 }
 				#log = "New index is [?SOV_paranoia_portrait_index]"
 			}
 		}
@@ -2804,15 +2801,14 @@ SOV_propaganda_campaigns = {
 
 			custom_effect_tooltip = SOV_propaganda_heroes_forward_tt
 
-			set_temp_variable = { temp_targets_index = 0 }
-			while_loop_effect = {
-				limit = {
-					check_variable = { temp_targets_index = 5 compare = less_than }
-				}
+			for_loop_effect = {
+				start = 0
+				end = 5
 				if = {
 					limit = {
 						any_unit_leader = {
 							is_assigned = yes
+							has_trait = panzer_leader # HMM: fixed this bug, executive decision
 							NOT = { has_trait = trait_SOV_determined }
 						}
 					}
@@ -2840,7 +2836,6 @@ SOV_propaganda_campaigns = {
 						}
 					}
 				}
-				add_to_temp_variable = { temp_targets_index = 1 }
 			}
 		}
 
@@ -2892,16 +2887,9 @@ SOV_propaganda_campaigns = {
 		available = {
 			SOV_propaganda_poster_slot_available = yes
 
-			any_country = {
+			any_country_of = {
+				target = { ENG FRA GER ITA USA JAP }
 				has_government = democratic
-				OR = {
-					tag = ENG
-					tag = FRA
-					tag = GER
-					tag = ITA
-					tag = USA
-					tag = JAP
-				}
 			}
 		}
 
@@ -3148,16 +3136,9 @@ SOV_propaganda_campaigns = {
 		available = {
 			SOV_propaganda_poster_slot_available = yes
 
-			any_country = {
+			any_country_of = {
+				target = { ENG FRA GER ITA USA JAP }
 				has_government = fascism
-				OR = {
-					tag = ENG
-					tag = FRA
-					tag = GER
-					tag = ITA
-					tag = USA
-					tag = JAP
-				}
 			}
 		}
 
@@ -3737,15 +3718,10 @@ SOV_propaganda_campaigns = {
 			custom_effect_tooltip = SOV_propaganda_builders_of_communism_effect_tt
 			if = {
 				limit = {
-					any_country = {
-						is_subject_of = ROOT
-					}
+					num_subjects > 0
 				}
 				hidden_effect = {
-					every_country = {
-						limit = {
-							is_subject_of = ROOT
-						}
+					every_subject_country = {
 						country_event = NSB_soviet_propaganda_capmaign_events.1
 					}
 				}
@@ -6490,18 +6466,12 @@ SOV_diplomacy_middle_east_decision_category = {
 				array = SOV_iranian_initial_states
 				OR = {
 					is_controlled_by = SOV
-					any_allied_country = {
-						controls_state = PREV
-					}
+					controller = { is_ally_with = ROOT }
 					AND = {
 						has_global_flag = SOV_agreed_anglo_soviet_invasion_of_iran_flag
 						OR = {
 							is_controlled_by = ENG
-							ENG = {
-								any_allied_country = {
-									controls_state = PREV
-								}
-							}
+							controller = { is_ally_with = ENG }
 						}
 					}
 				}
@@ -6812,6 +6782,54 @@ SOV_diplomacy_asia_decision_category = {
 				transfer_state = 555
 				transfer_state = 536
 			}
+		}
+	}
+
+	SOV_cancel_the_japanese_resource_rights_to_sakhalin_decision = {
+		priority = 999
+
+		icon = GFX_decision_generic_forestry
+
+		ai_will_do = {
+			base = 10
+		}
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		visible = {
+			always = no
+			has_completed_focus = SOV_prepare_a_war_with_japan
+			655 = {
+				is_owned_and_controlled_by = ROOT
+			}
+			JAP = {
+				has_resources_rights = {
+					state = 655
+				}
+			}
+		}
+
+		available = {
+			controls_state = 655
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		complete_effect = {
+
+			JAP = { 
+				remove_resource_rights = 655 
+				country_event = { 
+					id = SEA_japan_popup_events.47 
+					hours = 4 
+					random_hours = 2 
+				}
+			}
+
 		}
 	}
 
@@ -11027,7 +11045,7 @@ SOV_industry_relocation = {
 					#Attempt to relocate 50%-50% of mils-civs
 					set_temp_variable = { SOV_half_the_factories_to_relocate = SOV.SOV_industrial_relocation_max_factories }
 					divide_temp_variable = { SOV_half_the_factories_to_relocate = 2 }
-					while_loop_effect = {
+					while_loop_effect = { #NOTE: Due to the seed not changing during the execution of this effect, the same state will always be chosen, UNLESS it runs out of slots -> That's the reason for this
 						limit = {
 							check_variable = { SOV_factories_counter = SOV.SOV_industrial_relocation_max_factories compare = less_than }
 						}
@@ -11540,10 +11558,7 @@ SOV_comecon_dec_cat = {
 				}
 
 				custom_effect_tooltip = SOV_found_the_comecon_subjects_tt
-				every_other_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
+				every_subject_country = {
 					swap_ideas = {
 						remove_idea = SOV_comecon_puppet_military
 						add_idea = SOV_comecon_puppet_default
@@ -11561,10 +11576,7 @@ SOV_comecon_dec_cat = {
 				}
 
 				custom_effect_tooltip = SOV_found_the_comecon_subjects_tt
-				every_other_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
+				every_subject_country = {
 					country_event = { id = NSB_soviet_comecon.2 hours = 1 }
 					swap_ideas = {
 						remove_idea = SOV_comecon_puppet_default
@@ -11583,10 +11595,7 @@ SOV_comecon_dec_cat = {
 				}
 
 				custom_effect_tooltip = SOV_found_the_comecon_subjects_tt
-				every_other_country = {
-					limit = {
-						is_subject_of = ROOT
-					}
+				every_subject_country = {
 					swap_ideas = {
 						remove_idea = SOV_comecon_puppet_military
 						add_idea = SOV_comecon_puppet_default
@@ -12707,9 +12716,10 @@ SOV_great_patriotic_war = {
 		visible = {
 			has_country_flag = SOV_scorched_earth
 			NOT = { has_country_flag = SOV_order_227_flag }
-			any_of = {
-				array = BLR.core_states
-				var:v = { is_controlled_by = SOV }
+			BLR = {
+				any_core_state = {
+					is_controlled_by = SOV
+				}
 			}
 		}
 
@@ -12718,15 +12728,16 @@ SOV_great_patriotic_war = {
 				type = support_equipment_1
 				amount = -50
 			}
-			every_state = {
+			BLR = {
+			every_core_state = {
 				limit = {
-					is_core_of = BLR
 					is_controlled_by = SOV
 				}
 				damage_building = {
 					type = infrastructure
 					damage = 3
 				}
+			}
 			}
 		}
 
@@ -12755,9 +12766,10 @@ SOV_great_patriotic_war = {
 		fire_only_once = yes
 		visible = {
 			has_country_flag = SOV_scorched_earth
-			any_of = {
-				array = UKR.core_states
-				var:v = { is_controlled_by = SOV }
+			UKR = {
+				any_core_state = {
+					is_controlled_by = SOV
+				}
 			}
 		}
 
@@ -12766,15 +12778,16 @@ SOV_great_patriotic_war = {
 				type = support_equipment_1
 				amount = -75
 			}
-			every_state = {
+			UKR = {
+			every_core_state = {
 				limit = {
-					is_core_of = UKR
 					is_controlled_by = SOV
 				}
 				damage_building = {
 					type = infrastructure
 					damage = 3
 				}
+			}
 			}
 		}
 
@@ -12957,7 +12970,8 @@ SOV_great_patriotic_war = {
 				type = support_equipment_1
 				amount = -50
 			}
-			every_state = {
+			SOV = {
+			every_controlled_state = {
 				limit = {
 					OR = {
 						state = 220
@@ -12969,12 +12983,12 @@ SOV_great_patriotic_war = {
 						state = 246
 						state = 219
 					}
-					is_controlled_by = SOV
 				}
 				damage_building = {
 						type = infrastructure
 						damage = 3
 					}
+			}
 			}
 
 		}
@@ -14245,7 +14259,7 @@ SOV_soviet_civil_war_dec_cat = {
 			}
 		}
 		available = {
-			JAP = { exists = yes }
+			country_exists = JAP
 			408 = { CONTROLLER = { original_tag = SOV } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
@@ -14331,7 +14345,7 @@ SOV_soviet_civil_war_dec_cat = {
 		}
 
 		available = {
-			JAP = { exists = yes }
+			country_exists = JAP
 			655 = { CONTROLLER = { original_tag = SOV } }
 			custom_trigger_tooltip = {
 				tooltip = SOV_not_has_conflict_with_japan
@@ -14407,7 +14421,7 @@ SOV_soviet_civil_war_dec_cat = {
 		}
 
 		available = {
-			GER = { exists = yes }
+			country_exists = GER
 			229 = { CONTROLLER = { original_tag = SOV } }
 		}
 		ai_will_do = {
@@ -14494,7 +14508,7 @@ SOV_soviet_civil_war_dec_cat = {
 		}
 
 		available = {
-			GER = { exists = yes }
+			country_exists = GER
 		}
 		ai_will_do = {
 			base = 0
@@ -14555,7 +14569,7 @@ SOV_soviet_civil_war_dec_cat = {
 		}
 
 		available = {
-			ENG = { exists = yes }
+			country_exists = ENG
 			206 = { CONTROLLER = { original_tag = SOV } }
 
 		}
@@ -16139,7 +16153,7 @@ SOV_soviet_civil_war_dec_cat = {
 						has_character_flag = SOV_character_purged_flag
 					}
 				}
-
+				NOT = { has_trait = trait_SOV_stalinist }
 			}
 
 		}
@@ -16199,6 +16213,7 @@ SOV_soviet_civil_war_dec_cat = {
 						has_character_flag = SOV_character_purged_flag
 					}
 				}
+				NOT = { has_trait = trait_SOV_stalinist }
 			}
 		}
 
@@ -17487,7 +17502,7 @@ operations = {
 		fire_only_once = yes
 		visible = {
 			JAP = { has_completed_focus = JAP_strengthen_civilian_government }
-			MAN = { exists = yes }
+			country_exists = MAN
 		}
 
 		complete_effect = {
@@ -17546,7 +17561,7 @@ political_actions = {
 		fire_only_once = yes
 		visible = {
 			JAP = { has_completed_focus = JAP_strengthen_civilian_government }
-			PRC = { exists = yes }
+			country_exists = PRC
 		}
 
 		complete_effect = {

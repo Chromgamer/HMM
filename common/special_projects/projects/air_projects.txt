@@ -747,6 +747,10 @@ sp_air_jet_engine = {
 		sp_tag_jet
 	}
 
+	allowed = {
+		jet_engines_allowed = yes
+	}
+
 	available = { 
 		FROM = {
 			if = {
@@ -1012,6 +1016,10 @@ sp_air_axial_jet_engine = {
 
 	special_project_parent = {
 		sp_air_jet_engine
+	}
+
+	allowed = {
+		jet_engines_allowed = yes
 	}
 
 	available = { 
@@ -1293,6 +1301,7 @@ sp_air_supersonic_jet = {
 
 	allowed = {
 		has_dlc = "Gotterdammerung"		
+		jet_engines_allowed = yes
 	}
 	
 	breakthrough_cost = {

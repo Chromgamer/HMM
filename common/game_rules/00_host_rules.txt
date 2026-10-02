@@ -87,6 +87,11 @@ horst_host_country = {
 		text = "Brazil"
 		desc = ""
 	}
+	option = {
+		name = MEX
+		text = "Mexico"
+		desc = ""
+	}
 	# comintern
 	option = {
 		name = SOV
@@ -94,173 +99,575 @@ horst_host_country = {
 		desc = ""
 	}
 }
-Brasil_AC_rule = {
-	name = "Select if Brazil can be AC"
+Australia_AC_rule = {
+	name = "Can Australia do its more powerful air focuses?"
 	group = "HMM Rules"
-	icon = "GFX_volunteers"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = Australia_AC
+		text = "GYes"
+		desc = "Australia can do its more powerful air focuses"
+	} 
+	default = {
+		name = Australia_no_AC
+		text = "RNo"
+		desc = "Australia cannot do its more powerful air focuses"
+	}
+}
+Brasil_AC_rule = {
+	name = "Can Brazil do its air focuses?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
 	option = {
 		name = Brasil_AC
-		text = "Brazil can AC"
-		desc = ""
+		text = "GYes"
+		desc = "Brazil can do its air focuses"
 	} 
 	default = {
 		name = Brasil_no_AC
-		text = "Brazil can't AC"
-		desc = ""
+		text = "RNo"
+		desc = "Brazil cannot do its air focuses"
 	}
 
 }
-Germany_Wirtschaftswunder = {
-	name = "Select if Germany is allowed to complete Prioritize Economic Growth "
+Finland_AC_rule = {
+	name = "Can Finland do its air focuses?"
 	group = "HMM Rules"
-	icon = "GFX_volunteers"
-	default = {
-		name = Germany_no_wirtschaftswunder
-		text = "Germany can't do the Left Side Economy Tree"
-		desc = ""
-	}
+	icon = "GFX_decision_generic_air"
 	option = {
-		name = Germany_wirtschaftswunder
-		text = "Germany can do the Left Side Economy Tree"
-		desc = ""
+		name = Finland_AC
+		text = "GYes"
+		desc = "Finland can do its air focuses"
+	} 
+	option = {
+		name = Finland_AC_no_bonuses
+		text = "YYes, But No Air Bonuses"
+		desc = "Finland can do its air focuses, but does not get or improve the spirit from them that provides various air bonuses."
+	} 
+	default = {
+		name = Finland_no_AC
+		text = "RNo"
+		desc = "Finland cannot do its air focuses"
 	}
-
+}
+Iraq_AC_rule = {
+	name = "Can Iraq's air focuses give their more powerful bonuses?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = Iraq_AC
+		text = "GYes"
+		desc = "Iraq's air focuses can give their more powerful bonuses"
+	} 
+	default = {
+		name = Iraq_no_AC
+		text = "RNo"
+		desc = "Iraq's air focuses cannot give their more powerful bonuses"
+	}
+}
+Philippines_AC_rule = {
+	name = "Can the Philippines do their more powerful air focuses?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = Philippines_AC
+		text = "GYes"
+		desc = "The Philippines can do their more powerful air focuses"
+	} 
+	default = {
+		name = Philippines_no_AC
+		text = "RNo"
+		desc = "The Philippines cannot do their more powerful air focuses"
+	}
+}
+Siam_AC_rule = {
+	name = "Can Siam do its more powerful air focuses?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = Siam_AC
+		text = "GYes"
+		desc = "Siam can do its more powerful air focuses"
+	} 
+	default = {
+		name = Siam_no_AC
+		text = "RNo"
+		desc = "Siam cannot do its more powerful air focuses"
+	}
 }
 Germany_Cancel_Mefo= {
-	name = "Select if Germany is allowed to cancel MEFO Bills"
+	name = "Can Germany cancel MEFO Bills prematurely?"
 	group = "HMM Rules"
 	icon = "GFX_volunteers"
 	default = {
 		name = Germany_no_cancel_MEFO_Bills
-		text = "Germany can't cancel MEFO Bills"
-		desc = ""
+		text = "RNo"
+		desc = "Germany cannot cancel MEFO Bills and is forced onto Economy of Conquest."
 	}
 	option = {
 		name = Germany_cancel_MEFO_Bills
-		text = "Germany can cancel MEFO Bills"
-		desc = ""
+		text = "GYes"
+		desc = "Germany can cancel MEFO Bills."
 	}
-
 }
 Germany_Fate_of_yugo= {
-	name = "Select if Germany is allowed to annex Yugoslavia"
+	name = "Can Germany annex Yugoslavia through focuses?"
 	group = "HMM Rules"
 	icon = "GFX_volunteers"
 	default = {
 		name = Germany_no_fate_of_yugo
-		text = "Germany can't annex Yugoslavia"
-		desc = ""
+		text = "RNo"
+		desc = "Germany cannot annex Yugoslavia through its focuses."
 	}
 	option = {
 		name = Germany_fate_of_yugo
-		text = "Germany can annex Yugoslavia"
-		desc = ""
+		text = "GYes"
+		desc = "Germany can annex Yugoslavia through its focuses."
 	}
-
 }
 urban_assault_vechile= {
-	name = "Select if Urban Assault Vehicle is allowed or not "
+	name = "Status of Assault Engineer Support Companies"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_tank"
 	default = {
 		name = off
-		text = "You CANNOT research armoured engineer company."
-		desc = "You also don't get the urban assault vehicle."
+		text = "RBanned"
+		desc = "Assault engineer support companies are not unlocked after finishing the Military Engineering Vehicles special project."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Assault engineer support companies are unlocked as normal for Axis countries, but only them, after finishing the Military Engineering Vehicles special project."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Assault engineer support companies are unlocked as normal for Allied countries, but only them, after finishing the Military Engineering Vehicles special project."
 	}
 	option = {
 		name = on
-		text = "You CAN research armoured engineer company"
-		desc = "You also get the urban assault vehicle."
+		text = "GAllowed"
+		desc = "Assault engineer support companies are unlocked as normal after finishing the Military Engineering Vehicles special project."
 	}
 }
-railway_gun= {
-	name = "Select if Railway Gun is allowed or not "
+railway_gun = {
+	name = "Status of Railway Guns"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = off
-		text = "You CANNOT research Railway Battery."
-		desc = "###."
+		text = "RBanned"
+		desc = "Railway guns cannot be researched, and focuses, decisions, or events that would unlock them and/or spawn them in do not do that."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Railway guns can be researched and built by the Axis only, and focuses, decisions, and events that unlock and/or spawn in railway guns do not do that for the Allies."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Railway guns can be researched and built by the Allies only, and focuses, decisions, and events that unlock and/or spawn in railway guns do not do that for the Axis."
 	}
 	option = {
 		name = on
-		text = "You CAN research Railway Battery."
-		desc = "###"
+		text = "GAllowed"
+		desc = "Railway guns can be researched and built, and focuses, decisions, and events that unlock and/or spawn in railway guns are unaffected."
 	}
 }
-super_heavy_railway_gun= {
-	name = "Select if Super Heavy Railway Battery is allowed or not "
+super_heavy_railway_gun = {
+	name = "Status of Super-Heavy Railway Guns"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = off
-		text = "You CANNOT research Super Heavy Railway Battery."
-		desc = "###."
+		text = "RBanned"
+		desc = "Super-heavy railway guns cannot be researched."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Super-heavy railway guns can only be researched and built by Axis countries, assuming they can also research ordinary railway guns."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Super-heavy railway guns can only be researched and built by Allied countries, assuming they can also research ordinary railway guns."
 	}
 	option = {
 		name = on
-		text = "You CAN research Super Heavy Railway Battery."
-		desc = "###"
+		text = "GAllowed"
+		desc = "Super-heavy railway guns can be researched and built, assuming ordinary railway guns can also be researched."
 	}
 }
-multi_charge_large_caliber_gun= {
-	name = "Select if Multi Charge LCG is allowed or not "
+multi_charge_large_caliber_gun = {
+	name = "Status of Multi-Charge Large Caliber Guns"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = off
-		text = "You CANNOT research Multi Charge LCG."
-		desc = "###."
+		text = "RBanned"
+		desc = "Multi-charge large caliber guns cannot be researched."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Multi-charge large caliber guns can only be researched and built by Axis countries."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Multi-charge large caliber guns can only be researched and built by Allied countries."
 	}
 	option = {
 		name = on
-		text = "You CAN research Multi Charge LCG."
-		desc = "###"
+		text = "GAllowed"
+		desc = "Multi-charge large caliber guns can be researched and built."
 	}
 }
-max_submarine_tech= {
-	name = "Select if Submarine 3 and 4 are allowed. "
+dozer_blade_status = {
+	name = "Status of Dozer Blades"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = banned
+		text = "RBanned"
+		desc = "Dozer Blades cannot be unlocked."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Dozer Blades can be unlocked with 1939 Engineers tech, but only for Axis countries. They do not unlock for the Allies."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Dozer Blades can be unlocked with 1939 Engineers tech, but only for Allied countries. They do not unlock for the Axis."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Dozer Blades can be unlocked with 1939 Engineers tech as normal."
+	}
+}
+super_heavy_tank = {
+	name = "Status of Super Heavy Tanks & Land Cruisers"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = banned
+		text = "RBanned"
+		desc = "Super heavy tanks cannot be researched or built."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Only the Axis is allowed to research and build super-heavy tanks."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Only the Allies are allowed to research and build super-heavy tanks."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Super heavy tanks can be researched and built as normal."
+	}
+}
+land_cruiser = {
+	name = "Status of Land Cruisers"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = banned
+		text = "RBanned"
+		desc = "Land cruisers also cannot be researched or built."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Only the Axis is allowed to research and build land cruisers, assuming they can also research super-heavy tanks."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Only the Allies are allowed to research and build land cruisers, assuming they can also research super-heavy tanks."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Land cruisers can be researched and built as normal, assuming super-heavy tanks can also be researched."
+	}
+}
+jet_engines = {
+	name = "Status of Jet Engines"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = banned
+		text = "RBanned"
+		desc = "Jet engines cannot be researched or built."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Jet engines can only be researched or built by Axis countries."
+	}
+	default = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Jet engines can only be researched or built by Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Jet engines can be researched and built as normal."
+	}
+}
+air_engine_4 = {
+	name = "Status of Aircraft Engine IV"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = banned
+		text = "RBanned"
+		desc = "Engine IV cannot be researched or built."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Engine IV can only be researched or built by Axis countries."
+	}
+	default = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Engine IV can only be researched or built by Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Engine IV can be researched and built as normal."
+	}
+}
+marine_commando_status = {
+	name = "Status of Marine Commandos"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = banned
+		text = "RBanned"
+		desc = "Marine Commandos cannot be unlocked."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Marine Commandos can only be unlocked by Axis countries."
+	}
+	option = {
+		name = allies
+		text = "CAllies Only"
+		desc = "Marine Commandos can only be unlocked by Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Marine Commandos can be unlocked as normal."
+	}
+}
+max_submarine_tech = {
+	name = "Maximum Submarine Tech Level"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = sub2
-		text = "You CANNOT research Submarine 3 or 4."
-		desc = "###."
+		text = "R1936"
+		desc = "Improved Submarine hulls, Advanced Submarine hulls, all snorkel technologies, and all AIP engine upgrade technologies are banned. Fleet submarines, nuclear submarines, and missile launching submarines are indirectly banned."
+	}
+	option = {
+		name = sub3_no_fleet
+		text = "O1939 w/o Fleet Submarines"
+		desc = "Fleet submarines, Advanced Submarine hulls, the Improved Snorkel technology, and the High-Speed Walter Engines technology are banned. Nuclear submarines, and missile launching submarines are indirectly banned."
 	}
 	option = {
 		name = sub3
-		text = "You CAN research Submarine 3 and Snorkel 1."
-		desc = "###"
+		text = "Y1939"
+		desc = "Advanced Submarine hulls, the Improved Snorkel technology, and the High-Speed Walter Engines technology are banned."
 	}
 	option = {
 		name = sub4
-		text = "You CAN research Submarine 4 and Snorkel 2."
-		desc = "###"
+		text = "G1943"
+		desc = "All submarine hulls and technologies are allowed."
+	}
+}
+max_field_hospital_tech = {
+	name = "Maximum Field Hospital Tech Level"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = none
+		text = "RBanned"
+		desc = "Field hospital technologies cannot be unlocked at all."
+	}
+	option = {
+		name = hospital_1_no_heli
+		text = "01936"
+		desc = "Field hospitals can be unlocked, but no passive upgrades for them are available."
+	}
+	default = {
+		name = hospital_1
+		text = "O1938"
+		desc = "Field hospitals and helicopter med-evacs can be unlocked, but no passive upgrades for them are available."
+	}
+	option = {
+		name = hospital_2
+		text = "Y1939"
+		desc = "Field hospitals and helicopter med-evacs can be unlocked, and the first passive upgrade for them can be unlocked."
+	}
+	option = {
+		name = hospital_3
+		text = "41942"
+		desc = "Field hospitals and helicopter med-evacs can be unlocked, and the first and second passive upgrades for them can be unlocked."
+	}
+	option = {
+		name = hospital_4
+		text = "G1945"
+		desc = "All field hospital and helicopter med-evac related technologies can be unlocked."
+	}
+}
+easier_arteries_of_trade_for_allies = {
+	name = "Protect the Arteries of Trade..."
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = no
+		text = "RShould Be Vanilla"
+		desc = "To complete the Protect the Arteries of Trade faction goal, the Allies will need to establish dominance in 10 of 16 specific sea zones, as per vanilla."
+	}
+	default = {
+		name = yes
+		text = "GShould Be Trivial for the Allies"
+		desc = "To complete the Protect the Arteries of Trade faction goal, the Allies will need to establish dominance in just one of 16 specific sea zones."
+	}
+}
+danzig_or_war_date = {
+	name = "When is the earliest that the Axis can declare war on Poland?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	option = {
+		name = historical
+		text = "CSeptember 1939"
+	}
+	option = {
+		name = june
+		text = "GJune 1939"
+	}
+	default = {
+		name = march
+		text = "YMarch 1939"
+	}
+	option = {
+		name = january
+		text = "OJanuary 1939"
+	}
+	option = {
+		name = unrestricted
+		text = "RUnrestricted"
+	}
+}
+jap_sov_war_allowed = {
+	name = "Can Japan and the Soviet Union Go To War?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = banned
+		text = "GFully Banned"
+		desc = "Japan and the Soviet Union cannot go to war with each other under any circumstances, nor are they allowed to get into any border conflicts."
+	}
+	option = {
+		name = only_focuses_restricted
+		text = "4Only Through Focuses, Restricted"
+		desc = "Japan and the Soviet Union can only go to war with each other through completing national focuses. Japan can only complete their focuses after the US and UK have capitulated, and the Soviets can only complete their focuses after Germany and Italy have capitulated. Border conflicts between them are still disallowed."
+	}
+	option = {
+		name = only_focuses
+		text = "YOnly Through Focuses"
+		desc = "Japan and the Soviet Union can only go to war with each other through completing national focuses. Border conflicts between them are still disallowed."
+	}
+	option = {
+		name = only_focuses_with_border_conflicts
+		text = "OOnly Through Focuses, Border Conflicts Allowed"
+		desc = "Japan and the Soviet Union can only go to war with each other through completing national focuses or through border conflicts."
+	}
+	option = {
+		name = vanilla
+		text = "RUnmodified"
+		desc = "There are no special rules for wars between Japan and the Soviet Union, including the border conflict."
 	}
 }
 sov_boost = {
 	name = "Soviet Civ Boost"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_merge_plant_materiel"
-	default = {
+	option = {
 		name = off
 		text = "GOff"
-		desc = "Soviets won't receive civilian factories"
+		desc = "Soviets do not get any extra civilian factories at startup (not recommended)."
+	}
+	option = {
+		name = sov2
+		text = "1On (+2)"
+		desc = "Soviets receive 2 extra civilian factories at startup (not recommended)."
 	}
 	option = {
 		name = sov4
-		text = "ROn-4"
-		desc = "Soviets receives 4 Civilian factories"
+		text = "2On (+4)"
+		desc = "Soviets receive 4 extra civilian factories at startup (not recommended)."
+	}
+	option = {
+		name = sov6
+		text = "3On (+6)"
+		desc = "Soviets receive 6 extra civilian factories at startup (not recommended)."
 	}
 	option = {
 		name = sov8
-		text = "ROn-8"
-		desc = "Soviets receives 8 Civilian factories"
+		text = "4On (+8)"
+		desc = "Soviets receive 8 extra civilian factories at startup (not recommended)."
+	}
+	default = {
+		name = sov10
+		text = "5On (+10)"
+		desc = "Soviets receive 10 extra civilian factories at startup."
 	}
 	option = {
 		name = sov12
-		text = "ROn-12"
-		desc = "Soviets receives 12 Civilian factories"
+		text = "6On (+12)"
+		desc = "Soviets receive 12 extra civilian factories at startup."
+	}
+	option = {
+		name = sov14
+		text = "7On (+14)"
+		desc = "Soviets receive 14 extra civilian factories at startup."
+	}
+	option = {
+		name = sov16
+		text = "8On (+16)"
+		desc = "Soviets receive 16 extra civilian factories at startup."
+	}
+	option = {
+		name = sov18
+		text = "9On (+18)"
+		desc = "Soviets receive 18 extra civilian factories at startup."
+	}
+	option = {
+		name = sov20
+		text = "tOn (+20)"
+		desc = "Soviets receive 20 extra civilian factories at startup."
+	}
+	option = {
+		name = sov22
+		text = "0On (+22)"
+		desc = "Soviets receive 22 extra civilian factories at startup."
 	}
 }     
   
@@ -271,22 +678,37 @@ ger_boost = {
 	default = {
 		name = off
 		text = "GOff"
-		desc = "Germany won't have civilian factories buff (Recommmended)"
+		desc = "Germany does not get any extra civilian factories at startup."
+	}
+	option = {
+		name = ger2
+		text = "6On (+2)"
+		desc = "Germany gets 2 extra civilian factories at startup (not recommended)."
 	}
 	option = {
 		name = ger4
-		text = "ROn-4"
-		desc = "Germany get 4 Civilian factories (Not Recommmended)"
+		text = "7On (+4)"
+		desc = "Germany gets 4 extra civilian factories at startup (not recommended)."
+	}
+	option = {
+		name = ger6
+		text = "8On (+6)"
+		desc = "Germany gets 6 extra civilian factories at startup (not recommended)."
 	}
 	option = {
 		name = ger8
-		text = "ROn-8"
-		desc = "Germany get 8 Civilian factories (Not Recommmended)"
+		text = "9On (+8)"
+		desc = "Germany gets 8 extra civilian factories at startup (not recommended)."
+	}
+	option = {
+		name = ger10
+		text = "tOn (+10)"
+		desc = "Germany gets 10 extra civilian factories at startup (not recommended)."
 	}
 	option = {
 		name = ger12
-		text = "ROn-12"
-		desc = "Germany get 12 Civilian factories (Not Recommmended)"
+		text = "0On (+12)"
+		desc = "Germany gets 12 extra civilian factories at startup (not recommended)."
 	}
 } 
 jap_boost = {
@@ -296,47 +718,77 @@ jap_boost = {
 	default = {
 		name = off
 		text = "GOff"
-		desc = "Japan won't receive civilian factories"
+		desc = "Japan does not get any extra civilian factories at startup."
+	}
+	option = {
+		name = jap2
+		text = "6On (+2)"
+		desc = "Japan gets 2 extra civilian factories at startup."
 	}
 	option = {
 		name = jap4
-		text = "ROn-4"
-		desc = "Japan receives 4 Civilian factories"
+		text = "7On (+4)"
+		desc = "Japan gets 4 extra civilian factories at startup."
+	}
+	option = {
+		name = jap6
+		text = "8On (+6)"
+		desc = "Japan gets 6 extra civilian factories at startup."
 	}
 	option = {
 		name = jap8
-		text = "ROn-8"
-		desc = "Japan receives 8 Civilian factories)"
+		text = "9On (+8)"
+		desc = "Japan gets 8 extra civilian factories at startup."
+	}
+	option = {
+		name = jap10
+		text = "tOn (+10)"
+		desc = "Japan gets 10 extra civilian factories at startup."
 	}
 	option = {
 		name = jap12
-		text = "ROn-12"
-		desc = "Japan receives 12 Civilian factories"
+		text = "0On (+12)"
+		desc = "Japan gets 12 extra civilian factories at startup."
 	}
 }          
 eng_boost = {
-	name = "Britain Civ Boost"
+	name = "United Kingdom Civ Boost"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_merge_plant_materiel"
 	default = {
 		name = off
 		text = "GOff"
-		desc = "Britain won't receive civilian factories"
+		desc = "The United Kingdom does not get any extra civilian factories at startup."
+	}
+	option = {
+		name = eng2
+		text = "6On (+2)"
+		desc = "The United Kingdom gets 2 extra civilian factories at startup."
 	}
 	option = {
 		name = eng4
-		text = "ROn-4"
-		desc = "Britain receives 4 Civilian factories"
+		text = "7On (+4)"
+		desc = "The United Kingdom gets 4 extra civilian factories at startup."
+	}
+	option = {
+		name = eng6
+		text = "8On (+6)"
+		desc = "The United Kingdom gets 6 extra civilian factories at startup."
 	}
 	option = {
 		name = eng8
-		text = "ROn-8"
-		desc = "Britain receives 8 Civilian factories"
+		text = "9On (+8)"
+		desc = "The United Kingdom gets 8 extra civilian factories at startup."
+	}
+	option = {
+		name = eng10
+		text = "tOn (+10)"
+		desc = "The United Kingdom gets 10 extra civilian factories at startup."
 	}
 	option = {
 		name = eng12
-		text = "ROn-12"
-		desc = "Britain receives 12 Civilian factories"
+		text = "0On (+12)"
+		desc = "The United Kingdom gets 12 extra civilian factories at startup."
 	}
 }
 ita_boost = {
@@ -346,22 +798,37 @@ ita_boost = {
 	default = {
 		name = off
 		text = "GOff"
-		desc = "Italy won't have civilian factories buff"
+		desc = "Italy does not get any extra civilian factories at startup."
+	}
+	option = {
+		name = ita2
+		text = "6On (+2)"
+		desc = "Italy gets 2 extra civilian factories at startup."
 	}
 	option = {
 		name = ita4
-		text = "ROn-4"
-		desc = "Italy receives 4 Civilian factories"
+		text = "7On (+4)"
+		desc = "Italy gets 4 extra civilian factories at startup."
+	}
+	option = {
+		name = ita6
+		text = "8On (+6)"
+		desc = "Italy gets 6 extra civilian factories at startup."
 	}
 	option = {
 		name = ita8
-		text = "ROn-8"
-		desc = "Italy receives 8 Civilian factories"
+		text = "9On (+8)"
+		desc = "Italy gets 8 extra civilian factories at startup."
+	}
+	option = {
+		name = ita10
+		text = "tOn (+10)"
+		desc = "Italy gets 10 extra civilian factories at startup."
 	}
 	option = {
 		name = ita12
-		text = "ROn-12"
-		desc = "Italy receives 12 Civilian factories"
+		text = "tOn (+12)"
+		desc = "Italy gets 12 extra civilian factories at startup."
 	}
 }
 fra_boost = {
@@ -371,22 +838,37 @@ fra_boost = {
 	default = {
 		name = off
 		text = "GOff"
-		desc = "France won't receive civilian factories"
+		desc = "France does not get any extra civilian factories at startup."
+	}
+	option = {
+		name = fra2
+		text = "6On (+2)"
+		desc = "France gets 2 extra civilian factories at startup."
 	}
 	option = {
 		name = fra4
-		text = "ROn-4"
-		desc = "France receives 4 Civilian factories"
+		text = "7On (+4)"
+		desc = "France gets 4 extra civilian factories at startup."
+	}
+	option = {
+		name = fra6
+		text = "8On (+6)"
+		desc = "France gets 6 extra civilian factories at startup."
 	}
 	option = {
 		name = fra8
-		text = "ROn-8"
-		desc = "France receives 8 Civilian factories"
+		text = "9On (+8)"
+		desc = "France gets 8 extra civilian factories at startup."
+	}
+	option = {
+		name = fra10
+		text = "tOn (+10)"
+		desc = "France gets 10 extra civilian factories at startup."
 	}
 	option = {
 		name = fra12
-		text = "ROn-12"
-		desc = "France receives 12 Civilian factories"
+		text = "tOn (+12)"
+		desc = "France gets 12 extra civilian factories at startup."
 	}
 }
 usa_boost = {
@@ -396,32 +878,137 @@ usa_boost = {
 	default = {
 		name = off
 		text = "GOff"
-		desc = "USA won't receive civilian factories"
+		desc = "The United States of America does not get any extra civilian factories at startup."
+	}
+	option = {
+		name = usa2
+		text = "6On (+2)"
+		desc = "The United States of America gets 2 extra civilian factories at startup."
 	}
 	option = {
 		name = usa4
-		text = "ROn-4"
-		desc = "USA receives 4 Civilian factories"
+		text = "7On (+4)"
+		desc = "The United States of America gets 4 extra civilian factories at startup."
+	}
+	option = {
+		name = usa6
+		text = "8On (+6)"
+		desc = "The United States of America gets 6 extra civilian factories at startup."
 	}
 	option = {
 		name = usa8
-		text = "ROn-8"
-		desc = "USA receives 8 Civilian factories"
+		text = "9On (+8)"
+		desc = "The United States of America gets 8 extra civilian factories at startup."
+	}
+	option = {
+		name = usa10
+		text = "tOn (+10)"
+		desc = "The United States of America gets 10 extra civilian factories at startup."
+	}
+	option = {
+		name = usa12
+		text = "0On (+12)"
+		desc = "The United States of America gets 12 extra civilian factories at startup."
+	}
+}
+axis_facility_handicaps = {
+	name = "Free Axis Special Facilities"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	option = {
+		name = none
+		text = "GOff"
+		desc = "Axis countries get no free special project facilities spawned in for them."
+	}
+	option = {
+		name = bul_land
+		text = "8Bulgaria Land Facility"
+		desc = "Bulgaria gets a free land warfare facility spawned in for it at startup."
+	}
+	option = {
+		name = spa_land
+		text = "9Spain Land Facility"
+		desc = "Spain gets a free land warfare facility spawned in for it at startup."
+	}
+	default = {
+		name = bul_land_spa_land
+		text = "tBulgaria & Spain Land Facility"
+		desc = "Bulgaria and Spain get free land warfare facilities spawned in for them at startup."
+	}
+}
+soviet_facility_handicaps = {
+	name = "Free Soviet Special Facilities"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	option = {
+		name = none
+		text = "GOff"
+		desc = "The Soviets get no free special project facilities spawned in for them."
+	}
+	default = {
+		name = land
+		text = "8Land Facility"
+		desc = "The Soviets get a free land warfare facility spawned in for them at startup."
+	}
+	option = {
+		name = naval
+		text = "9Naval Facility"
+		desc = "The Soviets get a free naval engineering facility spawned in for them at startup."
+	}
+	option = {
+		name = land_naval
+		text = "tLand & Naval Facility"
+		desc = "The Soviets get a free land warfare facility and a free naval engineering facility spawned in for them at startup."
+	}
+}
+mongol_licenses_to_soviets = {
+	name = "Mongolian Licenses for Soviets"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_merge_plant_materiel"
+	option = {
+		name = none
+		text = "RNone"
+		desc = "The Soviets do not get any licenses from Mongolia."
+	}
+	option = {
+		name = mech
+		text = "OMechanized"
+		desc = "The license decision for cheap mechanized gives Mongolian-licensed equipment for the Soviets instead of Swedish-licensed."
+	}
+	default = {
+		name = guns
+		text = "YInfantry Equipment"
+		desc = "The license decisions for infantry equipment 2 and 3 give Mongolian-licensed equipment for the Soviets instead of Swedish-licensed."
+	}
+	option = {
+		name = guns_and_mech
+		text = "GInfantry Equipment & Mechanized"
+		desc = "The license decisions for cheap mechanized and infantry equipment 2 and 3 give Mongolian-licensed equipment for the Soviets instead of Swedish-licensed."
 	}
 }
 playable_iraq = {
-	name = "Playable Iraq"
+	name = "Status of Iraq"
 	group = "HMM Rules"
 	icon = "GFX_decision_category_usa_intervention_mandate"
 	default = {
-		name = no
-		text = "No"
-		desc = "Iraq is annexed into the UK day 1"
+		name = annexed
+		text = "YAnnexed into UK"
+		desc = "Iraq is instantly annexed into the UK at the start of the game."
 	}
 	option = {
-		name = yes
-		text = "Yes"
-		desc = "Iraq is playable"
+		name = subordinated
+		text = "OSubordinated to UK"
+		desc = "Iraq starts as a Subordinated Country of the UK (special puppet with all industry transferred and very generous subject terms)."
+	}
+	option = {
+		name = axis
+		text = "RAxis"
+		desc = "Iraq is playable and on the Axis."
+	}
+	option = {
+		name = allies
+		text = "4Allies"
+		desc = "Iraq is playable and on the Allies."
 	}
 }
 strat_bombing = {
@@ -444,44 +1031,684 @@ strat_bombing = {
 		desc = "Strategic Bombers banned and German Eco Unnerfed"
 	}
 }
+deterrence_enabled = {
+	name = "Deterrence Is..."
+	group = "HMM Rules"
+	icon = "GFX_maximum_fort_level"
+	option = {
+		name = no
+		text = "RBanned"
+		desc = "The Build Stronger Fortifications short-term faction goal cannot be taken by anyone, and thus the Deterrence spirit is effectively banned from the game."
+	}
+	default = {
+		name = yes_w_fort_focuses_time_locked
+		text = "YAllowed w/ Time-Locked Focuses"
+		desc = "The Build Stronger Fortifications short-term faction goal can be completed as normal and will provide the Deterrence spirit to all faction members when completed. Certain focuses on minor nations are time-locked to prevent them from inadvertently removing their faction's ability to get Deterrence."
+	}
+	option = {
+		name = yes
+		text = "GAllowed"
+		desc = "The Build Stronger Fortifications short-term faction goal can be completed as normal and will provide the Deterrence spirit to all faction members when completed."
+	}
+}
 spanish_production = {
-	name = "Spanish Production"
+	name = "Spain Simulator"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_industry"
 	option = {
 		name = ger_mech
-		text = "GGerman Lend Lease for Mech"
-		desc = "It progressively gets better as time passes"
+		text = "OOn, Mech to Germany"
+		desc = "If there is no AI on Spain, then the Spain Simulator decision can be taken in early 1939. Germany will receive a slow influx of mechanized that increases over time, Bulgaria will get extra manpower, and Italy will eventually start getting +1 mil every month. One of the Spanish generals will also be transferred to Bulgaria, and Bulgaria will get extra command power."
 	}
 	option = {
 		name = bul_mech
-		text = "BGerman-Bulgarian Lend Lease for Mech"
-		desc = "It progressively gets better as more time passes, sent to Bulgaria"
+		text = "GOn, Mech to Bulgaria"
+		desc = "If there is no AI on Spain, then the Spain Simulator decision can be taken in early 1939. Bulgaria will receive a slow influx of mechanized that increases over time and extra manpower, and Italy will eventually start getting +1 mil every month. One of the Spanish generals will also be transferred to Bulgaria, and Bulgaria will get extra command power."
 	}
 	option = {
 		name = mixer
-		text = "4Germany can choose either BUL or GER"
-		desc = "It progressively gets better as time passes, Germany can choose between itself and Bulgaria"
+		text = "YOn, Germany Chooses Mech Destination"
+		desc = "If there is no AI on Spain, then the Spain Simulator decision can be taken in early 1939. Germany chooses if it's Germany or Bulgaria that gets a slow influx of mechanized that increases over time, Bulgaria will receive extra manpower, and Italy will eventually start getting +1 mil every month. One of the Spanish generals will also be transferred to Bulgaria, and Bulgaria will get extra command power."
 	}
 	default = {
 		name = off
-		text = "RGermany doesn't get a button for Mech Lend Lease"
-		desc = "No DDAY wall"
+		text = "ROff"
+		desc = "The Spain Simulator decision is disabled, Axis is not compensated if there is no player on Spain."
 	}
 }
-finish_production = {
-	name = "Finnish Production"
+finland_simulator = {
+	name = "Finland Simulator"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_industry"
 	option = {
-		name = ger_gun
-		text = "GGerman Lend Lease for Guns"
-		desc = "The gun amount progressively increases as time passes"
+		name = on
+		text = "GOn"
+		desc = "Germany gets a decision after 1st March 1939 that is enabled if there is no player on Finland. After taking the decision, Germany and Italy will get Swedish infantry equipment spawned in every month, simulating Finnish lend-lease. After 1st March 1939, Bulgaria will also get a special trait increasing their command power cap to simulate being able to send expeditionary forces to Finland. Both of these effects are (temporarily) disabled if/when Finland becomes player-controlled."
+	}
+	option = {
+		name = on_ll_only
+		text = "YOn (Lend-Lease Only)"
+		desc = "Germany gets a decision after 1st March 1939 that is enabled if there is no player on Finland. After taking the decision, Germany and Italy will get Swedish infantry equipment spawned in every month, simulating Finnish lend-lease. This effect is (temporarily) disabled if/when Finland becomes player-controlled."
+	}
+	option = {
+		name = on_cp_only
+		text = "OOn (Command Power Only)"
+		desc = "After 1st March 1939, Bulgaria will get a special trait increasing their command power cap to simulate being able to send expeditionary forces to Finland. This effect is (temporarily) disabled if/when Finland becomes player-controlled."
 	}
 	default = {
 		name = off
-		text = "RNo German Lend Lease for Guns"
-		desc = "Use if Finland has a player on it"
+		text = "ROff"
+		desc = "Axis does not get free infantry equipment simulating lend-lease from Finland or free command power simulating the ability to expeditionary units to Finland."
+	}
+}
+long_range_patrol_company_status = {
+	name = "Status of Long Range Patrol Company"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = banned
+		text = "RBanned"
+		desc = "Long Range Patrol Company cannot be unlocked."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Long Range Patrol Company can be unlocked as normal."
+	}
+}
+winter_logistics_company_status = {
+	name = "Status of Winter Logistics Company"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = banned
+		text = "RBanned"
+		desc = "Winter Logistics Company cannot be unlocked by any country."
+	}
+	option = {
+		name = jap_only
+		text = "OAllowed (Japan Only)"
+		desc = "Winter Logistics Company can only be unlocked by Japan."
+	}
+	option = {
+		name = fin_only
+		text = "4Allowed (Finland Only)"
+		desc = "Winter Logistics Company can only be unlocked by Finland."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed"
+		desc = "Winter Logistics Company can be unlocked as normal."
+	}
+}
+finland_lend_lease_status = {
+	name = "When can Finland send equipment through Lend-Lease?"
+	group = "HMM Rules"
+	icon = "GFX_lend_lease"
+	option = {
+		name = banned
+		text = "RNever"
+		desc = "Finland can never lend-lease equipment to other nations."
+	}
+	option = {
+		name = mannerheim_militarized_society
+		text = "OOnly with Mannerheim & Militarized Society"
+		desc = "Finland can only lend-lease equipment to other nations if it has Mannerheim as its country leader and has the Militarized Society spirit."
+	}
+	option = {
+		name = mannerheim
+		text = "YOnly with Mannerheim"
+		desc = "Finland can only lend-lease equipment to other nations if it has Mannerheim as its country leader."
+	}
+	option = {
+		name = militarized_society
+		text = "4Only with Militarized Society"
+		desc = "Finland can only lend-lease equipment to other nations if it has the Militarized Society spirit."
+	}
+	default = {
+		name = allowed
+		text = "GUnrestricted"
+		desc = "Finland can lend-lease equipment to other nations without any special restrictions."
+	}
+}
+finland_can_kyosti_kallio_resign_early = {
+	name = "Can Kyösti Kallio Resign Early?"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = no
+		text = "RNo"
+		desc = "As Finland's leader, Kyösti Kallio cannot resign early to be replaced by Risto Ryti (production cap guy), and can only be replaced by him when he dies from health issues in late 1940."
+	}
+	default = {
+		name = yes
+		text = "GYes"
+		desc = "As Finland's leader, Kyösti Kallio can resign early to let Risto Ryti (production cap guy) take over early."
+	}
+}
+usa_oil_boost = {
+	name = "USA Oil Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_oil"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "USA does not get any extra oil spawned in at startup."
+	}
+	option = {
+		name = usa16
+		text = "6On (+16)"
+		desc = "The USA gets 16 extra (base) oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa32
+		text = "7On (+32)"
+		desc = "The USA gets 32 extra (base) oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa48
+		text = "8On (+48)"
+		desc = "The USA gets 48 extra (base) oil spawned in Texas at startup."
+	}
+	option = {
+		name = usa64
+		text = "9On (+64)"
+		desc = "The USA gets 64 extra (base) oil spawned in Texas at startup."
+	}
+	default = {
+		name = usa80
+		text = "tOn (+80)"
+		desc = "The USA gets 80 extra (base) oil spawned in Texas at startup."
+	}
+}
+sov_oil_boost = {
+	name = "Soviet Oil Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_oil"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "The Soviet Union does not get any extra oil spawned in at startup."
+	}
+	option = {
+		name = sov16
+		text = "6On (+16)"
+		desc = "The Soviet Union gets 16 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	option = {
+		name = sov32
+		text = "7On (+32)"
+		desc = "The Soviet Union gets 32 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	option = {
+		name = sov48
+		text = "8On (+48)"
+		desc = "The Soviet Union gets 48 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	option = {
+		name = sov64
+		text = "9On (+64)"
+		desc = "The Soviet Union gets 64 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+	default = {
+		name = sov80
+		text = "tOn (+80)"
+		desc = "The Soviet Union gets 80 extra (base) oil spawned in the Volga-Urals at startup."
+	}
+}
+sov_coal_boost = {
+	name = "Soviet Coal Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_coal"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "The Soviet Union does not get any extra coal spawned in at startup."
+	}
+	option = {
+		name = sov16
+		text = "6On (+16)"
+		desc = "The Soviet Union gets 16 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	option = {
+		name = sov32
+		text = "7On (+32)"
+		desc = "The Soviet Union gets 32 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	option = {
+		name = sov48
+		text = "8On (+48)"
+		desc = "The Soviet Union gets 48 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	option = {
+		name = sov64
+		text = "9On (+64)"
+		desc = "The Soviet Union gets 64 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+	default = {
+		name = sov80
+		text = "tOn (+80)"
+		desc = "The Soviet Union gets 80 extra (base) coal spawned in Khakassia (in Siberia) at startup."
+	}
+}
+sov_refinery_boost = {
+	name = "Soviet Synthetic Refinery Boost"
+	group = "HMM Rules"
+	icon = "GFX_decision_rubber"
+	option = {
+		name = off
+		text = "GOff"
+		desc = "The Soviet Union does not get any extra synthetic refineries spawned in at startup."
+	}
+	option = {
+		name = sov2
+		text = "6On (+2)"
+		desc = "The Soviet Union gets 2 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+	option = {
+		name = sov4
+		text = "7On (+4)"
+		desc = "The Soviet Union gets 4 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+	option = {
+		name = sov6
+		text = "8On (+6)"
+		desc = "The Soviet Union gets 6 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+	default = {
+		name = sov8
+		text = "9On (+8)"
+		desc = "The Soviet Union gets 8 extra synthetic refineries spawned in across their four historical 1930s synthetic rubber production sites at startup."
+	}
+}
+axis_fuel_spirit = {
+	name = "Axis Fuel Spirit"
+	group = "HMM Rules"
+	icon = "GFX_decision_oil"
+	default = {
+		name = on_ger
+		text = "GOn (Germany)"
+		desc = "Romanian and Hungarian oil decisions and focuses are replaced with a spirit on Germany that gives fuel."
+	}
+	option = {
+		name = on_ita
+		text = "4On (Italy)"
+		desc = "Romanian and Hungarian oil decisions and focuses are replaced with a spirit on Italy that gives fuel."
+	}
+	option = {
+		name = off
+		text = "ROff"
+		desc = "Romanian and Hungarian oil decisions and focuses are kept as they are in the base game."
+	}
+}
+berlin_madrid_tunnel = {
+	name = "Status of Spanish Berlin-Madrid Tunnel"
+	group = "HMM Rules"
+	icon = "GFX_decision_infiltrate_state"
+	default = {
+		name = on
+		text = "ROn"
+		desc = "A special tunnel is enabled between Berlin and Madrid that allows trade and lend-leases with Spain without convoys."
+	}
+	option = {
+		name = off
+		text = "ROff"
+		desc = "No special tunnel exists between Berlin and Madrid, so if Southern France is controlled by a hostile country, trade and lend-leases with Spain will require convoys."
+	}
+}
+who_gets_saf_annex = {
+	name = "Who Gets the Annex South Africa Decision If It Is Not Player-Controlled?"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = fra
+		text = "4France"
+		desc = "France will get the decision to annex South Africa if there is no player on it."
+	}
+	option = {
+		name = ast
+		text = "6Australia"
+		desc = "Australia will get the decision to annex South Africa if there is no player on it."
+	}
+	default = {
+		name = raj
+		text = "OBritish Raj"
+		desc = "British Raj will get the decision to annex South Africa if there is no player on it."
+	}
+	option = {
+		name = eng
+		text = "tUnited Kingdom"
+		desc = "The United Kingdom will get the decision to annex South Africa if there is no player on it."
+	}
+}
+who_gets_mex_annex = {
+	name = "Who Gets the Annex Mexico Decision If It Is Not Player-Controlled?"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = bra
+		text = "GBrazil"
+		desc = "Brazil will get the decision to annex Mexico if there is no player on it."
+	}
+	option = {
+		name = usa
+		text = "2United States"
+		desc = "The United States will get the decision to annex Mexico if there is no player on it."
+	}
+}
+desperate_defense_conditions_status = {
+	name = "The Desperate Defense subdoctrine's conditions are..."
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = unchanged
+		text = "RUnchanged"
+		desc = "Desperate Defense can only be taken by countries when they are in a defensive war or have enough surrender progress."
+	}
+	option = {
+		name = axis_removed
+		text = "ORemoved for Axis Only"
+		desc = "Desperate Defense can be taken at any time by Axis countries, but other countries must be in a defensive war or have enough surrender progress to take it."
+	}
+	option = {
+		name = allies_removed
+		text = "4Removed for Allies Only"
+		desc = "Desperate Defense can be taken at any time by Allied countries, but other countries must be in a defensive war or have enough surrender progress to take it."
+	}
+	default = {
+		name = removed
+		text = "GRemoved for Everyone"
+		desc = "Desperate Defense can be taken at any time by anyone."
+	}
+}
+battlefield_support_status = {
+	name = "The Battlefield Support grand doctrine is..."
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	default = {
+		name = banned
+		text = "RFully Banned"
+		desc = "Battlefield Support cannot be taken by anyone."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Battlefield Support is only allowed for Axis countries."
+	}
+	option = {
+		name = allies
+		text = "4Allies Only"
+		desc = "Battlefield Support is only allowed for Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed for Everyone"
+		desc = "Battlefield Support can be taken by anyone."
+	}
+}
+pinpoint_strikes_status = {
+	name = "The Pinpoint Strikes subdoctrine is..."
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = banned
+		text = "RFully Banned"
+		desc = "Pinpoint Strikes cannot be taken by anyone."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Pinpoint Strikes is only allowed for Axis countries."
+	}
+	default = {
+		name = allies
+		text = "4Allies Only"
+		desc = "Pinpoint Strikes is only allowed for Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed for Everyone"
+		desc = "Pinpoint Strikes can be taken by anyone."
+	}
+}
+ground_support_subdoctrines_status = {
+	name = "Ground Support-giving subdoctrines are..."
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	option = {
+		name = banned
+		text = "RFully Banned"
+		desc = "Air subdoctrines that provide ground support bonuses cannot be taken by anyone."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "Air subdoctrines that provide ground support bonuses are only allowed for Axis countries."
+	}
+	default = {
+		name = allies
+		text = "4Allies Only"
+		desc = "Air subdoctrines that provide ground support bonuses are only allowed for Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed for Everyone"
+		desc = "All air subdoctrines can be taken by anyone."
+	}
+}
+integrate_czech_manufacturers_status = {
+	name = "The Integrate Czech Manufacturers focus for Germany is..."
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_industry"
+	option = {
+		name = disabled
+		text = "RFully Disabled"
+		desc = "The Integrate Czech Manufacturers focus cannot be taken by Germany."
+	}
+	option = {
+		name = enabled_no_mios
+		text = "OEnabled Without MIOs"
+		desc = "The Integrate Czech Manufacturers focus can be taken, but does not unlock any new MIOs for Germany."
+	}
+	option = {
+		name = enabled_no_tank_mios
+		text = "YEnabled Without Tank-Related MIOs"
+		desc = "The Integrate Czech Manufacturers focus can be taken, but does not unlock tank-related MIOs for Germany."
+	}
+	default = {
+		name = enabled
+		text = "GEnabled"
+		desc = "The Integrate Czech Manufacturers focus functions as it does in vanilla."
+	}
+}
+soviet_post_cap_compliance_scaling = {
+	name = "After the Soviets capitulate, collaboration government-based compliance should..."
+	group = "HMM Rules"
+	icon = "GFX_boosting_party_popularity"
+	option = {
+		name = scale_to_zero
+		text = "RBe Removed Entirely"
+		desc = "Compliance in Soviet cores will be 0% after they capitulate, regardless of how many collaboration government operations were done beforehand."
+	}
+	default = {
+		name = scale_as_if_1_collab
+		text = "OBe Scaled by 0.35x (One Collab)"
+		desc = "Compliance in Soviet cores after they capitulate will be scaled by 0.7x. Completing three collaboration government operations on them (= 100% Compliance) will produce post-capitulation compliance equivalent to having done only one collaboration government operation (= 35% Compliance)."
+	}
+	option = {
+		name = scale_as_if_2_collabs
+		text = "YBe Scaled by 0.7x (Two Collabs)"
+		desc = "Compliance in Soviet cores after they capitulate will be scaled by 0.7x. Completing three collaboration government operations on them (= 100% Compliance) will produce post-capitulation compliance equivalent to having done only two collaboration government operations (= 70% Compliance)."
+	}
+	option = {
+		name = no_scaling
+		text = "GRemain Unchanged"
+		desc = "Compliance in Soviet cores after they capitulate will behave as it does for any other country's cores."
+	}
+}
+steal_blueprints_operation = {
+	name = "Status of Steal Blueprints Operation"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "RBanned"
+		desc = "Countries cannot perform the Steal Blueprints operation on each other."
+	}
+	option = {
+		name = enemies_only
+		text = "OEnemies Only"
+		desc = "Countries can only perform the Steal Blueprints operation on targets that are considered on the opposite side of World War 2."
+	}
+	option = {
+		name = non_faction_only
+		text = "YDifferent Faction Only"
+		desc = "Countries can only perform the Steal Blueprints operation on targets that are not considered part of the same faction (Western Allies, Comintern, European Axis, GEACPS)."
+	}
+	option = {
+		name = on
+		text = "GAllowed"
+		desc = "Countries can perform the Steal Blueprints operation on each other as normal."
+	}
+}
+resistance_operations = {
+	name = "Status of Resistance-Based Operations"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "RBanned"
+		desc = "Countries cannot perform the Make Resistance Contacts operation, which means they also inherently cannot perform sabotage operations or operations boosting resistance."
+	}
+	option = {
+		name = only_sabotage
+		text = "OOnly Sabotage"
+		desc = "Countries can perform the Make Resistance Contacts operation and any operation that sabotages buildings in occupied territories. However, Make Resistance Contacts will never affect resistance, and the Boost Resistance operation cannot be performed."
+	}
+	option = {
+		name = only_boost_resistance
+		text = "YOnly Boost Resistance"
+		desc = "Countries can perform the Make Resistance Contacts and Boost Resistance operations. However, they cannot perform any of the operations that would sabotage buildings in occupied territories."
+	}
+	option = {
+		name = on
+		text = "GAllowed"
+		desc = "Countries can perform any operation that increases resistance or that sabotages buildings in occupied territories as normal."
+	}
+}
+coordinated_strike_operation = {
+	name = "Status of Coordinated Strike Operation"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = off
+		text = "RBanned"
+		desc = "Countries cannot perform the Coordinated Strike operation on each other."
+	}
+	option = {
+		name = axis_only
+		text = "YAxis Only"
+		desc = "Only Axis countries can perform the Coordinated Strike operation."
+	}
+	option = {
+		name = on
+		text = "GAllowed"
+		desc = "Countries can perform the Coordinated Strike operation on each other as normal."
+	}
+}
+continuous_recruitment_drive = {
+	name = "Status of Continuous Recruitment Drive"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	option = {
+		name = banned
+		text = "RRemoved"
+		desc = "The non-vanilla continuous national focus 'Continuous Recruitment Drive' is removed from the game."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "The non-vanilla continuous national focus 'Continuous Recruitment Drive' is only allowed to be done by Axis countries."
+	}
+	option = {
+		name = allies
+		text = "4Allies Only"
+		desc = "The non-vanilla continuous national focus 'Continuous Recruitment Drive' is only allowed to be done by Allied countries."
+	}
+	default = {
+		name = allowed
+		text = "GAdded for Everyone"
+		desc = "The non-vanilla continuous national focus 'Continuous Recruitment Drive' can be done by anyone."
+	}
+}
+continuous_air_production = {
+	name = "Status of Continuous Air Production"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_air"
+	default = {
+		name = banned
+		text = "RFully Banned"
+		desc = "The continuous national focus 'Continuous Air Production' cannot be done by anyone."
+	}
+	option = {
+		name = axis
+		text = "OAxis Only"
+		desc = "The continuous national focus 'Continuous Air Production' is only allowed for Axis countries."
+	}
+	option = {
+		name = allies
+		text = "4Allies Only"
+		desc = "The continuous national focus 'Continuous Air Production' is only allowed for Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "GAllowed for Everyone"
+		desc = "The continuous national focus 'Continuous Air Production' can be done by anyone, as in the base game."
+	}
+}
+baltics_status = {
+	name = "Baltic Countries' Status"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = abstracted
+		text = "RAbstracted"
+		desc = "Lithuania, Latvia, and Estonia get empty focus trees and cannot produce or construct anything, but instead get extra factories spawned in on Day 1 to simulate their actions. Lithuania gets nothing, Latvia gets +9 civilian factories, and Estonia gets +10 civilian factories and +2 military factories."
+	}
+	option = {
+		name = vanilla
+		text = "GUnmodified"
+		desc = "Lithuania, Latvia, and Estonia get their historical focus trees and can construct buildings and produce equipment as normal, but will not deploy units."
+	}
+}
+austria_status = {
+	name = "Austria's Status"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = abstracted
+		text = "RAbstracted"
+		desc = "Austria gets an empty focus tree and cannot produce or construct anything, but instead gets +6 civilian factories and +1 military factory spawned in on Day 1 to simulate its actions."
+	}
+	option = {
+		name = vanilla
+		text = "GUnmodified"
+		desc = "Austria gets its historical focus tree and can construct buildings and produce equipment as normal, but will not deploy units."
+	}
+}
+czechs_status = {
+	name = "Czechoslovakia's Status"
+	group = "HMM Rules"
+	icon = "GFX_volunteers"
+	default = {
+		name = abstracted
+		text = "RAbstracted"
+		desc = "Czechoslovakia gets an empty focus tree and cannot produce or construct anything, but instead gets +4 civilian factories and +1 military factory spawned in on Day 1 to simulate its actions."
+	}
+	option = {
+		name = vanilla
+		text = "GUnmodified"
+		desc = "Czechoslovakia gets its historical focus tree and can construct buildings and produce equipment as normal, but will not deploy units."
 	}
 }
 tradebacks = {
@@ -502,5 +1729,352 @@ tradebacks = {
 		name = only_axis
 		text = "YOnly Axis"
 		desc = "The axis has a tradeback idea that gives -100% missing resource penalty"
+	}
+}
+
+alt_hist_fra = {
+	name = "Can France do alt-historical democratic focuses?"
+	group = "HMM Alternate History Rules"
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "France is forced to follow focuses under Form the Popular Front (historical)."
+	}
+	default = {
+		name = allowed
+		text = "GYes"
+		desc = "France can follow either Form the Popular Front (historical) or Revive the National Bloc."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "France is forced to follow focuses under Revive the National Bloc."
+	}
+}
+alt_hist_usa = {
+	name = "Can the USA do alt-historical democratic focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "The USA is forced to follow focuses under Continue the New Deal (historical)."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "The USA can follow either Continue the New Deal (historical) or Reestablish the Gold Standard."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "The USA is forced to follow focuses under Reestablish the Gold Standard."
+	}
+}
+alt_hist_ger_eco = {
+	name = "Can Germany do alt-historical economy focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "Germany is forced to follow focuses under The Four-Year Plan (historical)."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Germany can follow either The Four-Year Plan (historical) or Prioritize Economic Growth."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Germany is forced to follow focuses under Prioritize Economic Growth."
+	}
+}
+alt_hist_ita = {
+	name = "Can Italy do alt-historical fascist focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "Italy is forced to follow focuses under Culto del Duce (historical)."
+	}
+	option = {
+		name = only_italo_balbo
+		text = "OOnly Italo Balbo"
+		desc = "Italy can follow focuses under Culto del Duce (historical) or Italo Balbo."
+	}
+	option = {
+		name = only_dino_grandi
+		text = "YOnly Dino Grandi"
+		desc = "Italy can follow focuses under Culto del Duce (historical) or Dino Grandi."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Italy can follow focuses under Culto del Duce (historical), Italo Balbo, or Dino Grandi."
+	}
+	option = {
+		name = forced
+		text = "CForced Alt-Historical"
+		desc = "Italy can follow focuses under Italo Balbo or Dino Grandi."
+	}
+	option = {
+		name = forced_italo_balbo
+		text = "BForced Italo Balbo"
+		desc = "Italy can follow focuses under Culto del Duce (historical) or Italo Balbo."
+	}
+	option = {
+		name = forced_dino_grandi
+		text = "0Forced Dino Grandi"
+		desc = "Italy can follow focuses under Culto del Duce (historical) or Dino Grandi."
+	}
+}
+alt_hist_jap = {
+	name = "Can Japan do alt-historical non-aligned focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "Japan is forced to follow focuses under Purge the Kodoha Faction (historical)."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Japan can follow either Purge the Kodoha Faction (historical) or Revere the Emperor, Destroy the Traitors."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Japan is forced to follow focuses under Revere the Emperor, Destroy the Traitors."
+	}
+}
+alt_hist_bra = {
+	name = "Can Brazil do alt-historical democratic focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "Brazil is forced to follow focuses under Tribunal de Segurança Nacional and Estado Novo (historical)."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Brazil can follow either Tribunal de Segurança Nacional and Estado Novo (historical) or End the State of Emergency and Repeal the National Security Laws."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Brazil is forced to follow focuses under End the State of Emergency and Repeal the National Security Laws."
+	}
+}
+alt_hist_bul = {
+	name = "Can Bulgaria do alt-historical fascist focuses?"
+	group = "HMM Alternate History Rules"
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "Bulgaria is forced to follow focuses under The Tsar's Regime (historical)."
+	}
+	default = {
+		name = allowed
+		text = "GYes"
+		desc = "Bulgaria can follow either The Tsar's Regime (historical) or Appoint Right-Wing Ministers."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Bulgaria is forced to follow focuses under Appoint Right-Wing Ministers."
+	}
+}
+alt_hist_fin = {
+	name = "Can Finland do alt-historical political focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned_no_lone_wolf
+		text = "0No & Lone Wolf Banned"
+		desc = "Finland is forced to follow focuses under Finnish Neutrality (historical) and cannot do The Lone Wolf, Northern Defense Front, or Join the Allies."
+	}
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "Finland is forced to follow focuses under Finnish Neutrality and The Lone Wolf (historical)."
+	}
+	option = {
+		name = allowed_no_lone_wolf
+		text = "YYes, but Lone Wolf banned"
+		desc = "Finland can follow either Finnish Neutrality (historical) or Right-Wing Policies, but if they choose the former, they cannot do The Lone Wolf, Northern Defense Front, or Join the Allies."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Finland can follow either Finnish Neutrality and The Lone Wolf (historical) or Right-Wing Policies."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Finland is forced to follow focuses under Right-Wing Policies."
+	}
+}
+alt_hist_hun = {
+	name = "Can Hungary do alt-historical fascist and non-aligned focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "Hungary is forced to follow focuses under Continue the Regency (historical) and Reinforce Horthy's Reign (historical)."
+	}
+	option = {
+		name = only_fascist_king
+		text = "OFascist King Allowed"
+		desc = "Hungary can follow either Continue the Regency (historical) and Reinforce Horthy's Reign (historical) or End the Regency and Elect a Fascist King."
+	}
+	option = {
+		name = only_arrow_cross
+		text = "YNon-Monarchist Fascist Allowed"
+		desc = "Hungary is forced to follow focuses under Continue the Regency (historical), but can follow either Reinforce Horthy's Reign (historical) or Undermine the Admiral."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Hungary can follow either Continue the Regency (historical) and either Reinforce Horthy's Reign (historical) or Undermine the Admiral, or End the Regency and Elect a Fascist King."
+	}
+	option = {
+		name = forced_arrow_cross
+		text = "CForced Non-Monarchist Fascist"
+		desc = "Hungary is forced to follow focuses under Continue the Regency (historical) and Undermine the Admiral."
+	}
+	option = {
+		name = forced_fascist_king
+		text = "0Forced Fascist King"
+		desc = "Hungary is forced to follow focuses under End the Regency and Elect a Fascist King."
+	}
+}
+alt_hist_irq = {
+	name = "Can Iraq do alt-historical non-aligned or democratic focuses?"
+	group = "HMM Alternate History Rules"
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "Iraq is forced to follow focuses under Party of National Brotherhood (historical)."
+	}
+	default = {
+		name = allowed
+		text = "GYes"
+		desc = "Iraq can follow either Party of National Brotherhood (historical) or Rally Behind the Hashemite Dynasty."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Iraq is forced to follow focuses under Rally Behind the Hashemite Dynasty."
+	}
+}
+alt_hist_mex = {
+	name = "Can Mexico do alt-historical democratic and non-aligned focuses?"
+	group = "HMM Alternate History Rules"
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "Mexico is forced to Arrest General Cedillo (historical) and follow focuses under State Education (historical)."
+	}
+	option = {
+		name = only_christian_democracy
+		text = "OChristian Democracy Allowed"
+		desc = "Mexico is forced to Arrest General Cedillo (historical), but can follow either State Education (historical) or Knights of Columbus."
+	}
+	option = {
+		name = only_caudillos
+		text = "YCaudillos Allowed"
+		desc = "Mexico can either Arrest General Cedillo (historical) or Support General Cedillo, but is forced to follow focuses under State Education (historical)."
+	}
+	default = {
+		name = allowed
+		text = "GYes"
+		desc = "Mexico can either Arrest General Cedillo (historical) or Support General Cedillo, and can follow either State Education (historical) or Knights of Columbus."
+	}
+	option = {
+		name = forced_caudillos
+		text = "CForced Caudillos"
+		desc = "Mexico is forced to Support General Cedillo, but can follow either State Education (historical) or Knights of Columbus."
+	}
+	option = {
+		name = forced_caudillos_secularism
+		text = "0Forced Caudillos & Secularism"
+		desc = "Mexico is forced to Support General Cedillo and to follow focuses under State Education (historical)."
+	}
+}
+alt_hist_raj = {
+	name = "Can the British Raj do alt-historical democratic focuses?"
+	group = "HMM Alternate History Rules"
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "The British Raj is forced to follow focuses under Onto the Road of Independence (historical) and Two-Nation Theory (historical). Since going independent would result in the Partition of India, they can only go independent if releasing nations is not banned."
+	}
+	option = {
+		name = only_india_united
+		text = "YIndependence Paths Allowed"
+		desc = "The British Raj is forced to follow Onto the Road of Independence (historical), but can choose either Two-Nation Theory (historical) or India United."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "The British Raj can follow either Onto the Road of Independence (historical) or His Majesty's Loyal Government. If they choose Onto the Road of Independence, they can also choose to follow either Two-Nation Theory (historical) or India United."
+	}
+	default = {
+		name = forced
+		text = "CForced Loyalty Path"
+		desc = "The British Raj is forced to follow focuses under His Majesty's Loyal Government."
+	}
+}
+alt_hist_sia_eco = {
+	name = "Can Siam do alt-historical economy focuses?"
+	group = "HMM Alternate History Rules"
+	default = {
+		name = banned
+		text = "RNo"
+		desc = "Siam is forced to follow focuses under Thai Rice Company (historical)."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Siam can follow either Thai Rice Company (historical) or The Bank of Siam."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Siam is forced to follow focuses under The Bank of Siam."
+	}
+}
+alt_hist_spr = {
+	name = "Can Spain do alt-historical fascist focuses?"
+	group = "HMM Alternate History Rules"
+	option = {
+		name = banned
+		text = "RNo"
+		desc = "Spain is forced to follow focuses under Autarky (historical) and cannot do Join the Axis. Germany cannot do Alliance with Spain."
+	}
+	default = {
+		name = banned_no_faction_needed
+		text = "ONo & Relax Faction Requirements"
+		desc = "Spain is forced to follow focuses under Autarky (historical) and cannot do Join the Axis, but does not need to be in the Axis to finish certain focuses. Germany cannot do Alliance with Spain."
+	}
+	option = {
+		name = allowed
+		text = "GYes"
+		desc = "Spain can follow either Autarky (historical) or Fascist Economic Aid, though needs to remain in the Axis to complete focuses under the latter. Germany cannot do Alliance with Spain if Spain does Autarky, and Spain cannot do Autarky if Germany does Alliance with Spain."
+	}
+	option = {
+		name = allowed_no_faction_needed
+		text = "YYes & Relax Faction Requirements"
+		desc = "Spain can follow either Autarky (historical) or Fascist Economic Aid, and can follow the latter without being in the Axis. Germany cannot do Alliance with Spain if Spain does Autarky, and Spain cannot do Autarky if Germany does Alliance with Spain."
+	}
+	option = {
+		name = forced
+		text = "CForced"
+		desc = "Spain is forced to follow focuses under Fascist Economic Aid and needs to remain in the Axis to complete the focuses under it."
+	}
+	option = {
+		name = forced_no_faction_needed
+		text = "0Forced & Relax Faction Requirements"
+		desc = "Spain is forced to follow focuses under Fascist Economic Aid and does not need to be in the Axis to complete the focuses under it."
 	}
 }

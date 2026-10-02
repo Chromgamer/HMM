@@ -2146,6 +2146,9 @@ prospect_for_resources = {
 
 		available = {
 			has_tech = construction3
+			OR = {
+				ai_black = yes
+				AND = {
 			if = {
 				limit = {
 					has_dlc = "Battle for the Bosporus"
@@ -2153,6 +2156,8 @@ prospect_for_resources = {
 				has_country_flag = TUR_karabuk_iron_steel_factory_modernised_flag
 			}
 			num_of_civilian_factories_available_for_projects > 14
+				}
+			}
 			owns_state = 347
 			controls_state = 347
 		}
@@ -2174,13 +2179,14 @@ prospect_for_resources = {
 		days_remove = 90
 
 		modifier = {
-			civilian_factory_use = 15
+			#civilian_factory_use = 15 # HMM: disabled because black nation
 		}
 
 		ai_will_do = {
-			base = 0.3
+			base = 1000 # HMM: prioritize this
 			modifier = {
 				factor = 0
+				always = no
 				OR = {
 					AND = { #Ultimatum decisions are available and we should prio them
 						original_tag = SOV
@@ -8490,7 +8496,7 @@ prospect_for_resources = {
 		icon = oil
 
 		allowed = {
-			always = no
+
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8505,7 +8511,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = {
+				rule = axis_fuel_spirit
+				option = off
+			}
 			owns_state = 76
 			controls_state = 76
 			76 = {
@@ -8546,7 +8555,6 @@ prospect_for_resources = {
 		allowed = {
 			original_tag = HUN
 			has_dlc = "Gotterdammerung"
-			always = no
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8555,7 +8563,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = {
+				rule = axis_fuel_spirit
+				option = off
+			}
 			original_tag = HUN
 			owns_state = 155
 			controls_state = 155
@@ -8606,7 +8617,6 @@ prospect_for_resources = {
 		allowed = {
 			original_tag = HUN
 			has_dlc = "Gotterdammerung"
-			always = no
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8615,7 +8625,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = {
+				rule = axis_fuel_spirit
+				option = off
+			}
 			original_tag = HUN
 			owns_state = 155
 			controls_state = 155
@@ -8673,7 +8686,10 @@ prospect_for_resources = {
 		}
 		available = {
 			has_tech = excavation4
+			OR = { # HMM: disabled for Sweden effectively being a black nation
+				ai_black = yes
 			num_of_civilian_factories_available_for_projects > 5
+			}
 			controls_state = 666
 			owns_state = 666
 		}
@@ -8687,7 +8703,10 @@ prospect_for_resources = {
 				}
 			}
 
+			OR = { # HMM: check disabled for Sweden effectively being a black nation
+				ai_black = yes
 			has_completed_focus = SWE_deep_mining_complexes
+			}
 		}
 
 		fire_only_once = yes
@@ -8696,11 +8715,11 @@ prospect_for_resources = {
 		days_remove = 60
 
 		modifier = {
-			civilian_factory_use = 5
+			#civilian_factory_use = 5 # HMM: disabled for Sweden effectively being a black nation
 		}
 
 		ai_will_do = {
-			base = 1
+			base = 1000 # HMM: increased so Sweden is guaranteed to do it
 		}
 
 		remove_effect = {
@@ -9386,6 +9405,96 @@ prospect_for_resources = {
 			}
 		}
 	}
+
+	develop_guapore_casserite_deposits = {
+		icon = aluminium
+
+		allowed = {
+			
+		}
+
+		available = {
+			owns_state = 942
+			controls_state = 942
+			num_of_civilian_factories_available_for_projects > 4
+			IF = {
+				limit = {
+					original_tag = BRA
+					has_dlc = "Trial of Allegiance"
+				}
+				has_completed_focus = BRA_federal_development
+			}
+			ELSE = {
+				has_tech = excavation4
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 942
+			}
+		}
+
+		visible = {
+			owns_state = 942
+			controls_state = 942
+			942 = {
+				NOT = {
+					has_state_flag = guapore_cassiterite_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					AND = { #Ultimatum decisions are available and we should prio them
+						original_tag = SOV
+						SOV_we_want_to_send_ultimatums = yes
+					}
+					AND = { #Too low MP we need to save PP for the laws
+						has_manpower < 10000
+						NOT = { has_idea = scraping_the_barrel }
+					}
+				}
+			}
+			modifier = {  # Too low PP
+				factor = 0.5
+				has_political_power < 80
+			}
+			modifier = { #We have plenty of PP, avanti!
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #Running out of the stuff, need more!
+				factor = 5
+				has_resources_in_country = {
+					resource = coal
+					amount < 1
+				}
+			}
+		}
+		remove_effect = {
+			942 = { set_state_flag = guapore_cassiterite_developed }
+			942 = {
+				add_resource = {
+					type = aluminium
+					amount = 12 
+				}
+			}
+		}
+	}
+
 	develop_la_libertad_coal_mines = {
 		icon = coal
 

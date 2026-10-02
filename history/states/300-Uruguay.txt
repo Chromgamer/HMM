@@ -7,11 +7,14 @@ state = {
 	state_category = wasteland
 	
 	
+	resources = {
+	}
 
 	history = {
 
 		owner = WST
 		add_core_of = WST
+		add_core_of = URG
 
 		buildings = {
 			infrastructure = 3 #was: 5

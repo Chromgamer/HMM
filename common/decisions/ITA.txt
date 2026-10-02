@@ -610,11 +610,16 @@ ITA_missiolinis = {
 		available = { #GOAL
 			custom_trigger_tooltip = {
 				tooltip = ITA_pacify_ethiopia_goal_tt
-				all_of_scopes = {
-					array = ITA_initial_ethiopian_states
+				NOT = {
+					any_state_in = {
+						continent = africa
+						is_initial_ethiopian_state = yes
+						NOT = {
 					OR = {
 						compliance > 60 #WARNING THIS VALUE NEEDS TO MATCH THE ONE IN EVENT TRIGGER
 						controller = { is_subject_of = ROOT }
+					}
+						}
 					}
 				}
 			}
@@ -641,9 +646,14 @@ ITA_missiolinis = {
 		cancel_effect = {
 			if = { #Succeeded
 				limit = {
-					all_of_scopes = {
-						array = ITA_initial_ethiopian_states
+					NOT = {
+						any_state_in = {
+							continent = africa
+							is_initial_ethiopian_state = yes
+							NOT = {
 						is_owned_by = ROOT
+							}
+						}
 					}
 				}
 				country_event = { id = BBA_italy_missiolinis.23 hours = 1 }
@@ -685,11 +695,16 @@ ITA_missiolinis = {
 		available = { #GOAL
 			custom_trigger_tooltip = {
 				tooltip = ITA_pacify_ethiopia_goal_tt
-				all_of_scopes = {
-					array = ITA_initial_ethiopian_states
+				NOT = {
+					any_state_in = {
+						continent = africa
+						is_initial_ethiopian_state = yes
+						NOT = {
 					OR = {
 						compliance > 60 #WARNING THIS VALUE NEEDS TO MATCH THE ONE IN EVENT TRIGGER
 						controller = { is_subject_of = ROOT }
+					}
+						}
 					}
 				}
 			}
@@ -716,9 +731,14 @@ ITA_missiolinis = {
 		cancel_effect = {
 			if = { #Succeeded
 				limit = {
-					all_of_scopes = {
-						array = ITA_initial_ethiopian_states
+					NOT = {
+						any_state_in = {
+							continent = africa
+							is_initial_ethiopian_state = yes
+							NOT = {
 						compliance > 60
+							}
+						}
 					}
 				}
 				log = "Success"
@@ -4616,142 +4636,114 @@ ITA_colonial_management_dec_cat = {
 			has_completed_focus = ITA_the_new_emperor_of_ethiopia
 			custom_trigger_tooltip = {
 				tooltip = aoi_required_ethiopian_states
-				AND = {
+				ITA = {
 					OR = {
-						ITA = {
 						owns_state = 271 # Shewa
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 271 # Shewa
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 843 # Wello
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 843 # Wello
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 908 # Afar
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 908 # Afar
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 842 # Tigray
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 842 # Tigray
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 841 # Begemder
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 841 # Begemder
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 840 # Gojjam
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 840 # Gojjamm
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 839 # Welega
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 839 # Welega
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 838 # Illubabor-Kaffa
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 838 # Illubabor-Kaffa
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 837 # Sidamo
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 837 # Sidamo
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 836 # Bale
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 836 # Bale
 						}
 					}
 					OR = {
-						ITA = {
 						owns_state = 835 # Hararghe
-						}
-						any_country = {
-							is_subject_of = ITA
+						any_subject_country = {
 							owns_state = 835 # Hararghe
 						}
 					}
 				}
 			}
+			ITA = {
 			OR = {
-				ITA = {
 				owns_state = 550 # Eritrea
-				}
-				any_country = {
-					is_subject_of = ITA
+				any_subject_country = {
 					owns_state = 550 # Eritrea
 				}
 			}
 			OR = {
-				ITA = {
 				owns_state = 559 # Somaliland
-				}
-				any_country = {
-					is_subject_of = ITA
+				any_subject_country = {
 					owns_state = 559 # Somaliland
 				}
 			}
 			OR = {
-				ITA = {
 				owns_state = 844 # Jubaland
-				}
-				any_country = {
-					is_subject_of = ITA
+				any_subject_country = {
 					owns_state = 844 # Jubaland
 				}
 			}
-
+			}
 		}
 
 		visible = {
 			has_completed_focus = ITA_ministry_of_italian_africa
 			original_tag = ITA # Italy
 			NOT = { has_global_flag = italian_east_africa_flag }
+			NOT = { # HMM: AOI is technically a released nation, so subject it to the releasing nations rule
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
+			OR = {
+				has_war = no
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
+			}
 		}
 
 		complete_effect = {
@@ -4888,17 +4880,14 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			country_exists = AOI
+			ITA = {
 			OR = {
-				ITA = {
 				controls_state = 269 # British Somaliland
-				}
-				any_country = {
-					is_subject_of = ITA
+				any_subject_country = {
 					controls_state = 269 # British Somaliland
 				}
+			}
 			}
 		}
 
@@ -4941,17 +4930,14 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			country_exists = AOI
+			ITA = {
 			OR = {
-				ITA = {
 				controls_state = 268 # French Somaliland
-				}
-				any_country = {
-					is_subject_of = ITA
+				any_subject_country = {
 					controls_state = 268 # French Somaliland
 				}
+			}
 			}
 		}
 
@@ -4994,17 +4980,14 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			country_exists = AOI
+			ITA = {
 			OR = {
-				ITA = {
 				controls_state = 903 # Garissa
-				}
-				any_country = {
-					is_subject_of = ITA
+				any_subject_country = {
 					controls_state = 903 # Garissa
 				}
+			}
 			}
 		}
 
@@ -5047,9 +5030,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			country_exists = AOI
 			ITA = {
 				has_manpower > 10000
 			}
@@ -5070,12 +5051,10 @@ ITA_colonial_management_dec_cat = {
 			AOI = {
 				add_manpower = 10000
 				army_experience = 15
-			}
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = AOI
+				every_owned_state = {
+					limit = { is_controlled_by = AOI }
+					add_resistance = -5
 				}
-				add_resistance = -5
 			}
 
 			hidden_effect = {
@@ -5101,9 +5080,7 @@ ITA_colonial_management_dec_cat = {
 		}
 
 		available = {
-			AOI = {
-				exists = yes
-			}
+			country_exists = AOI
 			OR = {
 				ITA = {
 					has_equipment = {
@@ -5139,11 +5116,13 @@ ITA_colonial_management_dec_cat = {
 				}
 			}
 
-			every_state = {
-				limit = {
-					is_owned_and_controlled_by = AOI
+			AOI = {
+				every_owned_state = {
+					limit = {
+						is_controlled_by = AOI
+					}
+					add_resistance = -5
 				}
-				add_resistance = -5
 			}
 
 			hidden_effect = {
@@ -6018,8 +5997,9 @@ ITA_diplomacy_balkan_decision_category = {
 			}
 			set_country_flag = ITA_aimones_coronation
 			hidden_effect = {
-				ITA_prince_aimone = {
-					set_nationality = CRO
+				set_nationality = {
+					target_country = CRO
+					character = ITA_prince_aimone
 				}
 			}
 		}
@@ -6160,9 +6140,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		available = {
-			ALB = {
-				exists = no
-			}
+			NOT = { country_exists = ALB }
 			44 = {
 				is_controlled_by = ITA
 			}
@@ -6186,6 +6164,19 @@ ITA_diplomacy_balkan_decision_category = {
 			}
 			NOT = {
 				has_country_flag = ITA_established_albania
+			}
+			NOT = { # HMM: ALB is technically a released nation, so subject it to the releasing nations rule
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
+			OR = {
+				has_war = no
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
 			}
 		}
 
@@ -6296,9 +6287,7 @@ ITA_diplomacy_balkan_decision_category = {
 		}
 
 		available = {
-			MNT = {
-				exists = no
-			}
+			NOT = { country_exists = MNT }
 			105 = {
 				is_controlled_by = ITA
 			}
@@ -6316,6 +6305,19 @@ ITA_diplomacy_balkan_decision_category = {
 			}
 			NOT = {
 				has_country_flag = ITA_established_montenegro
+			}
+			NOT = { # HMM: MNT is technically a released nation, so subject it to the releasing nations rule
+				has_game_rule = {
+					rule = allow_release_nations
+					option = BLOCKED
+				}
+			}
+			OR = {
+				has_war = no
+				has_game_rule = {
+					rule = allow_release_nations
+					option = FREE
+				}
 			}
 		}
 
@@ -6553,22 +6555,22 @@ ITA_diplomacy_balkan_decision_category = {
 			}
 			NOT = {
 				105 = {
+					OR = {
 					is_controlled_by = ITA
+					controller = { is_subject_of = ITA }
+					}
 				}
 				any_subject_country = {
 					original_tag = MNT
 					controls_state = 105
 				}
-				any_country = {
-					is_subject_of = ITA
-					controls_state = 105
-				}
 			}
-			any_country = {
-				controls_state = 105
+			105 = {
+			controller = {
 				NOT = {
 					has_war_with = ROOT
 				}
+			}
 			}
 		}
 
@@ -6600,13 +6602,14 @@ ITA_diplomacy_balkan_decision_category = {
 		cost = 100
 
 		complete_effect = {
-			random_country = {
-				limit = { controls_state = 105 }
+			105 = {
+			controller = {
 				country_event = {
 				    id = BBA_italy_interaction_events.11
 				    days = 2
 				    random = 3
 				}
+			}
 			}
 			hidden_effect = {
 				set_country_flag = ITA_demanded_montenegro
@@ -6722,13 +6725,14 @@ ITA_diplomacy_balkan_decision_category = {
 			ITA = {
 				has_completed_focus = ITA_befriend_greece
 			}
-			any_country = {
-				controls_state = 342
+			342 = {
+				controller = {
 				controls_state = 339
 				has_war = no
 				NOT = {
 					is_in_faction_with = ITA
 				}
+			}
 			}
 		}
 
@@ -6747,13 +6751,14 @@ ITA_diplomacy_balkan_decision_category = {
 		cost = 100
 
 		complete_effect = {
-			random_country = {
-				limit = { controls_state = 342 }
+			342 = {
+			controller = {
 				country_event = {
 				    id = BBA_italy_interaction_events.14
 				    days = 1
 				    random = 4
 				}
+			}
 			}
 
 			hidden_effect = {
@@ -7467,6 +7472,7 @@ operations = {
 
 		visible = {
 			has_completed_focus = ITA_decima_flottiglia_mas
+			always = no
 		}
 
 		available = {

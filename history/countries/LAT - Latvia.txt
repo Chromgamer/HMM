@@ -1,6 +1,6 @@
 ﻿capital = 808
 
-oob = "LAT_1936"
+oob = "EMPTY"
 if = {
 	limit = { has_dlc = "Man the Guns" }
 		set_naval_oob = "LAT_1936_naval_mtg"
@@ -17,11 +17,6 @@ if = {
 			early_fighter = 1
 		}
 	}
-}
-
-if = {
-	limit = { has_dlc = "Arms Against Tyranny" }
-	store_core_states_on_game_start = yes
 }
 
 add_ideas = {

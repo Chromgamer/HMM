@@ -1,4 +1,63 @@
 is_playable_country = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_playable_country
+		OR = {
+			tag = GER
+			tag = ITA
+			tag = HUN
+			tag = ROM
+			tag = SPR
+			tag = BUL
+			tag = JAP
+			tag = SIA
+			tag = MAN
+			tag = FIN
+			tag = ENG
+			tag = FRA
+			tag = CAN
+			tag = AST
+			tag = BRA
+			tag = MEX
+			tag = NZL
+			tag = USA
+			tag = RAJ
+			tag = SAF
+			tag = SOV
+			tag = PHI
+			tag = IRQ
+			AND = {
+				is_baltic_country = yes
+				NOT = {
+					has_game_rule = {
+						rule = baltics_status
+						option = abstracted
+					}
+				}
+			}
+			AND = {
+				tag = AUS
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
+			}
+			AND = {
+				tag = CZE
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
+			}
+		}
+	}
+}
+
+ # Used for history files and decision allows, needs to be separate because nothing in those fields can key off of game rules without crashing the game
+is_potentially_playable_country = {
 	OR = {
 		tag = GER
 		tag = ITA
@@ -23,90 +82,244 @@ is_playable_country = {
 		tag = SOV
 		tag = PHI
 		tag = IRQ
+		is_baltic_country = yes
+		tag = AUS
+		tag = CZE
 	}
 }
 
 # Playable countries that are supposed to be annexed at some point or have an annex decision available
 is_annexable_playable_country = {
-	OR = {
-		# Annexed into Japan
-		tag = SIA
-		tag = MAN
-		# Annexed into Australia
-		tag = NZL
-		# Annexed into USA
-		tag = PHI
-		# Annexed into UK
-		tag = IRQ
-		# Brazil has annex decision
-		tag = MEX
-		# France/Raj have annex decision
-		tag = SAF
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_annexable_playable_country
+		OR = {
+			# Annexed into Japan
+			tag = SIA
+			tag = MAN
+			# Annexed into Australia
+			tag = NZL
+			# Annexed into USA
+			tag = PHI
+			# Annexed into UK
+			tag = IRQ
+			# Brazil/USA has annex decision
+			tag = MEX
+			# USA has annex decision
+			tag = BRA
+			# France/Raj/UK has annex decision
+			tag = SAF
+			# Nonnomed into Soviets
+			AND = {
+				is_baltic_country = yes
+				NOT = {
+					has_game_rule = {
+						rule = baltics_status
+						option = abstracted
+					}
+				}
+			}
+			# Nonnomed into Germany
+			AND = {
+				tag = AUS
+				NOT = {
+					has_game_rule = {
+						rule = austria_status
+						option = abstracted
+					}
+				}
+			}
+			# Nonnomed into Germany
+			AND = {
+				tag = CZE
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
+			}
+		}
 	}
 }
 
 allies = {
-	OR = {
-		tag = ENG
-		tag = FRA
-		tag = CAN
-		tag = AST
-		tag = BRA
-		tag = MEX
-		tag = NZL
-		tag = USA
-		tag = RAJ
-		tag = SAF
-		tag = IRE
-		tag = SOV
-		tag = NOR
-		tag = HOL
-		tag = BEL
-		tag = LUX
-		tag = POL
-		tag = DEN
-		tag = PHI
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_allies
+		OR = {
+			allies_western = yes
+			allies_comintern = yes
+		}
+	}
+}
+
+allies_western = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_allies_western
+		OR = {
+			allies_western_early_join = yes
+			allies_western_late_join = yes
+		}
+	}
+}
+
+allies_western_early_join = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_allies_western_early_join
+		OR = {
+			tag = ENG
+			tag = FRA
+			tag = CAN
+			tag = AST
+			tag = NZL
+			tag = USA
+			tag = RAJ
+			tag = SAF
+			tag = IRE
+			tag = NOR
+			tag = HOL
+			tag = BEL
+			tag = LUX
+			tag = POL
+			tag = DEN
+			AND = {
+				tag = IRQ
+				NOT = {
+					has_game_rule = {
+						rule = playable_iraq
+						option = axis
+					}
+				}
+			}
+		}
+	}
+}
+
+allies_western_late_join = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_allies_western_late_join
+		OR = {
+			tag = USA
+			tag = PHI
+			tag = MEX
+			tag = BRA
+		}
+	}
+}
+
+allies_comintern = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_allies_comintern
+		OR = {
+			tag = SOV
+			tag = MON
+			tag = TAN
+			tag = LIT # In case they aren't nomnomed by Soviets
+			tag = LAT # In case they aren't nomnomed by Soviets
+			tag = EST # In case they aren't nomnomed by Soviets
+		}
 	}
 }
 
 
 axis = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_axis
+		OR = {
+			axis_european = yes
+			axis_geacps = yes
+		}
+	}
+}
+
+axis_european = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_axis_european
+		OR = {
+			tag = GER
+			tag = ITA
+			tag = HUN
+			tag = ROM
+			tag = SPR
+			tag = BUL
+			tag = FIN
+			tag = SLO
+			AND = {
+				tag = IRQ
+				has_game_rule = {
+					rule = playable_iraq
+					option = axis
+				}
+			}
+			tag = AUS # In case they aren't nomnomed by Germany
+			AND = {
+				tag = CZE # In case they aren't nomnomed by Germany
+				is_ai = no
+			}
+			ai_rk = yes
+		}
+	}
+}
+
+axis_geacps = {
+	custom_trigger_tooltip = {
+		tooltip = hmm_is_axis_geacps
+		OR = {
+			tag = JAP
+			tag = SIA
+			tag = MAN
+		}
+	}
+}
+
+# HMM: keep this in sync with the on_war_relation_added block in on actions responsible for removing the no grind trait
+can_grind_generals = {
+	if = {
+		limit = { axis_european = yes }
+		has_global_flag = axis_grind_allowed
+		OR = {
+			has_war_with = ENG
+			has_war_with = USA
+			has_war_with = SOV
+			tag = SPR
+		}
+	}
+	else_if = {
+		limit = { axis_geacps = yes }
+		has_global_flag = geacps_grind_allowed
+		OR = {
+			has_war_with = ENG
+			has_war_with = USA
+			has_war_with = SOV # Just in case
+		}
+	}
+	else_if = {
+		limit = { allies = yes }
+		has_global_flag = allies_grind_allowed
+		OR = {
+			has_war_with = GER
+			has_war_with = JAP
+		}
+	}
+}
+
+deterrence_date_lock_passed = {
 	OR = {
-		tag = GER
-		tag = ITA
-		tag = HUN
-		tag = ROM
-		tag = SPR
-		tag = BUL
-		tag = JAP
-		tag = SIA
-		tag = MAN
-		tag = FIN
-		tag = RKB
-		tag = RKN
-		tag = RKG
-		tag = RKU
-		tag = RKO
-		tag = RKK
-		tag = RKT
-		tag = RKM
-		tag = RKL
-		tag = GEN
-		tag = RKH
-		tag = RKI
-		tag = RKC
-		tag = RGB
-		tag = RKA
-		tag = RNA
-		tag = RUS
-		tag = RCO
-		tag = RAN
-		tag = RKV
-		tag = RHD
-		tag = RAR
-		tag = ROA
-		tag = RAA
-		tag = IRQ
+		date > 1937.12.31
+		is_in_faction = no
+		has_idea = deterrence
+		has_completed_goal = faction_goal_a_great_fortress
+	}
+}
+
+ai_no_units = { # These countries should not make units at all
+	OR = {
+		is_baltic_country = yes
+		tag = AUS
+		tag = CZE
+		ai_annex = yes
+		ai_black = yes
+		ai_rk = yes
+		ai_manpower = yes
 	}
 }
 ai_manpower = {
@@ -122,19 +335,107 @@ ai_manpower = {
 		tag = DEN
 		tag = ALB
 		tag = IRE
-
 	}
 }
 ai_annex = {
-	OR = {
-		tag = LIT
-		tag = LAT
-		tag = EST
-		tag = AUS
-		tag = CZE
+	# We need this giant if-else structure because if we just use ANDs, the game crashes on startup
+	if = {
+		limit = {
+			has_game_rule = {
+				rule = baltics_status
+				option = abstracted
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = austria_status
+					option = abstracted
+				}
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
+				OR = {
+					is_baltic_country = yes
+					tag = AUS
+					tag = CZE
+					tag = COG
+				}
+			}
+			else = {
+				OR = {
+					is_baltic_country = yes
+					tag = AUS
+					tag = COG
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					rule = czechs_status
+					option = abstracted
+				}
+			}
+			OR = {
+				is_baltic_country = yes
+				tag = CZE
+				tag = COG
+			}
+		}
+		else = {
+			OR = {
+				is_baltic_country = yes
+				tag = COG
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = austria_status
+				option = abstracted
+			}
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = czechs_status
+					option = abstracted
+				}
+			}
+			OR = {
+				tag = AUS
+				tag = CZE
+				tag = COG
+			}
+		}
+		else = {
+			OR = {
+				tag = AUS
+				tag = COG
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = {
+				rule = czechs_status
+				option = abstracted
+			}
+		}
+		OR = {
+			tag = CZE
+			tag = COG
+		}
+	}
+	else = {
 		tag = COG
-		tag = MON
-		tag = TAN	
 	}
 }
 ai_rk = {
@@ -173,18 +474,226 @@ ai_black = {
 		tag = SWE
 	}
 }
+# Better to have these statically set than saved dynamically in an array
+malaya_states = {
+	OR = {
+		state = 1060
+		state = 1063
+		state = 336
+		state = 1064
+		state = 1065
+		state = 1062
+		state = 1064
+		state = 1061
+		state = 1021 #Singapore
+	}
+}
+borneo_states = {
+	OR = {
+		state = 333
+		state = 1059
+		state = 1024
+		state = 334
+		state = 1022
+		state = 1055
+		state = 1023
+	}
+}
+indochina_states = {
+	OR = {
+		state = 1069
+		state = 670
+		state = 671
+		state = 1017
+		state = 1068
+		state = 286
+		state = 1067
+		state = 741
+		state = 1066
+	}
+}
+malaysia_burma_states = {
+	OR = {
+		state = 994
+		state = 999
+		state = 993
+		state = 1061
+		state = 1065
+		state = 1062
+		state = 1064
+	}
+}
+INS_releasables = {
+	OR = {
+		original_tag = ATJ
+		original_tag = BLI
+		original_tag = SSI
+		original_tag = TNE
+		original_tag = GOW
+		original_tag = POK
+		original_tag = TML
+		original_tag = PNG
+		original_tag = WPG
+	}
+}
 
+marker_for_useless_agency_upgrade = {
+	custom_trigger_tooltip = {
+		tooltip = HMM_useless_agency_upgrade_disabled
+		always = no
+	}
+}
+
+# Not sure these actually even work...
 DIPLOMACY_PEACE_PROPOSAL_ENABLE_TRIGGER = {
 	always = no
 }
 DIPLOMACY_RETURN_TERRITORY_ENABLE_TRIGGER = {
 	if = {
 		limit = {
-			FROM = { tag = WST }
+			FROM = { ai_black = yes }
 		}
 		custom_trigger_tooltip = {
-			tooltip = RETURN_TERRITORY_TO_WST_BLOCKED_TOOLTIP
-			NOT = { FROM = { tag = WST } }
+			tooltip = HMM_RETURN_TERRITORY_TO_BLACK_NATION_BLOCKED_TOOLTIP
+			always = no
+		}
+	}
+}
+
+railway_gun_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = railway_gun
+			option = on
+		}
+		AND = {
+			has_game_rule = {
+				rule = railway_gun
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = railway_gun
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+super_heavy_tank_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = super_heavy_tank
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = super_heavy_tank
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = super_heavy_tank
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+land_cruiser_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = land_cruiser
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = land_cruiser
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = land_cruiser
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+air_engine_4_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = air_engine_4
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = air_engine_4
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = air_engine_4
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+jet_engines_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = jet_engines
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = jet_engines
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = jet_engines
+				option = axis
+			}
+			axis = yes
+		}
+	}
+}
+
+marine_commando_allowed = {
+	OR = {
+		has_game_rule = {
+			rule = marine_commando_status
+			option = allowed
+		}
+		AND = {
+			has_game_rule = {
+				rule = marine_commando_status
+				option = allies
+			}
+			allies = yes
+		}
+		AND = {
+			has_game_rule = {
+				rule = marine_commando_status
+				option = axis
+			}
+			axis = yes
 		}
 	}
 }

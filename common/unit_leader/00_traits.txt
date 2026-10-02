@@ -799,7 +799,7 @@ leader_traits = {
 					original_tag = BRA
 					original_tag = GER
 					original_tag = CHI # Intentionally not below 
-					#original_tag = PRC
+					original_tag = PRC
 				}
 			}
 		}
@@ -818,7 +818,7 @@ leader_traits = {
 					original_tag = AUS
 					original_tag = BRA
 					original_tag = GER
-					#original_tag = PRC 
+					original_tag = PRC 
 				}
 				NOT = {
 					OR = {
@@ -3826,7 +3826,10 @@ leader_traits = {
 		}
 		
 		modifier = {
-
+		#	max_commander_army_size = -18
+		#	max_army_group_size = -4
+		#	army_non_core_attack_factor = 0.10
+		#	army_non_core_defence_factor = 0.10
 		}
 		
 		ai_will_do = {

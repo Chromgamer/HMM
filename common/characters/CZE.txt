@@ -77,6 +77,12 @@
 				idea_token = CZE_edvard_benesh_idea
 				can_be_fired = no
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -210,6 +216,12 @@
 			slot = political_advisor
 			idea_token = CZE_karel_schwarzenberg
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -300,6 +312,12 @@
 			slot = political_advisor
 			idea_token = CZE_josef_rozsevac
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				OR = {
 					original_tag  = CZE
 					tag = RKH
@@ -354,6 +372,12 @@
 				slot = political_advisor
 				idea_token = CZE_konrad_henlein
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available  = {
@@ -404,6 +428,12 @@
 				slot = political_advisor
 				idea_token = CZE_konrad_henlein
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				on_add = {
@@ -480,6 +510,12 @@
 			slot = political_advisor
 			idea_token = CZE_gustav_husak
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available  = {
@@ -543,6 +579,12 @@
 				slot = political_advisor
 				idea_token = CZE_vojtech_tuka
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				visible = {
@@ -579,6 +621,12 @@
 				slot = political_advisor
 				idea_token = CZE_vojtech_tuka
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				visible = {
@@ -638,6 +686,12 @@
 			slot = political_advisor
 			idea_token = CZE_bohumil_lausman
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = { #too important to restrict
@@ -692,6 +746,12 @@
 			slot = political_advisor
 			idea_token = CZE_alois_tucny
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			cost = 150
@@ -715,6 +775,12 @@
 			slot = political_advisor
 			idea_token = CZE_jozef_tiso
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -768,6 +834,12 @@
 			slot = political_advisor
 			idea_token = CZE_rudolf_bechyne
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -797,6 +869,12 @@
 			idea_token = CZE_ferdinand_catlos
 			cost = 150
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			traits = {
@@ -850,6 +928,12 @@
 				slot = political_advisor
 				idea_token = CZE_zdenek_fierlinger
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -911,6 +995,12 @@
 				slot = political_advisor
 				idea_token = CZE_zdenek_fierlinger_dod
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				traits = {
@@ -931,6 +1021,12 @@
 			slot = political_advisor
 			idea_token = CZE_kamil_krofta
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -961,6 +1057,12 @@
 			slot = political_advisor
 			idea_token = CZE_milada_horakova
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -998,6 +1100,12 @@
 				slot = political_advisor
 				idea_token = CZE_stefan_osusky
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -1031,6 +1139,12 @@
 				slot = political_advisor
 				idea_token = CZE_stefan_osusky
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available  = {
@@ -1070,6 +1184,12 @@
 			slot = political_advisor
 			idea_token = CZE_frantisek_chvalkovsky
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1126,6 +1246,12 @@
 			slot = political_advisor
 			idea_token = CZE_bozena_machacova_dostalova
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1158,6 +1284,12 @@
 			slot = political_advisor
 			idea_token = CZE_jaroslav_slechta
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1208,6 +1340,12 @@
 			slot = political_advisor
 			idea_token = CZE_hugo_vavrecka
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1263,6 +1401,12 @@
 			slot = political_advisor
 			idea_token = CZE_jan_antonin_bata
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1322,6 +1466,12 @@
 			slot = political_advisor
 			idea_token = CZE_dominik_cipera
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1385,6 +1535,12 @@
 			slot = political_advisor
 			idea_token = CZE_ferdinand_peroutka
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1417,6 +1573,12 @@
 			slot = political_advisor
 			idea_token = CZE_karel_domin
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			cost = 150
@@ -1476,6 +1638,12 @@
 			slot = political_advisor
 			idea_token = CZE_josef_kalfus
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = { #too important to restrict
@@ -1532,6 +1700,12 @@
 				slot = political_advisor
 				idea_token = CZE_emil_kolben_dod
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -1556,6 +1730,12 @@
 				slot = political_advisor
 				idea_token = CZE_emil_kolben
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -1610,6 +1790,12 @@
 			slot = political_advisor
 			idea_token = CZE_jan_dostalek
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1636,6 +1822,12 @@
 			slot = political_advisor
 			idea_token = CZE_emil_franke
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			visible = {
@@ -1663,6 +1855,12 @@
 			slot = political_advisor
 			idea_token = CZE_jan_krcmar
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			visible = {
@@ -1688,6 +1886,12 @@
 			slot = political_advisor
 			idea_token = CZE_jan_sramek
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1726,6 +1930,12 @@
 			slot = political_advisor
 			idea_token = CZE_karel_husarek
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1773,6 +1983,12 @@
 			slot = army_chief
 			idea_token = CZE_karel_husarek_chief
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits  = {
@@ -1805,7 +2021,7 @@
 			}
 		}
 		corps_commander={
-			traits={ old_guard trait_engineer career_officer }
+			traits={ old_guard trait_engineer career_officer winter_specialist }
 			skill=3
 			attack_skill=1
 			defense_skill=4
@@ -1835,6 +2051,12 @@
 				slot = political_advisor
 				idea_token = CZE_frantisek_machnik
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -1897,6 +2119,12 @@
 				slot = political_advisor
 				idea_token = CZE_frantisek_machnik_dod
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -1920,6 +2148,12 @@
 			slot = political_advisor
 			idea_token = CZE_stanislav_bukovsky
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1950,6 +2184,12 @@
 			slot = political_advisor
 			idea_token = CZE_josef_cerny
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -1983,6 +2223,12 @@
 			slot = political_advisor
 			idea_token = CZE_rudolf_mlcoch
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2017,6 +2263,12 @@
 			slot = political_advisor
 			idea_token = CZE_ludwig_czech
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2059,6 +2311,12 @@
 				slot = political_advisor
 				idea_token = CZE_karel_englis
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -2095,6 +2353,12 @@
 				slot = political_advisor
 				idea_token = CZE_karel_englis
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag  = CZE
 				}
 				available = {
@@ -2121,6 +2385,12 @@
 			slot = political_advisor
 			idea_token = CZE_augustin_voloshyn
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2152,7 +2422,7 @@
 			logistics_skill=1
 			legacy_id=-1
 			visible = {
-				always = no
+				is_ai = no
 			}
 		}
 	}
@@ -2169,6 +2439,12 @@
 			slot = political_advisor
 			idea_token = CZE_jan_ruckl
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			#cost = 75
@@ -2205,6 +2481,12 @@
 			slot = political_advisor
 			idea_token = CZE_pavel_reiman
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2243,6 +2525,12 @@
 			slot = political_advisor
 			idea_token = CZE_vaclav_kopecky
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2283,6 +2571,12 @@
 			slot = political_advisor
 			idea_token = CZE_josef_guttman
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2318,6 +2612,12 @@
 			slot = political_advisor
 			idea_token = AUS_ernst_fischer
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2353,6 +2653,12 @@
 			slot = political_advisor
 			idea_token = CZE_vladimir_mandl
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag  = CZE
 			}
 			available = {
@@ -2392,11 +2698,17 @@
 				slot = political_advisor
 				idea_token = CZE_frantisek_moravec_no_mun
 				allowed  = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					has_dlc = "La Resistance"
 					original_tag  = CZE
 				}
 				available  = {
-					has_intelligence_agency  = yes 
+					has_intelligence_agency = yes 
 				}
 				traits = {
 					head_of_intelligence
@@ -2421,13 +2733,47 @@
 				slot = political_advisor
 				idea_token = CZE_frantisek_moravec_mun
 				allowed  = {
-					original_tag = CZE
+					OR = {
+						original_tag = CZE
+						original_tag = ENG
+					}
 				}
 				available  = {
-					has_intelligence_agency  = yes 
-					has_completed_focus = CZE_department_two_expansion
-					NOT = {
-						has_idea = CZE_simon_drgac
+					has_intelligence_agency = yes
+					if = {
+						limit = {
+							original_tag = CZE
+						}
+						has_completed_focus = CZE_department_two_expansion
+						NOT = {
+							has_idea = CZE_simon_drgac
+						}
+					}
+					if = {
+						limit = {
+							NOT = {
+								original_tag = CZE
+							}
+						}
+						ROOT = {
+							NOT = {
+								has_war_with = CZE
+							}
+						}
+					}
+				}
+				visible = {
+					if = {
+						limit = {
+							NOT = {
+								original_tag = CZE
+							}
+						}
+						ROOT = {
+							NOT = {
+								has_war_with = CZE
+							}
+						}
 					}
 				}
 				traits = {
@@ -2435,6 +2781,93 @@
 				}
 				on_add = {
 					owner = {
+						if = {
+							limit = {
+								original_tag = ENG
+								GER = {
+									NOT = {
+										has_government = CZE
+									}
+								}
+								NOT = {
+									has_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+								}
+							}
+							if = {
+								limit = {
+									9 = {
+										has_resistance = yes
+										is_controlled_by_ROOT_or_ally = no
+										OR = {
+											is_controlled_by = GER
+											is_controlled_by = RKH
+										}
+									}
+								}
+								9 = {
+									add_resistance = 5
+									add_resistance_target = 5
+									add_compliance = -5
+								}
+								if = {
+									limit = {
+										NOT = {
+											has_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+										}
+									}
+									set_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+								}
+							}
+							if = {
+								limit = {
+									75 = {
+										has_resistance = yes
+										is_controlled_by_ROOT_or_ally = no
+										OR = {
+											is_controlled_by = GER
+											is_controlled_by = RKH
+										}
+									}
+								}
+								75 = {
+									add_resistance = 5
+									add_resistance_target = 5
+									add_compliance = -5
+								}
+								if = {
+									limit = {
+										NOT = {
+											has_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+										}
+									}
+									set_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+								}
+							}
+							if = {
+								limit = {
+									OR = {
+										9 = {
+											has_resistance = yes
+											is_controlled_by_ROOT_or_ally = no
+											OR = {
+												is_controlled_by = GER
+												is_controlled_by = RKH
+											}
+										}
+										75 = {
+											has_resistance = yes
+											is_controlled_by_ROOT_or_ally = no
+											OR = {
+												is_controlled_by = GER
+												is_controlled_by = RKH
+											}
+										}
+									}
+								}
+								custom_effect_tooltip = generic_skip_one_line_tt
+								custom_effect_tooltip = generic_can_only_happen_once_tt
+							}
+						}
 						if = {
 							limit = {
 								has_power_balance = {
@@ -2480,10 +2913,44 @@
 				slot = political_advisor
 				idea_token = CZE_frantisek_moravec_mun_no_lar
 				allowed  = {
-					original_tag  = CZE
+					OR = {
+						original_tag = CZE
+						original_tag = ENG
+					}
 				}
-				available  = {
-					has_completed_focus = CZE_department_two_expansion
+				available = {
+					if = {
+						limit = {
+							original_tag = CZE
+						}
+						has_completed_focus = CZE_department_two_expansion
+					}
+					if = {
+						limit = {
+							NOT = {
+								original_tag = CZE
+							}
+						}
+						ROOT = {
+							NOT = {
+								has_war_with = CZE
+							}
+						}
+					}
+				}
+				visible = {
+					if = {
+						limit = {
+							NOT = {
+								original_tag = CZE
+							}
+						}
+						ROOT = {
+							NOT = {
+								has_war_with = CZE
+							}
+						}
+					}
 				}
 				traits = {
 					bold_intelligence_officer_no_lar
@@ -2498,6 +2965,69 @@
 							}
 							CZE_bop_very_low_increase_effect = yes
 							custom_effect_tooltip = generic_skip_one_line_tt
+						}
+						if = {
+							limit = {
+								original_tag = ENG
+								GER = {
+									NOT = {
+										has_government = CZE
+									}
+								}
+								NOT = {
+									has_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+								}
+							}
+							if = {
+								limit = {
+									9 = {
+										has_resistance = yes
+										is_controlled_by_ROOT_or_ally = no
+										OR = {
+											is_controlled_by = GER
+											is_controlled_by = RKH
+										}
+									}
+								}
+								9 = {
+									add_resistance = 5
+									add_resistance_target = 5
+									add_compliance = -5
+								}
+								if = {
+									limit = {
+										NOT = {
+											has_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+										}
+									}
+									set_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+								}
+							}
+							if = {
+								limit = {
+									75 = {
+										has_resistance = yes
+										is_controlled_by_ROOT_or_ally = no
+										OR = {
+											is_controlled_by = GER
+											is_controlled_by = RKH
+										}
+									}
+								}
+								75 = {
+									add_resistance = 5
+									add_resistance_target = 5
+									add_compliance = -5
+								}
+								if = {
+									limit = {
+										NOT = {
+											has_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+										}
+									}
+									set_country_flag = ENG_CZE_frantisek_moravec_on_add_effect_already_happened
+								}
+							}
 						}
 					}
 				}
@@ -2531,6 +3061,12 @@
 			slot = political_advisor
 			idea_token = CZE_simon_drgac
 			allowed  = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				has_dlc = "La Resistance"
 				original_tag  = CZE
 			}
@@ -2587,12 +3123,34 @@
 			logistics_skill=2
 			legacy_id=-1
 			visible = {	#Was pressured to retire in 1935
-				OR = {
-					NOT = {
-						has_dlc = "Peace For Our Time"
+				if = {
+					limit = {
+						original_tag = CZE
 					}
-					has_completed_focus = CZE_contact_the_czech_and_slovak_legion
-					has_completed_focus = CZE_fight_over_silesia
+					OR = {
+						NOT = {
+							has_dlc = "Peace For Our Time"
+						}
+						has_completed_focus = CZE_contact_the_czech_and_slovak_legion
+						has_completed_focus = CZE_fight_over_silesia
+					}
+				}
+				if = {
+					limit = {
+						original_tag = FRA
+						has_dlc = "Peace For Our Time"
+						CZE = {
+							NOT = {
+								OR = {
+									has_completed_focus = CZE_contact_the_czech_and_slovak_legion
+									has_completed_focus = CZE_fight_over_silesia
+								}
+							}
+						}
+					}
+					NOT = {
+						has_war_with = CZE
+					}
 				}
 			}
 		}
@@ -2615,11 +3173,21 @@
 			logistics_skill=1
 			legacy_id=-1
 			visible = {	#marijn211: has zero combat experience in 1936
-				OR = {
-					NOT = {
-						has_dlc = "Peace For Our Time"
+				if = {
+					limit = {
+						original_tag = CZE
 					}
-					has_completed_focus = CZE_recruit_ideologically_aligned_generals
+					OR = {
+						NOT = {
+							has_dlc = "Peace For Our Time"
+						}
+						has_completed_focus = CZE_recruit_ideologically_aligned_generals
+					}
+				}
+				else = {
+					NOT = {
+						has_war_with = CZE
+					}
 				}
 			}
 		}
@@ -2731,6 +3299,12 @@
 			slot = high_command
 			idea_token = CZE_frantisek_hrabcik
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -2738,8 +3312,16 @@
 			}
 			cost = 100
 			available = {
-				has_defensive_war = yes
-				has_war_with_major = yes
+				OR = {
+					GER = {
+						has_completed_focus = GER_demand_sudetenland
+					}
+					has_defensive_war = yes
+				}
+				OR = {
+					has_war_with_major = yes
+					has_country_flag = CZE_lessons_of_war_i_had_war_with_major_flag
+				}
 				is_subject = no
 			}
 			ai_will_do = {
@@ -2851,6 +3433,12 @@
 			slot = army_chief
 			idea_token = CZE_jan_syrovy
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -2958,6 +3546,12 @@
 			idea_token = CZE_emanuel_moravec
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -3018,12 +3612,32 @@
 				logistics_skill=1
 				legacy_id=-1
 				visible = {
-					has_completed_focus = CZE_elevate_slovak_officers
+					if = {
+						limit = {
+							original_tag = CZE
+						}
+						has_completed_focus = CZE_elevate_slovak_officers
+					}
 					SLO = {
 						OR = {
 							exists = no
 							is_subject_of = ROOT
 							has_government = fascism
+						}
+					}
+					if = {
+						limit = {
+							original_tag = FRA
+						}
+						CZE = {
+							NOT = {
+								has_completed_focus = CZE_elevate_slovak_officers
+							}
+						}
+						ROOT = {
+							NOT = {
+								has_war_with = CZE
+							}
 						}
 					}
 				}
@@ -3032,6 +3646,12 @@
 				slot = army_chief
 				idea_token = CZE_rudolf_viest
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -3041,6 +3661,11 @@
 							is_subject_of = ROOT
 							has_government = fascism
 						}
+					}
+				}
+				visible = {
+					NOT = {
+						original_tag = FRA
 					}
 				}
 				traits = {
@@ -3093,6 +3718,12 @@
 				slot = army_chief
 				idea_token = CZE_rudolf_viest
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				traits = {
@@ -3151,6 +3782,12 @@
 			idea_token = CZE_karel_vaclav_petrik
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			
@@ -3198,6 +3835,12 @@
 			idea_token = CZE_alois_vicherek
 			ledger = air
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -3239,6 +3882,12 @@
 			slot = air_chief
 			idea_token = CZE_alois_vicherek_advisor_idea_reform
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -3314,6 +3963,12 @@
 				idea_token = CZE_ludvik_krejci
 				ledger = army
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				traits = {
@@ -3366,6 +4021,12 @@
 				slot = army_chief
 				idea_token = CZE_ludvik_krejci
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				traits = {
@@ -3390,6 +4051,12 @@
 			slot = army_chief
 			idea_token = CZE_ludvik_svoboda
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -3413,6 +4080,12 @@
 			slot = army_chief
 			idea_token = CZE_louis_eugene_faucher
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -3422,6 +4095,9 @@
 				NOT = {
 					has_war_with = FRA
 				}
+			}
+			visible = {
+				original_tag = CZE
 			}
 			traits = {
 				army_chief_reform_2		
@@ -3455,7 +4131,27 @@
 					}
 				}
 			}
-		}	
+		}
+		advisor={
+			slot = high_command
+			idea_token = CZE_louis_eugene_faucher_high_command
+			allowed = {
+				original_tag = FRA
+			}
+			traits = {
+				army_guerilla_organizer_1
+			}
+			cost = 50
+			available = {
+				is_subject = no
+			}
+			visible = {
+				is_subject = no
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
 	}
 
 	CZE_melichar_frantisek={
@@ -3482,6 +4178,12 @@
 			slot = army_chief
 			idea_token = CZE_melichar_frantisek
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -3533,6 +4235,12 @@
 			slot = army_chief
 			idea_token = CZE_mikulas_dolezal
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -3591,6 +4299,12 @@
 				slot = navy_chief
 				idea_token = CZE_karel_pavala
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				traits = {
@@ -3626,6 +4340,12 @@
 				slot = navy_chief
 				idea_token = CZE_karel_pavala
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				traits = {
@@ -3703,13 +4423,19 @@
 		name=CZE_frantisek_placak
 		portraits={
 			army={
-				small="GFX_idea_generic_air_europe_3" #Yes air
+				small="GFX_portrait_CZE_frantisek_placak_small"
 			}
 		}
 		advisor={
 			slot = navy_chief
 			idea_token = CZE_frantisek_placak
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -3768,6 +4494,12 @@
 				idea_token = CZE_zdenko_hudecek_theorist_mun
 				ledger = navy
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -3812,6 +4544,12 @@
 				slot = navy_chief
 				idea_token = CZE_zdenko_hudecek_navy_chief_mun
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -3861,6 +4599,12 @@
 				idea_token = CZE_zdenko_hudecek_high_command_mun
 				ledger = navy
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -3932,6 +4676,12 @@
 				slot = navy_chief
 				idea_token = CZE_zdenko_hudecek_navy_chief
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -3951,6 +4701,12 @@
 				idea_token = CZE_zdenko_hudecek_high_command
 				ledger = navy
 				allowed = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
 					original_tag = CZE
 				}
 				available = {
@@ -3981,6 +4737,12 @@
 			slot = air_chief
 			idea_token = CZE_karel_janousek
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4029,6 +4791,12 @@
 			slot = air_chief
 			idea_token = CZE_jaroslav_fajfr
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4070,13 +4838,19 @@
 		name = CZE_jaroslav_kejla
 		portraits = {
 			army = {
-				small="GFX_idea_generic_air_europe_1"
+				small="GFX_portrait_CZE_jaroslav_kejla_small"
 			}
 		}
 		advisor = {
 			slot = air_chief
 			idea_token = CZE_jaroslav_kejla_idea
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			available = {
@@ -4131,6 +4905,12 @@
 			idea_token = CZE_jan_golian
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4180,6 +4960,12 @@
 			idea_token = CZE_josef_frantisek
 			ledger = air
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4229,6 +5015,12 @@
 			idea_token = CZE_karel_kuttelwascher
 			ledger = air
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4278,6 +5070,12 @@
 			idea_token = CZE_karel_prochazka
 			ledger = air
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4327,6 +5125,12 @@
 			idea_token = CZE_frantisek_havel
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4376,6 +5180,12 @@
 			idea_token = CZE_antonin_pavlik
 			ledger = army
 			allowed = {
+				NOT = {
+					has_game_rule = {
+						rule = czechs_status
+						option = abstracted
+					}
+				}
 				original_tag = CZE
 			}
 			traits = {
@@ -4425,7 +5235,10 @@
 			idea_token = CZE_vladimir_prikryl
 			ledger = army
 			allowed = {
-				original_tag = CZE
+				OR = {
+					original_tag = CZE
+					original_tag = SOV
+				}
 			}
 			traits = {
 				army_artillery_2
@@ -4433,6 +5246,38 @@
 			cost = 100
 			ai_will_do = {
 				factor = 1.000
+			}
+			available = {
+				if = {
+					limit = {
+						NOT = {
+							original_tag = CZE
+						}
+					}
+					NOT = {
+						has_war_with = CZE
+					}
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						NOT = {
+							original_tag = CZE
+						}
+					}
+					NOT = {
+						has_war_with = CZE
+					}
+				}
+				else = {
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
+				}
 			}
 			on_add = {
 				owner = {
@@ -4474,15 +5319,55 @@
 			idea_token = CZE_sergej_ingr
 			ledger = army
 			allowed = {
-				original_tag = CZE
+				OR = {
+					original_tag = CZE
+					original_tag = ENG
+				}
 			}
 			available = {
-				has_government = democratic
+				if = {
+					limit = {
+						original_tag = CZE
+					}
+					has_government = democratic
+					NOT = {
+						has_game_rule = {
+							rule = czechs_status
+							option = abstracted
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							original_tag = CZE
+						}
+					}
+					ROOT = {
+						NOT = {
+							has_war_with = CZE
+						}
+					}
+				}
+			}
+			visible = {
+				if = {
+					limit = {
+						NOT = {
+							original_tag = CZE
+						}
+					}
+					ROOT = {
+						NOT = {
+							has_war_with = CZE
+						}
+					}
+				}
 			}
 			traits = {
 				army_concealment_1
 			}
-			cost = 100
+			cost = 50
 			ai_will_do = {
 				factor = 0
 			}
@@ -4531,6 +5416,7 @@
 			id=-1
 			traits = {
 				anti_communist
+				JAP_militarist
 			}
 		}
 	}
