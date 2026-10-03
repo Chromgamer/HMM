@@ -198,6 +198,132 @@ on_actions = {
 					add_ideas = no_tradebacks
 				}
 			}
+
+			FRA = { 
+				add_tech_bonus = {
+					name = "AT3 Rush"
+					bonus = 0.75
+					technology = antitank5
+				}
+			}
+			ENG = { 
+				add_equipment_to_stockpile = {
+               		type = convoy_1
+                	amount = 1500
+					producer = ENG
+          	  	}
+			}
+			SOV = { 
+				country_event = {
+					id = lar_spain.53 # Spanish Gold
+					days = 420 # April 37
+				}
+			}
+			
+			every_state = { # FRANCE BUILD SLOTS
+				limit = { 
+					OR = { 
+						state = 694
+						state = 310
+						state = 730
+					}
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+			every_state = { # ENG BUILD SLOTS MOVED FROM EGYPT
+				limit = { 
+					is_core_of = ENG
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_state = { 
+				limit = { 
+					OR = { 
+						state = 691
+						state = 692
+						state = 689
+						state = 693
+						state = 690
+						state = 308
+						state = 687
+					}
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			every_state = { # British Egypt & French Syria building slots removed
+				limit = { 
+					AND = {
+						NOT = {
+							has_state_category = wasteland 
+						}
+						OR = { 
+							# EGYPT
+							state = 452
+							state = 447
+							state = 907
+							state = 446
+							state = 456
+							state = 457
+							state = 453
+							# PALESTINE/ISREAL
+							state = 454
+							# JORDAN
+							state =  455
+							# KUWAIT
+							state = 656
+							# FRENCH SYRIA & LEBANON
+							state = 554
+							state = 553
+							state = 680
+							state = 677
+						}
+					}
+				}
+				set_state_category = wasteland
+			}
+			if = { # IRAQ SLOTS REMOVED IF THERES NO PLAYER ON IT
+				limit = { 
+					has_game_rule = { 
+						rule = playable_iraq
+						option = no
+					}
+				}
+				every_state = { 
+					limit = {
+						AND = { 
+							is_core_of = IRQ
+							NOT = {
+								has_state_category = wasteland
+							}
+						} 
+					}
+					set_state_category = wasteland
+				}
+			}
+			HOL = { # France gets some oil!! [:
+				give_resource_rights = { 
+					receiver = FRA
+					state = 695
+				}
+			}
+			695 = { 
+				set_compliance = 100
+			}
+
+			276 = { # Some Canadian Oil and Aluminium Spawned in day 1
+				add_resource = { 
+					type = oil
+					amount = 35
+				}
+				add_resource = { 
+					type = aluminium
+					amount = 21
+				}
+			}
+
+			AST = { # Manpower to Australia to defend Africa!
+				add_manpower = 450000
+			}
 		}
 	}
 	on_monthly = {

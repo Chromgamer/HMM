@@ -44,6 +44,9 @@ NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_REDEPLOY = 0		-- time in day
 NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_WITHDRAW = 0		-- base time in days for withdrawing a deployed unit leader. Instantaneous if 0. Scaled by HQ template manpower.
 NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_WITHDRAW_MIN = 0		-- minimum cooldown in days for withdrawing a unit leader, even for very small HQ templates
 
+NDefines.NAI.MAX_DEPLOYED_ARMY_HQS = 0 -- vanilla is 5, disable the AI trying to even deploy HQs in the first place because we disabled them outright anyway
+NDefines.NAI.ARMY_LEADER_MIN_DIVISIONS_FOR_HQ = 999 -- vanilla is 10, disable the AI trying to even deploy HQs in the first place, just in case
+
 
 --AI no lend lease
 NDefines.NAI.LENDLEASE_FRACTION_OF_PRODUCTION = 0
@@ -59,8 +62,8 @@ NDefines.NNavy.NAVAL_TRANSFER_PRIORITY = 1								-- Default convoy priority for
 NDefines.NNavy.SUPPLY_PRIORITY = 2								    	-- Default convoy priority for supplying units via sea
 NDefines.NNavy.RESOURCE_ORIGIN_PRIORITY = 3								-- Default convoy priority for resources shipped internally
 NDefines.NNavy.RESOURCE_EXPORT_PRIORITY = 4								-- Default convoy priority for export trade
-NDefines.NNavy.RESOURCE_LENDLEASE_PRIORITY = 5                          -- Default convoy priority for export lend lease
-NDefines.NCountry.FUEL_LEASE_CONVOY_RATIO = 0.001
+NDefines.NNavy.RESOURCE_LENDLEASE_PRIORITY = 3                          -- Default convoy priority for export lend lease
+NDefines.NCountry.FUEL_LEASE_CONVOY_RATIO = 0.0001
 
 
 ---LOGI STRIKE NERFS---
@@ -120,7 +123,7 @@ NDefines.NMilitary.COHESION_IMMOBILE_PLANNING_SPEED_MULTIPLIER = 1.0	-- If using
 NDefines.NFocus.MAX_SAVED_FOCUS_PROGRESS = 30                           -- Up from 10, should allow for more flexibility with picking focuses while doing something else, like tank templates
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROLLED = 0
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROL_DIFF = 0
-NDefines.NGame.GAME_SPEED_SECONDS = { 1000.0, 0.25, 0.20, 0.10, 0.0 } 
+NDefines.NGame.GAME_SPEED_SECONDS = { 1000.0, 0.25, 0.20, 0.12, 0.0 } 
 NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 999
 NDefines.NGame.LAG_DAYS_FOR_PAUSE = 999
 NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 14 							    -- WAS 48 | drastically cuts down on save file sizes after WW2 starts and well into barbarossa
@@ -202,12 +205,62 @@ NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROLLED = 0
 NDefines.NAI.GIVE_STATE_CONTROL_MIN_CONTROL_DIFF = 0
 NDefines.NAI.MINIMUM_CONVOY_TO_ASK_LEND_LEASE = 0
 
+-- Contingencies for disabling international market
+NDefines.NMarket.MAX_CIV_FACTORIES_PER_CONTRACT = 1 -- This can't go lower than 1, so we also have to alter other defines to make the market unusable for sending equipment or gaining CIC from the AI
+NDefines.NMarket.IC_TO_CIC_FACTOR = 9999.0
+NDefines.NMarket.LOW_PRICE_LEVEL_FACTOR = 1.0
+NDefines.NMarket.HIGH_PRICE_LEVEL_FACTOR = 1.0
+NDefines.NMarket.PURCHASE_CONTRACT_DELIVERY_TOTAL_DAYS = 9999
+NDefines.NAI.EQUIPMENT_MARKET_UPDATE_FREQUENCY_DAYS = 9999
+NDefines.NAI.EQUIPMENT_MARKET_MAX_CIVS_FOR_PURCHASES_RATIO = 0.0
+NDefines.NAI.EQUIPMENT_MARKET_BASE_MARKET_RATIO = 0.0
+
+-- Removed unnecessary AI calculations and extended time between updates (don't disable completely in case it screws with test builds)
+NDefines.NAI.AI_UPDATE_ROLES_FREQUENCY_HOURS = 672 -- vanilla: 48
+NDefines.NAI.AI_NAVAL_GOALS_UPDATE_FREQUENCY_DAYS = 28 -- vanilla: 7
+NDefines.NAI.UPDATE_SUPPLY_BOTTLENECKS_FREQUENCY_HOURS = 672 -- vanilla: 168
+NDefines.NAI.UPDATE_SUPPLY_MOTORIZATION_FREQUENCY_HOURS = 168 -- vanilla: 52
+NDefines.NAI.RAIDS_ENABLE_AI = false -- vanilla: true
+NDefines.NAI.RAIDS_CREATE_FREQUENCY_DAYS = 9999 -- vanilla: 7
+NDefines.NAI.RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 28 -- vanilla: 7
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_DOCTRINE = 365 -- vanilla: 30
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_TEMPLATE = 28 -- vanilla: 7
+NDefines.NAI.DAYS_BETWEEN_CHECK_BEST_EQUIPMENT = 28 -- vanilla: 7
+NDefines.NAI.DAYS_BETWEEN_AIR_PRIORITIES_UPDATE = 28 -- vanilla: 4
+NDefines.NAI.CONVOY_RAIDING_TARGET_RECALC_DAYS = 180 -- vanilla: 15
+NDefines.NAI.STRIKE_FORCE_TARGET_RECALC_DAYS = 28 -- vanilla: 5
+NDefines.NAI.AI_OBJECTIVE_DEFAULT_TARGET_RECALC_DAYS = 28 -- vanilla: 5
+NDefines.NAI.AI_PREFERRED_TACTIC_WEEKLY_CHANGE_CHANCE = 0 -- vanilla: 0.05
+
+-- EXPERIMENTAL: Disabling the AI Force Concentration mechanic speeds up the game (specifically, reduces CPU overhead), but makes the AI behave in non-vanilla ways
+NDefines.NAI.AIFC_UPDATE_FREQUENCY_DAYS = 9999
+NDefines.NAI.AIFC_UNIT_NUDGE_FREQUENCY_DAYS = 9999
+NDefines.NAI.AIFC_PATH_MAX_COST = 0.0
+
+-- Prevent AI from using XP to create new division templates or variants because they bloat save games unnecessarily (and test builds should still work fine)
+NDefines.NAI.DESIRE_USE_XP_TO_UPDATE_LAND_TEMPLATE = 0.0
+NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_LAND_EQUIPMENT = 0.0
+NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_NAVAL_EQUIPMENT = 0.0
+NDefines.NAI.DESIRE_USE_XP_TO_UPGRADE_AIR_EQUIPMENT = 0.0
+
+-- Why is this even a thing? No, no wacky crazy AIs trying to do wacky crazy things, that is really dumb to bake into a define
+NDefines.NAI.IRRATIONALITY_LAMBDA = 0
+
+-- Garbage building, never build
+NDefines.NAI.NUM_FACTORIES_IN_STATE_TO_WANT_ENERGY_REDUCTION = 9999
+-- Less garbage building, but be pickier about where we'd build it
+NDefines.NAI.TOTAL_STATE_EXTRACTED_RESOURCES_FOR_BUILDING_RESOURCE_CAP_BUILDING = 100
+
+-- AI only builds convoys (helpful for performance and annex builds)
+NDefines.NAI.CONVOY_NEED_SAFETY_BUFFER = 9999
+
+-- Avoid building in non-cores and especially occupied territory (helps with annex builds especially)
+NDefines.NAI.CONSTRUCTION_PRIO_FACTOR_OCCUPIED_TERRITORY = 0.01
+NDefines.NAI.CONSTRUCTION_PRIO_FACTOR_OWNED_NONCORE = 0.10
+
 --THANKS THRASHY
 NDefines.NAir.ACE_WING_SIZE_MAX_BONUS = 1                       -- biggest bonus we can get from having a small wing with an ace on
 NDefines.NNavy.INITIAL_ALLOWED_DOCKYARD_RATIO_FOR_REPAIRS = 1.0				-- initially countries will allocate this ratio of dockyards for repairs
-NDefines.NNavy.RESOURCE_EXPORT_PRIORITY = 3 --swapped prio so imports go first
-NDefines.NNavy.RESOURCE_LENDLEASE_PRIORITY = 3
-NDefines.NNavy.RESOURCE_ORIGIN_PRIORITY = 3
 NDefines.NCountry.COUNTRY_SCORE_MULTIPLIER = 0				-- Weight of the country score.
 NDefines.NCountry.ARMY_SCORE_MULTIPLIER = 0					-- Based on number of armies.
 NDefines.NCountry.NAVY_SCORE_MULTIPLIER = 0					-- Based on number of navies.

@@ -140,8 +140,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist cavalry_leader organizer war_hero trickster skilled_staffer pre_grind }
-			skill=4
+			traits={ brilliant_strategist cavalry_leader organizer war_hero trickster skilled_staffer ranger pre_grind }
+			skill=6
 			attack_skill=4
 			defense_skill=5
 			planning_skill=4
@@ -160,7 +160,7 @@ characters={
 		}
 		corps_commander={
 			traits={ career_officer trait_cautious armor_officer panzer_leader trait_engineer skilled_staffer pre_grind }
-			skill=4
+			skill=6
 			attack_skill= 5
 			defense_skill= 5
 			planning_skill=5
@@ -343,7 +343,7 @@ characters={
 		
 		corps_commander={
 			traits={ career_officer trait_cautious armor_officer panzer_leader trait_engineer skilled_staffer pre_grind }
-			skill=4
+			skill=6
 			attack_skill= 5
 			defense_skill= 5
 			planning_skill=5

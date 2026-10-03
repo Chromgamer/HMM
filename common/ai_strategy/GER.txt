@@ -1,5 +1,51 @@
 #Added the way it is so there can be less errors in the log
 
+GER_guns_before_anchluss = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		NOT = { 
+			has_completed_focus = GER_anschluss
+		}
+	}
+	abort = {
+		has_completed_focus = GER_anschluss
+	}
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = infantry
+		value = 32
+	}
+
+}
+
+GER_stockpile_guns_until_anchluss = {
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		NOT = { 
+			has_completed_focus = GER_anschluss
+		}
+	}
+	abort = {
+		has_completed_focus = GER_anschluss
+	}
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = infantry_equipment
+		value = -10000
+	}
+	ai_strategy = { 
+		type = build_army
+		id = infantry
+		value = -10000
+	}
+
+}
+
 GER_unit_production = {
 	allowed = {
 		original_tag = GER
@@ -1063,30 +1109,12 @@ GER_play_nice_with_ribbentrop_pact = {
 		OR ={
 			GER = { has_war_with = SOV }
 			date > 1941.5.1
-			AND = {
-				LIT = { is_in_faction_with = SOV }
-				LAT = { is_in_faction_with = SOV }
-				EST = { is_in_faction_with = SOV }
-			}
+			
 		}
 	}
 
 	# leave britney alone!
-	ai_strategy = {
-		type = ignore
-		id = LIT
-		value = 100
-	}
-	ai_strategy = {
-		type = ignore
-		id = LAT
-		value = 100
-	}
-	ai_strategy = {
-		type = ignore
-		id = EST
-		value = 100
-	}
+	
 }
 
 GER_tfv_protect_fascist_south_africa = {
@@ -1922,11 +1950,7 @@ GER_share_borders_with_ITA_against_SOV = {
 		}
 	}
 
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = CRO
-		value = 100
-	}
+	
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = ROM
@@ -1935,11 +1959,6 @@ GER_share_borders_with_ITA_against_SOV = {
 	ai_strategy = {
 		type = dont_defend_ally_borders
 		id = HUN
-		value = 100
-	}
-	ai_strategy = {
-		type = dont_defend_ally_borders
-		id = SLO
 		value = 100
 	}
 	ai_strategy = {
@@ -3810,29 +3829,7 @@ GER_sweden_was_a_puppet_and_broke_free_so_now_we_are_angry = {
 	}
 }
 
-GER_sweden_joined_our_pact_so_we_are_kinda_happy = {
-	allowed = {
-		original_tag = GER
-	}
-	enable = {
-		SWE = { has_completed_focus = SWE_join_the_anti_soviet_pact }
-	}
 
-	abort = {
-		SWE = { has_war_with = GER }
-	}
-
-	ai_strategy = {
-		type = alliance
-		id = SWE
-		value = 50
-	}
-	ai_strategy = {
-		type = protect
-		id = SWE
-		value = 70
-	}
-}
 
 GER_dont_DOW_benelux = { #Don't try to bypass Around the Maginot!
 	allowed = {

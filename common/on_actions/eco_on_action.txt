@@ -1326,6 +1326,10 @@ on_actions = {
 					type = anti_air_equipment_1
 					amount = 0
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#add_equipment_to_stockpile = {
 				#	type = armored_car_equipment
 				#	amount = 0
@@ -1360,6 +1364,10 @@ on_actions = {
 					type = artillery_equipment_1
 					amount = 48
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#add_equipment_to_stockpile = {
 				#	type = anti_tank_equipment_1
 				#	amount = 0
@@ -1433,6 +1441,10 @@ on_actions = {
 					type = train_equipment
 					amount = 82
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				
 			}
 			SAF = {
@@ -1460,6 +1472,10 @@ on_actions = {
 					type = artillery_equipment_1
 					amount = 0
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#add_equipment_to_stockpile = {
 				#	type = anti_tank_equipment_1
 				#	amount = 0
@@ -1495,6 +1511,10 @@ on_actions = {
 					type = motorized_equipment_0
 					amount = 0
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#add_equipment_to_stockpile = {
 				#	type = motorized_equipment_1
 				#	amount = 0
@@ -1585,6 +1605,10 @@ on_actions = {
 					type = artillery_equipment_1
 					amount = 814
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#add_equipment_to_stockpile = {
 				#	type = anti_tank_equipment_1
 				#	amount = 0
@@ -1593,10 +1617,10 @@ on_actions = {
 					type = anti_air_equipment_1
 					amount = 0
 				}
-				add_equipment_to_stockpile = {
-					type = armored_car_equipment
-					amount = 0
-				}
+				#add_equipment_to_stockpile = {
+					#type = armored_car_equipment
+					#amount = 0
+				#}
 				add_equipment_to_stockpile = {
 					type = light_tank_chassis_1
 					amount = 1300
@@ -1635,6 +1659,10 @@ on_actions = {
 					type = artillery_equipment_1
 					amount = 0
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#There is no need for the "0" ones but what ever i guess??? Also this spewed out an error
 				#add_equipment_to_stockpile = {
 				#	type = anti_tank_equipment_1
@@ -1709,6 +1737,10 @@ on_actions = {
 					type = motorized_equipment_0
 					amount = 0
 				}
+				add_equipment_to_stockpile = {
+               		type = convoy
+                	amount = 200
+          	  	}
 				#add_equipment_to_stockpile = {
 				#	type = motorized_equipment_1
 				#	amount = 0

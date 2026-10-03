@@ -361,8 +361,8 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_reckless infantry_officer }
-			skill = 3
+			traits = { trait_reckless infantry_officer trickster sov_inf_gen infantry_leader pre_grind }
+			skill = 7
 			attack_skill = 1
 			defense_skill = 3
 			planning_skill = 3

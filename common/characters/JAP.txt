@@ -1762,7 +1762,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { career_officer infantry_officer commando trait_engineer infantry_leader naval_invader skilled_staffer ranger hill_fighter trait_mountaineer }
+			traits = { career_officer infantry_officer commando trait_engineer infantry_leader naval_invader skilled_staffer ranger hill_fighter }
 			skill = 7
 			attack_skill = 5
 			defense_skill = 5

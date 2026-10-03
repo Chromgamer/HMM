@@ -320,9 +320,9 @@ characters={
 		}
 		
 		field_marshal={
-			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader }
-			skill=4
-			attack_skill=2
+			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader infantry_leader panzer_leader pre_grind }
+			skill=5
+			attack_skill=4
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=4
@@ -357,10 +357,10 @@ characters={
 		}
 		
 		corps_commander={
-			traits={ inflexible_strategist career_officer }
+			traits={ inflexible_strategist career_officer infantry_leader panzer_leader cavalry_leader pre_grind }
 			skill=5
-			attack_skill=3
-			defense_skill=5
+			attack_skill=4
+			defense_skill=4
 			planning_skill=3
 			logistics_skill=5
 			legacy_id=0
@@ -395,9 +395,10 @@ characters={
 			}
 		}
 		corps_commander={
-			skill=4
+			traits={ infantry_leader cavalry_leader panzer_leader pre_grind }
+			skill=5
 			attack_skill=4
-			defense_skill=1
+			defense_skill=4
 			planning_skill=4
 			logistics_skill=4
 			legacy_id=0
@@ -510,7 +511,7 @@ characters={
 		}
 		
 		corps_commander={
-			traits={ politically_connected }
+			traits={ politically_connected infantry_leader panzer_leader cavalry_leader pre_grind }
 			skill=5
 			attack_skill=4
 			defense_skill=4
@@ -725,8 +726,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ harsh_leader armor_officer politically_connected }
-			skill=4
+			traits={ harsh_leader armor_officer politically_connected infantry_leader panzer_leader cavalry_leader pre_grind }
+			skill=5
 			attack_skill=4
 			defense_skill=2
 			planning_skill=3

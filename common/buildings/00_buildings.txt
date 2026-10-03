@@ -63,7 +63,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			shares_slots = yes
-			state_max = 20
+			state_max = 25
 		}
 	}
 
@@ -77,7 +77,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			shares_slots = yes
-			state_max = 20
+			state_max = 25
 		}
 	}
 
@@ -128,8 +128,8 @@ buildings = {
 	
 	naval_facility = {
 		show_on_map = 1
-		base_cost = 12000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 10000
+		per_controlled_building_extra_cost = 6000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 18
 		value = 1
@@ -279,7 +279,7 @@ buildings = {
 		}
 
 		level_cap = {
-			shares_slots = yes
+			shares_slots = no
 			state_max = 3
 		}
 	}
@@ -538,8 +538,8 @@ buildings = {
 
 	air_facility = {
 		show_on_map = 1
-		base_cost = 12000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 10000
+		per_controlled_building_extra_cost = 6000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 17
 		value = 1
@@ -562,8 +562,8 @@ buildings = {
 
 	land_facility = {
 		show_on_map = 1
-		base_cost = 12000
-		per_controlled_building_extra_cost = 5000
+		base_cost = 10000
+		per_controlled_building_extra_cost = 6000
 		damage_factor = 0 # This building can't be damaged by regular strat bombing
 		icon_frame = 19
 		value = 1
@@ -727,7 +727,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+			shares_slots = no
 			group_by = infrastructure_keystone
 		}
 		state_modifiers = {
@@ -746,7 +746,7 @@ buildings = {
 		infrastructure_construction_effect = yes
 		level_cap = {
 			state_max = 1
-			shares_slots = yes
+			shares_slots = no
 			group_by = infrastructure_keystone
 		}
 		state_modifiers = {
