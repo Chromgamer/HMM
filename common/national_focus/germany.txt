@@ -8877,15 +8877,60 @@ focus_tree = {
             is_subject = no
 			has_war = no
 			has_civil_war = no
-            OR = {
-                date > 1937.6.1
-                custom_trigger_tooltip = {
-                    tooltip = GER_anschluss_eq_trigger_tt
-                	has_equipment = {
-						infantry_equipment > 50000
+			# HMM: replace complicated Anschluss check with just the requirement for guns in stockpile
+            custom_trigger_tooltip = {
+				tooltip = GER_anschluss_eq_trigger_tt
+				has_equipment = {
+					infantry_equipment > 50000
+				}
+			}
+			# HMM: focus takes 70 days to do and we have 30 days of save-up time, so put date-lock 40 days before the designated date 
+			if = {
+				limit = {
+					NOT = {
+						has_game_rule = {
+							rule = anschluss_date
+							option = unrestricted
 						}
-            	}
-        	}
+					}
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							rule = anschluss_date
+							option = historical # 12th March 1938
+						}
+					}
+					date > 1938.1.31
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = anschluss_date
+							option = jan38
+						}
+					}
+					date > 1937.11.20
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = anschluss_date
+							option = jun37
+						}
+					}
+					date > 1937.4.20
+				}
+				else_if = {
+					limit = {
+						has_game_rule = {
+							rule = anschluss_date
+							option = jan37
+						}
+					}
+					date > 1936.11.20
+				}
+			}
     	}
 
 

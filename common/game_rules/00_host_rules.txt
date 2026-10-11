@@ -550,6 +550,31 @@ easier_arteries_of_trade_for_allies = {
 		desc = "To complete the Protect the Arteries of Trade faction goal, the Allies will need to establish dominance in just one of 16 specific sea zones."
 	}
 }
+anschluss_date = {
+	name = "When is the earliest that Germany can annex Austria via Anschluss?"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_ignite_civil_war"
+	default = {
+		name = historical
+		text = "CMarch 1938 (Historical)"
+	}
+	option = {
+		name = jan38
+		text = "GJanuary 1938"
+	}
+	option = {
+		name = jun37
+		text = "YJune 1937"
+	}
+	option = {
+		name = jan37
+		text = "OJanuary 1937"
+	}
+	option = {
+		name = unrestricted
+		text = "RUnrestricted"
+	}
+}
 danzig_or_war_date = {
 	name = "When is the earliest that the Axis can declare war on Poland?"
 	group = "HMM Rules"
