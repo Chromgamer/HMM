@@ -554,15 +554,15 @@ danzig_or_war_date = {
 	name = "When is the earliest that the Axis can declare war on Poland?"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
-	option = {
+	default = {
 		name = historical
-		text = "CSeptember 1939"
+		text = "CSeptember 1939 (Historical)"
 	}
 	option = {
 		name = june
 		text = "GJune 1939"
 	}
-	default = {
+	option = {
 		name = march
 		text = "YMarch 1939"
 	}
