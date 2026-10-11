@@ -2195,28 +2195,40 @@
         search_filters = { FOCUS_FILTER_INDUSTRY }
 
 		complete_tooltip = {
-			275 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = SAF_infrastructure_effort_Inf
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			719 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = SAF_infrastructure_effort_Inf2
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			719 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = SAF_infrastructure_effort_Inf3
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
 			}
-			681 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = SAF_infrastructure_effort_Inf4
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -2226,33 +2238,69 @@
 		}
 
 		completion_reward = {
-			275 = {
+			# HMM: changed these to a version that guarantees decent results and doesn't accidentally overbuild infra
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					prioritize = { 275 }
+				}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = SAF_infrastructure_effort_Inf
 			}
-			719 = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					NOT = { has_state_flag = SAF_infrastructure_effort_Inf }
+				}
+				prioritize = { 719 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = SAF_infrastructure_effort_Inf2
 			}
-			719 = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					NOT = { has_state_flag = SAF_infrastructure_effort_Inf }
+				}
+				prioritize = { 719 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = SAF_infrastructure_effort_Inf3
 			}
-			681 = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					NOT = { has_state_flag = SAF_infrastructure_effort_Inf }
+				}
+				prioritize = { 681 }
 				add_building_construction = {
 					type = infrastructure
 					level = 1
 					instant_build = yes
 				}
+				set_state_flag = SAF_infrastructure_effort_Inf4
 			}
 		}
 	}

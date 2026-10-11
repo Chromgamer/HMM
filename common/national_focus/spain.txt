@@ -3357,11 +3357,21 @@ focus_tree = {
 		}
 		search_filters = {FOCUS_FILTER_INDUSTRY}
 		completion_reward = {
-			176 = {
-				add_extra_state_shared_building_slots = 4
+			every_core_state = { # HMM: better to do this with random select amount instead of two separate randoms
+				random_select_amount = 2
+				limit = {
+					is_owned_and_controlled_by = ROOT
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes # HMM: added this so that we can still spawn mils even if we have full building slots (focus adds building slots anyway)
+					}
+				}
+				set_state_flag = SPA_expand_the_war_industry_2mil
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
-					level = 4
+					level = 2
 					instant_build = yes
 				}
 			}

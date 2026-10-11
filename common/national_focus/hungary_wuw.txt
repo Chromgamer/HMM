@@ -14981,7 +14981,10 @@ focus_tree = {
 		available_if_capitulated = no
 
 		complete_tooltip = {
-			155 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = HUN_reintegrate_the_railroads_Inf
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
@@ -14989,7 +14992,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			43 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = HUN_reintegrate_the_railroads_Inf_2
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
@@ -14997,7 +15003,10 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
-			154 = {
+			random_owned_controlled_state = {
+				limit = {
+					has_state_flag = HUN_reintegrate_the_railroads_Inf_3
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
@@ -15069,6 +15078,27 @@ focus_tree = {
 				}
 				set_state_flag = HUN_reintegrate_the_railroads_Inf_2
 			}
+			if = { # HMM: we need this to be able to de-RNGify this if we don't have Southern Slovakia while keeping the Southern Slovakia priority if we do
+				limit = {
+					664 = {
+						is_owned_and_controlled_by = ROOT
+						free_building_slots = {
+							building = infrastructure
+							size > 0
+						}
+					}
+				}
+				664 = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+					set_state_flag = HUN_reintegrate_the_railroads_Inf_3
+				}
+			}
+			else = {
 			random_owned_controlled_state = {
 				prioritize = { 154 }
 				limit = {
@@ -15084,6 +15114,7 @@ focus_tree = {
 					instant_build = yes
 				}
 				set_state_flag = HUN_reintegrate_the_railroads_Inf_3
+			}
 			}
 
 			custom_effect_tooltip = generic_skip_one_line_tt
