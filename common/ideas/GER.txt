@@ -1127,9 +1127,9 @@ ideas = {
 			picture = generic_acquire_tanks
 
 			#targeted_modifier = {
-			#	tag = SOV
-			#	breakthrough_bonus_against = 0.15
-			#	defense_bonus_against = 0.05
+				#tag = SOV
+				#breakthrough_bonus_against = 0.15
+				#defense_bonus_against = 0.05
 			#}
 
 		}
@@ -2462,34 +2462,6 @@ ideas = {
 			}
 		}
 
-		GER_fernostliche_legion_prc_ns = {
-			name = GER_fernostliche_legion_ns
-			removal_cost = -1
-
-			picture = ETH_conservative_high_command
-				
-			allowed = {
-				original_tag = GER
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			cancel = {
-				PRC = { has_war = no }
-			}
-
-			modifier = {
-				send_volunteer_divisions_required = -0.15
-				experience_gain_army_factor = 0.15
-				experience_gain_air_factor = 0.15
-				send_volunteer_size = 2
-				air_volunteer_cap = 1
-				send_volunteers_tension = -0.2
-			}
-		}
-
 		#REICHSKOMMISSARIATS
 		GER_german_controlled_reichskommissariat = {
 			
@@ -2817,11 +2789,6 @@ ideas = {
 			modifier = {
 			}
 
-			targeted_modifier = {
-				tag = SWI
-				attack_bonus_against = 0.05
-				breakthrough_bonus_against = 0.05
-			}
 		}
 
 		GER_recieving_payments_for_protection_fake_idea = {
@@ -4188,6 +4155,10 @@ ideas = {
 				always = no
 			}
 
+			available = {
+				always = no
+			}
+
 			removal_cost = -1
 
 			modifier = { #REMINDER to always update these if the dynamic modifier is altered!
@@ -4203,6 +4174,10 @@ ideas = {
 				always = no
 			}
 
+			available = {
+				always = no
+			}
+
 			removal_cost = -1
 
 			modifier = { #REMINDER to always update these if the dynamic modifier is altered!
@@ -4215,6 +4190,10 @@ ideas = {
 			picture = GER_army 
 		
 			allowed = {
+				always = no
+			}
+
+			available = {
 				always = no
 			}
 
@@ -4234,10 +4213,15 @@ ideas = {
 				always = no
 			}
 
+			available = {
+				always = no
+			}
+
 			removal_cost = -1
 
 			modifier = { #REMINDER to always update these if the dynamic modifier is altered!
 				army_org_factor = 0.05
+				org_loss_when_moving = -0.1
 				planning_speed = 0.25
 				supply_consumption_factor = 0.15
 				unit_leader_as_advisor_cp_cost_factor = -0.15
@@ -4269,6 +4253,10 @@ ideas = {
 				always = no
 			}
 
+			available = {
+				always = no
+			}
+
 			removal_cost = -1
 
 			modifier = { #REMINDER to always update these if the dynamic modifier is altered!
@@ -4282,6 +4270,10 @@ ideas = {
 			picture = GER_autarky 
 		
 			allowed = {
+				always = no
+			}
+
+			available = {
 				always = no
 			}
 

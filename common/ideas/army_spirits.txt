@@ -278,12 +278,15 @@ ideas = {
 		}
 		NOR_flexible_officers_academy_spirit = {
 			ledger = army
-			visible = { 
-				has_military_academy = yes 
-				has_completed_focus = NOR_officers_academy
+			visible = {
+				always = no
+				
+					original_tag = NOR
+				
 			}
 			available = { 
 				NOR_AAT = yes 
+				always = no
 			}
 			modifier = {
 				army_leader_start_level = 2
@@ -305,10 +308,6 @@ ideas = {
 			ledger = army
 			available = { 
 				has_military_academy = yes 
-				NOT = {
-					has_completed_focus = CHI_close_whampoa
-					has_completed_focus = CHI_end_military_primacy
-				}
 			}
 			visible = { 
 				tag = CHI
@@ -322,12 +321,8 @@ ideas = {
 				army_leader_cost_factor = -0.15
 				custom_modifier_tooltip = political_loyalty_spirit_tt
 			}
-			allowed_to_remove = {
-				OR = {
-					has_completed_focus = CHI_end_military_primacy
-					has_completed_focus = CHI_close_whampoa 
-					has_completed_focus = CHI_focus_on_meritocratic_principles
-				}
+			allowed_to_remove = { 
+
 			}
 			ai_will_do = {
 				base = 1
@@ -386,16 +381,8 @@ ideas = {
 		proper_heritage_spirit = {
 			ledger = army
 			available = {
-				IF = {
-					limit = { 
-						original_tag = AFG 
-						has_dlc = "Graveyard of Empires"
-					}
-					OR = {
-						has_completed_focus = AFG_reintroduce_war_elephants
-						has_doctrine = grand_battleplan
-						has_doctrine = mounted_infantry
-					}
+				IF = { 
+					
 				}
 				ELSE = {
 					OR = {
@@ -765,7 +752,7 @@ ideas = {
 			ledger = army
 			visible = { has_dlc = "No Compromise, No Surrender" }
 			available = {
-				always = false
+				always = no
 				OR = {
 					has_doctrine = mass_assault 
 					has_doctrine = guerilla_war
@@ -826,8 +813,8 @@ ideas = {
 				has_dlc = "Peace For Our Time"
 			}
 			visible = {
-				NOT = {
-					has_completed_focus = CZE_revive_the_czechoslovak_legion_dynamic
+				NOT = { 
+					
 				}
 			}
 			modifier = {
@@ -1263,7 +1250,12 @@ ideas = {
 		quick_improvisation_spirit = {
 			ledger = army
 			available = {
-				has_doctrine = new_mobile_warfare
+				OR = { 
+					has_doctrine = new_mobile_warfare
+					tag = USA
+					tag = ENG
+				}
+				
 			}
 			modifier = {
 				command_abilities_cost_factor = -0.20
