@@ -488,17 +488,8 @@
 		}
 
 		available = {
-			any_state = {
-				OR = {
-					state = 272
-					state = 780
-					state = 556
-					state = 779
-					state = 778
-					state = 781
-					state = 776
-					state = 777
-				}	
+			any_state_of = {
+				target = {272 780 556 779 778 781 776 777}	
 				is_owned_or_subject_trigger = yes
 			}
 		}
@@ -1110,11 +1101,11 @@
 				}
 				capital_scope = {
 					create_unit = {
-						division = "name = \"1re Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7 force_equipment_variants = { heavy_tank_chassis_0 = { creator = \"FRA\" version_name = \"Char B1\"} }"  
+						division = "name = \"1re Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7 force_equipment_variants = { heavy_tank_chassis_1 = { creator = \"FRA\" version_name = \"Char B1\"} }"  
 						owner = ROOT
 					}
 					create_unit = {
-						division = "name = \"2me Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7 force_equipment_variants = { heavy_tank_chassis_0 = { creator = \"FRA\" version_name = \"Char B1\"} }"  
+						division = "name = \"2me Division Cuirassée\" division_template = \"Division Cuirassée\" start_experience_factor = 0.7 force_equipment_variants = { heavy_tank_chassis_1 = { creator = \"FRA\" version_name = \"Char B1\"} }"  
 						owner = ROOT
 					}
 				}
@@ -2236,12 +2227,7 @@
 		}
 
 		available = {
-			NOT = {
-				OR = {
-					has_completed_focus = FRA_invite_communist_ministers
-					has_completed_focus = FRA_utilize_the_leagues
-				}
-			}
+		
 		}
 		
 		bypass = {
@@ -2451,9 +2437,7 @@
 		}
 		bypass = {
 			is_in_faction_with = ENG
-			NOT = {
-				has_completed_focus = FRA_strengthen_the_little_entente
-			}
+			
 		}
 	 	prerequisite = { focus = FRA_buy_time }
 		x = 0
@@ -2660,22 +2644,12 @@
 		available_if_capitulated = no
 
 		completion_reward = {
-			if = {
-				limit = {
-					not = { has_completed_focus = FRA_utilize_the_leagues }
-				}
-				set_temp_variable = { FRA_fascism = party_popularity@fascism }
-				add_popularity = { ideology = democratic popularity = FRA_fascism } 
-				multiply_temp_variable = { FRA_fascism = -1 }
-				add_popularity = { ideology = fascism popularity = FRA_fascism }
-			}
-			else = {
-				set_temp_variable = { FRA_democracy = party_popularity@democratic }
-				multiply_temp_variable = { FRA_democracy = 0.3 }
-				add_popularity = { ideology = fascism popularity = FRA_democracy } 
-				multiply_temp_variable = { FRA_democracy = -1 }
-				add_popularity = { ideology = democratic popularity = FRA_democracy }
-			}
+		
+				
+			set_temp_variable = { FRA_fascism = party_popularity@fascism }
+			add_popularity = { ideology = democratic popularity = FRA_fascism } 
+			multiply_temp_variable = { FRA_fascism = -1 }
+			add_popularity = { ideology = fascism popularity = FRA_fascism }
 			FRA_communism_riot_effect = yes
 		}
 	}	

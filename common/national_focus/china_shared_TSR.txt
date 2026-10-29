@@ -40,12 +40,8 @@ shared_focus = {
 	icon = GFX_focus_generic_concessions
 	x = 40
 	y = 0
-	offset = {
-		x = -6
-		y = 0
-		trigger = {
-			tag = PRC
-		}
+	offset = { 
+
 	}
 	offset = {
 		x = -8
@@ -313,9 +309,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 		modifier = {
 			factor = 4
@@ -354,9 +349,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 		modifier = {
 			factor = 4
@@ -607,9 +601,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 		modifier = {
 			factor = 4
@@ -700,137 +693,23 @@ shared_focus = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					tag = PRC
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = PRC_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
+			if = { 
+
 			}
-			if = {
-				limit = {
-					tag = YUN
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = YUN_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
+			if = { 
+
 			}
-			if = {
-				limit = {
-					tag = GXC
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = GXC_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
+			if = { 
+
 			}
-			if = {
-				limit = {
-					tag = SHX
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = SHX_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
+			if = { 
+
 			}
-			if = {
-				limit = {
-					tag = XSM
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = XSM_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
+			if = { 
+
 			}
-			if = {
-				limit = {
-					tag = SIK
-				}
-				division_template = {
-					name = "Experimental Mechanised Division"
-					division_names_group = SIK_MEC_01
-					priority = 2
-					regiments = {
-						light_armor = { x = 0 y = 0 }
-						light_armor = { x = 0 y = 1 }
-			
-						motorized = { x = 1 y = 0 }
-						motorized = { x = 1 y = 1 }
-						motorized = { x = 1 y = 2 }
-						motorized = { x = 1 y = 3 }
-					}
-					support = {
-						
-					}
-				}
+			if = { 
+
 			}
 			if = {
 				limit = {
@@ -922,9 +801,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+			
 		}
 	}
 
@@ -966,9 +844,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 	}
 
@@ -1023,9 +900,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 	}
 
@@ -1059,9 +935,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 		modifier = {
 			factor = 4
@@ -1173,9 +1048,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 		modifier = {
 			factor = 4
@@ -1237,9 +1111,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 		modifier = {
 			factor = 4
@@ -1387,9 +1260,8 @@ shared_focus = {
 				has_tech = tech_mountaineers # Wait for the full benefit
 			}
 		}
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 	}
 
@@ -1457,9 +1329,8 @@ shared_focus = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 4
-			tag = PRC
+		modifier = { 
+
 		}
 	}
 
@@ -1783,9 +1654,8 @@ shared_focus = {
 
 	ai_will_do = {
 		base = 1
-		modifier = {
-			factor = 4
-			tag = PRC			
+		modifier = { 
+			
 		}
 	}
 
@@ -2086,6 +1956,7 @@ shared_focus = {
 		}
 		set_variable = { CHI_ledo_road_current_level = 1 }
 		add_offsite_building = { type = arms_factory level = 1 }
+		set_global_flag = CHI_ledo_road_focus_taken
 	}
 }
 
@@ -2907,7 +2778,7 @@ shared_focus = {
 			uses = 2
 			category = cv_tech
 		}
-		activate_mission_tooltip = CHI_build_a_carrier
+		#activate_mission_tooltip = CHI_build_a_carrier
 	}
 }
 

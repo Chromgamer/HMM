@@ -2051,7 +2051,6 @@ focus_tree = {
 					free_building_slots = {
 						building = synthetic_refinery
 						size > 0
-						include_locked = yes
 					}
 				}
 				prioritize = { 65 }
@@ -2159,7 +2158,6 @@ focus_tree = {
 					free_building_slots = {
 						building = synthetic_refinery
 						size > 0
-						include_locked = yes
 					}
 				}
 				prioritize = { 57 }
@@ -2245,7 +2243,6 @@ focus_tree = {
 					free_building_slots = {
 						building = synthetic_refinery
 						size > 0
-						include_locked = yes
 					}
 				}
 				prioritize = { 65 }
@@ -10621,8 +10618,8 @@ focus_tree = {
 			}
 			else_if = {
 				limit = {
-					any_country = {
-						original_tag = FRA
+					any_country_with_original_tag = {
+						original_tag_to_check = FRA
 						exists = yes
 					}
 				}
@@ -10632,8 +10629,8 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					any_country = {
-						original_tag = LUX
+					any_country_with_original_tag = {
+						original_tag_to_check = LUX
 						exists = yes
 					}
 				}
@@ -11342,8 +11339,7 @@ focus_tree = {
 			OR = {
 				has_war_with = YUG
 				NOT = { country_exists = YUG }
-				any_other_country = {
-					is_in_faction_with = ROOT
+				any_allied_country = {
 					OR = {
 						has_war_with = YUG
 						YUG = {

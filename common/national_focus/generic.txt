@@ -627,14 +627,13 @@ focus_tree = {
 		
 		available_if_capitulated = yes
 		ai_will_do = {
-			factor = 50
+			factor = 2
+			
 		}
 
-
 		available = {
-			any_state = {
+			any_controlled_state = {
 				is_coastal = yes
-				is_controlled_by = ROOT
 			}
 		}
 
@@ -776,15 +775,25 @@ focus_tree = {
 		}
 
 		completion_reward = {
+
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_convoy_raiding
+			}
+			add_mastery_bonus = {
+				name = flexible_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_base_strike
+			}
+
 			add_doctrine_cost_reduction = {
-				name = sub_op_bonus
+				name = flexible_navy
 				cost_reduction = 0.5
 				uses = 2
-				technology = convoy_interdiction_ti
-				technology = unrestricted_submarine_warfare
-				technology = wolfpacks
-				technology = advanced_submarine_warfare
-				technology = combined_operations_raiding
+				category = naval_doctrine
 			}
 		}
 	}
@@ -816,13 +825,27 @@ focus_tree = {
 				}
 			}
 		}
+		
 
 		completion_reward = {
+
+			add_mastery_bonus = {
+				name = large_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_fleet_in_being
+			}
+			add_mastery_bonus = {
+				name = large_navy
+				bonus = 0.1
+				days = 240
+				grand_doctrine = new_base_strike
+			}
 			add_doctrine_cost_reduction = {
-				name = fleet_in_being_bonus
+				name = large_navy
 				cost_reduction = 0.25
 				uses = 2
-				category = fleet_in_being_tree
+				category = naval_doctrine
 			}
 		}
 	}
@@ -898,7 +921,6 @@ focus_tree = {
 				bonus = 1.0
 				ahead_reduction = 2
 				uses = 1
-				category = ca_tech
 				category = ca_tech
 			}
 		}
@@ -1004,6 +1026,9 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 100
+		
+			
+			
 		}
 	}
 
@@ -1024,17 +1049,21 @@ focus_tree = {
 		
 		ai_will_do = {
 			factor = 100
+			
 		}
 
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = construction_effort_tt
 				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}					
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = industrial_complex
+							size < 1
+							include_locked = yes
+						}
+					}				
 				}
 			}
 		}
@@ -1051,6 +1080,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -1098,16 +1128,20 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 100
+			
 		}
 
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = production_effort_tt
 				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = arms_factory
+							size < 1
+							include_locked = yes
+						}
 					}
 				}
 			}
@@ -1125,6 +1159,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -1172,16 +1207,20 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 100
+			
 		}
 
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = construction_effort_tt
 				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = industrial_complex
+							size < 1
+							include_locked = yes
+						}
 					}
 				}
 			}
@@ -1199,6 +1238,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = industrial_complex
 						size > 0
@@ -1245,17 +1285,20 @@ focus_tree = {
 
 
 		ai_will_do = {
-			factor = 100
+			factor = 100	
 		}
 
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = production_effort_tt
 				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = arms_factory
+							size < 1
+							include_locked = yes
+						}
 					}
 				}
 			}
@@ -1273,6 +1316,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -1313,21 +1357,25 @@ focus_tree = {
 		relative_position_id = construction_effort_2
 		cost = 10
 
-		ai_will_do = {
-			factor = 100
-		}
-
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		
 		available_if_capitulated = yes
 
+		ai_will_do = {
+			factor = 100
+			
+		}
+
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = infrastructure_effort_tt
-				all_owned_state = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 1
+				all_owned_state = {
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = infrastructure
+							size < 1
+						}
 					}
 				}
 			}
@@ -1349,6 +1397,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = infrastructure
 						size > 0
@@ -1376,6 +1425,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = infrastructure
 						size > 1
@@ -1420,16 +1470,20 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 100
+			
 		}
 
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = production_effort_tt
 				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = arms_factory
+							size < 1
+							include_locked = yes
+						}
 					}					
 				}
 			}
@@ -1447,6 +1501,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = arms_factory
 						size > 0
@@ -1489,19 +1544,21 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		
+		available_if_capitulated = yes
 		ai_will_do = {
 			factor = 100
+			
 		}
-
-		available_if_capitulated = yes
-
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = infrastructure_effort_tt
 				all_owned_state = {			
-					free_building_slots = {
-						building = infrastructure
-						size < 1
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = infrastructure
+							size < 1
+						}
 					}
 				}
 			}
@@ -1523,6 +1580,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = infrastructure
 						size > 0
@@ -1550,6 +1608,7 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = infrastructure
 						size > 1
@@ -1594,16 +1653,20 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 100
+			
 		}
 
 		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = construction_effort_tt
 				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 2
-						include_locked = yes
+					OR = {
+						impassable = yes
+						free_building_slots = {
+							building = industrial_complex
+							size < 2
+							include_locked = yes
+						}
 					}
 				}
 			}
@@ -1621,6 +1684,7 @@ focus_tree = {
 		completion_reward = {
 			random_owned_controlled_state = {
 				limit = {
+					impassable = no
 					free_building_slots = {
 						building = industrial_complex
 						size > 1
@@ -1697,7 +1761,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = infrastructure_effort_2
 		cost = 10
-
+		ai_will_do = {
+			base = 2
+			modifier = {
+				factor = 6
+				original_tag = SIA
+			}
+		}
 		search_filters = { FOCUS_FILTER_RESEARCH } 
 		
 		available_if_capitulated = yes
@@ -1720,7 +1790,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = extra_tech_slot
 		cost = 10
-
+		ai_will_do = {
+			base = 2
+			
+		}
 		search_filters = { FOCUS_FILTER_RESEARCH } 
 		
 		available_if_capitulated = yes
@@ -1817,10 +1890,7 @@ focus_tree = {
 					has_idea = neutrality_idea
 				}
 			}
-			modifier = {
-				factor = 20
-				has_idea = SOV_russian_political_influence
-			}
+			
 		}
 
 		completion_reward = {
@@ -1865,10 +1935,7 @@ focus_tree = {
 					NOT = { has_government = fascism }
 				}
 			}
-			modifier = {
-				factor = 10
-				has_idea = SOV_russian_political_influence
-			}
+			
 		}
 
 		completion_reward = {
@@ -1955,6 +2022,12 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 95
+			modifier = {
+				factor = 0.05
+				is_historical_focus_on = yes
+				original_tag = SIA
+			}
+			
 			modifier = {
 				factor = 0.1
 				any_neighbor_country = {
@@ -2045,12 +2118,12 @@ focus_tree = {
 				factor = 0
 				tag = AUS
 			}
+
 			modifier = {
 				factor = 0
-				tag = SAU
-				is_in_faction_with = SOV
-				SOV = { has_government = communism }
+				original_tag = SIA
 			}
+			
 		}
 
 		completion_reward = {
