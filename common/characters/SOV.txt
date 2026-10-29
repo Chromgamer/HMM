@@ -361,10 +361,10 @@ characters = {
 			}
 		}
 		corps_commander = {
-			traits = { trait_reckless infantry_officer trickster sov_inf_gen infantry_leader pre_grind }
+			traits = { trait_reckless infantry_officer trickster sov_inf_gen pre_grind }
 			skill = 7
-			attack_skill = 1
-			defense_skill = 3
+			attack_skill = 5
+			defense_skill = 8
 			planning_skill = 3
 			logistics_skill = 3
 			legacy_id = 0
@@ -1026,7 +1026,7 @@ characters = {
 			traits = { army_CombinedArms_2}
 		}
 		corps_commander = {
-			traits = { brilliant_strategist  winter_specialist panzer_leader trickster trait_engineer cavalry_leader organizer commando unyielding_defender pre_grind }
+			traits = { brilliant_strategist  winter_specialist panzer_leader trickster trait_engineer cavalry_leader organizer commando aggressive_assaulter pre_grind }
 			skill = 8
 			attack_skill = 5
 			defense_skill = 10

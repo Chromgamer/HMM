@@ -247,7 +247,7 @@ characters={
 		}
 
 		field_marshal={
-			traits={ trait_cautious armor_officer politically_connected organizer logistics_wizard offensive_doctrine naval_invader panzer_leader pre_grind }
+			traits={ trait_cautious armor_officer politically_connected organizer logistics_wizard offensive_doctrine naval_invader pre_grind }
 			skill=5
 			attack_skill=2
 			defense_skill=4

@@ -320,7 +320,7 @@ characters={
 		}
 		
 		field_marshal={
-			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader infantry_leader panzer_leader pre_grind }
+			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader infantry_leader pre_grind }
 			skill=5
 			attack_skill=4
 			defense_skill=4
