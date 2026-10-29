@@ -179,20 +179,6 @@ technologies = {
 				localization_key = SP_UNLOCK_PROJECT
 				PROJECT = sp_land_military_engineering_vehicles
 			}
-
-			if = {
-				limit = {
-					original_tag = AFG
-					has_dlc = "Graveyard of Empires"
-					has_completed_focus = AFG_expand_quami_template
-				}
-				add_units_to_division_template = {
-					template_name = "Pashtun Levy" 
-					support = {
-						engineer = 0 
-					}
-				}
-			}
 		}
 	}
 
@@ -318,7 +304,7 @@ technologies = {
 
 		light_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -326,7 +312,7 @@ technologies = {
 		}
 		medium_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -334,7 +320,7 @@ technologies = {
 		}
 		heavy_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -395,7 +381,7 @@ technologies = {
 		assault_engineer = {
 			breakthrough = 0.1
 			urban = {
-				attack = 0.15
+				attack = 0.1
 			}
 		}
 
@@ -409,7 +395,7 @@ technologies = {
 
 		light_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -417,7 +403,7 @@ technologies = {
 		}
 		medium_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -425,7 +411,7 @@ technologies = {
 		}
 		heavy_flame_tank = {
 			urban = {
-				attack = 0.1
+				attack = 0.05
 			}
 			fort = {
 				attack = 0.1
@@ -757,22 +743,6 @@ technologies = {
 			modifier = {
 				factor = 2
 				has_war = yes
-			}
-		}
-
-		on_research_complete = {
-			if = {
-				limit = {
-					original_tag = AFG
-					has_dlc = "Graveyard of Empires"
-					has_completed_focus = AFG_expand_quami_template
-				}
-				add_units_to_division_template = {
-					template_name = "Pashtun Levy" 
-					support = {
-						military_police = 0 
-					}
-				}
 			}
 		}
 	}
@@ -1199,28 +1169,14 @@ technologies = {
 				date > "1939.1.1"
 			}
 		}
-
-		on_research_complete = {
-			if = {
-				limit = {
-					original_tag = AFG
-					has_dlc = "Graveyard of Empires"
-					has_completed_focus = AFG_expand_quami_template
-				}
-				add_units_to_division_template = {
-					template_name = "Pashtun Levy" 
-					support = {
-						field_hospital = 0 
-					}
-				}
-			}
-		}
 	}
 
 	tech_field_hospital2 = {
+
 		allow = {
 			always = no
 		}
+
 		field_hospital = {
 			casualty_trickleback = 0.10
 			experience_loss_factor = -0.10
@@ -1391,24 +1347,6 @@ technologies = {
 		}
 	}
 
-
-	SWI_saint_bernard_tech = { #Saint Bernard tech
-		allow = { always = no } #Only obtained through Focus
-		field_hospital = {
-			casualty_trickleback = 0.20 ## REMEMBER TO UPDATE THE TOOLTIP
-			experience_loss_factor = -0.3
-		}
-	}
-
-	NORDIC_supportCollaboration_tech = { # For the Army Capston in the Nordic JFT
-		allow = { always = no } #Only obtained through Focus
-		category_support_battalions = {
-			max_organisation = 10
-			soft_attack = 0.25
-			experience_loss_factor = -0.05
-		}
-	}
-
 	tech_logistics_company = {
 
 		enable_subunits = {
@@ -1504,7 +1442,7 @@ technologies = {
 		}
 
 		helicopter_transport = {
-			supply_consumption_factor = -0.12
+			supply_consumption_factor = -0.15
 		}
 
 		path = {
@@ -1559,7 +1497,7 @@ technologies = {
 		}
 
 		helicopter_transport = {
-			supply_consumption_factor = -0.12
+			supply_consumption_factor = -0.15
 		}
 
 		helicopter_brigade = {
@@ -1903,7 +1841,11 @@ technologies = {
 		enable_equipments = {
 			railway_gun_equipment_1
 		}
-		always = no
+
+		allow = { 
+			always = no
+		}
+		
 		enable_equipment_modules = {
 			lc_hull_mounted_railway_gun #Module for Land Cruiser
 		}
