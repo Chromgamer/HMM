@@ -150,7 +150,7 @@ defensive_postures = {
 			}
         }
         field_construction_training = {
-            dig_in_speed_factor = 0.15
+            dig_in_speed_factor = 0.2
         }
 
     }
@@ -200,13 +200,13 @@ large_unit_tactics = {
 
     rewards = {
         wide_trench_networks = {
-            dig_in_speed_factor = 0.10
+            dig_in_speed_factor = 0.15
         }
         flexible_division_structures = {
         #2
            unit_infantry_design_cost_factor = -1
            infantry = {
-                combat_width = -0.3
+                combat_width = -0.2
             }
         }
         unit_knowledge_sharing = {
@@ -550,7 +550,7 @@ commandos = {
             logistics_company = {
                 battalion_mult = {
                  category = category_vehicle_infantry
-                 max_strength = 5
+                 max_strength = 2.5
                  add = yes
                 }
             }
@@ -728,24 +728,8 @@ peoples_war = {
     xp_cost = 50
     xp_type = army
 
-    available = {
-        if = {
-            limit = {
-                NOT = {
-                    original_tag = INS
-                }
-            }
-            has_government = communism
-        }
-        else = {
-            OR = {
-                has_government = communism
-                AND = {
-                    original_tag = INS
-                    has_completed_focus = INS_underground_revolution
-                }
-            }
-        }
+    available = { 
+        has_government = communism
     }
     visible = {
         has_dlc = "No Compromise, No Surrender"
@@ -753,10 +737,7 @@ peoples_war = {
     ai_will_do = {
 
         base = 1
-        modifier = {
-            factor = 95
-            original_tag = PRC
-        }
+       
 
         modifier = {
             factor = 2

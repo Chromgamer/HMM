@@ -91,8 +91,8 @@ last_stand = {
     xp_cost = 100
     xp_type = army
 
-    available = {
-
+    available = { 
+        always = yes
     }
     # EFFECTS
     conscription = 0.05
@@ -395,6 +395,13 @@ deep_battle = {
                 }
             }
             mot_recon = {
+                battalion_mult = {
+                    category = category_light_infantry
+                    soft_attack = 0.05
+                    defense = 0.05
+                }
+            }
+            armored_car_recon = {
                 battalion_mult = {
                     category = category_light_infantry
                     soft_attack = 0.05
