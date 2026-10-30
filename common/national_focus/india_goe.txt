@@ -58,12 +58,7 @@ focus_tree = {
         search_filters = { FOCUS_FILTER_MILITARY_CHARACTER }
 
         completion_reward = {
-            IF = {
-                limit = {
-                    NOT = {
-                        has_completed_focus = RAJ_look_to_the_past
-                    }
-                }
+           
                 every_army_leader = {
                     limit = {
                         has_trait = loyalty_to_india
@@ -78,10 +73,8 @@ focus_tree = {
                         }    
                     }
                 }
-            }
-            ELSE = {
-                army_experience = 50
-            }
+            
+           
         }
     }
 
@@ -98,9 +91,8 @@ focus_tree = {
             factor = 1
         }
         allow_branch = {
-            always = {
-                NO
-            }
+            always = no
+                
         }
         available = {
             always = no
@@ -358,7 +350,7 @@ focus_tree = {
     focus = {
         id = RAJ_trade_port
         icon = GFX_focus_POL_develop_polish_shipbuilding
-        prerequisite = { focus = RAJ_great_depression_price_controls focus = RAJ_provincial_autonomy }
+        prerequisite = { focus = RAJ_provincial_autonomy }
         x = -47
         y = 1
 
@@ -371,9 +363,7 @@ focus_tree = {
 
         available = {
             992 = { is_fully_controlled_by = ROOT }
-            NOT = {
-                has_completed_focus = RAJ_look_to_the_past
-            }
+           
         }
         
         bypass = {
@@ -426,7 +416,7 @@ focus_tree = {
 
         available = {
             992 = { is_fully_controlled_by = ROOT }
-            NOT = { has_completed_focus = RAJ_look_to_the_past }
+            
         }
         
         bypass = {
@@ -581,8 +571,9 @@ focus_tree = {
         }
 
         allow_branch = {
+              always = no
         	if = {
-                always = no
+              
 				limit = {
 					has_game_rule = {
 						rule = obsolete_focus_branches_visibility
@@ -590,7 +581,7 @@ focus_tree = {
 					}
 				}
 	            NOT = {
-	            	has_completed_focus = RAJ_great_depression_price_controls
+	            	
 	            	has_completed_focus = RAJ_his_majestys_loyal_government
 	            	has_completed_focus = RAJ_league_against_gandhism
 	            }
@@ -652,9 +643,8 @@ focus_tree = {
         }
 
         allow_branch = {
-            always = {
-                NO
-            }
+            always = no
+            
         	if = {
 				limit = {
 					has_game_rule = {
@@ -663,7 +653,7 @@ focus_tree = {
 					}
 				}
 	            NOT = {
-	            	has_completed_focus = RAJ_great_depression_price_controls
+	            	
 	            	has_completed_focus = RAJ_his_majestys_loyal_government
 	            	has_completed_focus = RAJ_mahatma
 	            }
@@ -1922,9 +1912,8 @@ focus_tree = {
         }
 
         allow_branch = {
-            always = {
-                NO
-            }
+            always = no
+            
         	if = {
 				limit = {
 					has_game_rule = {
@@ -1933,7 +1922,7 @@ focus_tree = {
 					}
 				}
 	            NOT = {
-	            	has_completed_focus = RAJ_great_depression_price_controls
+	            
 	            	has_completed_focus = RAJ_his_majestys_loyal_government
 	            	has_completed_focus = RAJ_mahatma
 	            	has_completed_focus = RAJ_red_in_the_shadows
@@ -2097,7 +2086,9 @@ focus_tree = {
         ai_will_do = {
             factor = 1
         }
-
+        allow_branch = { 
+            always = no
+        }
         available = {
             compare_autonomy_state > autonomy_colony
         }
@@ -2156,9 +2147,8 @@ focus_tree = {
         }
 
         allow_branch = {
-            always = {
-                NO
-            }
+            always = no
+        
         	if = {
 				limit = {
 					has_game_rule = {
@@ -2167,7 +2157,7 @@ focus_tree = {
 					}
 				}
 	            NOT = {
-	            	has_completed_focus = RAJ_great_depression_price_controls
+	            
 	            	has_completed_focus = RAJ_his_majestys_loyal_government
 	            	has_completed_focus = RAJ_mahatma
 	            	has_completed_focus = RAJ_forward_bloc
@@ -2350,14 +2340,8 @@ focus_tree = {
             factor = 1
         }
 
-        available = {
-            communism > var:RAJ_royal_indian_navy_mutiny_threshold
-            PAK = {
-                OR = {
-                    is_subject = no
-                    is_subject_of = RAJ
-                }
-            }
+        available = { 
+
         }
         
         bypass = {
@@ -2461,32 +2445,13 @@ focus_tree = {
            custom_effect_tooltip = generic_skip_one_line_tt
 
             if = {
-                limit = {
-                    PAK = { exists = no }
-                }
-                release = PAK
-            }
-            else = {
-                if = {
-                    limit = {
-                        PAK = { is_subject_of = RAJ }
-                    }
-                    end_puppet = PAK
-                }
+
+             }
+            else = { 
+
             }
             hidden_effect = {
-               RAJ = { 
-                    RAJ_GOE_muhammad_ali_jinnah = {
-                        set_nationality = PAK
-                        add_country_leader_role = {
-                            promote_leader = yes
-                            country_leader = {
-                                ideology = centrism
-                                traits = { father_of_pakistan } 
-                            }
-                        }
-                    }
-               }
+            
                ENG = {
                    add_opinion_modifier = {
                        target = RAJ
@@ -2494,87 +2459,9 @@ focus_tree = {
                    }
                }
            }
-           PAK = {
-                if = {
-                    limit = {
-                        ENG = {
-                            NOT = {
-                                has_government = communism
-                            }
-                        }
-                    }
-                    add_ideas = idea_RAJ_PAK_british_anti_communist_investments
-                    add_opinion_modifier = {
-                        target = RAJ
-                        modifier = modifier_RAJ_ENG_anti_communist
-                    }
-                }
-                transfer_state = 986
-                transfer_state = 441
-                transfer_state = 989
-                transfer_state = 443
-                transfer_state = 428
-                transfer_state = 431
-                transfer_state = 433
+           
+            hidden_effect = { 
 
-                hidden_effect = {
-                    inherit_technology = RAJ
-                    986 = { add_core_of = THIS }
-                    441 = { add_core_of = THIS }
-                    989 = { add_core_of = THIS }
-                    443 = { add_core_of = THIS }
-                    428 = { add_core_of = THIS }
-                    431 = { add_core_of = THIS }
-                    433 = { add_core_of = THIS }
-                    add_equipment_to_stockpile = { 
-                        type = convoy_1
-                        amount = 80
-                        producer = PAK
-                    }
-
-                    add_equipment_to_stockpile = { 
-                        type = train_equipment_1
-                        amount = 15
-                        producer = PAK
-                    }
-
-                    433 = {
-                        add_building_construction = {
-                            type = supply_node
-                            level = 1
-                            province = 7998
-                            instant_build = yes
-                        }
-                    }
-
-                    build_railway = {
-                        level = 1
-                        start_province = 7998
-                        target_province = 10772
-                    }
-
-                    build_railway = {
-                        level = 1
-                        start_province = 7998
-                        target_province = 1908
-                    }
-                }
-            }   
-            hidden_effect = {
-            
-               random_core_state = {
-                    limit = {
-                        is_controlled_by = PAK   
-                    }
-                    prioritize = { 443 } #optional: to pick those states first if they fulfill the limit
-                    create_unit = {
-                        division = "name = \"Infantry Division\" division_template = \"Infantry Division\" start_experience_factor = 0.3 start_equipment_factor = 1 start_manpower_factor = 0.8"
-                        owner = PAK
-
-                        count = 27
-                    }
-                    
-                }
             }
 
             hidden_effect = {
@@ -2582,32 +2469,20 @@ focus_tree = {
                     limit = {
                         has_idea = idea_RAJ_great_depression_1
                     }
-                    PAK = {
-                        add_ideas = idea_RAJ_great_depression_1
-                    }
+                    
                 }
                 else_if = {
                     limit = {
                         has_idea = idea_RAJ_great_depression_2
                     }
-                    PAK = {
-                        add_ideas = idea_RAJ_great_depression_2
-                    }
+                    
                 }
 
-                PAK = {
-                    add_dynamic_modifier = { modifier = idea_RAJ_agrarian_society }
-                    set_variable = { RAJ_agrarian_society_conscription_factor = RAJ.RAJ_agrarian_society_conscription_factor } #3
-                    set_variable = { RAJ_agrarian_society_mobilization_laws_cost_factor = RAJ.RAJ_agrarian_society_mobilization_laws_cost_factor } #9
-                    set_variable = { RAJ_agrarian_society_mobilization_speed = RAJ.RAJ_agrarian_society_mobilization_speed } #3
-                }
+               
 
             }
 
-           set_truce = {
-               target = PAK
-               days = 580
-           }
+          
 
 
            add_stability = -0.15
@@ -4486,14 +4361,8 @@ focus_tree = {
         
         bypass = {
 
-            OR = {
-                PAK = { exists = no }
-                PAK = { is_subject_of = ROOT }
-                has_war_with = PAK
-                AND = {
-                    PAK = { NOT = { controls_state = 430 } }
-                    PAK = { NOT = { controls_state = 431 } }
-                }
+            OR = { 
+
             }
         }
 
@@ -6246,10 +6115,7 @@ focus_tree = {
         }
 
         available = {
-            BHU = {
-                exists = yes
-                NOT = { is_subject_of = ROOT }
-            }
+            always = no
         }
         
         bypass = {
@@ -6264,10 +6130,7 @@ focus_tree = {
 
         completion_reward = {
 
-            create_wargoal = {
-                type = annex_everything
-                target = BHU 
-            }
+            
         }
     }
 
@@ -6332,10 +6195,7 @@ focus_tree = {
         }
 
         available = {
-            BHU = {
-                exists = yes
-                is_subject = no
-            }
+            always = no
         }
         
         bypass = {
@@ -6348,12 +6208,8 @@ focus_tree = {
 
         search_filters = {FOCUS_FILTER_ANNEXATION}
 
-        completion_reward = {
-            BHU = {
-              country_event = { id = GOE_RAJ.4 hours = 3 random_hours = 2  }
-            }
-            custom_effect_tooltip = if_they_accept_tt
-            custom_effect_tooltip = RAJ_bhutanese_protectorate_tt
+        completion_reward = { 
+
         }
     }
 
@@ -6435,9 +6291,7 @@ focus_tree = {
         }
         
         bypass = {
-            TIB = {
-                exists = no
-            }
+           
         }
 
         cancel_if_invalid = yes
@@ -6446,50 +6300,8 @@ focus_tree = {
 
         search_filters = {FOCUS_FILTER_POLITICAL}
 
-        completion_reward = {
-            TIB = {
-                every_core_state = {
-                    limit = {
-                        NOT = { state = 601 } #Chinese core
-                        controller = {
-                            NOT = { original_tag = ROOT }
-                            NOT = { is_subject_of = ROOT }
-                        }
-                        NOT = { 
-                            controller = {
-                                ROOT = {
-                                    has_wargoal_against = {
-                                         target = PREV
-                                     } 
-                                }
-                            }
-
-                        }
-                    }
-
-                    controller = {
-                        ROOT = {
-                            create_wargoal = {
-                                type = puppet_wargoal_focus
-                                target = PREV
-                                expire = 0
-                            }
-                        }
-                    }
-
-                }
-            }
-            if = {
-                limit = {
-                    CHI = {
-                        exists = yes
-                        is_subject = no
-                    }
-                }
-                CHI = {
-                    country_event = { id = GOE_RAJ.17 hours = 1 }
-                }
-            }
+        completion_reward = { 
+            
         }
     }
 
@@ -6657,11 +6469,7 @@ focus_tree = {
         }
 
         available = {
-            BRM = { 
-                exists = yes 
-                NOT = { is_subject_of = ROOT }
-            }
-
+          
         }
         
         bypass = {
@@ -6676,10 +6484,7 @@ focus_tree = {
         search_filters = {FOCUS_FILTER_POLITICAL}
 
         completion_reward = {
-            create_wargoal = {
-                type = annex_everything
-                target = BRM
-            }
+           
         }
     }
 
@@ -6712,28 +6517,8 @@ focus_tree = {
         search_filters = {FOCUS_FILTER_ANNEXATION}
         search_filters = {FOCUS_FILTER_POLITICAL}
 
-        completion_reward = {
-            if = {
-                limit = {
-                    NOT = { has_war_with = MAL }
-                }
+        completion_reward = { 
 
-                create_wargoal = {
-                    type = annex_everything
-                    target = MAL
-                }
-
-                MAL = {
-                    every_core_state = {
-                        add_claim_by = ROOT
-                    }
-                }
-            }
-
-            custom_effect_tooltip = generic_skip_one_line_tt
-
-            add_ideas = idea_RAJ_anti_imperialism
-            
         }
     }
 
@@ -7069,13 +6854,11 @@ focus_tree = {
         }
 
         available = {
-
+                always = no
         }
         
         bypass = {
-            NEP = {
-                exists = no
-            }
+            
         }
 
         cancel_if_invalid = yes
@@ -7084,38 +6867,8 @@ focus_tree = {
 
         search_filters = {FOCUS_FILTER_POLITICAL}
 
-        completion_reward = {
-            NEP = {
-                every_core_state = {
-                    limit = {
-                        controller = {
-                            NOT = { original_tag = ROOT }
-                            NOT = { is_subject_of = ROOT }
-                        }
-                        NOT = { 
-                            controller = {
-                                ROOT = {
-                                    has_wargoal_against = {
-                                         target = PREV
-                                     } 
-                                }
-                            }
+        completion_reward = { 
 
-                        }
-                    }
-
-                    controller = {
-                        ROOT = {
-                            create_wargoal = {
-                                type = puppet_wargoal_focus
-                                target = PREV
-                                expire = 0
-                            }
-                        }
-                    }
-
-                }
-            }
         }
     }
 
@@ -7173,25 +6926,7 @@ focus_tree = {
 
         available = {
             has_tech = tech_mountaineers
-            OR = {
-                TIB = {
-                    any_core_state = {
-                        is_controlled_by = ROOT
-                    }
-                }
-
-                NEP = {
-                    any_core_state = {
-                        is_controlled_by = ROOT
-                    }
-                }
-
-                BHU = {
-                    any_core_state = {
-                        is_controlled_by = ROOT
-                    }
-                }
-            }
+           
         }
         
         bypass = {
@@ -7377,11 +7112,7 @@ focus_tree = {
 
         completion_reward = {
             custom_effect_tooltip = RAJ_akhand_bharat_tt
-            unlock_decision_tooltip = {
-                decision =  RAJ_form_akhand_bharat
-                show_effect_tooltip = yes # default is no
-                show_modifiers = yes # default is no
-            }
+           
         }
     }
 
@@ -8075,9 +7806,7 @@ focus_tree = {
         bypass = {
            OR = {
                 is_subject = no
-                BAN = {
-                    exists = yes
-                }
+               
             }
         }
         
@@ -8123,9 +7852,7 @@ focus_tree = {
         bypass = {
             OR = {
                 is_subject = no
-                PAK = {
-                    exists = yes
-                }
+               
             }
         }
 
@@ -8264,16 +7991,8 @@ focus_tree = {
         prerequisite = { focus = RAJ_eastern_pakistan  focus = RAJ_united_bengal }
         cost = 10
         available = {
-            if = {
-                limit = {
-                    PAK = {
-                        exists = yes
-                    }
-                }
-                OR = {
-                    check_variable = { RAJ.num_of_factories >  pak_factories tooltip = pak_factories_tt }
-                    check_variable = { RAJ.num_researched_technologies > pak_researched_techs tooltip = pak_tech_tt }
-                }
+            if = { 
+
             }
             else = {
                 is_subject = no
@@ -8399,12 +8118,8 @@ focus_tree = {
     focus = {
         id = RAJ_tryst_with_destiny
         icon = {
-            GFX_focus_RAJ_tryst_with_destiny_BAN = {
-                tag = BAN
-            }
-            GFX_focus_RAJ_tryst_with_destiny_PAK = {
-                tag = PAK
-            }
+           
+           
             GFX_focus_RAJ_tryst_with_destiny = yes
         }
         prerequisite = { focus = RAJ_united_bengal focus = RAJ_eastern_pakistan focus = RAJ_a_secular_state }
@@ -9067,11 +8782,7 @@ focus_tree = {
         }
 
         available = {
-            BRM = {
-                exists = yes
-                is_in_faction_with = ROOT
-                controls_province = 1330
-            }
+           
             controls_province = 4245
         }
         
@@ -9095,9 +8806,7 @@ focus_tree = {
                 start_province = 4245
                 target_province = 1330 
             }
-            BRM = {
-                add_manpower = 21000
-            }
+            
         }
     }
 
@@ -10336,10 +10045,10 @@ focus = {
 
 		custom_effect_tooltip = generic_skip_one_line_tt
 
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = RAJ_GOE_tara_singh
+		#custom_effect_tooltip = available_political_advisor
+		#show_ideas_tooltip = RAJ_GOE_tara_singh
 
-		custom_effect_tooltip = generic_skip_one_line_tt
+		#custom_effect_tooltip = generic_skip_one_line_tt
 
 		show_unit_leaders_tooltip = RAJ_GOE_ishar_singh
 		show_unit_leaders_tooltip = RAJ_GOE_parkash_singh
@@ -12273,7 +11982,7 @@ focus = {
 				industrial_manufacturer = mio:RAJ_garden_reach_shipbuilders_organization
 			}
 		}
-		#NO MTG
+		#no MTG
 		else = {
 			# DESTROYER	
 			create_equipment_variant = { #Made-up
@@ -12394,7 +12103,7 @@ focus = {
 	cost = 10
 
 	available = {
-        always = false
+        
 		NOT = { has_idea = RAJ_mobilization_of_the_indian_army }
 	}
 
@@ -12411,7 +12120,7 @@ focus = {
 		add_to_variable = { RAJ_south_east_asia_command_dm_command_power_gain = 0.2 tooltip = command_power_gain_tt }
 		add_to_variable = { RAJ_south_east_asia_command_dm_special_forces_cap = 0.25 tooltip = special_forces_cap_tt }
 
-		country_event = GOE_RAJ_loyalist.06
+		#country_event = GOE_RAJ_loyalist.06
 	}
 }
 focus = {
@@ -12696,49 +12405,12 @@ focus = {
 
 
 		#Event to annex Malay
-		if = { # MAL is independent -> Send event to them
-			limit = {
-				MAL = {
-					exists = yes 
-					controls_state = 336 #SINGAPORE
-					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
-						has_war = no
-						all_enemy_country = {
-							has_war_with = ROOT	
-						}
-					}
-					is_subject = no
-					is_in_faction = no
-					is_ai = yes #No point on sending an event to get annexed to a player, would be just clickbait
-				}
-				NOT = {
-					has_war_with = MAL
-					any_allied_country = { has_war_with = MAL }
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			MAL = { save_event_target_as = RAJ_annexing_country_target }
-			MAL = { country_event = { id = GOE_RAJ_loyalist.07 hours = 8 random_hours = 4 } }
-		}
-		else_if = { # MAL is subject of an ally -> Send event to overlord
-			limit = {
-				is_ally_with = MAL.OVERLORD
-				MAL = {
-					is_ai = yes #Do not annex a player without they having a say
-					exists = yes 
-					controls_state = 336 #SINGAPORE
-					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
-						has_war = no
-						all_enemy_country = {
-							has_war_with = ROOT	
-						}
-					}
-				}
-			}
-			custom_effect_tooltip = generic_skip_one_line_tt
-			MAL = { save_event_target_as = RAJ_annexing_country_target }
-			var:MAL.OVERLORD = { country_event = { id = GOE_RAJ_loyalist.08 hours = 8 random_hours = 4 } }
-		}
+		if = { 
+
+        }
+		else_if = { 
+
+        }
 	}
 }
 
@@ -13164,48 +12836,21 @@ focus = {
 		#Event to annex Burma
 		if = { # BRM is independent -> Send event to them
 			limit = {
-				BRM = {
-					exists = yes 
-					controls_state = 995 # PEGU (Rangoon)
-					controls_state = 998 # SAGAING (Myitkyina)
-					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
-						has_war = no
-						all_enemy_country = {
-							has_war_with = ROOT	
-						}
-					}
-					is_subject = no
-					is_in_faction = no
-					is_ai = yes #No point on sending an event to get annexed to a player, would be just clickbait
-				}
-				NOT = {
-					has_war_with = BRM
-					any_allied_country = { has_war_with = BRM }
-				}
+				
+				NOT = { 
+
+                }
 			}
 			custom_effect_tooltip = generic_skip_one_line_tt
-			BRM = { save_event_target_as = RAJ_annexing_country_target }
-			BRM = { country_event = { id = GOE_RAJ_loyalist.77 hours = 8 random_hours = 4 } }
+			
 		}
 		else_if = { # BRM is subject of an ally -> Send event to overlord
-			limit = {
-				is_ally_with = BRM.OVERLORD
-				BRM = {
-					is_ai = yes #Do not annex a player without they having a say
-					exists = yes 
-					controls_state = 995 # PEGU (Rangoon)
-					controls_state = 998 # SAGAING (Myitkyina)
-					OR = { #To avoid transferring states controlled by enemy, messing up the controller.
-						has_war = no
-						all_enemy_country = {
-							has_war_with = ROOT	
-						}
-					}
-				}
-			}
+			limit = { 
+
+            }
 			custom_effect_tooltip = generic_skip_one_line_tt
-			BRM = { save_event_target_as = RAJ_annexing_country_target }
-			var:BRM.OVERLORD = { country_event = { id = GOE_RAJ_loyalist.88 hours = 8 random_hours = 4 } }
+			
+			
 		}
 	}
 }
@@ -14566,6 +14211,50 @@ focus = {
         }
     }
 
+     focus = {
+        id = RAJ_establish_the_alupuram_works
+        icon = GFX_focus_generic_aluminum
+        prerequisite = { focus = RAJ_bombay_baroda_and_central_india_railway }
+        x = 2
+        y = 1
+        relative_position_id = RAJ_bombay_baroda_and_central_india_railway
+        
+        cost = 5
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        available = {
+            controls_state = 982 
+        }
+        
+        bypass = {
+
+        }
+
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available_if_capitulated = no
+
+        search_filters = { FOCUS_FILTER_INDUSTRY }
+
+        completion_reward = {
+            982 = {
+                add_resource = {
+                    type = aluminium
+                    amount = 15  
+                }
+            }
+            custom_effect_tooltip = generic_skip_one_line_tt
+            unlock_decision_tooltip = {
+                decision = establish_jaykaynagar_aliminium_smelters
+                show_effect_tooltip = yes # default is no
+                show_modifiers = no 
+            }   
+        }
+    }
+
     focus = {
         id = RAJ_great_indian_peninsula_railway_dlc
         icon = GFX_goal_generic_construct_infrastructure
@@ -15140,11 +14829,13 @@ focus = {
 
         completion_reward = {
             RAJ_noel_beresfordpeirse = {
+                if = {
                 limit = {
                     NOT = { has_trait = panzer_leader }
                 }
                 add_trait = {
                     trait = panzer_leader
+                    }
                 }
             }
             add_tech_bonus = {
@@ -16857,18 +16548,13 @@ focus = {
         }
 
         available = {
-            BRM = {
-                is_in_faction_with = ROOT
-                controls_state = 995
-                controls_state = 640
-                controls_state = 998
-            }
+           
 
             CHI = {
                 any_enemy_country = {
                     is_major = yes
                     NOT = { 
-                        original_tag = BRM 
+                        
                         is_in_faction_with = RAJ
                         original_tag = RAJ
                     }
@@ -17269,7 +16955,7 @@ focus = {
                 any_enemy_country = {
                     is_major = yes
                     NOT = { 
-                        original_tag = BRM 
+                       
                         is_in_faction_with = RAJ
                         original_tag = RAJ
                     }
@@ -18402,20 +18088,12 @@ focus = {
         }
 
         available = {
-            NOT = { has_war_with = PAK }
+         
         }
         
         bypass = {
-            OR = {
-                PAK = {
-                    OR = {
-                        exists = no
-                        is_subject_of = ROOT
-                    }
-                }
+            OR = { 
 
-                has_war_with = PAK
-                controls_state = 986
             }
 
         }
@@ -18427,11 +18105,7 @@ focus = {
         search_filters = {FOCUS_FILTER_ANNEXATION}
 
         completion_reward = {
-            unlock_decision_tooltip = {
-                decision = RAJ_red_punjab_operation_decision
-                show_effect_tooltip = yes # default is no
-                show_modifiers = yes # default is no
-            }
+            
         }
     }
 
@@ -18450,22 +18124,14 @@ focus = {
         }
 
         available = {
-            NOT = { has_war_with = PAK }
+       
             controls_state = 437
             controls_state = 991
         }
         
         bypass = {
-            OR = {
-                PAK = {
-                    OR = {
-                        exists = no
-                        is_subject_of = ROOT
-                    }
-                }
+            OR = { 
 
-                has_war_with = PAK
-                controls_state = 433
             }
 
         }
@@ -18477,11 +18143,7 @@ focus = {
         search_filters = {FOCUS_FILTER_ANNEXATION}
 
         completion_reward = {
-            unlock_decision_tooltip = {
-                decision = RAJ_secure_rajahsthan_decision
-                show_effect_tooltip = yes # default is no
-                show_modifiers = yes # default is no
-            }
+            
         }
     }
 
@@ -18500,20 +18162,12 @@ focus = {
         }
 
         available = {
-            NOT = { has_war_with = PAK }
+            
         }
         
         bypass = {
-            OR = {
-                PAK = {
-                    OR = {
-                        exists = no
-                        is_subject_of = ROOT
-                    }
-                }
+            OR = { 
 
-                has_war_with = PAK
-                controls_state = 431
             }
 
         }
@@ -18525,11 +18179,7 @@ focus = {
         search_filters = {FOCUS_FILTER_ANNEXATION}
 
         completion_reward = {
-            unlock_decision_tooltip = {
-                decision = RAJ_secure_west_bengal_decision
-                show_effect_tooltip = yes # default is no
-                show_modifiers = yes # default is no
-            }
+           
         }
     }
 
@@ -18548,9 +18198,7 @@ focus = {
         }
 
         available = {
-            NOT = {
-                has_truce_with = PAK
-            }
+           
         }
         
         bypass = {
@@ -18564,34 +18212,12 @@ focus = {
         search_filters = {FOCUS_FILTER_ANNEXATION}
 
         completion_reward = {
-            create_wargoal = {
-                type = annex_everything
-                target = PAK 
-            }
+           
             custom_effect_tooltip = generic_skip_one_line_tt
-            PAK = {
-                every_core_state = {
-                    add_core_of = ROOT
-                }
-            }
+            
 
-            if = {
-                limit = {
-                    BRM = {
-                        is_in_faction_with = ENG
-                    }
-                }
+            if = { 
 
-                create_wargoal = {
-                    type = annex_everything
-                    target = BRM 
-                }
-                custom_effect_tooltip = generic_skip_one_line_tt
-                BRM = {
-                    every_core_state = {
-                        add_core_of = ROOT
-                    }
-                }
             }
         }
     }

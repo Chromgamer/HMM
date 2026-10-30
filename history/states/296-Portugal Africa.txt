@@ -9,11 +9,8 @@ state={
 	history={
 		owner = WST
 		add_core_of = WST
-		buildings = {
-			infrastructure = 1
-			12891 ={
-				naval_base = 1
-			}
+		buildings = { 
+			
 		}
 	}
 
@@ -21,5 +18,5 @@ state={
 		12747 12891 
 	}
 
-	local_supplies=0.0 
+	local_supplies = 0.0 
 }

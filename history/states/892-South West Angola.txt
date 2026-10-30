@@ -5,9 +5,9 @@ state={
 	state_category = wasteland
 
 	history={
-		owner = POR
-		buildings = {
-			infrastructure = 1
+		owner = WST
+		buildings = { 
+			
 		}
 		victory_points = {
 			10966 1 

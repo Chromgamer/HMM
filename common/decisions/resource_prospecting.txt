@@ -81,6 +81,93 @@ prospect_for_resources = {
 		}
 	}
 
+	establish_jaykaynagar_aliminium_smelters = {
+		icon = aluminium
+
+		allowed = {
+			
+		}
+
+		available = {
+			owns_state = 431
+			controls_state = 431
+			num_of_civilian_factories_available_for_projects > 2
+			has_tech = excavation3
+			IF = {
+				limit = {
+					has_dlc = "Graveyard of Empires"
+					original_tag = RAJ 
+				}
+				has_completed_focus = RAJ_establish_the_alupuram_works
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 431
+			}
+		}
+
+		visible = {
+			owns_state = 431
+			controls_state = 431
+			431 = {
+				NOT = {
+					has_state_flag = west_bengal_aluminum_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					AND = { #Ultimatum decisions are available and we should prio them
+						original_tag = SOV
+						SOV_we_want_to_send_ultimatums = yes
+					}
+					AND = { #Too low MP we need to save PP for the laws
+						has_manpower < 10000
+						NOT = { has_idea = scraping_the_barrel }
+					}
+				}
+			}
+			modifier = {  # Too low PP
+				factor = 0.5
+				has_political_power < 80
+			}
+			modifier = { #We have plenty of PP, avanti!
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #Running out of the stuff, need more!
+				factor = 5
+				has_resources_in_country = {
+					resource = aluminium
+					amount < 1
+				}
+			}
+		}
+		remove_effect = {
+			431 = { set_state_flag = west_bengal_aluminum_developed }
+			431 = {
+				add_resource = {
+					type = aluminium
+					amount = 12 
+				}
+			}
+		}
+	}
+
 	develop_suiyuan_steel_deposits = { #621
 
 		icon = steel
@@ -206,7 +293,7 @@ prospect_for_resources = {
 				OR = {
 					is_literally_china = yes
 					original_tag = MAN
-					original_tag = MEN
+					#original_tag = MEN
 					original_tag = JAP
 				}
 			}
@@ -3696,16 +3783,7 @@ prospect_for_resources = {
 			controls_state = 889
 			num_of_civilian_factories_available_for_projects > 4
 			has_tech = excavation3
-			IF = {
-				limit = {
-					OR = {
-						original_tag = BEL
-						original_tag = COG
-					}
-					has_dlc = "Gotterdammerung"
-				}
-				has_completed_focus = CONGO_heat_resistant_cobalt
-			}
+			
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8490,7 +8568,7 @@ prospect_for_resources = {
 		icon = oil
 
 		allowed = {
-			always = no
+			
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8505,7 +8583,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = { 
+				rule = axis_fuel_spirit
+				option = off
+			}
 			owns_state = 76
 			controls_state = 76
 			76 = {
@@ -8546,7 +8627,6 @@ prospect_for_resources = {
 		allowed = {
 			original_tag = HUN
 			has_dlc = "Gotterdammerung"
-			always = no
 		}
 		highlight_states = {
 			highlight_state_targets = {
@@ -8555,7 +8635,10 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			always = no
+			has_game_rule = { 
+				rule = axis_fuel_spirit
+				option = off
+			}
 			original_tag = HUN
 			owns_state = 155
 			controls_state = 155
@@ -8686,8 +8769,7 @@ prospect_for_resources = {
 					has_state_flag = has_expanded_mines
 				}
 			}
-
-			has_completed_focus = SWE_deep_mining_complexes
+			always = no
 		}
 
 		fire_only_once = yes
@@ -8748,7 +8830,7 @@ prospect_for_resources = {
 		}
 
 		visible = {
-			has_completed_focus = DEN_prospecting_new_sites
+			always = no
 			101 = {
 				NOT = {
 					has_state_flag = {
@@ -8848,11 +8930,8 @@ prospect_for_resources = {
 			num_of_civilian_factories_available_for_projects > 4
 			owns_state = 688
 			controls_state = 688
-			if = {
-				limit = {
-					original_tag = PAR
-				}
-				has_completed_focus = GUAY_exploit_mineral_wealth
+			if = { 
+
 			}
 			else = {
 				hidden_trigger = {
@@ -8886,10 +8965,9 @@ prospect_for_resources = {
 			modifier = {
 				factor = 20 
 				OR = {
-					original_tag = PAR
-					original_tag = BOL
+					
 					original_tag = ARG
-					original_tag = BRA
+				
 				}
 			}
 			modifier = {  # Too low PP
@@ -9088,7 +9166,7 @@ prospect_for_resources = {
 					has_state_flag = CHI_develop_hunan_tungsten_mines
 				}
 			}
-			has_completed_focus = CHI_tungsten_and_antimony_extraction
+			always = no
 		}
 
 		available = {
@@ -9159,7 +9237,7 @@ prospect_for_resources = {
 					has_state_flag = CHI_develop_jiangxi_tungsten_mines
 				}
 			}
-			has_completed_focus = CHI_tungsten_and_antimony_extraction
+			always = no
 		}
 
 		available = {
@@ -9227,13 +9305,7 @@ prospect_for_resources = {
 		}
 
 		target_root_trigger = {
-			if = {
-				limit = {
-					original_tag = CHI
-					has_dlc = "No Compromise, No Surrender"
-				}
-				has_completed_focus = CHI_grow_the_coal_industry
-			}
+			
 		}
 
 		state_target = yes
@@ -9382,6 +9454,95 @@ prospect_for_resources = {
 				add_resource = {
 					type = coal
 					amount = 20
+				}
+			}
+		}
+	}
+
+	develop_guapore_casserite_deposits = {
+		icon = aluminium
+
+		allowed = {
+			
+		}
+
+		available = {
+			owns_state = 942
+			controls_state = 942
+			num_of_civilian_factories_available_for_projects > 4
+			IF = {
+				limit = {
+					original_tag = BRA
+					has_dlc = "Trial of Allegiance"
+				}
+				has_completed_focus = BRA_federal_development
+			}
+			ELSE = {
+				has_tech = excavation4
+			}
+		}
+		highlight_states = {
+			highlight_state_targets = {
+				state = 942
+			}
+		}
+
+		visible = {
+			owns_state = 942
+			controls_state = 942
+			942 = {
+				NOT = {
+					has_state_flag = guapore_cassiterite_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			base = 1
+			modifier = {
+				factor = 0
+				OR = {
+					AND = { #Ultimatum decisions are available and we should prio them
+						original_tag = SOV
+						SOV_we_want_to_send_ultimatums = yes
+					}
+					AND = { #Too low MP we need to save PP for the laws
+						has_manpower < 10000
+						NOT = { has_idea = scraping_the_barrel }
+					}
+				}
+			}
+			modifier = {  # Too low PP
+				factor = 0.5
+				has_political_power < 80
+			}
+			modifier = { #We have plenty of PP, avanti!
+				factor = 3
+				has_political_power > 200
+			}
+			modifier = { #Running out of the stuff, need more!
+				factor = 5
+				has_resources_in_country = {
+					resource = coal
+					amount < 1
+				}
+			}
+		}
+		remove_effect = {
+			942 = { set_state_flag = guapore_cassiterite_developed }
+			942 = {
+				add_resource = {
+					type = aluminium
+					amount = 12 
 				}
 			}
 		}
@@ -10287,6 +10448,7 @@ prospect_for_resources = {
 					original_tag = GER
 				}
 				has_completed_focus = GER_autarky_efforts
+				has_completed_focus = GER_industrial_expansion
 			}
 		}
 		highlight_states = {
@@ -10520,13 +10682,7 @@ prospect_for_resources = {
 				has_tech = excavation5
 			}
 
-			if = {
-				limit = {
-					has_dlc = "Thunder at Our Gates"
-					original_tag = SIA
-				}
-				has_completed_focus = SIA_domestic_tin_smelters
-			}
+			
 		}
 		highlight_states = {
 			highlight_state_targets = {

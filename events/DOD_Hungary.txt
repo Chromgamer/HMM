@@ -735,10 +735,7 @@ country_event = {
 				has_war_with = HUN
 				factor = 0 #lol
 			}
-			modifier = {
-				has_completed_focus = CZE_rapprochement_with_hungary
-				factor = 3
-			}
+			
 		}
 
 		#FRA block
@@ -1001,7 +998,7 @@ country_event = {
 		trigger = {
 			FRA = {
 				NOT = { has_war_with = HUN }
-				NOT = { has_completed_focus = FRA_strengthen_the_little_entente } #would be super awkward
+				#NOT = { has_completed_focus = FRA_strengthen_the_little_entente } #would be super awkward
 				has_government = democratic
 			}
 		}
@@ -1159,9 +1156,26 @@ country_event = {
 	
 	is_triggered_only = yes
 
-
-	option = { #Fold
+	option = { #challenge
 		name = DOD_hungary.40.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				has_war = yes
+				factor = 0.1
+			}
+		}
+		add_stability = -0.05
+		add_war_support = -0.1
+		HUN = { country_event = { id = DOD_hungary.41 } } #option for HUN to back down
+		
+	}
+	option = { #Fold
+		name = DOD_hungary.40.b
 		ai_chance = {
 			factor = 50
 		}
@@ -1287,7 +1301,7 @@ country_event = {
 				is_in_faction = no
 			}
 			set_rule = { can_create_factions = yes }
-			create_faction = BALKAN_ENTENTE_FACTION
+			create_faction_from_template = faction_template_BALKAN_ENTENTE_FACTION
 		}
 		if = {
 			limit = { 
@@ -1401,6 +1415,10 @@ country_event = {
 				ROM_is_on_historical_plan_trigger = yes
 				factor = 0
 			}
+			modifier = {
+				strength_ratio = { tag = HUN ratio < 0.8 }
+				factor = 2
+			}
 		}
 		HUN = { 
 			country_event = { 
@@ -1409,6 +1427,9 @@ country_event = {
 				random_days = 2
 			} 
 		}
+		add_stability = -0.25
+		add_war_support = -0.1
+
 	}
 
 	option = { #no 
@@ -1485,6 +1506,7 @@ country_event = {
 				transfer_state = 82
 			}
 		}
+		add_threat = -1
 		if = {
 			limit = {
 				has_idea = HUN_war_preparation
@@ -1513,8 +1535,44 @@ country_event = {
 		ai_chance = {
 			base = 20
 			modifier = {
+				strength_ratio = { tag = ROM ratio < 1 } #weaker than Romania
+				factor = 2
+			}
+			modifier = {
 				HUN_is_on_historical_plan_trigger = yes
 				factor = 0
+			}
+		}
+		add_stability = -0.2
+		add_war_support = -0.1
+		remove_state_claim = 76
+		remove_state_claim = 83
+		remove_state_claim = 84
+		add_threat = -1
+	}
+
+	option = {# Prepare for war!
+		name = DOD_hungary.52.b
+		ai_chance = {
+			base = 80
+			modifier = {
+				strength_ratio = { tag = ROM ratio > 1.2 }
+				factor = 3
+			}
+		}
+		ROM = { 
+			country_event = { 
+				id = DOD_hungary.53 
+				hours = 24
+			} 
+		}
+		add_ideas = HUN_war_preparation
+		add_war_support = 0.1
+		add_threat = 2
+		hidden_effect = {
+			news_event = { 
+				id = news.302 
+				days = 1 
 			}
 		}
 	}
@@ -1560,10 +1618,7 @@ country_event = {
 		HUN = { country_event = { id = DOD_hungary.54 hours = 24 } }
 		ai_chance = {
 			base = 35
-			modifier = {
-				has_completed_focus = ROM_balkans_dominance
-				factor = 10 #NO DEALS WITH THE HUNGARIAN SCUM
-			}
+			
 			modifier = { 
 				ROM_is_on_historical_plan_trigger = yes 
 				factor = 0
@@ -2341,10 +2396,7 @@ country_event = {
 		name = DOD_hungary.61.b
 		ai_chance = {
 			base = 35
-			modifier = {
-				has_completed_focus = ROM_balkans_dominance
-				factor = 2 #come and have a go
-			}
+			
 		}
 	}
 
@@ -2549,10 +2601,7 @@ country_event = {
 		name = DOD_hungary.64.a
 		ai_chance = {
 			base = 80
-			modifier = {
-				has_completed_focus = ROM_balkans_dominance
-				factor = 0.2
-			}
+			
 		}
 		HUN = {
 			country_event = { 
@@ -3262,17 +3311,6 @@ country_event = {
 		}
 	}
 
-	option = { # Appeal to Germany
-		name = DOD_hungary.80.c
-		ai_chance = {
-			base = 25
-		}
-		trigger = {
-			tag = SLO
-			is_puppet_of = GER
-		}
-		GER = { country_event = DOD_hungary.83 }
-	}
 	option = {# Refuse outright
 		name = DOD_hungary.80.d
 		HUN = { country_event = DOD_hungary.84 }
@@ -3396,12 +3434,7 @@ country_event = {
 		name = DOD_hungary.84.b
 		ai_chance = {
 			factor = 90
-			modifier = {
-				country_exists = SLO
-				SLO = { is_puppet = no }
-				SLO = { is_in_faction = no }
-				factor = 10
-			}
+		
 		}
 
 		add_war_support = 0.05
@@ -3455,19 +3488,7 @@ country_event = {
 				generator = { 664 }
 			}
 		}
-		if = {
-			limit = { 
-				SLO = {
-					owns_state = 664
-				}
-			}
-
-			create_wargoal = {
-				type = take_state_focus
-				target = SLO
-				generator = { 664 }
-			}
-		}
+		
 	}
 }
 
@@ -3570,7 +3591,7 @@ country_event = {
 	option = {# back down
 		name = DOD_hungary.92.a
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				has_war = yes
 				factor = 2
@@ -3582,7 +3603,7 @@ country_event = {
 	option = {# ask Germany for help
 		name = DOD_hungary.92.b
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				is_in_faction_with = GER
 				factor = 5
@@ -3631,7 +3652,7 @@ country_event = {
 		}
 		name = DOD_hungary.92.c
 		ai_chance = {
-			factor = 10
+			base = 10
 			modifier = {
 				is_in_faction_with = ITA
 				factor = 5
@@ -3649,7 +3670,7 @@ country_event = {
 	option = {# ask both for help
 		name = DOD_hungary.92.d
 		ai_chance = {
-			factor = 170
+			base = 170
 		}
 		trigger = {
 			AND = {
@@ -3663,7 +3684,7 @@ country_event = {
 	option = {# Go alone
 		name = DOD_hungary.92.e
 		ai_chance = {
-			factor = 0
+			base = 0
 			modifier = {
 				add = 10
 				AND = {
@@ -4130,10 +4151,7 @@ country_event = {
 		name = DOD_hungary.101.a
 		ai_chance = {
 			factor = 70
-			modifier = {
-				country_exists = SLO
-				factor = 0
-			}
+			
 		}
 		HUN = {
 			transfer_state = 70
@@ -4150,6 +4168,17 @@ country_event = {
 		if = {
 			limit = {
 				country_exists = CZE
+				CZE = {
+					NOT = {
+						OR = {
+							has_cosmetic_tag = CZE_union
+							has_cosmetic_tag = CZE_second_republic
+							has_cosmetic_tag = CZE_union_expanded
+							has_cosmetic_tag = CZE_fall_of_the_republic
+							has_cosmetic_tag = CZE_CEF
+						}
+					}
+				}
 			}
 			CZE = {
 				set_cosmetic_tag = CZE_ONLY
@@ -4157,74 +4186,6 @@ country_event = {
 		}
 	}
 
-	option = {# puppet
-		name = DOD_hungary.101.b
-		ai_chance = {
-			factor = 30
-		}
-		if = {
-			limit = {
-				70 = {
-					is_owned_by = CZE
-				}
-			}
-			SLO = { transfer_state = 70 }
-		}
-		if = {
-			limit = {
-				71 = {
-					is_owned_by = CZE	
-				}
-			}
-			SLO = { transfer_state = 71 }
-		}
-		if = {
-			limit = {
-				72 = {
-					is_owned_by = CZE	
-				}
-			}
-			SLO = { transfer_state = 72 }
-		}
-		if = {
-			limit = {
-				154 = { is_owned_by = HUN }
-				73 = {
-					is_owned_by = CZE
-				}
-			}
-			HUN = { transfer_state = 73 }
-		}
-		if = {
-			limit = {
-				664 = {
-					is_owned_by = CZE
-				}
-			}
-			HUN = { transfer_state = 664 }
-		}
-		every_state = {
-				limit = {
-					is_owned_by = SLO
-				}
-				add_core_of = SLO
-			}
-		SLO = {
-				load_oob = SLO_1939
-				add_manpower = 9876
-				add_state_core = 664
-				add_state_core = 73
-			}
-		puppet = SLO
-		if = {
-			limit = {
-				country_exists = CZE
-			}
-			CZE = {
-				set_cosmetic_tag = CZE_ONLY
-			}
-		}
-	}
 }
 
 #Demand Overlordship over Slovakia - CZE refuses to hand over Slovakia
@@ -4393,15 +4354,10 @@ country_event = {
 	desc = {
 		text = DOD_hungary.107.desc_SLO_independent
 		trigger = { 
-			SLO = { is_subject = no }
+			
 		}
 	}
-	desc = {
-		text = DOD_hungary.107.desc_SLO_puppet
-		trigger = { 
-			SLO = { is_subject = yes }
-		}
-	}
+
 	picture = GFX_report_event_lithuania_army
 	
 	is_triggered_only = yes
@@ -4449,7 +4405,7 @@ country_event = {
 
 	option = {# good
 		name = DOD_hungary.108.a
-		puppet = SLO
+		
 	}
 
 	
@@ -4466,10 +4422,7 @@ country_event = {
 
 	option = {# war!
 		name = DOD_hungary.109.a
-		create_wargoal = {
-				type = puppet_wargoal_focus
-				target = SLO
-		}
+		
 		hidden_effect = {
 			news_event = { id = news.311 days = 1 }
 		}
@@ -5190,13 +5143,7 @@ country_event = {
 				transfer_state = 71
 				transfer_state = 72
 			}
-			SLO = {
-				add_state_core = 70
-				add_state_core = 71
-				add_state_core = 72
-				add_state_core = 73
-				add_state_core = 664
-			}
+			
 		}
 	}
 	option = {# refuse
@@ -9367,7 +9314,7 @@ country_event = {
 				OR = {
 					exists = no
 					is_puppet = yes
-					NOT = { has_completed_focus = FRA_strengthen_the_little_entente }
+					#NOT = { has_completed_focus = FRA_strengthen_the_little_entente }
 				}
 			}
 		}

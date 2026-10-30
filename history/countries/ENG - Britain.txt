@@ -568,7 +568,7 @@ add_to_faction = SAF
 
 give_military_access = RAJ
 add_to_faction = RAJ		# Must be after puppet
-add_to_faction = MAL
+
 
 #give_guarantee = CZE
 
@@ -663,7 +663,7 @@ recruit_character = ENG_random_communist_minister_11
 recruit_character = ENG_random_communist_minister_10
 recruit_character = ENG_mary_sophia_allen
 recruit_character = ENG_philip_kerr
-recruit_character = ENG_sylvia_pankhurst
+#recruit_character = ENG_sylvia_pankhurst
 recruit_character = ENG_stewart_menzies
 recruit_character = ENG_maxwell_aitken
 recruit_character = ENG_thomas_moore

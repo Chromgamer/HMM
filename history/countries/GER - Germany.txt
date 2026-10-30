@@ -219,6 +219,7 @@ set_variable = { GER_industrial_production_factory_start_efficiency_factor = 0 }
 set_variable = { GER_industrial_line_change_production_efficiency_factor = 0 }
 set_variable = { GER_industrial_equipment_conversion_speed = 0 }
 set_variable = { GER_industrial_consumer_goods_expected_value = 0 }
+set_variable = { GER_global_building_slots = 0 }
 set_variable = { GER_economic_crash_consumer_goods = 0.75 } #Amount of CGFF if the MEFO Bills gets canceled one way or another
 add_dynamic_modifier = { modifier = GER_mefo_bills_modifier }
 
@@ -439,7 +440,6 @@ set_war_support = 0.3
 # SETUP THE 1939 SCENARIO
 
 
-
 # Setup German Politics
 set_politics = {
 	ruling_party = fascism
@@ -470,6 +470,11 @@ add_ideas = {
 # Activates the MEFO Bills Mission
 activate_mission = GER_mefo_bills_mission
 
+# ZHM Austrian Character moved here since they're removed in Austria's file.
+recruit_character = AUS_franz_bohme
+recruit_character = AUS_eugen_beyer
+recruit_character = AUS_lothar_rendulic
+recruit_character = AUS_karl_eglseer
 # Character Recruitment
 recruit_character = GER_wilhelm_pieck
 recruit_character = GER_konrad_adenauer
@@ -1141,7 +1146,7 @@ if = {
 			special_type_slot_1 = empty
 		}
 		obsolete = yes
-		icon = GFX_GER_cv_fighter1_medium
+		icon = "GFX_GER_CAS1_medium"
 	}
 	create_equipment_variant = {
 		name = "Bf 109 D"

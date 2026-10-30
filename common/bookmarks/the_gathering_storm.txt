@@ -31,9 +31,9 @@ bookmarks = {
 				FRA_protected_by_the_maginot_line
 			}
 			focuses = {
-				FRA_form_the_popular_front
 				FRA_revive_the_national_bloc
-				FRA_france_leads
+				FRA_devalue_the_franc
+				FRA_review_foreign_policy
 			}
 		}
 		"FRA"={
@@ -49,7 +49,7 @@ bookmarks = {
 			focuses = {
 				FRA_strengthen_government_support
 				FRA_revive_the_national_bloc
-				FRA_form_the_popular_front
+				FRA_review_foreign_policy
 			}
 		}
 		"USA"={
@@ -95,8 +95,8 @@ bookmarks = {
 			}
 			focuses = {
 				tizard_mission_focus
-				ENG_war_with_germany
-				ENG_war_with_italy
+				#ENG_war_with_germany
+				#ENG_war_with_italy
 			}
 		}
 
@@ -129,8 +129,8 @@ bookmarks = {
 			}
 			focuses = {
 				GER_fuhrerprinzip
-				GER_revive_the_kaiserreich
-				GER_reestablish_free_elections
+				#GER_revive_the_kaiserreich
+				#GER_reestablish_free_elections
 			}
 		}
 
@@ -179,8 +179,8 @@ bookmarks = {
 			}
 			focuses = {
 				JAP_sea_purge_the_kodoha_faction
-				JAP_sea_greater_east_asian_co_prosperity_sphere
-				JAP_okadas_military_purge_speech
+				#JAP_sea_greater_east_asian_co_prosperity_sphere
+				#JAP_okadas_military_purge_speech
 			}
 		}
 
@@ -197,8 +197,8 @@ bookmarks = {
 			}
 			focuses = {
 				JAP_sea_purge_the_kodoha_faction
-				JAP_sea_greater_east_asian_co_prosperity_sphere
-				JAP_okadas_military_purge_speech
+				#JAP_sea_greater_east_asian_co_prosperity_sphere
+				#JAP_okadas_military_purge_speech
 			}
 		}
 		"SOV"={
@@ -352,7 +352,7 @@ bookmarks = {
 				HUN_gombos_trade_treaty
 			}
 			focuses = {
-				HUN_proclaim_the_restoration_of_austria_hungary
+				#HUN_proclaim_the_restoration_of_austria_hungary
 				HUN_secret_rearmament
 				HUN_renounce_the_treaty_of_trianon
 			}
@@ -388,8 +388,8 @@ bookmarks = {
 			}
 			focuses = {
 				MAN_obedience
-				MAN_independence_war
-				MAN_claim_the_mandate_of_heaven
+				#MAN_independence_war
+				#MAN_claim_the_mandate_of_heaven
 			}
 		}
 		
@@ -424,7 +424,7 @@ bookmarks = {
 			focuses = {
 				SPA_caudillo_of_spain
 				SPA_national_recovery
-				SPR_expand_the_axis_gold_trade
+				SPA_expand_the_axis_gold_trade
 			}
 		}
 

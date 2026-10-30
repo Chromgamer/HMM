@@ -93,7 +93,7 @@ characters = {
 		name = GER_wilhelm_iii
 		portraits = {
 			civilian = {
-				large = GFX_portrait_ger_wilhelm_iii			
+				large = GFX_portrait_ger_wilhelm_iii
 				small = GFX_portrait_ger_wilhelm_iii_small	#army advisor icon - appears unused, not to be confused with national spirit GFX_idea_GER_wilhelm_iii
 			}	
 		}
@@ -236,59 +236,7 @@ characters = {
 ##        ##  ##       ##       ##     ##    ##     ## ##     ## ##    ##  ##    ## ##     ## ##     ## ##       ##    ## 
 ##       #### ######## ######## ########     ##     ## ##     ## ##     ##  ######  ##     ## ##     ## ########  ######  
 
-AUS_eugen_beyer = {
-	instance = {
-		allowed = {
-			has_dlc = "Gotterdammerung"
-		}
 
-		advisor = {	
-			slot = high_command
-			idea_token = AUS_eugen_beyer
-			ledger = army
-			allowed = {
-				OR = {
-					original_tag = AUS
-					original_tag = GER
-				}
-			}
-			traits = {
-				army_commando_2
-			}
-			cost = 100
-			ai_will_do = {
-				base= 1
-			}
-		}
-		name = AUS_eugen_beyer
-		portraits = { 
-			army = {
-				large = "GFX_portrait_AUS_eugen_beyer"
-				small = "GFX_portrait_AUS_eugen_beyer_small"
-
-			}
-		}
-
-		field_marshal = {
-			traits = { offensive_doctrine commando career_officer}
-			skill = 2
-			attack_skill = 1
-			defense_skill = 3
-			planning_skill = 3
-			logistics_skill = 2
-			legacy_id = -1
-			visible = {
-				OR = {
-					original_tag = AUS
-					AND = {
-						original_tag = GER
-						has_country_flag = AUS_annexed 
-					}
-				}
-			}
-		}
-	}
-}
 
 	GER_werner_von_blomberg = {
 		name = GER_werner_von_blomberg
@@ -1393,6 +1341,157 @@ AUS_eugen_beyer = {
 			visible = {
 				has_completed_focus = GER_reorganize_nationale_volksarmee
 			}
+		}
+	}
+
+	# ZHM Austrian Generals from Anchluss.
+
+	AUS_franz_bohme = {
+		instance = {
+			allowed = {
+				has_dlc = "Gotterdammerung"
+			}
+
+			
+			name = AUS_franz_bohme
+			portraits = {
+				army = {
+					large = "GFX_portrait_AUS_franz_bohme"
+					small = "GFX_portrait_AUS_franz_bohme_small"
+				}
+			}
+	
+			field_marshal = {
+				traits = { brilliant_strategist harsh_leader offensive_doctrine }
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+				legacy_id = -1
+				
+			}
+		}
+	}
+
+	AUS_eugen_beyer = {
+		instance = {
+			allowed = {
+				has_dlc = "Gotterdammerung"
+			}
+
+			advisor = {	
+				slot = high_command
+				idea_token = AUS_eugen_beyer
+				ledger = army
+				allowed = {
+					original_tag = GER
+				}
+				
+				traits = {
+					army_commando_2
+				}
+				cost = 100
+				ai_will_do = {
+					base= 1
+				}
+			}
+			name = AUS_eugen_beyer
+			portraits = { 
+				army = {
+					large = "GFX_portrait_AUS_eugen_beyer"
+					small = "GFX_portrait_AUS_eugen_beyer_small"
+
+				}
+			}
+	
+			field_marshal = {
+				traits = { offensive_doctrine commando career_officer}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 2
+				legacy_id = -1
+				
+			}
+		}
+
+		instance = {
+			allowed = {
+				NOT = { has_dlc = "Gotterdammerung"}
+			}
+			
+			advisor = {	
+				slot = high_command
+				idea_token = AUS_eugen_beyer
+				ledger = army
+				allowed = {
+					original_tag = GER
+				}
+				traits = {
+					army_commando_2
+				}
+				cost = 100
+				ai_will_do = {
+					base = 1
+				}
+			}
+			name = AUS_eugen_beyer
+			portraits = {
+				army = {
+					small = "GFX_idea_generic_army_europe_5"
+				}
+			}
+	
+		}
+	}
+
+	AUS_lothar_rendulic = {
+		instance = {
+			allowed = {
+				has_dlc = "Gotterdammerung"
+			}
+
+			corps_commander = {
+				traits = { infantry_officer infantry_leader }
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 2
+				legacy_id = -1
+				
+			}
+			name = AUS_lothar_rendulic
+			portraits = { #add new art here
+				army = {
+					large = "GFX_portrait_AUS_lothar_rendulic"
+					small = "GFX_portrait_AUS_lothar_rendulic_small"
+				}
+			}
+		}
+
+	}
+
+	AUS_karl_eglseer = {
+		name = AUS_karl_eglseer
+		portraits = {
+			army = {
+				large = "GFX_portrait_AUS_karl_eglseer"
+				small = "GFX_portrait_AUS_karl_eglseer_small"
+				
+			}
+		}
+		corps_commander = {
+			traits = { trickster trait_mountaineer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = -1
+			
 		}
 	}
 
@@ -2988,7 +3087,7 @@ AUS_eugen_beyer = {
 			allowed = {
 				OR = {
 					original_tag = GER
-					original_tag = COG
+					
 				}
 				has_dlc = "Waking the Tiger"
 			}
@@ -3016,7 +3115,7 @@ AUS_eugen_beyer = {
 				ELSE = {
 					OR = {
 						has_completed_focus = GER_revive_the_kaiserreich_ww  
-						has_completed_focus = COG_invite_german_kasierist_exiles 
+						
 					}
 				}
 			}
@@ -3046,7 +3145,6 @@ AUS_eugen_beyer = {
 			allowed = {
 				OR = {
 					original_tag = GER
-					original_tag = COG
 				}
 				has_dlc = "Waking the Tiger"
 			}
@@ -3074,7 +3172,7 @@ AUS_eugen_beyer = {
 				ELSE = {
 					OR = {
 						has_completed_focus = GER_revive_the_kaiserreich_ww  
-						has_completed_focus = COG_invite_german_kasierist_exiles 
+						
 						has_completed_focus = GER_strive_for_conservative_values 
 					}
 				}

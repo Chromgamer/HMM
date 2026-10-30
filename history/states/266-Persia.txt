@@ -9,20 +9,8 @@ state={
 
 	history={
 		owner = WST
-		buildings = {
-			infrastructure = 2
-			arms_factory = 1
-			industrial_complex = 2
-			air_base = 3
+		buildings = { 
 			
-			10837 = {
-                landmark_sadabad_complex = {
-                    level = 1
-                    allowed = {
-                        has_dlc = "Graveyard of Empires"
-                    }
-                }
-			}
 		}
 		add_core_of = WST
 	}
@@ -31,5 +19,5 @@ state={
 		4580 7602 10385 10768 10837 
 	}
 
-	local_supplies=0.0 
+	local_supplies = 0.0 
 }

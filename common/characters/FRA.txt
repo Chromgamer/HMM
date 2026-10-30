@@ -44,65 +44,6 @@ characters={
 		}
 	}
 
-	FRA_maurice_thorez={ #Communist Leader
-		name=FRA_maurice_thorez
-		portraits={
-			army={
-				small="GFX_idea_maurice_thorez"
-			}
-			civilian={
-				large="GFX_portrait_fra_maurice_thorez"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = maurice_thorez
-			allowed  = {
-				original_tag  = FRA
-			}
-			available  = {
-				or  = {
-					has_completed_focus  = FRA_leftist_rhetoric 
-					has_completed_focus  = FRA_invite_communist_ministers 
-				}
-				not  = {
-					has_country_leader  = {
-						character  = FRA_philippe_petain
-						ruling_only  = yes 
-					}
-				}
-				if  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					not  = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
-				}
-			}
-			traits  = {
-				communist_revolutionary 
-			}
-			do_effect  = {
-				not  = {
-					has_government  = communism 
-				}
-			}
-			on_add  = {
-				FRA_right_wing_riot_effect = yes 
-			}
-			ai_will_do  = {
-				factor  = 0.000
-			}
-		}
-		
-		country_leader={
-			ideology=stalinism
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
-
 	FRA_rene_nicod={
 		name=FRA_rene_nicod
 		portraits={
@@ -124,11 +65,6 @@ characters={
 				large=GFX_portrait_FRA_philippe_petain
 			}
 		}
-		
-		
-		
-		
-		
 	}
 
 	FRA_jean_de_lattre_de_tassigny={
@@ -140,8 +76,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ brilliant_strategist cavalry_leader organizer war_hero trickster skilled_staffer ranger pre_grind }
-			skill=6
+			traits={ brilliant_strategist cavalry_leader organizer war_hero trickster skilled_staffer pre_grind }
+			skill=4
 			attack_skill=4
 			defense_skill=5
 			planning_skill=4
@@ -160,7 +96,7 @@ characters={
 		}
 		corps_commander={
 			traits={ career_officer trait_cautious armor_officer panzer_leader trait_engineer skilled_staffer pre_grind }
-			skill=6
+			skill=4
 			attack_skill= 5
 			defense_skill= 5
 			planning_skill=5
@@ -343,7 +279,7 @@ characters={
 		
 		corps_commander={
 			traits={ career_officer trait_cautious armor_officer panzer_leader trait_engineer skilled_staffer pre_grind }
-			skill=6
+			skill=4
 			attack_skill= 5
 			defense_skill= 5
 			planning_skill=5
@@ -1128,105 +1064,6 @@ characters={
 		}
 	}
 
-	FRA_marcel_bucard = {
-		name = FRA_marcel_bucard
-		portraits = {
-			civilian = {	
-				large = GFX_portrait_FRA_marcel_bucard
-				small = GFX_portrait_FRA_marcel_bucard_small
-			}
-		}
-		country_leader = {
-			ideology = fascism_ideology
-			traits = { fascist_corporatist }
-			expire = "1949.1.1.12"
-			id = -1
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = marcel_bucard
-			allowed  = {
-				original_tag  = FRA
-			}
-			available  = {
-				OR = {
-					has_completed_focus  = FRA_right_wing_rhetoric 
-					has_completed_focus  = FRA_utilize_the_leagues 
-					has_focus_tree  = vichy_french_focus
-				}
-				IF  = {
-					limit  = {
-						has_dlc = "Man the Guns"
-					}
-					NOT  = {
-						has_autonomy_state  = autonomy_supervised_state
-					}
-				}
-			}
-			traits  = {
-				fascist_demagogue 
-			}
-			do_effect  = {
-				NOT  = {
-					has_government  = fascism 
-				}
-			}
-			on_add  = {
-				IF  = {
-					limit  = {
-						NOT  = {
-							owner = { tag = VIC }
-						}
-					}
-					owner = {
-						country_event = lar_france_political_violence.2
-					}
-				}
-			}
-			ai_will_do = {
-				factor = 0.000
-			}
-		}
-	}
-
-	FRA_marcel_deat = {
-		name = FRA_marcel_deat
-		portraits = {
-			civilian = {	
-				large = GFX_portrait_FRA_marcel_deat
-				small = GFX_portrait_FRA_marcel_deat_small
-			}
-		}
-		#country_leader = {
-		#	ideology = fascism_ideology
-		#	traits = {  }
-		#	expire = "1949.1.1.12"
-		#	id = -1
-		#}
-		advisor = {
-			slot = political_advisor
-			idea_token = FRA_marcel_deat
-			allowed  = {
-				original_tag = FRA
-			}
-			available  = {
-				OR = {
-					has_government = fascism
-					has_government = neutrality
-				}
-			}
-			cost = 150
-			traits  = {
-				FRA_neo_jacobin
-			}
-			do_effect  = {
-			}
-			ai_will_do  = {
-				base = 1.000
-			}
-		}
-	}
-
 	FRA_rene_massigli={
 		name=FRA_rene_massigli
 		portraits={
@@ -1241,7 +1078,7 @@ characters={
 				original_tag  = FRA
 			}
 			available  = {
-				has_completed_focus  = FRA_confirm_eastern_commitments 
+				always = no
 				has_government  = democratic 
 			}
 			cost  = 75.000
@@ -1276,83 +1113,6 @@ characters={
 			cost  = 75.000
 			traits  = {
 				appeaser 
-			}
-			do_effect  = {
-			}
-			ai_will_do  = {
-				factor  = 1.000
-			}
-		}
-	}
-
-	FRA_charles_maurras = {
-		name = FRA_charles_maurras
-		portraits = {
-			civilian = {
-				large = GFX_portrait_FRA_charles_maurras
-				small = GFX_portrait_FRA_charles_maurras_small
-			}
-		}
-		country_leader = {
-			ideology = centrism
-			traits = { editor monarchist_media_mogul }
-			expire = "1949.1.1.12"
-			id = -1
-		}
-		advisor = {
-			slot = political_advisor
-			idea_token = charles_maurras
-			allowed  = {
-				original_tag  = FRA
-			}
-			available  = {
-				OR = {
-					has_completed_focus = FRA_integralism 
-					has_completed_focus = FRA_orleanist_restoration 
-				}
-				OR  = {
-					has_government  = fascism 
-					has_government  = neutrality 
-				}
-			}
-			visible  = {
-				has_dlc = "La Resistance"
-			}
-			cost  = 75.000
-			traits  = {
-				national_integralist 
-			}
-			do_effect  = {
-			}
-			ai_will_do  = {
-				factor  = 1.000
-			}
-		}		
-	}
-
-	FRA_philippe_henriot={
-		name=FRA_philippe_henriot
-		portraits={
-			army={
-				small="GFX_idea_FRA_philippe_henriot"
-			}
-		}
-		advisor={
-			slot = political_advisor
-			idea_token = FRA_philippe_henriot
-			allowed  = {
-				original_tag  = FRA
-			}
-			visible  = {
-				has_dlc = "La Resistance"
-			}
-			available  = {
-				has_completed_focus  = FRA_national_regeneration 
-				has_government  = fascism 
-			}
-			cost  = 75.000
-			traits  = {
-				propaganda_expert 
 			}
 			do_effect  = {
 			}

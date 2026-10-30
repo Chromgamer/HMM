@@ -23,6 +23,8 @@ is_playable_country = {
 		tag = SOV
 		tag = PHI
 		tag = IRQ
+		tag = ARG
+		tag = POR
 	}
 }
 
@@ -66,6 +68,7 @@ allies = {
 		tag = POL
 		tag = DEN
 		tag = PHI
+		tag = ARG
 	}
 }
 
@@ -82,33 +85,27 @@ axis = {
 		tag = SIA
 		tag = MAN
 		tag = FIN
-		tag = RKB
-		tag = RKN
-		tag = RKG
-		tag = RKU
-		tag = RKO
-		tag = RKK
-		tag = RKT
-		tag = RKM
-		tag = RKL
-		tag = GEN
-		tag = RKH
-		tag = RKI
-		tag = RKC
-		tag = RGB
-		tag = RKA
-		tag = RNA
-		tag = RUS
-		tag = RCO
-		tag = RAN
-		tag = RKV
-		tag = RHD
-		tag = RAR
-		tag = ROA
-		tag = RAA
 		tag = IRQ
+		tag = POR
 	}
 }
+
+can_grind_generals = {
+	if = {
+		limit = { axis = yes }
+		has_global_flag = axis_grind_allowed
+		OR = {
+			has_war_with = ENG
+			tag = SPR
+		}
+	}
+	else_if = {
+		limit = { allies = yes }
+		has_global_flag = allies_grind_allowed
+		has_war_with = GER
+	}
+}
+
 ai_manpower = {
 	OR = {
 		tag = BEL
@@ -120,56 +117,25 @@ ai_manpower = {
 		tag = CHI
 		tag = GRE
 		tag = DEN
-		tag = ALB
 		tag = IRE
 
 	}
 }
-ai_annex = {
+ai_conquer = {
 	OR = {
-		tag = LIT
-		tag = LAT
-		tag = EST
+		
 		tag = AUS
 		tag = CZE
-		tag = COG
 		tag = MON
 		tag = TAN	
 	}
 }
-ai_rk = {
-	OR = {
-		tag = RKB
-		tag = RKN
-		tag = RKG
-		tag = RKU
-		tag = RKO
-		tag = RKK
-		tag = RKT
-		tag = RKM
-		tag = RKL
-		tag = GEN
-		tag = RKH
-		tag = RKI
-		tag = RKC
-		tag = RGB
-		tag = RKA
-		tag = RNA
-		tag = RUS
-		tag = RCO
-		tag = RAN
-		tag = RKV
-		tag = RHD
-		tag = RAR
-		tag = ROA
-		tag = RAA
-	}
-}
+
 ai_black = {
 	OR = {
 		tag = WST
 		tag = TUR
-		tag = POR
+		#tag = POR 
 		tag = SWE
 	}
 }

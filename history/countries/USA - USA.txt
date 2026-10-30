@@ -86,7 +86,7 @@ set_technology = {
 	engine_tech_1 = 1
 }
 
-set_grand_doctrine = grand_battleplan
+set_grand_doctrine = superior_firepower
 set_grand_doctrine = new_base_strike
 
 add_breakthrough_progress = {
@@ -378,10 +378,25 @@ if = {
 	}
 }
 
-set_grand_doctrine = grand_battleplan
+set_grand_doctrine = superior_firepower
 set_grand_doctrine = new_base_strike
 set_grand_doctrine = new_strategic_destruction
 
+set_sub_doctrine = assault_infantry
+add_mastery = {
+    amount = 25
+    sub_doctrine = assault_infantry
+}
+set_sub_doctrine = line_of_battle
+add_mastery = {
+    amount = 25
+    sub_doctrine = line_of_battle
+}
+set_sub_doctrine = air_subdoctrine_escort_fighter
+add_mastery = {
+    amount = 25
+    sub_doctrine = air_subdoctrine_escort_fighter
+}
 
 
 set_convoys = 700

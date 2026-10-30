@@ -9,17 +9,8 @@ state={
 	
 	history={
 		owner = WST
-		buildings = {
-			infrastructure = 2
-			arms_factory = 1
-			industrial_complex = 2 
-			air_base = 1
-			7630 = {
-				naval_base = 4
-			}
-			4611 = {
-				naval_base = 1
-			}
+		buildings = { 
+			
 		}
 		add_core_of = WST
 	}
@@ -28,5 +19,5 @@ state={
 		1633 4611 4624 7630 10482 
 	}
 
-	local_supplies=0.0 
+	local_supplies = 0.0 
 }

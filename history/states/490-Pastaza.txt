@@ -8,10 +8,8 @@ state = {
 
 	history = {
 		owner = WST #Used to be PRU but should become theirs through the Peruvian-Ecuadorian War
-		buildings = {
-			infrastructure = 2
-			industrial_complex = 1
-			air_base = 1
+		buildings = { 
+			
 		}
 		add_core_of = WST
 	}

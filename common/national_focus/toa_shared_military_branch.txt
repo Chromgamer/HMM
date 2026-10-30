@@ -854,7 +854,7 @@ shared_focus = {
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
 			add_to_variable = { JUNO_army_modifier_experience_gain_army_factor = 0.05 tooltip = experience_gain_army_factor_tt }
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
+			#add_to_variable = { JUNO_army_modifier_army_org_factor = 0.03 tooltip = army_org_factor_tt }
 		}
 		
 		ELSE = {
@@ -904,7 +904,7 @@ shared_focus = {
 				original_tag = ARG
 			}
 			custom_effect_tooltip = ARG_modify_argentine_army_ns_intro
-			add_to_variable = { JUNO_army_modifier_army_org_factor = 0.02 tooltip = army_org_factor_tt }
+			#add_to_variable = { JUNO_army_modifier_army_org_factor = 0.02 tooltip = army_org_factor_tt }
 			add_to_variable = { JUNO_army_modifier_army_core_defence_factor = 0.04 tooltip = army_core_defence_factor_tt }
 		}
 		
@@ -921,7 +921,6 @@ shared_focus = {
 			category = infantry_weapons
 		}
 	}
-		
 }
 
 shared_focus = {
@@ -2392,8 +2391,8 @@ shared_focus = {
 	}
 	allow_branch = {
         has_game_rule = {
-			rule = Brasil_AC_rule
-			option = Brasil_AC
+			rule = allies_ac_rule
+			option = brazil_ac
 		}
     }
 	
@@ -2431,8 +2430,8 @@ shared_focus = {
 	}
 	allow_branch = {
         has_game_rule = {
-			rule = Brasil_AC_rule
-			option = Brasil_AC
+			rule = allies_ac_rule
+			option = brazil_ac
 		}
     }
 	bypass = {
@@ -2473,8 +2472,8 @@ shared_focus = {
 	}
 	allow_branch = {
         has_game_rule = {
-			rule = Brasil_AC_rule
-			option = Brasil_AC
+			rule = allies_ac_rule
+			option = brazil_ac
 		}
     }
 	bypass = {

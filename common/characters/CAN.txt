@@ -81,9 +81,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ panzer_leader cavalry_leader pre_grind }
 			skill=4
-			attack_skill=3
+			attack_skill=2
 			defense_skill=3
 			planning_skill=3
 			logistics_skill=5
@@ -100,7 +99,6 @@ characters={
 			}
 		}
 		field_marshal={
-			traits={ infantry_leader panzer_leader organizer pre_grind }
 			skill=4
 			attack_skill=4
 			defense_skill=2
@@ -137,7 +135,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ hill_fighter panzer_leader cavalry_leader pre_grind }
+			traits={ hill_fighter }
 			skill=4
 			attack_skill=4
 			defense_skill=3
@@ -681,21 +679,8 @@ characters={
 			allowed = {
 				original_tag = CAN
 			}
-			available = {
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					has_completed_focus = CAN_swastika_clubs 
-				}
-				if = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state = autonomy_supervised_state
-					}
-				}
+			available = { 
+				always = no
 			}
 			traits = {
 				fascist_demagogue 
@@ -731,7 +716,7 @@ characters={
 					}
 					OR = {
 						has_completed_focus = CAN_strengthen_the_commonwealth_ties 
-						has_completed_focus = CAN_permanent_joint_defense_board 
+					
 					}
 				}
 				if = {
@@ -770,21 +755,8 @@ characters={
 			allowed = {
 				original_tag = CAN
 			}
-			available = {
-				if = {
-					limit = {
-						has_dlc = "Together for Victory"
-					}
-					has_completed_focus = CAN_burn_the_royal_portraits 
-				}
-				if = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					NOT = {
-						has_autonomy_state = autonomy_supervised_state
-					}
-				}
+			available = { 
+				always = no
 			}
 			traits = {
 				communist_revolutionary 

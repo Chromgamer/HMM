@@ -517,9 +517,7 @@ foreign_influence = {
 			modifier = {
 				# blocks our focus tree for libyan oil
 				tag = ITA
-				FROM = {
-					tag = LBA
-				}
+			
 
 				factor = 0
 			}
@@ -590,13 +588,7 @@ foreign_influence = {
 				factor = 0
 			}
 
-			modifier = {
-			# [softly] Don't...
-				tag = TUR
-				FROM = { tag = KUR }
-
-				factor = 0
-			}
+			
 			modifier = {
 				FROM = {
 					tag = POL

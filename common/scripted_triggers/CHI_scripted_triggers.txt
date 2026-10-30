@@ -17,7 +17,7 @@
 is_independent_china_or_warlord = { #Does not include sinkiang
 	OR = {
 		original_tag = CHI
-		original_tag = PRC
+	
 	}
 	is_subject = no
 }
@@ -60,7 +60,7 @@ has_hyper_inflation = {
 is_literally_china = {
 	OR = {
 		original_tag = CHI
-		original_tag = PRC
+		
 	}
 }
 is_literally_china_tooltip = {
@@ -84,6 +84,15 @@ is_chinese_warlord_tooltip = {
 	custom_trigger_tooltip = {
 		tooltip = is_chinese_warlord_tt
 		is_chinese_warlord = yes
+	}
+}
+
+### Attacking them calls in the USSR - evaluated in the scope of the country being targeted.
+CHI_is_soviet_protected = {
+	OR = {
+		is_in_faction_with = SOU
+		is_subject_of = SOU
+		is_guaranteed_by = SOU
 	}
 }
 

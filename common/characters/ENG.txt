@@ -320,9 +320,9 @@ characters={
 		}
 		
 		field_marshal={
-			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader infantry_leader pre_grind }
-			skill=5
-			attack_skill=4
+			traits={ inflexible_strategist trait_cautious media_personality organizer logistics_wizard offensive_doctrine naval_invader }
+			skill=4
+			attack_skill=2
 			defense_skill=4
 			planning_skill=3
 			logistics_skill=4
@@ -357,10 +357,10 @@ characters={
 		}
 		
 		corps_commander={
-			traits={ inflexible_strategist career_officer infantry_leader panzer_leader cavalry_leader pre_grind }
+			traits={ inflexible_strategist career_officer }
 			skill=5
-			attack_skill=4
-			defense_skill=4
+			attack_skill=3
+			defense_skill=5
 			planning_skill=3
 			logistics_skill=5
 			legacy_id=0
@@ -395,10 +395,9 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ infantry_leader cavalry_leader panzer_leader pre_grind }
-			skill=5
+			skill=4
 			attack_skill=4
-			defense_skill=4
+			defense_skill=1
 			planning_skill=4
 			logistics_skill=4
 			legacy_id=0
@@ -511,7 +510,7 @@ characters={
 		}
 		
 		corps_commander={
-			traits={ politically_connected infantry_leader panzer_leader cavalry_leader pre_grind }
+			traits={ politically_connected }
 			skill=5
 			attack_skill=4
 			defense_skill=4
@@ -726,8 +725,8 @@ characters={
 			}
 		}
 		corps_commander={
-			traits={ harsh_leader armor_officer politically_connected infantry_leader panzer_leader cavalry_leader pre_grind }
-			skill=5
+			traits={ harsh_leader armor_officer politically_connected }
+			skill=4
 			attack_skill=4
 			defense_skill=2
 			planning_skill=3
@@ -1951,65 +1950,6 @@ characters={
 			}
 			ai_will_do  = {
 				base = 1.5
-			}
-		}
-	}
-
-	ENG_sylvia_pankhurst={
-		name=ENG_sylvia_pankhurst
-		portraits={
-			army={
-				small="GFX_idea_ENG_sylvia_pankhurst"
-			}
-		}
-		gender = female
-		advisor={
-			slot = political_advisor
-			idea_token = ENG_sylvia_pankhurst
-			available  = {
-				OR = {
-					has_government  = communism 
-					SWE_refuge_for_revolutionaries_trigger = yes
-				}
-			}
-			allowed  = {
-				OR = {
-					AND = {
-						original_tag  = ENG
-						has_dlc = "Man the Guns"
-					}
-					AND = {
-						original_tag = ETH
-						has_dlc = "By Blood Alone"
-					}
-
-					AND = {
-						original_tag = SWE
-						has_aat = yes
-					}
-				}
-				
-			}
-			traits  = {
-				red_suffragette 
-			}
-			ai_will_do  = {
-				base = 1
-			}
-			on_add = {
-				owner = {
-					IF = {
-						limit = {
-							has_power_balance = {
-								id = ETH_centralization_balance
-							}
-						}
-						
-						hidden_effect = {
-							ETH_BOP_decentralization_large_effect = yes
-						}
-					}				
-				}
 			}
 		}
 	}

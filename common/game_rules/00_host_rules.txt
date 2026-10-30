@@ -46,6 +46,11 @@ horst_host_country = {
 		text = "Japan"
 		desc = ""
 	}
+	option = {
+		name = MAN
+		text = "Manchukuo"
+		desc = ""
+	}
 	# allies
 	option = {
 		name = ENG
@@ -83,6 +88,11 @@ horst_host_country = {
 		desc = ""
 	}
 	option = {
+		name = MEX
+		text = "Mexico"
+		desc = ""
+	}
+	option = {
 		name = BRA
 		text = "Brazil"
 		desc = ""
@@ -94,150 +104,323 @@ horst_host_country = {
 		desc = ""
 	}
 }
-Brasil_AC_rule = {
-	name = "Select if Brazil can be AC"
+
+cas_doctrines_status = {
+	name = "Ground Support doctrines are..."
 	group = "HMM Rules"
-	icon = "GFX_volunteers"
+	icon = "GFX_decision_generic_air"
+	default = {
+		name = banned
+		text = "Fully Banned"
+		desc = "Battlefield Support and all air subdoctrines that provide ground support bonuses cannot be taken by anyone."
+	}
 	option = {
-		name = Brasil_AC
-		text = "Brazil can AC"
+		name = axis
+		text = "Axis Only"
+		desc = "Battlefield Support and all air subdoctrines that provide ground support bonuses are only allowed for Axis countries."
+	}
+	option = {
+		name = allies
+		text = "Allies Only"
+		desc = "Battlefield Support and all air subdoctrines that provide ground support bonuses are only allowed for Allied countries."
+	}
+	option = {
+		name = allowed
+		text = "Allowed for Everyone"
+		desc = "All grand doctrines and air subdoctrines can be taken by anyone."
+	}
+}
+
+allied_pre_grind = { 
+	name = "Allies Pre-Grind"
+	group = "HMM Rules"
+	icon = "GFX_decision_category_eng_imperial_conference"
+	default = { 
+		name = on
+		text = "On"
+		desc = ZHM_game_rule
+	}
+	option = { 
+		name = off
+		text = "Off"
+		desc= ""
+	}
+}
+
+allies_ac_rule = {
+	name = "Allies AC Status"
+	group = "HMM Rules"
+	icon = "GFX_decision_SWE_set_air_budget"
+	option = {
+		name = brazil_ac
+		text = "Brazil Air Controller"
+		desc = "Brazil will be the Allies Air Controller"
+	} 
+	default = {
+		name = canada_ac
+		text = "Canada Air Controller"
+		desc = "Canada will be the Allies Air Controller"
+	}
+	option = {
+		name = uk_ac
+		text = "United Kingdom Air Controller"
+		desc = "United Kingdom will be the Allies Air Controller"
+	}
+}
+
+axis_fuel_spirit = { 
+	name = "Axis Fuel Spirit"
+	group = "HMM Rules"
+	icon = "GFX_decision_oil"
+	default = { 
+		name = on
+		text = "On"
+		desc = "Axis fuel is simulated"
+	}
+	option = { 
+		name = off
+		text = "Off"
+		desc= "Axis fuel is vanilla"
+	}
+}
+
+italy_alt_hist = {
+	name = "Italy Alt-Hist Paths"
+	group = "HMM Rules"
+	icon = "GFX_decision_ITA_claim_yugo_4"
+	default = {
+		name = on
+		text = "On"
+		desc = ""
+	} 
+	option = {
+		name =  off
+		text = "Off"
+		desc = ""
+	}
+}
+
+soviet_research_slot = {
+	name = "Soviet 4th Research Slot"
+	group = "HMM Rules"
+	icon = "GFX_decision_SOV_secure_the_administration"
+	option = {
+		name = on
+		text = "On"
 		desc = ""
 	} 
 	default = {
-		name = Brasil_no_AC
-		text = "Brazil can't AC"
+		name = off
+		text = "Off"
 		desc = ""
 	}
 
 }
-Germany_Wirtschaftswunder = {
-	name = "Select if Germany is allowed to complete Prioritize Economic Growth "
+
+soviet_collectivized_economy = {
+	name = "Soviet Collectivized Economy"
 	group = "HMM Rules"
-	icon = "GFX_volunteers"
+	icon = "GFX_decision_SOV_secure_the_administration"
 	default = {
-		name = Germany_no_wirtschaftswunder
-		text = "Germany can't do the Left Side Economy Tree"
+		name = on
+		text = "On"
 		desc = ""
+	} 
+	option = {
+		name = off
+		text = "Off"
+		desc = ""
+	}
+}
+soviet_eradicate_western_fascism_rule = {
+	name = "Soviet Eradicate Western Fascism"
+	group = "HMM Rules"
+	icon = "GFX_decision_SOV_secure_the_administration"
+	option = {
+		name = yes
+		text = "Allowed"
+		desc = ""
+	} 
+	default = {
+		name = no
+		text = "Banned"
+		desc = ""
+	}
+}
+
+Germany_czech_manufacturers = {
+	name = "German Czech Manufacturers"
+	group = "HMM Rules"
+	icon = "GFX_decision_generic_GER_flag"
+	option = {
+		name = allowed
+		text = "Allowed"
+		desc = "Every Czech MIO gained from 'Integrate Czech Manufacturers' is allowed"
+	}
+	default = { 
+		name = skoda_works
+		text = "Skoda Works allowed"
+		desc = "Skoda Works(Tank Production) allowed, Czech Tank Destroyer and Aircraft MIOs are banned"
+	}
+	option = { 
+		name = td_mio
+		text = "Czech TD MIO banned"
+		desc = "Only Czech Tank Destroyer MIO is banned"
+	}
+	option = { 
+		name = air_mio
+		text = "Czech Aircraft MIO banned"
+		desc = "Only Czech Aircraft MIO is banned"
+	}
+	option = { 
+		name = production_mio
+		text = "Skoda Works banned"
+		desc = "Skoda Works banned, TD & Aircraft MIO allowed"
 	}
 	option = {
+		name = banned
+		text = "Banned"
+		desc = "Every Czech MIO gained from 'Integrate Czech Manufacturers' is banned"
+	}
+
+}
+
+Germany_Wirtschaftswunder = {
+	name = "German Prioritize Economic Growth "
+	group = "HMM Rules"
+	icon = "GFX_decision_ger_mefo_bills"
+	option = {
+		name = Germany_no_wirtschaftswunder
+		text = "Banned"
+		desc = ""
+	}
+	default = {
 		name = Germany_wirtschaftswunder
-		text = "Germany can do the Left Side Economy Tree"
+		text = "Allowed"
 		desc = ""
 	}
 
 }
+
 Germany_Cancel_Mefo= {
-	name = "Select if Germany is allowed to cancel MEFO Bills"
+	name = "cancel MEFO Bills"
 	group = "HMM Rules"
-	icon = "GFX_volunteers"
+	icon = "GFX_decision_ger_mefo_bills"
 	default = {
 		name = Germany_no_cancel_MEFO_Bills
-		text = "Germany can't cancel MEFO Bills"
+		text = "Banned"
 		desc = ""
 	}
 	option = {
 		name = Germany_cancel_MEFO_Bills
-		text = "Germany can cancel MEFO Bills"
+		text = "Allowed"
 		desc = ""
 	}
 
 }
+
 Germany_Fate_of_yugo= {
-	name = "Select if Germany is allowed to annex Yugoslavia"
+	name = "Fate of Yugoslavia"
 	group = "HMM Rules"
-	icon = "GFX_volunteers"
+	icon = "GFX_decision_generic_GER_flag"
 	default = {
 		name = Germany_no_fate_of_yugo
-		text = "Germany can't annex Yugoslavia"
+		text = "Banned"
 		desc = ""
 	}
 	option = {
 		name = Germany_fate_of_yugo
-		text = "Germany can annex Yugoslavia"
+		text = "Allowed"
 		desc = ""
 	}
 
 }
+
 urban_assault_vechile= {
-	name = "Select if Urban Assault Vehicle is allowed or not "
+	name = "Urban Assault Vehicle"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_tank"
-	default = {
-		name = off
-		text = "You CANNOT research armoured engineer company."
-		desc = "You also don't get the urban assault vehicle."
-	}
 	option = {
+		name = off
+		text = "Banned"
+		desc = ""
+	}
+	default = {
 		name = on
-		text = "You CAN research armoured engineer company"
-		desc = "You also get the urban assault vehicle."
+		text = "Allowed"
+		desc = ""
 	}
 }
+
 railway_gun= {
-	name = "Select if Railway Gun is allowed or not "
+	name = "Railway Gun"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = off
-		text = "You CANNOT research Railway Battery."
+		text = "Banned"
 		desc = "###."
 	}
 	option = {
 		name = on
-		text = "You CAN research Railway Battery."
+		text = "Allowed"
 		desc = "###"
 	}
 }
+
 super_heavy_railway_gun= {
-	name = "Select if Super Heavy Railway Battery is allowed or not "
+	name = "Super Heavy Railway Gun"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = off
-		text = "You CANNOT research Super Heavy Railway Battery."
+		text = "Banned"
 		desc = "###."
 	}
 	option = {
 		name = on
-		text = "You CAN research Super Heavy Railway Battery."
+		text = "Allowed"
 		desc = "###"
 	}
 }
+
 multi_charge_large_caliber_gun= {
-	name = "Select if Multi Charge LCG is allowed or not "
+	name = "Multi Charge LCG"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = off
-		text = "You CANNOT research Multi Charge LCG."
+		text = "Banned"
 		desc = "###."
 	}
 	option = {
 		name = on
-		text = "You CAN research Multi Charge LCG."
+		text = "Allowed"
 		desc = "###"
 	}
 }
+
 max_submarine_tech= {
-	name = "Select if Submarine 3 and 4 are allowed. "
+	name = "Submarine 3 and 4"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_ignite_civil_war"
 	default = {
 		name = sub2
-		text = "You CANNOT research Submarine 3 or 4."
+		text = "Submarine 3 & 4 Banned"
 		desc = "###."
 	}
 	option = {
 		name = sub3
-		text = "You CAN research Submarine 3 and Snorkel 1."
+		text = "Submarine 3 and Snorkel 1 Allowed"
 		desc = "###"
 	}
 	option = {
 		name = sub4
-		text = "You CAN research Submarine 4 and Snorkel 2."
+		text = "Submarine 4 and Snorkel 2. Allowed"
 		desc = "###"
 	}
 }
+
 sov_boost = {
 	name = "Soviet Civ Boost"
 	group = "HMM Rules"
@@ -288,7 +471,8 @@ ger_boost = {
 		text = "ROn-12"
 		desc = "Germany get 12 Civilian factories (Not Recommmended)"
 	}
-} 
+}
+
 jap_boost = {
 	name = "Japan Civ Boost"
 	group = "HMM Rules"
@@ -313,7 +497,8 @@ jap_boost = {
 		text = "ROn-12"
 		desc = "Japan receives 12 Civilian factories"
 	}
-}          
+}  
+
 eng_boost = {
 	name = "Britain Civ Boost"
 	group = "HMM Rules"
@@ -339,6 +524,7 @@ eng_boost = {
 		desc = "Britain receives 12 Civilian factories"
 	}
 }
+
 ita_boost = {
 	name = "Italy Civ Boost"
 	group = "HMM Rules"
@@ -364,6 +550,7 @@ ita_boost = {
 		desc = "Italy receives 12 Civilian factories"
 	}
 }
+
 fra_boost = {
 	name = "French Civ Boost"
 	group = "HMM Rules"
@@ -389,6 +576,7 @@ fra_boost = {
 		desc = "France receives 12 Civilian factories"
 	}
 }
+
 usa_boost = {
 	name = "USA Civ Boost"
 	group = "HMM Rules"
@@ -409,6 +597,7 @@ usa_boost = {
 		desc = "USA receives 8 Civilian factories"
 	}
 }
+
 playable_iraq = {
 	name = "Playable Iraq"
 	group = "HMM Rules"
@@ -424,6 +613,7 @@ playable_iraq = {
 		desc = "Iraq is playable"
 	}
 }
+
 strat_bombing = {
 	name = "Strategic Bombing"
 	group = "HMM Rules"
@@ -444,6 +634,7 @@ strat_bombing = {
 		desc = "Strategic Bombers banned and German Eco Unnerfed"
 	}
 }
+
 spanish_production = {
 	name = "Spanish Production"
 	group = "HMM Rules"
@@ -469,6 +660,7 @@ spanish_production = {
 		desc = "No DDAY wall"
 	}
 }
+
 finish_production = {
 	name = "Finnish Production"
 	group = "HMM Rules"
@@ -484,6 +676,7 @@ finish_production = {
 		desc = "Use if Finland has a player on it"
 	}
 }
+
 tradebacks = {
 	name = "No Tradebacks Idea"
 	group = "HMM Rules"

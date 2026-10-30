@@ -1762,7 +1762,7 @@ characters = {
 		}
 		
 		corps_commander = {
-			traits = { career_officer infantry_officer commando trait_engineer infantry_leader naval_invader skilled_staffer ranger hill_fighter }
+			traits = { career_officer infantry_officer commando trait_engineer infantry_leader naval_invader skilled_staffer hill_fighter  }
 			skill = 7
 			attack_skill = 5
 			defense_skill = 5
@@ -6007,7 +6007,7 @@ characters = {
 		}
 
 		corps_commander = {
-			traits = { JAP_communist_sympathizer trait_mountaineer trait_cautious }
+			traits = { JAP_communist_sympathizer  trait_cautious }
 			skill = 2
 			attack_skill = 2
 			defense_skill = 2

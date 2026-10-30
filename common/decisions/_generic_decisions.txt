@@ -112,12 +112,7 @@ political_actions = {
 				original_tag = SPR
 				NOT = { has_global_flag = spanish_civil_war }
 			}
-			modifier = {
-				factor = 0 
-				tag = ICE
-				has_completed_focus = ICE_not_our_king
-				NOT = { has_completed_focus = ICE_break_with_the_crown }
-			}
+			
 			modifier = {
 				factor = 0 
 				tag = GER
@@ -129,12 +124,7 @@ political_actions = {
 					}
 				}
 			}
-			modifier = {
-				add = 1000
-				has_stability < 0.76
-				original_tag = SWE
-				has_idea = SWE_hungershield
-			}
+			
 		}
 	}
 }
@@ -228,14 +218,7 @@ economy_decisions = {
 		icon = GFX_decision_generic_construction
 
 		visible = { 
-			OR = {
-				is_major = no
-				tag = JAP
-				AND = {
-					is_faction_leader = yes
-					num_of_factories < 51 #would be a minor if it wasn't for faction leader status
-				}
-			}
+			
 		}
 		fire_only_once = yes
 
@@ -283,10 +266,7 @@ economy_decisions = {
 			modifier = {
 				add = 1
 				has_stability > 0.74
-				NOT = {
-					original_tag = SWE
-					has_idea = SWE_hungershield
-				}
+				
 			}
 		}
 
@@ -580,14 +560,6 @@ propaganda_efforts = {
 				threat > 0.25
 				#has_tech = radio
 				has_completed_focus = BRA_radio_nacional
-			}
-			ELSE_IF = {
-				limit = {
-					tag = AFG
-				}
-				threat > 0.25
-				#has_tech = radio
-				has_completed_focus = AFG_establish_radio_networks
 			}
 			ELSE = {
 				threat > 0.25
@@ -1928,7 +1900,7 @@ war_measures = {
 						tag = USA #has a focus
 						tag = SOV #has a focus
 						tag = JAP #has a focus
-						tag = CHL #has a focus
+						#tag = CHL #has a focus
 						tag = BRA #has a focus
 						tag = ARG #has a focus
 						tag = AST #has a focus
@@ -1940,11 +1912,10 @@ war_measures = {
 					has_dlc = "Trial of Allegiance"
 					NOT = {
 						OR = {
-							tag = CHL #has a focus
+							
 							tag = BRA #has a focus
 							tag = ARG #has a focus
-							tag = URG #has a focus
-							tag = PAR #has a focus
+						
 						}
 					}
 				}
@@ -1953,7 +1924,7 @@ war_measures = {
 					NOT = {
 						OR = {
 							tag = BEL #has a focus
-							tag = COG #has a focus
+							
 						}
 					}
 				}
@@ -1961,12 +1932,6 @@ war_measures = {
 					has_dlc = "No Compromise, No Surrender"
 					NOT = {
 						tag = PHI #has a focus
-					}
-				}
-				AND = {
-					has_dlc = "Thunder at Our Gates"
-					NOT = {
-						tag = INS #has a focus
 					}
 				}
 			}

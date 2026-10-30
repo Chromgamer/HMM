@@ -2,12 +2,9 @@ state={
 	id=796
 	name="STATE_796"
 	history={
-		owner = POR
-		buildings = {
-			infrastructure = 1
-			2115 = {
-				naval_base = 1
-			}
+		owner = WST
+		buildings = { 
+			
 		}
 		victory_points = {
 			2115 1 

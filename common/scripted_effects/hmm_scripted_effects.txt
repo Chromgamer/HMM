@@ -1,4 +1,17 @@
 hmm_capitulations_on_actions = {
+	if = { # Albania
+		limit = { 
+			original_tag = ALB
+			ITA = { has_war_with = ALB }
+		} 
+		ITA = {
+			add_threat = 1.5
+			annex_country = {
+				target = ALB
+				transfer_troops = no
+			}
+		}
+	}
 	if = {
 		limit = {
 			original_tag = POL
@@ -31,9 +44,9 @@ hmm_capitulations_on_actions = {
 			}
 		}
 		
-		GER = {
-			country_event = france.69420
-		}
+		#GER = { # ZHM idk what this does?
+		#	country_event = france.69420
+		#}
 		set_global_flag = fall_of_france
 		every_country = {
 			limit = {
@@ -168,22 +181,7 @@ hmm_capitulations_on_actions = {
 		}
 	} 
 	# Albania
-	if = {
-		limit = { 
-			original_tag = ALB 
-			ITA = { has_war_with = ALB }
-		} 
-		ITA = {
-			add_named_threat = { 
-				threat = -0.7 
-				name = hmm_alb
-			}
-			annex_country = {
-				target = ALB
-				transfer_troops = no
-			}
-		}
-	} 
+	
 	# Greece
 	if = {
 		limit = { 
@@ -309,11 +307,37 @@ hmm_capitulations_on_actions = {
 			remove_ideas = {
 				ai_war
 			}
-			delete_unit = {}
 		}	
 	}
 }
 
+allow_axis_grind = {
+	set_global_flag = axis_grind_allowed
+	every_country = {
+		limit = {
+			can_grind_generals = yes
+			any_army_leader = { has_trait = no_grind }
+		}
+		every_army_leader = {
+			limit = { has_trait = no_grind }
+			remove_unit_leader_trait = no_grind
+		}
+	}
+}
+
+allow_allies_grind = {
+	set_global_flag = allies_grind_allowed
+	every_country = {
+		limit = {
+			can_grind_generals = yes
+			any_army_leader = { has_trait = no_grind }
+		}
+		every_army_leader = {
+			limit = { has_trait = no_grind }
+			remove_unit_leader_trait = no_grind
+		}
+	}
+}
 
 initilize_victory_system = {
 	# state = 613 #Nanjing

@@ -1,7 +1,7 @@
 state = {
 	id = 767
 	name = "STATE_767" # North Darfur
-	manpower = 8143
+	manpower = 1
 	
 	state_category = wasteland
 	impassable = yes
@@ -9,7 +9,7 @@ state = {
 	
 	history = {
 
-		owner = ENG
+		owner = WST
 		add_core_of = WST
 		
 		buildings = {

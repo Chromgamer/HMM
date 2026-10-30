@@ -1,0 +1,110 @@
+add_namespace = zhm
+
+
+country_event = {
+	id = zhm.1
+	title = "AI Portugal"
+	desc = zhm.1.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+	
+}
+
+country_event = {
+	id = zhm.2
+	title = "AI Argentina"
+	desc = zhm.2.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	fire_for_sender = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+	
+}
+
+news_event = { 
+	id = zhm.3
+	title = "Host Changed German Consumer Goods"
+	desc = zhm.3.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+}
+
+news_event = { 
+	id = zhm.4
+	title = "Host Changed German Consumer Goods"
+	desc = zhm.4.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+}
+
+news_event = { 
+	id = zhm.5
+	title = "Host Restored UK Navy"
+	desc = zhm.5.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+}
+
+news_event = { 
+	id = zhm.6
+	title = "Host Restored German Navy"
+	desc = zhm.6.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+}
+
+news_event = { 
+	id = zhm.7
+	title = "Host Fixed Romanian Army"
+	desc = zhm.7.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+}
+
+news_event = { 
+	id = zhm.8
+	title = "Host Fixed Hungarian Army"
+	desc = zhm.8.b
+    picture = GFX_report_event_generic_peaceful_annexation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Okay"
+	}
+}

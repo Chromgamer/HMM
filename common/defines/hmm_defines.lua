@@ -34,8 +34,10 @@ NDefines.NMilitary.ABILITY_COMMS_SCALING = { 1.0, 1.0, 1.0, 1.0, 1.0 }			-- Same
 NDefines.NMilitary.ABILITY_NO_HQ_SCALING = 1.0									-- Same as PLANNING_CAP_NO_HQ_SCALING but for active abilities
 NDefines.NMilitary.GENERAL_PROXIMITY_CLOSE = 1									-- At the "close" proximity setting, the general should stay this many provinces behind the frontline
 NDefines.NMilitary.GENERAL_PROXIMITY_MEDIUM = 2									-- At the "medium" proximity setting, the general should stay this many provinces behind the frontline
-NDefines.NMilitary.GENERAL_PROXIMITY_FAR = 3										-- At the "far" proximity setting, the general should stay this many provinces behind the frontline
-NDefines.NMilitary.GENERAL_PROXIMITY_DEFAULT = 1									-- The default proximity setting for a deployed general. This number should correspond to one of the values above
+NDefines.NMilitary.GENERAL_PROXIMITY_FAR = 3
+-- Note for define below: we can't actually set Free Control to the default, so this is the best we can do to prevent people from getting their HQs accidentally run over out of negligence										-- At the "far" proximity setting, the general should stay this many provinces behind the frontline
+NDefines.NMilitary.GENERAL_PROXIMITY_DEFAULT = 3									-- The default proximity setting for a deployed general. This number should correspond to one of the values above
+
 NDefines.NMilitary.GENERAL_RANK_TO_ARMY_HQ_EXP_LEVEL_FACTOR = 1				    -- The general's rank is multiplied by this factor (rounded up) to determine the spawned Army HQ division's experience level
 NDefines.NMilitary.ARMY_HQ_REQUISITION_MINIMUM_REMAINING_PERCENTAGE = 1		    -- When deploying an Army HQ, divisions will not have their equipment or manpower requisitioned below this percentage of their target manpower or equipment
 NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_DEPLOY = 0		-- base time in days for a unit leader to be deployed while not already deployed. Instantaneous if 0. Scaled by HQ template manpower.
@@ -46,7 +48,6 @@ NDefines.NMilitary.UNIT_LEADER_MODIFIER_COOLDOWN_ON_WITHDRAW_MIN = 0		-- minimum
 
 NDefines.NAI.MAX_DEPLOYED_ARMY_HQS = 0 -- vanilla is 5, disable the AI trying to even deploy HQs in the first place because we disabled them outright anyway
 NDefines.NAI.ARMY_LEADER_MIN_DIVISIONS_FOR_HQ = 999 -- vanilla is 10, disable the AI trying to even deploy HQs in the first place, just in case
-
 
 --AI no lend lease
 NDefines.NAI.LENDLEASE_FRACTION_OF_PRODUCTION = 0
@@ -63,7 +64,7 @@ NDefines.NNavy.SUPPLY_PRIORITY = 2								    	-- Default convoy priority for su
 NDefines.NNavy.RESOURCE_ORIGIN_PRIORITY = 3								-- Default convoy priority for resources shipped internally
 NDefines.NNavy.RESOURCE_EXPORT_PRIORITY = 4								-- Default convoy priority for export trade
 NDefines.NNavy.RESOURCE_LENDLEASE_PRIORITY = 3                          -- Default convoy priority for export lend lease
-NDefines.NCountry.FUEL_LEASE_CONVOY_RATIO = 0.0001
+NDefines.NCountry.FUEL_LEASE_CONVOY_RATIO = 0  -- was 0.0001
 
 
 ---LOGI STRIKE NERFS---
@@ -128,6 +129,11 @@ NDefines.NGame.LAG_DAYS_FOR_LOWER_SPEED = 999
 NDefines.NGame.LAG_DAYS_FOR_PAUSE = 999
 NDefines.NGame.COMBAT_LOG_MAX_MONTHS = 14 							    -- WAS 48 | drastically cuts down on save file sizes after WW2 starts and well into barbarossa
 NDefines.NGame.MESSAGE_TIMEOUT_DAYS = 14					     	    -- WAS 60 | less messages lying around at the top of your screen
+
+NDefines.NDiplomacy.VOLUNTEERS_TRANSFER_SPEED = 7					-- days to transfer a unit to another nation FROM 14 DOWN TO 7 
+NDefines.NDiplomacy.VOLUNTEERS_RECALL_DAYS_PER_UNIT = 1				-- FROM 2 TO 1
+NDefines.NDiplomacy.SEND_VOLUNTEERS_AGAIN_COOLDOWN = 7			-- How long after recalling volunteers can you send volunteers to the same country (Days) FROM 180 TO 7
+NDefines.NDiplomacy.RECALL_VOLUNTEERS_AFTER_ARRIVAL_COOLDOWN = 7 -- How long after arriving can the volunteers be recalled (Days) FROM 180 TO 7
 
 NDefines_CareerProfile.NCareerProfile.MOD_STATISTICS_GROUP = "HMM"
 NDefines_CareerProfile.NCareerProfile.MOD_STATISTICS_GROUP_NAME = "HMM"
@@ -287,63 +293,4 @@ NDefines.NAir.STRATEGIC_BOMBING_RAILWAY_PRIORITY_SCALE = 0					-- The scale of e
 NDefines.NSupply.RAILWAY_FLOW_PENALTY_PER_DAMAGED = 4.9
 NDefines.NAir.AIR_WING_BOMB_DAMAGE_FACTOR = 0.5 --Vanilla 2
 NDefines.NIndustrialOrganisation.DESIGN_TEAM_CHANGE_XP_COST = 0
-NDefines.NMilitary.ANTI_AIR_TARGETTING_TO_CHANCE = 0.09 -- Vanilla 0.07
 NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = 0 --Vanilla -0.12
---NDefines_Graphics.NAirGfx.MAX_MISSILE_BOMBING_SCENARIOS = 0
---NDefines_Graphics.NAirGfx.MAX_BOMBING_SCENARIOS = 0
-NDefines_Graphics.NAirGfx.MAX_PATROL_SCENARIOS = 0
-NDefines_Graphics.NAirGfx.MAX_DOGFIGHTS_SCENARIOS = 0
-NDefines_Graphics.NAirGfx.MAX_TRANSPORT_SCENARIOS = 0
-NDefines_Graphics.NGraphics.CAMERA_ZOOM_SPEED_DISTANCE_MULT = 20
-NDefines_Graphics.NGraphics.MAPICON_GROUP_STRATEGIC_SIZE = 1000
-NDefines_Graphics.NGraphics.MAP_ICONS_STATE_HUGE = 100
-NDefines_Graphics.NGraphics.GRADIENT_BORDERS_FIELD_COUNTRY_REFRESH = 30
--- NDefines_Graphics.NGraphics.DECISION_MAP_ICON_DISTANCE_CUTOFF = 100
-NDefines_Graphics.NGraphics.NAVAL_COMBAT_DISTANCE_CUTOFF = 1200
-NDefines_Graphics.NGraphics.PROVINCE_ANIM_TEXT_DISTANCE_CUTOFF = 200
-NDefines_Graphics.NMapMode.MAP_MODE_TERRAIN_TRANSPARENCY = 0.8
-NDefines_Graphics.NGraphics.AIRBASE_ICON_DISTANCE_CUTOFF = 600
-NDefines_Graphics.NGraphics.NAVALBASE_ICON_DISTANCE_CUTOFF = 600
-NDefines_Graphics.NGraphics.RADAR_ICON_DISTANCE_CUTOFF = 150
-NDefines_Graphics.NAirGfx.AIRPLANES_ANIMATION_GLOBAL_SPEED_PER_GAMESPEED = {0.3, 0.3, 0.3, 0.3, 0.3, 0.3}
-NDefines_Graphics.NGraphics.DRAW_MAP_OBJECTS_CUTOFF = 1.0
-NDefines_Graphics.NGraphics.VICTORY_POINTS_DISTANCE_CUTOFF = {200, 350, 500}
-NDefines_Graphics.NGraphics.MAX_MESHES_LOADED_PER_FRAME = 5
-NDefines_Graphics.NMapMode.RADAR_ROTATION_SPEED = 0.0
-NDefines_Graphics.NMapMode.AIR_RANGE_INDICATOR_ROTATION_SPEED = 0.0000
-NDefines_Graphics.NAirGfx.AIRPLANES_SMOOTH_INTERPOLATION_MOVE = 0.02
-NDefines_Graphics.NAirGfx.AIRPLANES_SMOOTH_INTERPOLATION_TURN = 0.02
-NDefines_Graphics.NInterface.GRIDBOX_ELEMENTS_INTERPOLATION_SPEED = 0.2
-NDefines_Graphics.NGraphics.TREE_FADE_NEAR = 150.0
-NDefines_Graphics.NGraphics.TREE_FADE_FAR = 250.0
-NDefines_Graphics.NGraphics.RESOURCE_MAP_ICON_TEXT_CUTOFF = 400
-NDefines_Graphics.NGraphics.UNITS_DISTANCE_CUTOFF = 100
-NDefines_Graphics.NGraphics.SHIPS_DISTANCE_CUTOFF = 200
-NDefines_Graphics.NGraphics.UNIT_ARROW_DISTANCE_CUTOFF = 500
-NDefines_Graphics.NGraphics.UNITS_ICONS_DISTANCE_CUTOFF = 700
-NDefines_Graphics.NGraphics.NAVAL_COMBAT_DISTANCE_CUTOFF = 1000
-NDefines_Graphics.NGraphics.ADJACENCY_RULE_DISTANCE_CUTOFF = 1300
-NDefines_Graphics.NGraphics.LAND_COMBAT_DISTANCE_CUTOFF = 800
-NDefines_Graphics.NGraphics.SUPPLY_ICON_DISTANCE_CUTOFF = 1500
-NDefines_Graphics.NGraphics.PROV_CONSTRUCTION_ICON_DISTANCE_CUTOFF = 300
-NDefines_Graphics.NGraphics.STATE_CONSTRUCTION_ICON_DISTANCE_CUTOFF = 600
-NDefines_Graphics.NGraphics.GRADIENT_BORDERS_REFRESH_FREQ = 0.2
-NDefines_Graphics.NGraphics.MAPICON_GROUP_PASSES = 5
-NDefines_Graphics.NGraphics.DRAW_REFRACTIONS_CUTOFF = 0
-NDefines_Graphics.NGraphics.GRADIENT_BORDERS_FIELD_COUNTRY_REFRESH = 40
-NDefines_Graphics.NGraphics.WEATHER_DISTANCE_CUTOFF = 50
-NDefines_Graphics.NGraphics.MAP_ICONS_GROUP_CAM_DISTANCE = 100
-NDefines_Graphics.NGraphics.MAP_ICONS_STATE_GROUP_CAM_DISTANCE = 300
-NDefines_Graphics.NGraphics.MAP_ICONS_STRATEGIC_GROUP_CAM_DISTANCE = 400
-NDefines_Graphics.NGraphics.MAP_ICONS_STRATEGIC_AREA_HUGE = 250
-NDefines_Graphics.NGraphics.MAP_ICONS_COARSE_COUNTRY_GROUPING_DISTANCE = 300
-NDefines_Graphics.NGraphics.MAP_ICONS_COARSE_COUNTRY_GROUPING_DISTANCE_STRATEGIC = 0
-NDefines_Graphics.NGraphics.BLOOM_WIDTH = 0
-NDefines_Graphics.NGraphics.BLOOM_SCALE = 0
-NDefines_Graphics.NGraphics.BRIGHT_THRESHOLD = 0
-NDefines_Graphics.NGraphics.EMISSIVE_BLOOM_STRENGTH = 0
-NDefines_Graphics.NGraphics.DAY_NIGHT_FEATHER = 0.024
-NDefines_Graphics.NGraphics.DRAW_SHADOWS_CUTOFF = 0
-NDefines_Graphics.NGraphics.DRAW_SHADOWS_FADE_LENGTH = 0
-NDefines_Graphics.NGraphics.DRAW_FOW_CUTOFF = 0
-NDefines_Graphics.NGraphics.DRAW_FOW_FADE_LENGTH = 0

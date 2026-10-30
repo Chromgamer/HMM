@@ -1,0 +1,162 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+
+##### Example #####
+
+defined_text = {
+	name = GetRajName
+	text = {
+		trigger = {
+			original_tag = RAJ
+		}
+		localization_key = india
+	}
+}
+
+
+defined_text = {
+	name = GetRajAdjective
+	text = {
+		trigger = {
+			original_tag = RAJ
+		}
+		localization_key = indian
+	}
+}
+
+defined_text = {
+	name = GetFamineTimeframe
+	text = {
+		trigger = {
+			has_country_flag = reveal_true_famine_timeframe
+		}
+		localization_key = RAJ_famine_scripted_timeframe_reveal_desc
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = reveal_true_famine_timeframe }
+		}
+		localization_key = RAJ_famine_scripted_timeframe_non_reveal_desc
+	}
+}
+
+
+
+
+defined_text = {
+	name = GetMughalCivilWarStatus
+
+	text = { 
+		trigger = {
+			ROOT = { 
+				original_tag = RAJ 
+			}
+		}
+		localization_key = RAJ_secure_states
+	}
+
+	text = { #I am RAJ, BAN Exists and havent revealed pressure
+		trigger = {
+			ROOT = { 
+				original_tag = ENG 
+			}
+		}
+		localization_key = RAJ_defend_states
+	}
+}
+
+# Vie for Princely States gain line, ROOT is the country and FROM the targeted state
+defined_text = {
+	name = GetVieForPrincesGainText
+
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					ROOT = { original_tag = RAJ }
+					FROM = { has_state_flag = prefers_raj }
+				}
+				AND = {
+					ROOT = { original_tag = PAK }
+					FROM = { has_state_flag = prefers_pak }
+				}
+				AND = {
+					ROOT = { original_tag = BAN }
+					FROM = { has_state_flag = prefers_ban }
+				}
+			}
+		}
+		localization_key = RAJ_GOE_vie_for_princes_gain_lean_tt
+	}
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = RAJ_GOE_vie_for_princes_gain_tt
+	}
+}
+
+# Partition panel row picker, THIS is the state and ROOT the viewing player, an empty name drops the row
+defined_text = {
+	name = GetRAJPartitionStateEntry
+
+	text = {
+		trigger = {
+			OR = {
+				has_global_flag = RAJ_GOE_partition_is_over
+				is_controlled_by = RAJ
+				is_controlled_by = PAK
+				is_controlled_by = BAN
+			}
+		}
+		localization_key = ""
+	}
+
+	text = {
+		trigger = {
+			OR = {
+				AND = {
+					ROOT = { original_tag = RAJ }
+					has_state_flag = prefers_raj
+				}
+				AND = {
+					ROOT = { original_tag = PAK }
+					has_state_flag = prefers_pak
+				}
+				AND = {
+					ROOT = { original_tag = BAN }
+					has_state_flag = prefers_ban
+				}
+			}
+		}
+		localization_key = "raj_goe_partition_state_entry_lean"
+	}
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = "raj_goe_partition_state_entry"
+	}
+}
+
+# Viewing player's own pressure on the row's state, rival pressure stays hidden
+defined_text = {
+	name = GetRAJPartitionOwnPressure
+
+	text = {
+		trigger = {
+			always = yes
+		}
+		localization_key = RAJ_GOE_partition_gui_own_pressure_RAJ
+	}
+}

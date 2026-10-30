@@ -10,11 +10,11 @@ state = {
 
 	history = {
 
-		owner = POR
+		owner = WST
 		add_core_of = WST
 
-		buildings = {
-			infrastructure = 1
+		buildings = { 
+			
 		}
 		
 	}

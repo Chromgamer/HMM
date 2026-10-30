@@ -5,14 +5,9 @@ state={
 	state_category = wasteland 
 
 	history={
-		owner = POR
-		buildings = {
-			infrastructure = 2
-			2123 = {
-				naval_base = 1
-
-			}
-
+		owner = WST
+		buildings = { 
+			
 		}
 
 		add_core_of = WST
