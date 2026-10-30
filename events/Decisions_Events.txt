@@ -559,17 +559,13 @@ country_event = {
 		text = generic_purchase_ships_events.04.desc.a 
 		trigger = {
 			original_tag = BRA
-			original_tag = ARG
-
 		}
 	}
 	desc = { 
 		text = generic_purchase_ships_events.04.desc.b
 		trigger = {
 			NOT = {
-				original_tag = BRA
-				original_tag = ARG
-			
+				original_tag = BRA			
 			}
 		}
 	}

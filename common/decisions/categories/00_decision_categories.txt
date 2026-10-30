@@ -263,12 +263,7 @@ communism_on_the_rise = {
 					original_tag = FIN
 				}
 			}
-			AND = {
-				has_dlc = "Trial of Allegiance"
-				OR = {
-					original_tag = ARG
-				}
-			}
+
 
 			AND = {
 				has_dlc = "Gotterdammerung"
@@ -534,17 +529,6 @@ generic_purchase_old_ships_category = {
 				original_tag = BRA
 				has_dlc = "Trial of Allegiance"
 			}
-			
-			AND = {
-				original_tag = ARG
-				has_dlc = "Trial of Allegiance"
-			}
-
-		
-
-			
-
-			
 			AND = {
 				original_tag = RAJ
 				has_dlc = "Graveyard of Empires"

@@ -64,7 +64,6 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 		}
@@ -286,7 +285,6 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 		}
@@ -391,7 +389,6 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 		}
@@ -572,12 +569,6 @@ country_event = {
 					} 
 					original_tag = FIN
 				}
-			}
-		}
-		NOT = {
-			AND = {
-				original_tag = ARG
-				has_dlc = "Trial of Allegiance"
 			}
 		}
 
@@ -884,10 +875,7 @@ country_event = {
 				}
 			}
 		}
-		NOT = {
-			has_dlc = "Trial of Allegiance"
-			original_tag = ARG
-		}
+
 
 		NOT = {
 			AND = {
@@ -1050,10 +1038,7 @@ country_event = {
 				}
 			}
 		}
-		NOT = {
-			has_dlc = "Trial of Allegiance"
-			original_tag = ARG
-		}
+
 
 		NOT = {
 			AND = {
@@ -1145,10 +1130,7 @@ country_event = {
 				}
 			}
 		}
-		NOT = {
-			has_dlc = "Trial of Allegiance"
-			original_tag = ARG
-		}
+
 
 		NOT = {
 			AND = {
@@ -1210,10 +1192,6 @@ country_event = {
 					original_tag = TUR
 				}
 			}
-		}
-		NOT = {
-			has_dlc = "Trial of Allegiance"
-			original_tag = ARG
 		}
 
 		NOT = {
@@ -1540,7 +1518,6 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 		}
@@ -1711,7 +1688,6 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 		}
@@ -1882,7 +1858,6 @@ country_event = {
 				has_dlc = "Trial of Allegiance"
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 		}

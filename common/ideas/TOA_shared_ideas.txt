@@ -164,34 +164,6 @@ ideas = {
 					limit = {
 						tag = BRA
 					}
-					AND = {
-						ARG = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
-						
-					}
-				}
-				IF = {
-					limit = {
-						tag = ARG
-					}
-					AND = {
-						BRA = {
-							OR = {
-								has_capitulated = yes
-                    			exists = no
-                    			is_subject_of = ROOT
-							}
-						}
-						
-					}
-				}
-				IF = { 
-					
 				}
 			}
 

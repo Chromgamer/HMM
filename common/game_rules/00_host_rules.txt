@@ -188,12 +188,12 @@ italy_alt_hist = {
 	name = "Italy Alt-Hist Paths"
 	group = "HMM Rules"
 	icon = "GFX_decision_ITA_claim_yugo_4"
-	default = {
+	option = {
 		name = on
 		text = "On"
 		desc = ""
 	} 
-	option = {
+	default = {
 		name =  off
 		text = "Off"
 		desc = ""
@@ -252,12 +252,12 @@ Germany_czech_manufacturers = {
 	name = "German Czech Manufacturers"
 	group = "HMM Rules"
 	icon = "GFX_decision_generic_GER_flag"
-	option = {
+	default = {
 		name = allowed
 		text = "Allowed"
 		desc = "Every Czech MIO gained from 'Integrate Czech Manufacturers' is allowed"
 	}
-	default = { 
+	option = { 
 		name = skoda_works
 		text = "Skoda Works allowed"
 		desc = "Skoda Works(Tank Production) allowed, Czech Tank Destroyer and Aircraft MIOs are banned"
@@ -289,12 +289,12 @@ Germany_Wirtschaftswunder = {
 	name = "German Prioritize Economic Growth "
 	group = "HMM Rules"
 	icon = "GFX_decision_ger_mefo_bills"
-	option = {
+	default = {
 		name = Germany_no_wirtschaftswunder
 		text = "Banned"
 		desc = ""
 	}
-	default = {
+	option = {
 		name = Germany_wirtschaftswunder
 		text = "Allowed"
 		desc = ""
@@ -303,7 +303,7 @@ Germany_Wirtschaftswunder = {
 }
 
 Germany_Cancel_Mefo= {
-	name = "cancel MEFO Bills"
+	name = "Cancel MEFO Bills"
 	group = "HMM Rules"
 	icon = "GFX_decision_ger_mefo_bills"
 	default = {

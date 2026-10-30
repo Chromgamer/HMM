@@ -601,9 +601,6 @@ fascism_on_the_rise = {
 				limit = {
 					has_dlc = "Trial of Allegiance"
 				}
-				NOT = {
-					original_tag = ARG
-				}
 			}
 			IF = {
 				limit = {

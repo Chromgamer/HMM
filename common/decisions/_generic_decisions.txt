@@ -1902,7 +1902,6 @@ war_measures = {
 						tag = JAP #has a focus
 						#tag = CHL #has a focus
 						tag = BRA #has a focus
-						tag = ARG #has a focus
 						tag = AST #has a focus
 						tag = FRA #has a focus
 						tag = GER #has a focus
@@ -1912,10 +1911,7 @@ war_measures = {
 					has_dlc = "Trial of Allegiance"
 					NOT = {
 						OR = {
-							
-							tag = BRA #has a focus
-							tag = ARG #has a focus
-						
+							tag = BRA #has a focus						
 						}
 					}
 				}

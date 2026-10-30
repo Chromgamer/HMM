@@ -1049,10 +1049,7 @@ SOV_rubin_design_bureau_organization = {
 		OR = {
 			tag = SOV
 			
-			AND = {
-				tag = ARG
-				has_dlc = "Trial of Allegiance"
-			}
+
 			AND = {
 				tag = BRA
 				has_dlc = "Trial of Allegiance"

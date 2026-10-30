@@ -734,8 +734,6 @@ DIPLOMACY_LEND_LEASE_ENABLE_TRIGGER = {
 		limit = { 
 				OR = { 
 					TAG = MEX
-					TAG = POR
-					TAG = ARG
 				}
 			}
 			always = no

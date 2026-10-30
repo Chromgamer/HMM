@@ -14306,7 +14306,6 @@ SPA_reassert_american_dominance = {
 					original_tag = BRA
 					#original_tag = BOL
 					original_tag = CAN
-					original_tag = ARG
 					#original_tag = CHL
 					#original_tag = PRU
 					original_tag = VEN

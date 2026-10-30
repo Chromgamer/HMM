@@ -33,7 +33,6 @@
 		allowed = {
 			AND = {
 				OR = {
-					original_tag = ARG
 					original_tag = BRA
 					#original_tag = CHL
 				}

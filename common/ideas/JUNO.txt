@@ -7,7 +7,6 @@ ideas = {
 			allowed = {
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 
@@ -41,7 +40,6 @@ ideas = {
 			allowed = {
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 			}
 					

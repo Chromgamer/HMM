@@ -129,22 +129,7 @@ country_event = {
 			base = 10
 		}
 		trigger = {
-			NOT = {
-				original_tag = ARG
-			}
-		}
-		add_opinion_modifier = {
-			target = FROM
-			modifier = BRA_good_neighbor_policy
-		}
-	}
-	option = {
-		name = JUNO_brazil_events.14.b
-		ai_chance = {
-			base = 10
-		}
-		trigger = {
-			original_tag = ARG
+			original_tag = BRA
 		}
 		add_opinion_modifier = {
 			target = FROM

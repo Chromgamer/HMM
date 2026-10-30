@@ -2400,7 +2400,7 @@ economy_decisions = {
 
 PHI_relations_with_spanish_america = {
 	PHI_propose_treaty_of_mutual_assistance = {
-		targets = { ARG MEX SPR SPA SPD SPB SPC }	#Spanish America + Spain
+		targets = { MEX SPR SPA SPD SPB SPC }	#Spanish America + Spain
 		target_trigger = {
 			always = no
 			FROM = {
@@ -2465,7 +2465,7 @@ PHI_relations_with_spanish_america = {
 		}
 	}
 	PHI_propose_unification = {
-		targets = { ARG MEX SPR SPA SPD SPB SPC  }	#Spanish America + Spain
+		targets = { MEX SPR SPA SPD SPB SPC  }	#Spanish America + Spain
 		target_trigger = {
 			FROM = {
 				is_in_faction_with = ROOT
@@ -2540,7 +2540,7 @@ PHI_relations_with_spanish_america = {
 		}
 	}
 	PHI_force_unification = {
-		targets = { ARG MEX SPR SPA SPD SPB SPC }	#Spanish America + Spain
+		targets = { MEX SPR SPA SPD SPB SPC }	#Spanish America + Spain
 		target_root_trigger = {
 			always = no
 		}

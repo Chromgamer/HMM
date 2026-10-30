@@ -1,7 +1,7 @@
 state = {
 	id = 956
 	name = "STATE_956"
-	manpower = 2997169
+	manpower = 1
 
 	resources = {
 		oil = 6
@@ -11,14 +11,11 @@ state = {
 
 	history = {
 
-		owner = ARG
-		add_core_of = ARG
+		owner = WST
+		add_core_of = WST
 
 		buildings = {
-			infrastructure = 2 #was: 5
-			industrial_complex = 1
-			air_base = 1
-			arms_factory = 1
+
 		}
 
 		victory_points = {

@@ -1046,7 +1046,6 @@ ideas = {
 			allowed = {
 				OR = {
 					original_tag = BRA
-					original_tag = ARG
 				}
 				has_dlc = "Trial of Allegiance"
 			}
@@ -1054,11 +1053,6 @@ ideas = {
 
 			available = {
 				OR = {
-					AND = {
-						FROM = { original_tag = ARG }
-						FROM = { has_completed_focus = ARG_russian_manufacturers }
-					}
-
 					AND = {
 
 						FROM = { original_tag = BRA }
@@ -1116,7 +1110,6 @@ ideas = {
 
 			allowed = {
 				OR = {
-					original_tag = ARG
 					original_tag = BRA
 				}
 				has_dlc = "Trial of Allegiance"
@@ -1124,17 +1117,12 @@ ideas = {
 
 			visible = {
 				OR = {
-					original_tag = ARG
 					original_tag = BRA
 				}
 			}
 
 			available = {
 				OR = {
-					AND = {
-						original_tag = ARG
-						has_completed_focus = ARG_russian_manufacturers
-					}
 					AND = {
 						original_tag = BRA 
 						has_completed_focus = BRA_soviet_arms_industry
@@ -1166,18 +1154,12 @@ ideas = {
 
 			 allowed = {
 				OR = {
-					original_tag = ARG
 					original_tag = BRA
 				}
 				has_dlc = "Trial of Allegiance"
 			}
 			available = {
 				OR = {
-					AND = {
-						original_tag = ARG
-						has_completed_focus = ARG_russian_manufacturers
-					}
-
 					AND = {
 						original_tag = BRA
 						has_completed_focus = BRA_soviet_arms_industry

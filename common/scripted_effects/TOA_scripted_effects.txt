@@ -87,12 +87,6 @@ JUNO_pick_navy_modifier_tt = {
 		}
 		custom_effect_tooltip = BRA_modify_brazilian_navy_ns_intro
 	}
-	ELSE_IF = {
-		limit = {
-			original_tag = ARG
-		}
-		custom_effect_tooltip = ARG_modify_argentine_navy_ns_intro			
-	}
 	
 	ELSE = {
 		custom_effect_tooltip = JUNO_modify_south_american_navy_ns_intro			

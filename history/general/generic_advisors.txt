@@ -25,7 +25,7 @@ every_possible_country = {
 
 		IF = {
 			limit = { has_dlc = "Trial of Allegiance" }
-			NOT = { OR = { tag = ARG tag = BRA } }
+			NOT = { OR = { tag = BRA } }
 		}
 		IF = {
 			limit = { has_dlc = "Gotterdammerung" }
@@ -90,7 +90,7 @@ every_possible_country = {
 
 		IF = {
 			limit = { has_dlc = "Trial of Allegiance" }
-			NOT = { OR = { tag = ARG tag = BRA } }
+			NOT = { OR = { tag = BRA } }
 		}
 
 		IF = {
@@ -164,7 +164,7 @@ every_possible_country = {
 		# TODO CHANGE THIS TO THE CORRECT DLC LOCK
 		IF = {
 			limit = { has_dlc = "Trial of Allegiance" }
-			NOT = { OR = { tag = CHL tag = ARG tag = BRA } }
+			NOT = { OR = { tag = BRA } }
 		}
 		IF = {
 			limit = { has_dlc = "Gotterdammerung" }
@@ -244,7 +244,7 @@ every_possible_country = {
 
 		IF = {
 			limit = { has_dlc = "Trial of Allegiance" }
-			NOT = { OR = { tag = ARG tag = BRA } }
+			NOT = { OR = { tag = BRA } }
 		}
 
 		IF = {
