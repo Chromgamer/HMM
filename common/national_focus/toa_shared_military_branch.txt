@@ -58,30 +58,6 @@ shared_focus = {
 		}	
 	}
 
-	offset = {
-			x = 0
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ARG_the_clean_election 
-			}
-		}
-
-		offset = {
-			x = -33
-			y = 0
-			trigger = {
-				has_game_rule = {
-					rule = obsolete_focus_branches_visibility
-					option = HIDE
-				}
-				has_completed_focus = ARG_a_call_to_reform 
-			}
-		}
-
 	cost = 5
 
 	available = {

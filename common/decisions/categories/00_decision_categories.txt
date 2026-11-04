@@ -170,7 +170,7 @@ fascism_on_the_rise = {
 		NOT = {
 			AND = {
 				has_dlc = "La Resistance"
-				POR = { has_completed_focus = POR_the_empire_of_brazil }
+				#POR = { has_completed_focus = POR_the_empire_of_brazil }
 				tag = BRA
 				has_government = neutrality
 				has_civil_war = yes

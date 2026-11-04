@@ -1073,13 +1073,6 @@ SOV_rubin_design_bureau_organization = {
 
 		IF = {
 			limit = {
-				FROM = { original_tag = ARG }
-			}
-			FROM = { has_completed_focus = ARG_russian_manufacturers }
-		}
-
-		IF = {
-			limit = {
 				FROM = { original_tag = BRA }
 			}
 			FROM = { has_completed_focus = BRA_soviet_arms_industry }
@@ -1643,12 +1636,6 @@ SOV_mig_design_bureau_organization = {
 				FROM = { NOT = { original_tag = SOV } }
 			}
 			FROM = { NOT = { has_war_with = SOV } }
-		}
-		IF = {
-			limit = {
-				FROM = { original_tag = ARG }
-			}
-			FROM = { has_completed_focus = ARG_russian_manufacturers }
 		}
 		IF = {
 			limit = {
@@ -2648,13 +2635,6 @@ SOV_gaz_organization = {
 				#is_in_faction_with = SOV
 				NOT = { has_completed_focus = BUL_nationalization }
 			}
-		}
-
-		IF = {
-			limit = {
-				FROM = { original_tag = ARG }
-			}
-			FROM = { has_completed_focus = ARG_russian_manufacturers }
 		}
 
 		IF = {
