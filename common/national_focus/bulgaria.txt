@@ -1081,7 +1081,7 @@ focus_tree = {
 			}
 			add_tech_bonus = {
 				name = BUL_darzhavna_voenna_fabrika
-			    bonus = 0.5
+			    bonus = 1
 			    uses = 2
 				category = infantry_weapons
 				category = support_tech
@@ -9272,9 +9272,6 @@ focus_tree = {
 				custom_effect_tooltip = BUL_the_third_bulgarian_empire_tt
 			}
 
-			if = { 
-				
-			}
 
 			#Set ideology cosmetic tag to show the appropriate 3D models
 			set_country_flag = BUL_tbe_flag

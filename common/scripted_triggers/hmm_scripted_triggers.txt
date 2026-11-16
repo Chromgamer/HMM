@@ -23,6 +23,8 @@ is_playable_country = {
 		tag = SOV
 		tag = PHI
 		tag = IRQ
+		tag = ARG
+		tag = POR
 	}
 }
 
@@ -42,6 +44,61 @@ is_annexable_playable_country = {
 		tag = MEX
 		# France/Raj have annex decision
 		tag = SAF
+	}
+}
+
+is_noob_nation = { 
+	OR = {
+		#tag = SIA
+		#tag = MAN
+		tag = NZL
+		tag = PHI
+		tag = IRQ
+		tag = MEX
+		#tag = SAF
+		tag = POR
+		tag = ARG
+	}
+}
+
+is_minor_nation = {
+	OR = { 
+		tag = CAN # allies
+		tag = AST
+		tag = BRA
+		tag = MEX
+		tag = NZL
+		tag = RAJ
+		tag = SAF
+		tag = IRE
+		tag = PHI
+		tag = ARG # allies
+
+
+		tag = HUN # Axis
+		tag = ROM
+		tag = SPR
+		tag = BUL
+		tag = SIA
+		tag = MAN
+		tag = FIN
+		tag = IRQ
+		tag = POR # axis
+
+	}
+		
+}
+
+is_major_nation = { 
+	OR = { 
+		tag = ENG
+		tag = FRA
+		tag = USA
+		tag = SOV
+
+		tag = JAP
+		tag = ITA
+		tag = GER
 	}
 }
 
@@ -66,6 +123,7 @@ allies = {
 		tag = POL
 		tag = DEN
 		tag = PHI
+		tag = ARG
 	}
 }
 
@@ -83,6 +141,7 @@ axis = {
 		tag = MAN
 		tag = FIN
 		tag = IRQ
+		tag = POR
 	}
 }
 

@@ -1110,7 +1110,12 @@ focus_tree = {
 			add_ideas = BRA_radio_nacional_idea
 			IF = {
 				limit = { NOT = { has_tech = radio } }
-				set_technology = { radio = 1 }
+				add_tech_bonus = {
+				name = brazil_radio
+				bonus = 10
+				uses = 1
+				technology = radio
+				}
 			}
 		}
 	}
@@ -5867,7 +5872,7 @@ allow_branch = {
 				uses = 1
 				category = train_tech
 			}
-			add_ideas = ETH_mass_transit_idea
+			#ZHM-REVIEW idea not defined: add_ideas = ETH_mass_transit_idea
 		}
 	}
 

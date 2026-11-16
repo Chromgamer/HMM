@@ -7,6 +7,7 @@
  pre_grind_desc:0 "No Grinding Pregrinded Generals"
  tank_pre_grind:0 "Tank Pregrind" 
  sov_inf_gen:0 "Infantry General"
+ last_stand_gen:0 "Last Stand General"
  sov_inf_gen_desc:0 "Capable Commander to lead our vast Army"
  no_leader_promotion_trait:0 "No Leader Promotion"
  no_leader_promotion_trait_desc:0 "Trait exists only on FALS Generals"
@@ -33,9 +34,19 @@
  easy_LL_activation:0 "Will start a Cycling Aircraft §GLend Lease§W to §Y[FROM.GetNameDefCap]§W"
 
  NO_MIL_ACCESS_SOV_DIPLO_TT:0 "§RMilitary Access to the §YSoviet Union§R is not allowed§W"
+ NO_MIL_ACCESS_JAP_DIPLO_TT:0 "§RMilitary Access for §YJapan§R is not allowed§W"
+ limited_LL_SOV_DIPLO_TT:0 "§WLend Lease to the §YSoviet Union§W is §RProhibited§W unless they are over §Y35%§R §RSurrender Progress§W or after §YJune 1st, 1942§W"
+ banned_LL_SOV_DIPLO_TT:0 "§WLend Lease to the §YSoviet Union§W is §RProhibited§W"
+ same_faction_LL_DIPLO_TT:0 "§RLend Lease may only be in Faction§W"
+ limited_LL_DIPLO_TT:0 "§RLend Lease may only be in Faction§W"
+ banned_LL_DIPLO_TT:0 "§Y[ROOT.GetNameDefCap]§R is NOT allowed to Lend Lease§W"
+ banned_req_LL_DIPLO_TT:0 "§Y[FROM.GetNameDefCap]§R is NOT allowed to Lend Lease§W"
+
+
  zhm_opinion_modifier_temp_ally:0 "Temporary Alliance"
  #NO_OFFER_MIL_ACCESS_SOV_TO_ALLIES_DIPLO_TT:0 "Military Access to the §YSoviet Union§W is not §Rallowed§W"
   # DECISION CATEGORIES #
+ game_check:0 "Game Rules"
  ZHM_host:0 "Host Decisions"
  easy_LL:0 "Easy Lend lease"
 
@@ -51,6 +62,8 @@
   zhm.6.b:0 ""
   zhm.7.b:0 ""
   zhm.8.b:0 ""
+  zhm.9.b:0 "Half of USA is annexed to you and Heavy Fighter Lend Lease Starts"
+  zhm.10.b:0 "When it's Danzig or War, half of USA will be annexed to you and Fighter Lend Lease will begin"
 
  ## HMM'S ALTERNED VANILLA TOOLTIPS
 
@@ -60,7 +73,7 @@
 
 
 
- NO_ASIA_NAME:0 "No-Asia(not balanced)"
+ NO_ASIA_NAME:0 "Europe Only(WIP, Playable)"
  NO_ASIA_DESC:0 "Made for low playercount games\nBalance should be fine, but could need some more testing/refining"
 
 
@@ -198,3 +211,4 @@
  a50cw:0 "Create 50W Infantry Template"
  a50cw_desc:0 "Create a 50-width infantry division (25 battalions) template."
 
+ NZL_reserve_bank_governor_empowered:0 "Empowered Reserve Bank Governor"
