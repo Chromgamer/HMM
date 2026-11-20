@@ -8609,20 +8609,7 @@ focus_tree = {
 					}
 				}
 			}
-			modifier = {
-				factor = 4
-				CZE = {
-				
-				}
-			}
-			modifier = {
-				factor = 4
-				CZE = {
-					OR = {
-						
-					}
-				}
-			}
+		
 			
 			modifier = {
 				factor = 0
@@ -9763,13 +9750,15 @@ focus_tree = {
 		cost = 5
 
 		bypass = {
-			HUN = { 
-				owns_state = 664
+			OR = {
+				NOT = { country_exists = HUN }
+				HUN = { owns_state = 664 }
 			}
 		}
 
 		available = {
 			is_subject = no
+			country_exists = HUN
 			HUN = { 
 				NOT = { 
 					owns_state = 664
@@ -11548,34 +11537,162 @@ focus_tree = {
 
 		search_filters = { FOCUS_FILTER_HISTORICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_POLITICAL }
 
-		completion_reward = {
+		completion_reward = { 
+			
 
 			ROM = {
-				country_event = { 
-					id = wuw_GER_diplomacy.111 
-					days = 2 
+				if = {
+					limit = {
+						has_dlc = "To The Bitter End"
+						has_completed_focus = ROM_romanian_axis_membership
+						is_in_faction_with = ROOT
+					}
+					country_event = {
+						id = BA_romania_german_four_year_plan.41
+						days = 2
+					}
+				}
+				else_if = { # ROM asked to join but is not in the faction, e.g. we declined in BA_romania_german_four_year_plan.100
+					limit = {
+						has_dlc = "To The Bitter End"
+						has_completed_focus = ROM_romanian_axis_membership
+					}
+					country_event = {
+						id = wuw_GER_diplomacy.111
+						days = 2
+					}
+				}
+				else_if = {
+					limit = {
+						has_dlc = "To The Bitter End"
+						AND = {
+							NOT = {
+								is_in_faction_with = ROOT
+							}
+						}
+					}
+					set_country_flag = ROM_four_year_plan_initiate_GER
+					country_event = {
+						id = BA_romania_german_four_year_plan.102
+						days = 2
+					}
+				}
+				else_if = {
+					limit = {
+						has_dlc = "To The Bitter End"
+					}
+					country_event = { 
+						id = wuw_GER_diplomacy.111 
+						days = 2 
+					}
+				}
+				else = {
+					country_event = { 
+						id = wuw_GER_diplomacy.111 
+						days = 2 
+					}
 				}
 			}
 
 			custom_effect_tooltip = if_they_accept_tt
 			effect_tooltip = {
-				ROM = {
-					add_ideas = GER_development_of_economic_relations_ns
-					custom_effect_tooltip = generic_skip_one_line_tt
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = GER_trading_partners
+				if = {
+					limit = {
+						has_dlc = "To The Bitter End"
+						ROM = {
+							has_completed_focus = ROM_romanian_axis_membership
+							is_in_faction_with = ROOT
+						}
 					}
-					add_opinion_modifier = {
-						target = ROOT
-						modifier = GER_align_romania
-					}	
-					custom_effect_tooltip = generic_skip_one_line_tt
-					add_ideas = GER_align_romania
+					ROM = {
+						give_resource_rights = {
+							receiver = GER
+							state = 46
+							resources = { oil }
+						}
+						add_tech_bonus = {
+							name = ROM_romanian_axis_membership
+							ahead_reduction = 1
+							uses = 2
+							category = synth_resources
+						}
+						add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+					}
 				}
-				custom_effect_tooltip = war_will_cancel_deal_tt
-			}
+				else_if = {
+					limit = {
+						has_dlc = "To The Bitter End"
+						AND = {
+							ROM = {
+								NOT = {
+									is_in_faction_with = ROOT
+									has_completed_focus = ROM_romanian_axis_membership
+								}
+							}
+						}
+					}
+					ROM = {
+						give_resource_rights = {
+							receiver = GER
+							state = 46
+							resources = { oil }
+						}
+						add_tech_bonus = {
+							name = ROM_romanian_axis_membership
+							ahead_reduction = 1
+							uses = 2
+							category = synth_resources
+						}
+						add_offsite_building = {
+							type = industrial_complex
+							level = 2
+						}
+					}
+					custom_effect_tooltip = generic_skip_one_line_tt
+					custom_effect_tooltip = ROM_counter_proposal_tip_tt
+				}
+				else_if = {
+					limit = {
+						has_dlc = "To The Bitter End"
 
+					}
+					ROM = {
+						add_ideas = GER_development_of_economic_relations_ns
+						custom_effect_tooltip = generic_skip_one_line_tt
+						add_opinion_modifier = {
+							target = ROOT
+							modifier = GER_trading_partners
+						}
+						add_opinion_modifier = {
+							target = ROOT
+							modifier = GER_align_romania
+						}	
+						custom_effect_tooltip = generic_skip_one_line_tt
+						add_ideas = GER_align_romania
+					}
+					custom_effect_tooltip = war_will_cancel_deal_tt
+				}
+				else = {
+					ROM = {
+						add_ideas = GER_development_of_economic_relations_ns
+						custom_effect_tooltip = generic_skip_one_line_tt
+						add_opinion_modifier = {
+							target = ROOT
+							modifier = GER_trading_partners
+						}
+						add_opinion_modifier = {
+							target = ROOT
+							modifier = GER_align_romania
+						}	
+						custom_effect_tooltip = generic_skip_one_line_tt
+						add_ideas = GER_align_romania
+					}
+					custom_effect_tooltip = war_will_cancel_deal_tt
+				}
+			}
 		}
 	}
 	
@@ -11658,9 +11775,6 @@ focus_tree = {
 			is_subject = no
 			OR = {
 				NOT = { HOL = { is_in_faction_with = GER } }
-				if = { 
-
-				}
 				NOT = { BEL = { is_in_faction_with = GER } }
 				NOT = { LUX = { is_in_faction_with = GER } }
 			}
@@ -12425,9 +12539,6 @@ focus_tree = {
 					target = IRE
 					expire = 0
 				}
-			}
-			if = {
-
 			}
 		}
 	}
@@ -21182,9 +21293,6 @@ focus_tree = {
 
 		completion_reward = {
 
-			if = { 
-
-			}
 		
 			add_stability = 0.05
 			add_political_power = 50
@@ -21233,9 +21341,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL_CHARACTER }
 
 		completion_reward = {
-			if = { 
-
-			}
 
 			set_country_flag = GER_the_proletarian_revolution_flag
 
@@ -24946,9 +25051,6 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER }
 
 		completion_reward = {
-			if = { 
-
-			}
 
 			add_popularity = {
 				ideology = neutrality
@@ -26200,9 +26302,6 @@ focus_tree = {
 
 			custom_effect_tooltip = generic_skip_one_line_tt
 			
-			IF = { 
-
-			}
 		}
 	}
 
@@ -26363,9 +26462,6 @@ focus_tree = {
 				}
 			}
 			
-			IF = { 
-
-			}
 		}
 	}
 
@@ -28885,7 +28981,6 @@ focus_tree = {
 
 		available = {
 			is_subject = no
-			OR = {}
 		}
 
 		dynamic = yes
@@ -29268,12 +29363,6 @@ focus_tree = {
 			custom_effect_tooltip = GER_liberate_oppressed_people_tt
 			custom_effect_tooltip = generic_skip_one_line_tt
 
-			IF = { 
-
-			}
-			IF = { 
-
-			}
 
 		}
 	}
@@ -29375,9 +29464,6 @@ focus_tree = {
 
 		completion_reward = {
 
-			IF = { 
-
-			}
 
 			add_manpower = 15000
 			add_popularity = {
@@ -29399,7 +29485,7 @@ focus_tree = {
 
 				division_template = {
 					name = "Kosaken-Kavallerie-Division"	
-					division_names_group = GER_CAV_01
+					division_names_group = GER_Cav_01
 					template_counter = 106 # The Cossack Regiment Symbol 
 					regiments = {
 						cavalry = { x = 0 y = 0 }
@@ -29417,7 +29503,7 @@ focus_tree = {
 
 				division_template = {
 					name = "Russische Befreiungsarmee"	
-					division_names_group = GER_INF_01
+					division_names_group = GER_Inf_01
 					template_counter = 49 # The Griffin 
 					regiments = {
 						infantry = { x = 0 y = 0 }
@@ -29969,11 +30055,11 @@ focus_tree = {
 			188 = { #Memel
 				add_claim_by = GER
 				controller = {
-					country_event = { 
-						id = baltic.4 
-						days = 1
-						random_days = 3
-					}
+					#ZHM-REVIEW event not defined: country_event = { 
+						#id = baltic.4 
+						#days = 1
+						#random_days = 3
+					#}
 				}
 			}
 		}
@@ -34929,11 +35015,11 @@ allow_branch = {
 					owns_state = 188
 					controls_state = 188 
 				}
-				country_event = { 
-					id = baltic.4 
-					days = 1
-					random_days = 3
-				}
+				#ZHM-REVIEW event not defined: country_event = { 
+					#id = baltic.4 
+					#days = 1
+					#random_days = 3
+				#}
 			}
 			if = {
 				limit = {

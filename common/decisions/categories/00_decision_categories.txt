@@ -162,6 +162,12 @@ fascism_on_the_rise = {
 					original_tag = AST
 				}
 			}
+			AND = {
+				has_dlc = "To The Bitter End"
+				OR = {
+					original_tag = ROM
+				}
+			}
 		}
 	}
 	
@@ -170,7 +176,7 @@ fascism_on_the_rise = {
 		NOT = {
 			AND = {
 				has_dlc = "La Resistance"
-				#POR = { has_completed_focus = POR_the_empire_of_brazil }
+				POR = { has_completed_focus = POR_the_empire_of_brazil }
 				tag = BRA
 				has_government = neutrality
 				has_civil_war = yes
@@ -221,6 +227,12 @@ democratic_on_the_rise = {
 					original_tag = GER
 				}
 			}
+			AND = {
+				has_dlc = "To The Bitter End"
+				OR = {
+					original_tag = ROM
+				}
+			}
 			
 		}
 	}
@@ -263,7 +275,12 @@ communism_on_the_rise = {
 					original_tag = FIN
 				}
 			}
-
+			AND = {
+				has_dlc = "Trial of Allegiance"
+				OR = {
+					original_tag = ARG
+				}
+			}
 
 			AND = {
 				has_dlc = "Gotterdammerung"
@@ -279,6 +296,12 @@ communism_on_the_rise = {
 				has_dlc = "Thunder at Our Gates"
 				OR = {
 					original_tag = AST
+				}
+			}
+			AND = {
+				has_dlc = "To The Bitter End"
+				OR = {
+					original_tag = ROM
 				}
 			}
 		}
@@ -530,12 +553,20 @@ generic_purchase_old_ships_category = {
 				has_dlc = "Trial of Allegiance"
 			}
 			AND = {
+				original_tag = ARG
+				has_dlc = "Trial of Allegiance"
+			}
+			AND = {
 				original_tag = RAJ
 				has_dlc = "Graveyard of Empires"
 			}
 			AND = {
 				original_tag = IRQ
 				has_dlc = "Graveyard of Empires"
+			}
+			AND = {
+				original_tag = ROM
+				has_dlc = "To The Bitter End"
 			}
 			
 			original_tag = NZL

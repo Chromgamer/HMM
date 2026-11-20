@@ -23,8 +23,6 @@ is_playable_country = {
 		tag = SOV
 		tag = PHI
 		tag = IRQ
-		tag = ARG
-		tag = POR
 	}
 }
 
@@ -56,8 +54,6 @@ is_noob_nation = {
 		tag = IRQ
 		tag = MEX
 		#tag = SAF
-		tag = POR
-		tag = ARG
 	}
 }
 
@@ -72,7 +68,6 @@ is_minor_nation = {
 		tag = SAF
 		tag = IRE
 		tag = PHI
-		tag = ARG # allies
 
 
 		tag = HUN # Axis
@@ -83,7 +78,6 @@ is_minor_nation = {
 		tag = MAN
 		tag = FIN
 		tag = IRQ
-		tag = POR # axis
 
 	}
 		
@@ -123,7 +117,6 @@ allies = {
 		tag = POL
 		tag = DEN
 		tag = PHI
-		tag = ARG
 	}
 }
 
@@ -141,7 +134,6 @@ axis = {
 		tag = MAN
 		tag = FIN
 		tag = IRQ
-		tag = POR
 	}
 }
 
@@ -190,7 +182,6 @@ ai_black = {
 	OR = {
 		tag = WST
 		tag = TUR
-		#tag = POR 
 		tag = SWE
 	}
 }

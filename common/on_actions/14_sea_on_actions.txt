@@ -49,7 +49,6 @@ on_actions = {
 						original_tag = ITA
 						original_tag = JAP
 						original_tag = HOL
-						original_tag = POR
 						original_tag = USA 
 					}
 				}

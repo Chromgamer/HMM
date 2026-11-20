@@ -1902,16 +1902,28 @@ war_measures = {
 						tag = JAP #has a focus
 						#tag = CHL #has a focus
 						tag = BRA #has a focus
+						tag = ARG #has a focus
 						tag = AST #has a focus
 						tag = FRA #has a focus
 						tag = GER #has a focus
+					}
+				}
+				IF = {
+					limit = {
+						has_dlc = "To The Bitter End"
+					}
+						NOT = {
+					tag = ROM #has a focus
 					}
 				} 
 				AND = {
 					has_dlc = "Trial of Allegiance"
 					NOT = {
 						OR = {
-							tag = BRA #has a focus						
+							
+							tag = BRA #has a focus
+							tag = ARG #has a focus
+						
 						}
 					}
 				}

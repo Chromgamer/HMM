@@ -1421,8 +1421,6 @@ equipment_modules = {
 			soft_attack = -0.04
 		}
 		
-		multiply_stats = {
-		}
 	}
 
 	secondary_turret_small_cannon = {
@@ -1442,8 +1440,6 @@ equipment_modules = {
 			hard_attack = -0.05
 		}		
 		
-		multiply_stats = {
-		}
 	}
 
 	sloped_armor = {
@@ -1502,8 +1498,8 @@ equipment_modules = {
 
 		add_stats = {
 			reliability = -0.1
-			breakthrough = 3
-			defense = 5
+			breakthrough = 2
+			defense = 4
 		}
 		
 	}

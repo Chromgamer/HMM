@@ -9413,6 +9413,7 @@ news_event = {
 		trigger = {
 			OR = {
 				tag = MEX
+				tag = ARG
 			}
 		}
 	}
@@ -9432,6 +9433,7 @@ news_event = {
 				OR = {
 					tag = USA
 					tag = MEX
+					tag = ARG
 				}
 			}
 		}
@@ -9444,6 +9446,7 @@ news_event = {
 				has_government = democratic
 				tag = USA
 				tag = MEX
+				tag = ARG
 			}
 		}
 	}
@@ -12807,17 +12810,10 @@ news_event = {
 		}
 	}
 	option = {
-		name = news.326.b
-		trigger = {
-			TAG = CRO
-		}
-	}
-	option = {
 		name = news.326.c
 		trigger = { 
 			NOT = {
 				TAG = YUG
-				TAG = CRO
 			}
 		}
 	}

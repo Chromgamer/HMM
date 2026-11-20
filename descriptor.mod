@@ -1,4 +1,4 @@
-version="1.19"
+version="1.20"
 tags={
 	"Balance"
 	"Historical"
@@ -44,5 +44,5 @@ replace_path="events"
 replace_path="map/strategicregions"
 replace_path="map/supplyareas"
 name="HMM"
-supported_version="1.19.*"
+supported_version="1.20.*"
 remote_file_id="3365264825"

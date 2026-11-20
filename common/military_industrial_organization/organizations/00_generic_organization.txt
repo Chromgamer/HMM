@@ -4023,12 +4023,6 @@ generic_general_aircraft_organization = {
 		}
 		NOT = {
 			AND = {
-				original_tag = POR
-				has_dlc = "La Resistance"
-			}
-		}
-		NOT = {
-			AND = {
 				OR = { 
 					original_tag = ETH 
 					
